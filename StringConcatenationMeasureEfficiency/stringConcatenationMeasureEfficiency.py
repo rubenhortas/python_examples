@@ -2,11 +2,12 @@
 # _*_ coding:utf-8 _*_
 
 """
-@author:    Rubén Hortas Astariz <http://rubenhortas.blogspot.com>
-@contact:   rubenhortas at gmail.com
-@github:    http://github.com/rubenhortas
-@license:   CC BY-NC-SA 3.0 <http://creativecommons.org/licenses/by-nc-sa/3.0/>
-@file:      stringConcatenationMeasureEfficiency.py
+@author:        Rubén Hortas Astariz <http://rubenhortas.blogspot.com>
+@contact:       rubenhortas at gmail.com
+@github:        http://github.com/rubenhortas
+@license:       CC BY-NC-SA 3.0 <http://creativecommons.org/licenses/by-nc-sa/3.0/>
+@file:          stringConcatenationMeasureEfficiency.py
+@interpreter:   python 2.7
 """
 
 # python 2.7
@@ -26,7 +27,7 @@ def measure_time(fun):
         fun()
 
     t_end = timeit.default_timer()
-    t_total = (t_end - t_start)/ITERATIONS
+    t_total = (t_end - t_start) / ITERATIONS
     return "{0:0.10f} {1}".format(t_total, fun.__name__)
 
 
