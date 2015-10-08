@@ -9,10 +9,11 @@
 @file:      Subject.py
 """
 
+NOTIFY_MESSAGE = "Good news everyone!"
+
 
 class Subject:
     listener = None
-    notify_message = "Good news everyone!"
 
     def __init__(self, listener):
 
@@ -22,4 +23,4 @@ class Subject:
         print("I have a listener: ", self.listener)
         print("I'll notify my listener")
 
-        self.listener.notify(notify_message)
+        self.listener.notify(NOTIFY_MESSAGE)
