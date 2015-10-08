@@ -11,7 +11,8 @@
 
 from IListener import IListener
 
+
 class ListenerClass(IListener):
-            
+
     def notify(self, msg):
         print("I'm a listener and have a new message: {0}".format(msg))
