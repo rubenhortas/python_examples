@@ -38,3 +38,9 @@ if __name__ == '__main__':
         position = l.index(False)
     except:
         print("\tItem not found")
+
+    # Popping
+    print("Popping")
+    print("\t", l)
+    l.pop()
+    print("\t", l)
