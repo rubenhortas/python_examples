@@ -19,19 +19,22 @@ if __name__ == '__main__':
     l.extend(['b', 2])
     l.insert(0, True)
 
-    print(l)
+    print("List: ", l)
 
     # Searching for values
-
+    print("Searching for values")
     if 'a' in l:
-        print("The value is in the list")
+        print("\tThe value is in the list")
 
     l.append('a')
+    print("\tList: ", list)
     position = l.index('a')  # Returns the position of the first ocurrence
-    print("position: %d" % position)
+    print("\tposition: %d" % position)
 
     try:
-        # Raises an exception if the item is not found
+        # Negative index are valid, so raises an exception if the item is not
+        # found
+        print("\tItem in -1 position: %s" % l[-1])
         position = l.index(False)
     except:
-        print("Item not found")
+        print("\tItem not found")
