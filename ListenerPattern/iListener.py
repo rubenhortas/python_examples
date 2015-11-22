@@ -6,13 +6,17 @@
 @contact:   rubenhortas at gmail.com
 @github:    http://github.com/rubenhortas
 @license:   CC BY-NC-SA 3.0 <http://creativecommons.org/licenses/by-nc-sa/3.0/>
-@file:      ListenerClass.py
+@file:      iListener.py
 """
 
-from IListener import IListener
+"""
+In python there is no such thing as interface, but this is an ilustrative 
+example
+"""
+from abc import ABCMeta, abstractmethod
 
 
-class ListenerClass(IListener):
+class IListener(metaclass=ABCMeta):
 
     def notify(self, msg):
-        print("I'm a listener and have a new message: {0}".format(msg))
+        raise NotImplementedError

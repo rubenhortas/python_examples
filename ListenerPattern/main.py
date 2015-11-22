@@ -6,16 +6,16 @@
 @contact:       rubenhortas at gmail.com
 @github:        http://github.com/rubenhortas
 @license:       CC BY-NC-SA 3.0 <http://creativecommons.org/licenses/by-nc-sa/3.0/>
-@file:          Main.py
-@interpreter:   2.7
+@file:          main.py
+@interpreter:   3
 """
 
 """
 Example of Listener Pattern implementation.
 """
-from IListener import IListener
-from ListenerClass import ListenerClass
-from Subject import Subject
+from iListener import IListener
+from listener_class import ListenerClass
+from subject import Subject
 
 
 if __name__ == "__main__":
