@@ -10,8 +10,8 @@
 @interpreter: python3
 """
 
-import ListenerClass
-import Subject
+from listener_class import ListenerClass
+from subject import Subject
 
 
 if __name__ == "__main__":
