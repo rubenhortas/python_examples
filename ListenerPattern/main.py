@@ -10,7 +10,6 @@
 @interpreter:   3
 """
 
-from iListener import IListener
 from listener_class import ListenerClass
 from subject import Subject
 

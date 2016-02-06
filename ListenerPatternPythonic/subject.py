@@ -13,7 +13,7 @@
 NOTIFY_MESSAGE = "Good news everyone!"
 
 
-class Subject():
+class Subject:
 
     listener = None
 

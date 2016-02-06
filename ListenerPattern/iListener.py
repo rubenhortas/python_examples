@@ -9,11 +9,13 @@
 @file:      iListener.py
 """
 
+# noinspection PyUnresolvedReferences
+from abc import ABCMeta, abstractmethod
+
 """
 In python there is no such thing as interface, but this is an illustrative
 example
 """
-from abc import ABCMeta, abstractmethod
 
 
 class IListener(metaclass=ABCMeta):

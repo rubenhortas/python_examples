@@ -31,6 +31,7 @@ if __name__ == '__main__':
     position = l.index('a')  # Returns the position of the first occurrence
     print("\tposition: %d" % position)
 
+    # noinspection PyBroadException
     try:
         # Negative index are valid, so raises an exception if the item is not
         # found
