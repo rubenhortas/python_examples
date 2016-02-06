@@ -14,6 +14,5 @@ from ParentClass import Parent
 
 
 class Child(Parent):
-
-    def ___intit__(self):
+    def ___init__(self):
         super(Parent, self).__init__()

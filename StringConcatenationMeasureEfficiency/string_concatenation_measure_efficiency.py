@@ -64,13 +64,13 @@ def character_array():
 
 
 def build_list():
-    lstr = []
+    strings = []
     for i in range(1, ITEM_NUMBERS):
-        lstr.append(str(i))
-        lstr.append(" ")
+        strings.append(str(i))
+        strings.append(" ")
 
 
-def write_pseudofile():
+def write_pseudo_file():
     file_str = StringIO()
     for i in range(1, ITEM_NUMBERS):
         file_str.write(str(i))
@@ -88,7 +88,7 @@ if __name__ == '__main__':
     l_time.append(measure_time(mutable_string))
     l_time.append(measure_time(character_array))
     l_time.append(measure_time(build_list))
-    l_time.append(measure_time(write_pseudofile))
+    l_time.append(measure_time(write_pseudo_file))
 
     pos = 1
     for measure in sorted(l_time):

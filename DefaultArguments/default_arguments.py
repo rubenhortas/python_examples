@@ -12,7 +12,7 @@
 
 
 def function(optionalArgument=True):
-    if(optionalArgument == True):
+    if optionalArgument is True:
         print("Ok, it's true")
     else:
         print("It's false")

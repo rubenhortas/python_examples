@@ -13,5 +13,6 @@
 
 class ListenerClass:
 
-    def notify(self, msg):
+    @staticmethod
+    def notify(msg):
         print("I'm a listener and have a new message: {0}".format(msg))

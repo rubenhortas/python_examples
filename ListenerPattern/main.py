@@ -10,14 +10,13 @@
 @interpreter:   3
 """
 
-"""
-Example of Listener Pattern implementation.
-"""
 from iListener import IListener
 from listener_class import ListenerClass
 from subject import Subject
 
-
+"""
+Example of Listener Pattern implementation.
+"""
 if __name__ == "__main__":
     print("main")
     subject = Subject(ListenerClass())

@@ -13,7 +13,6 @@
 from listener_class import ListenerClass
 from subject import Subject
 
-
 if __name__ == "__main__":
     print("main")
     subject = Subject(ListenerClass())

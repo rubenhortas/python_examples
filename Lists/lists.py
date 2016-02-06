@@ -28,7 +28,7 @@ if __name__ == '__main__':
 
     l.append('a')
     print("\tList: ", list)
-    position = l.index('a')  # Returns the position of the first ocurrence
+    position = l.index('a')  # Returns the position of the first occurrence
     print("\tposition: %d" % position)
 
     try:
