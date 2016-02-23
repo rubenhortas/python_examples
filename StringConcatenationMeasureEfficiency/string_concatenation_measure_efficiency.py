@@ -78,20 +78,23 @@ def write_pseudo_file():
 
 if __name__ == '__main__':
 
-    l_time = []
+    times = []
+    sorted_times = []
+    pos = 1
 
     print "Starting measures...\n"
 
-    l_time.append(measure_time(naive_appending))
-    l_time.append(measure_time(format_specifiers))
-    l_time.append(measure_time(string_format))
-    l_time.append(measure_time(mutable_string))
-    l_time.append(measure_time(character_array))
-    l_time.append(measure_time(build_list))
-    l_time.append(measure_time(write_pseudo_file))
+    times.append(measure_time(naive_appending))
+    times.append(measure_time(format_specifiers))
+    times.append(measure_time(string_format))
+    times.append(measure_time(mutable_string))
+    times.append(measure_time(character_array))
+    times.append(measure_time(build_list))
+    times.append(measure_time(write_pseudo_file))
 
-    pos = 1
-    for measure in sorted(l_time):
+    sorted_times = sorted(times)
+
+    for measure in sorted_times:
         print "{0} - {1}".format(pos, measure)
         pos = pos + 1
 
