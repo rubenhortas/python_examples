@@ -25,3 +25,11 @@ if __name__ == '__main__':
     str = "hello world"
     print(str.capitalize())
     print
+
+    # Format examples
+    print("I have %d cats" % 2)
+    print("I have %3d cats" % 2)
+    print("I have %03d cats" % 2)
+    print("I have %f cats" % 2)
+    print("I have %.2f cats" % 2)
+    print
