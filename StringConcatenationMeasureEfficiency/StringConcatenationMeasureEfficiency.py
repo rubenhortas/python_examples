@@ -1,9 +1,7 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # _*_ coding:utf-8 _*_
 
-# python 2.7
-from StringIO import StringIO
-from UserString import MutableString
+from io import StringIO
 from array import array
 import timeit
 
@@ -41,17 +39,11 @@ def string_format():
         str_out = "{0} {1}".format(str_out, str(i))
 
 
-def mutable_string():
-    str_out = MutableString()
-    for i in range(1, ITEM_NUMBERS):
-        str_out = str_out + str(i)
-
-
 def character_array():
     char_array = array("c")
     for i in range(1, ITEM_NUMBERS):
-        char_array.fromstring(str(i))
-        char_array.fromstring(" ")
+        char_array.fromstring(bytes(i))
+        char_array.fromstring(bytes(" "))
 
 
 def build_list():
@@ -67,18 +59,17 @@ def write_pseudo_file():
         file_str.write(str(i))
         file_str.write(" ")
 
+
 if __name__ == '__main__':
 
     times = []
-    sorted_times = []
     pos = 1
 
-    print "Starting measures...\n"
+    print("Starting measures...\n")
 
     times.append(measure_time(naive_appending))
     times.append(measure_time(format_specifiers))
     times.append(measure_time(string_format))
-    times.append(measure_time(mutable_string))
     times.append(measure_time(character_array))
     times.append(measure_time(build_list))
     times.append(measure_time(write_pseudo_file))
@@ -86,7 +77,7 @@ if __name__ == '__main__':
     sorted_times = sorted(times)
 
     for measure in sorted_times:
-        print "{0} - {1}".format(pos, measure)
+        print("{0} - {1}".format(pos, measure))
         pos = pos + 1
 
-    print ""
+    print()
