@@ -1,2 +1,2 @@
 # python examples
-Small examples of Python code
+Small examples of Python3 code
