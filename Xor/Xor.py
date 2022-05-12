@@ -5,6 +5,7 @@ import os
 KEY_LENGTH = 4
 
 
+# noinspection SpellCheckingInspection,PyShadowingNames
 def initialize():
     print("Initializing values...")
     plain_text_string = "Hello world!".encode("utf-8")  # to bytes
@@ -20,6 +21,7 @@ def initialize():
     return plain_text_string, xor_key, xor_string
 
 
+# noinspection PyShadowingNames
 def xor(key: bytes, data: bytes) -> bytes:
     xor_data = b''
 
@@ -28,7 +30,8 @@ def xor(key: bytes, data: bytes) -> bytes:
     return xor_data
 
 
-def getXorKey(data: bytes, xor_data: bytes) -> bytes:
+# noinspection PyShadowingNames
+def get_xor_key(data: bytes, xor_data: bytes) -> bytes:
     key = b''
 
     print("Guessing the secret key using for xor...")
@@ -46,12 +49,12 @@ if __name__ == "__main__":
     plain_text_string, key, xor_string = initialize()
 
     # We can guess the key used for xor the string
-    guessed_key = getXorKey(plain_text_string, xor_string)
+    guessed_key = get_xor_key(plain_text_string, xor_string)
 
     # If we have guessed the key we can guess the initial string
     guessed_plain_text_string = xor(guessed_key, xor_string)
     
-    #Check the results
+    # Check the results
     print("Results:")
     print("\tRandom generated key: %s" % key)
     print("\tGuessed key: %s" % guessed_key)
