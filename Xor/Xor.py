@@ -48,8 +48,10 @@ if __name__ == "__main__":
     # We can guess the key used for xor the string
     guessed_key = getXorKey(plain_text_string, xor_string)
 
-    # Check the results
+    # If we have guessed the key we can guess the initial string
     guessed_plain_text_string = xor(guessed_key, xor_string)
+    
+    #Check the results
     print("Results:")
     print("\tRandom generated key: %s" % key)
     print("\tGuessed key: %s" % guessed_key)
