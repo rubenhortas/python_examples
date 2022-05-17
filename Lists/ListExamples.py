@@ -10,29 +10,29 @@ if __name__ == '__main__':
     lst.extend(['b', 2])
     lst.insert(0, True)
 
-    print("List: ", lst)
+    print('List: ', lst)
 
     # Searching for values
-    print("Searching for values")
+    print('Searching for values')
     if 'a' in lst:
-        print("\tThe value is in the lst")
+        print('\tThe value is in the lst')
 
     lst.append('a')
-    print("\tList: ", lst)
+    print('\tList: ', lst)
     position = lst.index('a')  # Returns the position of the first occurrence
-    print("\tposition: %d" % position)
+    print('\tposition: %d' % position)
 
     # noinspection PyBroadException
     try:
         # Negative index are valid, so raises an exception if the item is not
         # found
-        print("\tItem in -1 position: %s" % lst[-1])
+        print('\tItem in -1 position: %s' % lst[-1])
         position = lst.index(False)
     except:
-        print("\tItem not found")
+        print('\tItem not found')
 
     # Popping
-    print("Popping")
-    print("\t", lst)
+    print('Popping')
+    print('\t', lst)
     lst.pop()
-    print("\t", lst)
+    print('\t', lst)

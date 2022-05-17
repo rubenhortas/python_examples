@@ -12,14 +12,14 @@ if __name__ == '__main__':
     print()
 
     # Return a copy of the string with only its first character capitalized
-    s = "hello world"
+    s = 'hello world'
     print(s.capitalize())
     print()
 
     # Format examples
-    print("I have %d cats" % 2)
-    print("I have %3d cats" % 2)
-    print("I have %03d cats" % 2)
-    print("I have %f cats" % 2)
-    print("I have %.2f cats" % 2)
+    print('I have %d cats' % 2)
+    print('I have %3d cats' % 2)
+    print('I have %03d cats' % 2)
+    print('I have %f cats' % 2)
+    print('I have %.2f cats' % 2)
     print()

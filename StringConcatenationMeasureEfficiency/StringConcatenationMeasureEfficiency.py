@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
 # _*_ coding:utf-8 _*_
-
 from io import StringIO
 from array import array
 import timeit
@@ -18,29 +17,29 @@ def measure_time(fun):
     t_end = timeit.default_timer()
     t_total = (t_end - t_start) / ITERATIONS
 
-    return "{0:0.10f} {1}".format(t_total, fun.__name__)
+    return '{0:0.10f} {1}'.format(t_total, fun.__name__)
 
 
 def naive_appending():
-    str_out = ""
+    str_out = ''
 
     for i in range(1, ITEM_NUMBERS):
-        str_out = str_out + " " + str(i)
+        str_out = str_out + ' ' + str(i)
 
 
 def format_specifiers():
     # str_out = '%s %s' % (str_hello, str_my_friend)
-    str_out = ""
+    str_out = ''
 
     for i in range(1, ITEM_NUMBERS):
-        str_out = "%s %s" % (str_out, str(i))
+        str_out = '%s %s' % (str_out, str(i))
 
 
 def string_format():
-    str_out = ""
+    str_out = ''
 
     for i in range(1, ITEM_NUMBERS):
-        str_out = "{0} {1}".format(str_out, str(i))
+        str_out = '{0} {1}'.format(str_out, str(i))
 
 
 def character_array():
@@ -48,7 +47,7 @@ def character_array():
 
     for i in range(1, ITEM_NUMBERS):
         char_array.frombytes(bytes(i))
-        char_array.frombytes(bytes(" ".encode("utf-8")))
+        char_array.frombytes(bytes(' '.encode('utf-8')))
 
 
 def build_list():
@@ -56,7 +55,7 @@ def build_list():
 
     for i in range(1, ITEM_NUMBERS):
         strings.append(str(i))
-        strings.append(" ")
+        strings.append(' ')
 
 
 def write_pseudo_file():
@@ -64,14 +63,14 @@ def write_pseudo_file():
 
     for i in range(1, ITEM_NUMBERS):
         file_str.write(str(i))
-        file_str.write(" ")
+        file_str.write(' ')
 
 
 if __name__ == '__main__':
     times = []
     pos = 1
 
-    print("Starting measuring...\n")
+    print('Starting measuring...\n')
 
     times.append(measure_time(naive_appending))
     times.append(measure_time(format_specifiers))
@@ -83,7 +82,7 @@ if __name__ == '__main__':
     sorted_times = sorted(times)
 
     for measure in sorted_times:
-        print("{0} - {1}".format(pos, measure))
+        print('{0} - {1}'.format(pos, measure))
         pos = pos + 1
 
     print()
