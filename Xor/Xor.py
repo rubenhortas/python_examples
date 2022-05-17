@@ -7,15 +7,15 @@ KEY_LENGTH = 4
 
 # noinspection SpellCheckingInspection,PyShadowingNames
 def initialize():
-    print("Initializing values...")
-    plain_text_string = "Hello world!".encode("utf-8")  # to bytes
-    print("\tplain_text_string: %s" % plain_text_string.decode("utf-8"))
+    print('Initializing values...')
+    plain_text_string = 'Hello world!'.encode('utf-8')  # to bytes
+    print('\tplain_text_string: %s' % plain_text_string.decode('utf-8'))
 
     xor_key = os.urandom(KEY_LENGTH)  # Random KEY_LENGTH bytes key
-    print("\txor_key: %s" % xor_key)
+    print('\txor_key: %s' % xor_key)
 
     xor_string = xor(xor_key, plain_text_string)
-    print("\txor_string: %s" % xor_string)
+    print('\txor_string: %s' % xor_string)
     print()
 
     return plain_text_string, xor_key, xor_string
@@ -34,18 +34,18 @@ def xor(key: bytes, data: bytes) -> bytes:
 def get_xor_key(data: bytes, xor_data: bytes) -> bytes:
     key = b''
 
-    print("Guessing the secret key using for xor...")
+    print('Guessing the secret key using for xor...')
 
     for i in range(KEY_LENGTH):
         key += bytes([data[i] ^ xor_data[i]])
 
-    print("\tGuessed key: %s" % key)
+    print('\tGuessed key: %s' % key)
     print()
 
     return key
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     plain_text_string, key, xor_string = initialize()
 
     # We can guess the key used for xor the string
@@ -55,10 +55,10 @@ if __name__ == "__main__":
     guessed_plain_text_string = xor(guessed_key, xor_string)
     
     # Check the results
-    print("Results:")
-    print("\tRandom generated key: %s" % key)
-    print("\tGuessed key: %s" % guessed_key)
-    print(("\tKeys are different", "\tKeys are equals")[key == guessed_key])  # keys are equal
-    print("\tInitial plain text string: %s" % plain_text_string.decode("utf-8"))
-    print("\tGuessed initial plain text string: %s" % guessed_plain_text_string.decode("utf-8"))
-    print(("\tStrings are different", "\tStrings are equals")[plain_text_string == guessed_plain_text_string])  # strings are equal
+    print('Results:')
+    print('\tRandom generated key: %s' % key)
+    print('\tGuessed key: %s' % guessed_key)
+    print(('\tKeys are different', '\tKeys are equals')[key == guessed_key])  # keys are equal
+    print('\tInitial plain text string: %s' % plain_text_string.decode('utf-8'))
+    print('\tGuessed initial plain text string: %s' % guessed_plain_text_string.decode('utf-8'))
+    print(('\tStrings are different', '\tStrings are equals')[plain_text_string == guessed_plain_text_string])  # strings are equal
