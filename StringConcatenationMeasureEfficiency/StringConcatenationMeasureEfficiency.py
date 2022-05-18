@@ -86,3 +86,13 @@ if __name__ == '__main__':
         pos = pos + 1
 
     print()
+
+    """
+    My results (sorted by faster to slowest):
+        1 - build_list
+        2 - write_pseudo_file
+        3 - format_specifiers
+        4 - string_format
+        5 - naive_appending
+        6 - character_array
+    """
