@@ -5,7 +5,6 @@ import base64
 
 
 if __name__ == '__main__':
-
     message = 'Hello world!'
     print('message: %s' % str(message))  # str(message) to remove b' from string output
 
