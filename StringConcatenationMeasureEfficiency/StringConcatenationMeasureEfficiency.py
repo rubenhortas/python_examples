@@ -65,33 +65,34 @@ def write_pseudo_file():
 
 
 if __name__ == '__main__':
-    times = []
+    average_times = []
     pos = 1
 
     print("Starting measurements...")
 
     print("Concatenating with naive appending...")
-    times.append(measure_time(naive_appending))
+    average_times.append(measure_time(naive_appending))
 
     print("Concatenating with format specifiers...")
-    times.append(measure_time(format_specifiers))
+    average_times.append(measure_time(format_specifiers))
 
     print("Concatenating with string format...")
-    times.append(measure_time(string_format))
+    average_times.append(measure_time(string_format))
 
     print("Concatenating with character array...")
-    times.append(measure_time(character_array))
+    average_times.append(measure_time(character_array))
 
     print("Concatenating with build list...")
-    times.append(measure_time(build_list))
+    average_times.append(measure_time(build_list))
 
     print("Concatenating with write pseudo file...")
-    times.append(measure_time(write_pseudo_file))
+    average_times.append(measure_time(write_pseudo_file))
 
-    sorted_times = sorted(times)
+    print("Results:")
+    sorted_averaged_times = sorted(average_times)
 
-    for measure in sorted_times:
-        print("{0} - {1}".format(pos, measure))
+    for average_time in sorted_averaged_times:
+        print("\t%s - %s" % (pos, average_time))
         pos = pos + 1
 
     print()
