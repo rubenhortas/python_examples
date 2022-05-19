@@ -5,7 +5,7 @@ from array import array
 import timeit
 
 ITEM_NUMBERS = 10000
-ITERATIONS = 100
+ITERATIONS = 1000
 
 
 def measure_time(fun):
@@ -101,8 +101,8 @@ if __name__ == '__main__':
     My results (sorted by faster to slowest):
         1 - build_list
         2 - write_pseudo_file
-        3 - format_specifiers
-        4 - string_format
-        5 - naive_appending
+        3 - naive_appending
+        4 - format_specifiers
+        5 - string_format
         6 - character_array
     """
