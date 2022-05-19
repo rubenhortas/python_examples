@@ -47,7 +47,7 @@ def character_array():
 
     for i in range(1, ITEM_NUMBERS):
         char_array.frombytes(bytes(i))
-        char_array.frombytes(bytes(" ".encode("utf-8")))
+        char_array.frombytes(bytes(" ".encode('utf-8')))
 
 
 def build_list():
