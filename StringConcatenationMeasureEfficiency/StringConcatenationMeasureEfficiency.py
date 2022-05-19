@@ -85,7 +85,7 @@ if __name__ == '__main__':
     print("Concatenating with build list...")
     times.append(measure_time(build_list))
 
-    print("6 - Concatenating with write pseudo file...")
+    print("Concatenating with write pseudo file...")
     times.append(measure_time(write_pseudo_file))
 
     sorted_times = sorted(times)
