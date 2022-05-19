@@ -24,7 +24,7 @@ def naive_appending():
     str_out = ""
 
     for i in range(1, ITEM_NUMBERS):
-        str_out = str_out + " " + str(i)
+        str_out = str_out + str(i)
 
 
 def format_specifiers():
@@ -32,14 +32,14 @@ def format_specifiers():
     str_out = ""
 
     for i in range(1, ITEM_NUMBERS):
-        str_out = "%s %s" % (str_out, str(i))
+        str_out = "%s%s" % (str_out, str(i))
 
 
 def string_format():
     str_out = ""
 
     for i in range(1, ITEM_NUMBERS):
-        str_out = "{0} {1}".format(str_out, str(i))
+        str_out = "{0}{1}".format(str_out, str(i))
 
 
 def character_array():
@@ -47,7 +47,6 @@ def character_array():
 
     for i in range(1, ITEM_NUMBERS):
         char_array.frombytes(bytes(i))
-        char_array.frombytes(bytes(" ".encode('utf-8')))
 
 
 def build_list():
@@ -55,7 +54,6 @@ def build_list():
 
     for i in range(1, ITEM_NUMBERS):
         strings.append(str(i))
-        strings.append(" ")
 
 
 def write_pseudo_file():
@@ -70,13 +68,24 @@ if __name__ == '__main__':
     times = []
     pos = 1
 
-    print("Starting measuring...\n")
+    print("Starting measurements...")
 
+    print("Concatenating with naive appending...")
     times.append(measure_time(naive_appending))
+
+    print("Concatenating with format specifiers...")
     times.append(measure_time(format_specifiers))
+
+    print("Concatenating with string format...")
     times.append(measure_time(string_format))
+
+    print("Concatenating with character array...")
     times.append(measure_time(character_array))
+
+    print("Concatenating with build list...")
     times.append(measure_time(build_list))
+
+    print("6 - Concatenating with write pseudo file...")
     times.append(measure_time(write_pseudo_file))
 
     sorted_times = sorted(times)
