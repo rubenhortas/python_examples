@@ -1,25 +1,65 @@
 #!/usr/bin/env python3
 # _*_ coding:utf-8 _*_
+from string import Template
 
-if __name__ == '__main__':
+
+def multiline_strings():
+    print("Multiline strings:")
     # Triple quotes allow printing in several lines with a single instruction
-    print('''Hello
-    world''')
+    print('''Multi line string
+    in one instruction 1''')
     print()
 
-    print("""Hello
-    world""")
+    print("""Multi line string
+    in one instruction 2""")
     print()
 
-    # Return a copy of the string with only its first character capitalized
-    s = "hello world"
-    print(s.capitalize())
+
+def capitalizing_strings():
+    print("Capitalizing strings:")
+    # Return a capitalized version of the string.
+    # More specifically, make the first character have upper case and the rest lower case.
+    print("my capitalized string".capitalize())
+
+    # Return a version of the string where each word is titlecased.
+    # More specifically, words start with uppercased characters and all remaining cased characters have lower case
+    print("my title string".title())
     print()
 
-    # Format examples
+
+def number_formatting():
+    # Number format examples
+    print("Number formatting:")
     print("I have %d cats" % 2)
     print("I have %3d cats" % 2)
     print("I have %03d cats" % 2)
     print("I have %f cats" % 2)
     print("I have %.2f cats" % 2)
     print()
+
+
+def string_formatting():
+    print("String formatting:")
+    # String format examples
+    # Literal String Interpolation https://peps.python.org/pep-0498/
+    str_one_argument = "one argument"
+    print(f"f-string with {str_one_argument}")
+
+    # %-formatting
+    print("%%-formatting with %s" % str_one_argument)
+
+    # str.format
+    print("str.format with {0}".format(str_one_argument))
+    # Changed in version 3.1: The positional argument specifiers can be omitted for str.format()
+    print("str.format with {}{}".format(str_one_argument, " or two.."))
+
+    # template
+    s = Template("I have a template with $what")
+    print(s.substitute(what=str_one_argument))
+
+
+if __name__ == '__main__':
+    multiline_strings()
+    capitalizing_strings()
+    number_formatting()
+    string_formatting()
