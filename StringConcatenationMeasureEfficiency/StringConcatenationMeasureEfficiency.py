@@ -55,6 +55,8 @@ def build_list():
     for i in range(1, ITEM_NUMBERS):
         strings.append(str(i))
 
+    "".join(strings)
+
 
 def write_pseudo_file():
     file_str = StringIO()
