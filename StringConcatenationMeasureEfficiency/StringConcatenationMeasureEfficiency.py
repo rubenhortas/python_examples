@@ -17,7 +17,7 @@ def measure_time(fun):
     t_end = timeit.default_timer()
     t_total = (t_end - t_start) / ITERATIONS
 
-    return "%.10f %s" % (t_total, fun.__name__)
+    return f"{t_total:.10f} {fun.__name__}"
 
 
 def naive_appending():
@@ -104,7 +104,7 @@ if __name__ == '__main__':
     sorted_averaged_times = sorted(average_times)
 
     for average_time in sorted_averaged_times:
-        print("\t%s - %s" % (pos, average_time))
+        print(f"\t{pos} - {average_time}")
         pos = pos + 1
 
     print()

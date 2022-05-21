@@ -29,12 +29,13 @@ def capitalizing_strings():
 
 def number_formatting():
     # Number format examples
+    number_of_cats = 2
     print("Number formatting:")
-    print("I have %d cats" % 2)
-    print("I have %3d cats" % 2)
-    print("I have %03d cats" % 2)
-    print("I have %f cats" % 2)
-    print("I have %.2f cats" % 2)
+    print(f"I have {number_of_cats} cats")
+    print(f"I have {number_of_cats:3d} cats")  # Three spaces
+    print(f"I have {number_of_cats:03d} cats")  # Three spaces filled with 0s
+    print(f"I have {number_of_cats:f} cats")
+    print(f"I have {number_of_cats:.2f} cats")
     print()
 
 
