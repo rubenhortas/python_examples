@@ -65,4 +65,4 @@ if __name__ == '__main__':
     print("Initial strings:")
     print(f"\t\tInitial plain text string: {plain_text_string.decode('utf-8')}")
     print(f"\t\tGuessed initial plain text string: {guessed_plain_text_string.decode('utf-8')}")
-    print(("\t\tstringsexample are different", "\t\tstringsexample are equals")[plain_text_string == guessed_plain_text_string])  # strings are equal
+    print(("\t\tStrings are different", "\t\tStrings are equals")[plain_text_string == guessed_plain_text_string])  # strings are equal
