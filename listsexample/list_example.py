@@ -17,13 +17,14 @@ if __name__ == '__main__':
         print("\tThe value is in the lst")
 
     lst.append("a")
-    print("\tList: {l", lst)
+    print(f"\tList: {lst}")
 
     position = lst.index("a")  # Returns the position of the first occurrence
     print(f"\tPosition: {position}")
 
     # noinspection PyBroadException
     try:
+        # A negative index accesses items from the end of the list counting backwards.
         # Negative index are valid, so raises an exception if the item is not
         # found
         print(f"\tItem in -1 position: {lst[-1]}")
@@ -36,3 +37,10 @@ if __name__ == '__main__':
     print(f"\t{lst}")
     lst.pop()
     print(f"\t{lst}")
+
+    # Lists in a boolean context
+    # Empty lists are false otherwise is true
+    if lst:
+        print("Non empty list are True")
+    if not []:
+        print("Empty list are False")
