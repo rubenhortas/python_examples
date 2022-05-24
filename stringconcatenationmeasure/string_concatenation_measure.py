@@ -94,7 +94,7 @@ if __name__ == '__main__':
     print("Concatenating with character array...")
     average_times.append(measure_time(character_array))
 
-    print("Concatenating with build list...")
+    print("Concatenating with build listexample...")
     average_times.append(measure_time(build_list))
 
     print("Concatenating with write pseudo file...")

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # _*_ coding:utf-8 _*
-from parentClass import Parent
+from parent_class import Parent
 
 
 class Child(Parent):
