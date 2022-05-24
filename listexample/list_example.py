@@ -40,7 +40,10 @@ if __name__ == '__main__':
 
     # Lists in a boolean context
     # Empty lists are false otherwise is true
+    empty_list = []
+    print("Lists in a boolean context:")
     if lst:
-        print("Non empty list are True")
-    if not []:
-        print("Empty list are False")
+        print(f"\t{lst} is not empty")
+
+    if not empty_list:
+        print(f"\t{empty_list} is empty")
