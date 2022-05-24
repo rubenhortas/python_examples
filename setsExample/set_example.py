@@ -75,10 +75,10 @@ if __name__ == '__main__':
     if odd_set == reversed_odd_set:  # Any two sets that contain all the same values are considered equal.
         print(f"\t{odd_set} and {reversed_odd_set} are equals")  # Sets are equals
 
-    # Set questions
+    # Subsets and Supersets
     mini_odd_set = {1, 3}
 
-    print("Set questions:")
+    print("Subsets and Supersets:")
     if mini_odd_set.issubset(odd_set):
         print(f"\t{mini_odd_set} is subset of {odd_set}")
 
