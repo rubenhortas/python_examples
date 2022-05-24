@@ -13,8 +13,8 @@ if __name__ == '__main__':
 
     # Searching for values
     print("Searching for values")
-    if "a" in lst:
-        print("\tThe value is in the lst")
+    if 'a' in lst:
+        print("\t'a' is in the list")
 
     lst.append("a")
     print(f"\tList: {lst}")
