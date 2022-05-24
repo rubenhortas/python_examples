@@ -19,7 +19,7 @@ if __name__ == '__main__':
     print(f"\tUpdates list set: {list_set}")  # There is not duplicated values
 
     # Removing items from a set
-    print("Removing \"e\" from list_set:")
+    print("Removing 'e' from list_set:")
     list_set.remove("e")
     print(f"\t{list_set}")
 
@@ -43,10 +43,10 @@ if __name__ == '__main__':
     print(f"\t{list_set}")
 
     # Check if a value is in the set
-    print("Checking if \"a\" is in the set")
+    print("Checking if 'a' is in the set")
 
     if "a" in list_set:
-        print("\t\"a\" is in the set")  # Is in the set
+        print("\t'a' is in the set")  # Is in the set
 
     # Common set operations
     odd_set = {1, 3, 5, 7, 9}
@@ -60,9 +60,9 @@ if __name__ == '__main__':
     symmetric_difference_set = odd_set.symmetric_difference(mixed_set)
 
     print("Common set operations:")
-    print(f"\t{odd_set}")
-    print(f"\t{even_set}")
-    print(f"\t{mixed_set}")
+    print(f"\todd set: {odd_set}")
+    print(f"\teven set: {even_set}")
+    print(f"\tmixed set: {mixed_set}")
     print(f"\tUnion of odd set and even set: {union_set}")
     print(f"\tIntersection of odd set and mixed set: {intersection_set}")
     print(f"\tDifference of odd set and mixed set: {difference_set}")
