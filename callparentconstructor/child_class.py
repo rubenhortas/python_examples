@@ -1,5 +1,4 @@
-#!/usr/bin/env python3
-# _*_ coding:utf-8 _*
+#!/usr/bin/python3
 from parent_class import Parent
 
 

@@ -1,5 +1,4 @@
-#!/usr/bin/env python3
-# _*_ coding:utf-8 _*
+#!/usr/bin/python3
 
 # Parent class has to inherit from 'object' class
 class Parent(object):

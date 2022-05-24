@@ -1,5 +1,4 @@
-#!/usr/bin/env python3
-# _*_ coding:utf-8 _*_
+#!/usr/bin/python3
 import os
 
 KEY_LENGTH = 4

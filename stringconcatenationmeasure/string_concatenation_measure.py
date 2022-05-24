@@ -1,5 +1,4 @@
-#!/usr/bin/env python3
-# _*_ coding:utf-8 _*_
+#!/usr/bin/python3
 from io import StringIO
 from array import array
 import timeit
