@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+
 from io import StringIO
 from array import array
 import timeit

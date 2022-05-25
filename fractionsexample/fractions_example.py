@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+
 from fractions import Fraction
 
 if __name__ == '__main__':

@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+
 import os
 
 KEY_LENGTH = 4
