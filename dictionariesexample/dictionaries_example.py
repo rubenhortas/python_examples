@@ -27,3 +27,12 @@ if __name__ == '__main__':
 
     if not empty_dictionary:
         print(f"{empty_dictionary} is empty")
+
+    # Merging dictionaries Python >= 3.5
+    new_users = {
+        "sysadmin": "r2@l.r00t",
+        "anonymous": "anonymous"
+    }
+
+    merged_users = {**users, **new_users}
+    print(f"Merged users: {merged_users}")

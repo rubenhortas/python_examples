@@ -47,3 +47,15 @@ if __name__ == '__main__':
 
     if not empty_list:
         print(f"\t{empty_list} is empty")
+
+    # List comprehensions
+    # [ expression for item in list if conditional ]
+    numbers = [i for i in range(0, 10)]
+    even_numbers = [i for i in range(0, 10) if i % 2 == 0]
+    print("List comprehensions:")
+    print(f"\tnumbers: {numbers}")
+    print(f"\teven numbers: {even_numbers}")
+
+    # Reversing list
+    reversed_numbers = numbers[::-1]
+    print(f"Reversing: {numbers} backwards is {reversed_numbers}")
