@@ -19,10 +19,9 @@ if __name__ == '__main__':
     print(f"\tUpdates list set: {list_set}")  # There is not duplicated values
 
     # Removing items from a set
-    print("Removing 'e' from list_set:")
     list_set.remove("e")
+    print("Removing 'e' from list_set:")
     print(f"\t{list_set}")
-
     print("Removing a item that doesn't exist in the set")
 
     try:
@@ -36,10 +35,8 @@ if __name__ == '__main__':
     # The pop() method removes a single value from a set and returns the value. However, since sets are unordered,
     # there is no “last” value in a set, so there is no way to control which value gets removed.
     # It is completely arbitrary.
-    print("Popping a item from the set:")
-
     list_set.pop()
-
+    print("Popping a item from the set:")
     print(f"\t{list_set}")
 
     # Check if a value is in the set
@@ -90,7 +87,6 @@ if __name__ == '__main__':
     empty_set = {}
 
     print("Sets in a boolean context:")
-
     if list_set:
         print(f"\t{list_set} is not empty")
 
