@@ -3,6 +3,7 @@
 # None is the only null value
 # It has its own datatype (NoneType)
 # You can assign None to any variable, but you can not create other NoneType objects
+
 if __name__ == '__main__':
     var_none = None
     var_none2 = None
