@@ -73,7 +73,7 @@ def comprehensions():
     print(f"\teven numbers: {even_numbers}")
 
 
-def reversing():
+def reverse():
     numbers = [i for i in range(0, 10)]
     reversed_numbers = numbers[::-1]
 
@@ -96,4 +96,4 @@ if __name__ == '__main__':
     is_empty(item_list)
     is_empty(empty_list)
     comprehensions()
-    reversing()
+    reverse()
