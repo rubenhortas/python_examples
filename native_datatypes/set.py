@@ -3,6 +3,7 @@
 # A set is an unordered “bag” of unique values. A single set can contain values of any immutable datatype.
 # Once you have two sets, you can do standard set operations like union, intersection, and set difference
 
+# noinspection PyShadowingNames
 def create_from_list(lst):
     print("Create a set from a list:")
     print(f"\tList: {lst}")
@@ -26,6 +27,7 @@ def merge(set1, set2):
     return set1
 
 
+# noinspection PyShadowingBuiltins
 def remove_item(set, item):
     # Removing items from a set
     print(f"Removing 'e' from {set}:")
@@ -38,6 +40,7 @@ def remove_item(set, item):
     set.discard("e")  # Discard does nothing if the value doesn't exist in the set
 
 
+# noinspection PyShadowingBuiltins
 def pop(set):
     # Popping items
     # The pop() method removes a single value from a set and returns the value. However, since sets are unordered,
@@ -50,6 +53,7 @@ def pop(set):
     print(f"\t{set}")
 
 
+# noinspection PyShadowingBuiltins
 def search_value(set, value):
     print(f"Checking if {value} is in {set}")
 
@@ -94,6 +98,7 @@ def is_superset(set1, set2):
         print(f"\t{set1} is superset of {set2}")
 
 
+# noinspection PyShadowingBuiltins
 def is_empty(set):
     # In a boolean context an empty set is False, otherwise is True
     if set:

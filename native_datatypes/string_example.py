@@ -76,6 +76,7 @@ def joining():
 
 
 def reversing():
+    # noinspection SpellCheckingInspection
     s = "ytrewq"
     reversed_s = s[::-1]
     print(f"Reversing: {s} backwards is {reversed_s}")

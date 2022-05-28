@@ -4,6 +4,7 @@ def initialize_users():
     return users
 
 
+# noinspection PyShadowingNames
 def add_users(users):
     # Modify dictionary values
     users["bob"] = "temporaryPassword"
@@ -15,6 +16,7 @@ def add_users(users):
     print(f"Updated Bob password: {users}")  # We have a new Bob
 
 
+# noinspection PyShadowingBuiltins
 def is_empty(dict):
     # Dictionaries in a boolean context
     # An empty dictionary is False otherwise is true
@@ -24,6 +26,7 @@ def is_empty(dict):
         print(f"{dict} is empty")
 
 
+# noinspection PyShadowingNames
 def merge(users, new_users):
     # Merging dictionaries Python >= 3.5
     merged_users = {**users, **new_users}
