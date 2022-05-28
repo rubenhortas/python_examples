@@ -15,14 +15,13 @@ def add_users(users):
     print(f"Updated Bob password: {users}")  # We have a new Bob
 
 
-def check_empty(users, empty):
+def is_empty(dict):
     # Dictionaries in a boolean context
     # An empty dictionary is False otherwise is true
-    if users:
-        print(f"{users} is not empty")
-
-    if not empty:
-        print(f"{empty_dictionary} is empty")
+    if dict:
+        print(f"{dict} is not empty")
+    else:
+        print(f"{dict} is empty")
 
 
 def merge(users, new_users):
@@ -48,5 +47,6 @@ if __name__ == '__main__':
 
     print(f"Passwords: {users}")
 
-    check_empty(users, empty_dictionary)
+    is_empty(users)
+    is_empty(empty_dictionary)
     merge(users, new_users)

@@ -52,7 +52,7 @@ def popping(lst):
     print(f"\t{lst}")
 
 
-def check_empty(lst):
+def is_empty(lst):
     # Empty lists are false otherwise is true
     print("Lists in a boolean context:")
 
@@ -93,7 +93,7 @@ if __name__ == '__main__':
     get_value_by_position(item_list, -1)
     get_value_by_position(empty_list, -1)
     popping(item_list)
-    check_empty(item_list)
-    check_empty(empty_list)
+    is_empty(item_list)
+    is_empty(empty_list)
     comprehensions()
     reversing()
