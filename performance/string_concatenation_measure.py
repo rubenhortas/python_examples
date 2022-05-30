@@ -21,6 +21,8 @@ def measure_time(fun):
 
 
 def naive_appending():
+    print("Concatenating with naive appending...")
+
     str_out = ""
 
     for i in range(1, ITEM_NUMBERS):
@@ -29,6 +31,8 @@ def naive_appending():
 
 def format_specifiers():
     # str_out = "%s %s" % (str_hello, str_my_friend)
+    print("Concatenating with format specifiers...")
+
     str_out = ""
 
     for i in range(1, ITEM_NUMBERS):
@@ -36,13 +40,17 @@ def format_specifiers():
 
 
 def string_format():
+    print("Concatenating with string format...")
+
     str_out = ""
 
     for i in range(1, ITEM_NUMBERS):
         str_out = "{0}{1}".format(str_out, str(i))
 
 
-def string_format_without_positional_arguments():  # >= 3.1
+def string_format_without_positional_arguments():  # python >= 3.1
+    print("Concatenating with string format without positional arguments...")
+
     str_out = ""
 
     for i in range(1, ITEM_NUMBERS):
@@ -50,6 +58,8 @@ def string_format_without_positional_arguments():  # >= 3.1
 
 
 def character_array():
+    print("Concatenating with character array...")
+
     char_array = array("b")
 
     for i in range(1, ITEM_NUMBERS):
@@ -57,6 +67,8 @@ def character_array():
 
 
 def build_list():
+    print("Concatenating with build list...")
+
     strings = []
 
     for i in range(1, ITEM_NUMBERS):
@@ -66,6 +78,8 @@ def build_list():
 
 
 def write_pseudo_file():
+    print("Concatenating with write pseudo file...")
+
     file_str = StringIO()
 
     for i in range(1, ITEM_NUMBERS):
@@ -78,26 +92,12 @@ if __name__ == '__main__':
     pos = 1
 
     print("Starting measurements...")
-
-    print("Concatenating with naive appending...")
     average_times.append(measure_time(naive_appending))
-
-    print("Concatenating with format specifiers...")
     average_times.append(measure_time(format_specifiers))
-
-    print("Concatenating with string format...")
     average_times.append(measure_time(string_format))
-
-    print("Concatenating with string format without positional arguments...")
     average_times.append(measure_time(string_format_without_positional_arguments))
-
-    print("Concatenating with character array...")
     average_times.append(measure_time(character_array))
-
-    print("Concatenating with build list...")
     average_times.append(measure_time(build_list))
-
-    print("Concatenating with write pseudo file...")
     average_times.append(measure_time(write_pseudo_file))
 
     print("Results:")

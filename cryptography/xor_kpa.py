@@ -8,13 +8,13 @@ KEY_LENGTH = 4
 # noinspection SpellCheckingInspection,PyShadowingNames
 def initialize():
     print("Initializing values...")
+
     plain_text_string = "Hello world!".encode('utf-8')  # string to bytes
-    print(f"\tplain_text_string: {plain_text_string.decode('utf-8')}")
-
     xor_key = os.urandom(KEY_LENGTH)  # Random KEY_LENGTH bytes key
-    print(f"\txor_key: {xor_key}")
-
     xor_string = xor(xor_key, plain_text_string)
+
+    print(f"\tplain_text_string: {plain_text_string.decode('utf-8')}")
+    print(f"\txor_key: {xor_key}")
     print(f"\tciphertext: {xor_string}")
     print()
 

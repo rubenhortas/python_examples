@@ -15,7 +15,7 @@ def multiline_strings():
     print()
 
 
-def capitalize():
+def capitalizing():
     print("Capitalizing strings:")
     # Return a capitalized version of the string.
     # More specifically, make the first character have upper case and the rest lower case.
@@ -59,7 +59,7 @@ def string_formatting():
     print(str_template.substitute(what=str_one_argument))
 
 
-def split():
+def splitting():
     lorem_ipsum = "Lorem ipsum dolor sit amet"
     splitted_string = lorem_ipsum.split()  # To split on whitespace don’t have to give split any arguments
 
@@ -67,7 +67,7 @@ def split():
     print(f"\tsplitted string: {splitted_string}")
 
 
-def join():
+def joining():
     lorem_ipsum = ["lorem", "ipsum", "dolor", "sit", "amet"]
     joined_string = " ".join(lorem_ipsum)
 
@@ -75,7 +75,8 @@ def join():
     print(f"\tjoined string: {joined_string}")
 
 
-def reverse():
+def reversing():
+    # noinspection SpellCheckingInspection
     s = "ytrewq"
     reversed_s = s[::-1]
     print(f"Reversing: {s} backwards is {reversed_s}")
@@ -83,9 +84,9 @@ def reverse():
 
 if __name__ == '__main__':
     multiline_strings()
-    capitalize()
+    capitalizing()
     number_formatting()
     string_formatting()
-    split()
-    join()
-    reverse()
+    splitting()
+    joining()
+    reversing()
