@@ -109,7 +109,7 @@ if __name__ == '__main__':
     print()
 
     """"
-    My results (sorted by faster to slowest):
+    My results (sorted from faster to slowest):
         1 - build_list
         2 - write_pseudo_file
         3 - naive_appending
