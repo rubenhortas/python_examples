@@ -35,6 +35,14 @@ def merge(users, new_users):
     print(f"Merged users: {merged_users}")
 
 
+def comprehensions():
+    print("Dictionary comprehensions:")
+
+    powers = {x: x ** 2 for x in [1, 2, 3, 4, 5]}
+
+    print(f"\tPowers: {powers}")
+
+
 if __name__ == '__main__':
     empty_dictionary = {}
     users = {
@@ -53,3 +61,4 @@ if __name__ == '__main__':
     is_empty(users)
     is_empty(empty_dictionary)
     merge(users, new_users)
+    comprehensions()
