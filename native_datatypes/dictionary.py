@@ -38,7 +38,7 @@ def merge(users, new_users):
 def comprehensions():
     print("Dictionary comprehensions:")
 
-    powers = {x: x ** 2 for x in [1, 2, 3, 4, 5]}
+    powers = {x: x**3 for x in range(10) if x**3 % 4 == 0}
 
     print(f"\tPowers: {powers}")
 
