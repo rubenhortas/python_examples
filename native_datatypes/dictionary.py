@@ -1,9 +1,5 @@
 #!/usr/bin/python3
 
-def initialize_users():
-    return users
-
-
 # noinspection PyShadowingNames
 def add_users(users):
     # Modify dictionary values
@@ -27,18 +23,27 @@ def is_empty(dict):
 
 
 # noinspection PyShadowingNames
-def merge(dict, dict2):
+def merge(users, new_users):
     # Merging dictionaries Python >= 3.5
-    merged_users = {**dict, **dict2}
+    merged_users = {**users, **new_users}
 
-    print(f"New users: {dict2}")
+    print(f"New users: {new_users}")
     print(f"Merged users: {merged_users}")
 
 
-def iterate(dict):
-    print("Dictionary iteration:")
-    for key in dict:
-        print(f"\tkey: {key}\t value: {dict[key]}")
+def comprehensions():
+    print("Dictionary comprehensions:")
+
+    powers = {x: x ** 3 for x in range(10) if x ** 3 % 4 == 0}
+
+    print(f"\tPowers: {powers}")
+
+
+def search(user, users):
+    if user in users:
+        print(f"{user} is in users")
+    else:
+        print(f"{user} is not in users")
 
 
 if __name__ == '__main__':
@@ -59,4 +64,5 @@ if __name__ == '__main__':
     is_empty(users)
     is_empty(empty_dictionary)
     merge(users, new_users)
-    iterate(users)
+    comprehensions()
+    search("root", users)

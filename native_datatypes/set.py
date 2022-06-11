@@ -105,6 +105,11 @@ def is_empty(set):
         print(f"\t{set} is not empty")
 
 
+# noinspection PyShadowingBuiltins
+def get_max(set):
+    print(f"The biggest item in {set} is {max(set)}")
+
+
 if __name__ == '__main__':
     lst = ["a", "b", "c"]
     char_set_two = {"c", "d", "e"}
@@ -126,3 +131,4 @@ if __name__ == '__main__':
     is_superset(odd_set, mini_odd_set)
     is_empty(odd_set)
     is_empty(empty_set)
+    get_max(odd_set)
