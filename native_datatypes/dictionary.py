@@ -23,12 +23,12 @@ def is_empty(dict):
 
 
 # noinspection PyShadowingNames
-def merge(users, new_users):
+def merge(dict1, dict2):
     # Merging dictionaries Python >= 3.5
-    merged_users = {**users, **new_users}
+    merged_dict = {**dict1, **dict2}
 
-    print(f"New users: {new_users}")
-    print(f"Merged users: {merged_users}")
+    print(f"New users: {dict2}")
+    print(f"Merged users: {merged_dict}")
 
 
 def comprehensions():
@@ -39,11 +39,18 @@ def comprehensions():
     print(f"\tPowers: {powers}")
 
 
-def search(user, users):
-    if user in users:
-        print(f"{user} is in users")
+def search(value, dict):
+    if value in dict:
+        print(f"{value} is in users")
     else:
-        print(f"{user} is not in users")
+        print(f"{value} is not in users")
+
+
+def iterate(dict):
+    print("Dictionary iteration:")
+
+    for key in dict:
+        print(f"\tkey: {key}\t value: {dict[key]}")
 
 
 if __name__ == '__main__':
@@ -66,3 +73,4 @@ if __name__ == '__main__':
     merge(users, new_users)
     comprehensions()
     search("root", users)
+    iterate(users)
