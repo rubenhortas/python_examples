@@ -53,6 +53,13 @@ def iterate(dict):
         print(f"\tkey: {key}\t value: {dict[key]}")
 
 
+def sort_by_value(dict):
+    print(f"Sorting {dict} by values:")
+
+    sorted_dict = sorted(dict.items(), key=lambda x: x[1], reverse=True)  # sorted will return a list of tuples
+    print(f"\t{sorted_dict}")
+
+
 if __name__ == '__main__':
     empty_dictionary = {}
     users = {
@@ -66,6 +73,12 @@ if __name__ == '__main__':
         "anonymous": "anonymous"
     }
 
+    users_counter = {
+        "root": 1,
+        "users": 50,
+        "admins": 4
+    }
+
     print(f"Passwords: {users}")
 
     is_empty(users)
@@ -74,3 +87,4 @@ if __name__ == '__main__':
     comprehensions()
     search("root", users)
     iterate(users)
+    sort_by_value(users_counter)
