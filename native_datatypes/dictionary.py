@@ -54,9 +54,15 @@ def iterate(dict):
 
 
 def sort_by_value(dict):
+    # It is not possible to sort a dictionary, only to get a representation of a dictionary that is sorted.
+    # Dictionaries are inherently orderless.
+    # You need an ordered data type to represent sorted values.
     print(f"Sorting {dict} by values:")
 
-    sorted_dict = sorted(dict.items(), key=lambda x: x[1], reverse=True)  # sorted will return a list of tuples
+    sorted_list = sorted(dict.items(), key=lambda item: item[1], reverse=True)  # sorted will return a list of tuples
+    print(f"\t{sorted_list}")
+
+    sorted_dict = {k: v for k, v in sorted(dict.items(), key=lambda item: item[1], reverse=True)}  # returns a dictionary
     print(f"\t{sorted_dict}")
 
 
