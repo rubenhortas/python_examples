@@ -27,12 +27,18 @@ def is_empty(dict):
 
 
 # noinspection PyShadowingNames
-def merge(users, new_users):
+def merge(dict, dict2):
     # Merging dictionaries Python >= 3.5
-    merged_users = {**users, **new_users}
+    merged_users = {**dict, **dict2}
 
-    print(f"New users: {new_users}")
+    print(f"New users: {dict2}")
     print(f"Merged users: {merged_users}")
+
+
+def iterate(dict):
+    print("Dictionary iteration:")
+    for key in dict:
+        print(f"\tkey: {key}\t value: {dict[key]}")
 
 
 if __name__ == '__main__':
@@ -53,3 +59,4 @@ if __name__ == '__main__':
     is_empty(users)
     is_empty(empty_dictionary)
     merge(users, new_users)
+    iterate(users)
