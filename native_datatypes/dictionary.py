@@ -23,12 +23,12 @@ def is_empty(dict):
 
 
 # noinspection PyShadowingNames
-def merge(users, new_users):
+def merge(dict1, dict2):
     # Merging dictionaries Python >= 3.5
-    merged_users = {**users, **new_users}
+    merged_dict = {**dict1, **dict2}
 
-    print(f"New users: {new_users}")
-    print(f"Merged users: {merged_users}")
+    print(f"New users: {dict2}")
+    print(f"Merged users: {merged_dict}")
 
 
 def comprehensions():
@@ -39,11 +39,31 @@ def comprehensions():
     print(f"\tPowers: {powers}")
 
 
-def search(user, users):
-    if user in users:
-        print(f"{user} is in users")
+def search(value, dict):
+    if value in dict:
+        print(f"{value} is in users")
     else:
-        print(f"{user} is not in users")
+        print(f"{value} is not in users")
+
+
+def iterate(dict):
+    print("Dictionary iteration:")
+
+    for key in dict:
+        print(f"\tkey: {key}\t value: {dict[key]}")
+
+
+def sort_by_value(dict):
+    # It is not possible to sort a dictionary, only to get a representation of a dictionary that is sorted.
+    # Dictionaries are inherently orderless.
+    # You need an ordered data type to represent sorted values.
+    print(f"Sorting {dict} by values:")
+
+    sorted_list = sorted(dict.items(), key=lambda item: item[1], reverse=True)  # sorted will return a list of tuples
+    print(f"\t{sorted_list}")
+
+    sorted_dict = {k: v for k, v in sorted(dict.items(), key=lambda item: item[1], reverse=True)}  # returns a dictionary
+    print(f"\t{sorted_dict}")
 
 
 if __name__ == '__main__':
@@ -59,6 +79,12 @@ if __name__ == '__main__':
         "anonymous": "anonymous"
     }
 
+    users_counter = {
+        "root": 1,
+        "users": 50,
+        "admins": 4
+    }
+
     print(f"Passwords: {users}")
 
     is_empty(users)
@@ -66,3 +92,5 @@ if __name__ == '__main__':
     merge(users, new_users)
     comprehensions()
     search("root", users)
+    iterate(users)
+    sort_by_value(users_counter)
