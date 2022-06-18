@@ -1,4 +1,4 @@
-from classes.name_mangling.Hero import Hero
+from classes.namemangling.Hero import Hero
 
 if __name__ == '__main__':
     batman = Hero('Batman', 'Bruce Wayne')
