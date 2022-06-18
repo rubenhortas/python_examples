@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 
+# Python does not support overloading
+# So if you want to overload a function this is the way
 def function(optional_argument=True):
     if optional_argument is True:
         print("Ok, it's true")
