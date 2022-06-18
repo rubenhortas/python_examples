@@ -9,5 +9,6 @@ class Hero:
     def print_name(self):
         print(f'I\'m {self.hero_name}!')
 
+    # Class privates starts with two underscores
     def __print_real_name(self):
         print(f'PWNED! I\'m {self.real_name} :(')
