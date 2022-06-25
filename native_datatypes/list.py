@@ -80,6 +80,20 @@ def reverse():
     print(f"Reversing: {numbers} backwards is {reversed_numbers}")
 
 
+def join():
+    print("Join lists:")
+
+    lst1 = ['a', 'b', 'c']
+    lst2 = ['d', 'e', 'f']
+
+    joined_list_1 = lst1 + lst2
+    lst1.extend(lst2)  # Adds lst2 to end of lst1
+
+    print(f"\tJoin {lst1} and {lst2}")
+    print(f"\tJoin with +: {joined_list_1}")
+    print(f"\tJoin with extend: {lst1}")
+
+
 if __name__ == '__main__':
     item_list = []
     empty_list = []
@@ -97,3 +111,4 @@ if __name__ == '__main__':
     is_empty(empty_list)
     comprehensions()
     reverse()
+    join()
