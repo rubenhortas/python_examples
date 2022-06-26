@@ -6,6 +6,7 @@ Camelcase style.
 
 # Constant
 
+Screaming Snake Case style.
 Uppercase single letter, word, or words. Separate words with underscores.
 
 **MY_CONSTANT**
