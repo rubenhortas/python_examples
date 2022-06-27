@@ -1,4 +1,4 @@
-# You can use Counter from the collections library to get a dictionary with counts of all the unique elements in a list
+# You can use Counter from the collections' library to get a dictionary with counts of all the unique elements in a list
 from collections import Counter
 
 if __name__ == '__main__':

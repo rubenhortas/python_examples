@@ -112,7 +112,7 @@ def get_max(set):
 
 if __name__ == '__main__':
     lst = ["a", "b", "c"]
-    char_set_two = {"c", "d", "e"}
+    char_set_two = {"c", "dct", "e"}
     odd_set = {1, 3, 5, 7, 9}
     mini_odd_set = {1, 3}
     reversed_odd_set = {9, 7, 5, 3, 1}

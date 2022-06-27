@@ -39,30 +39,30 @@ def comprehensions():
     print(f"\tPowers: {powers}")
 
 
-def search(value, dict):
-    if value in dict:
+def search(value, dct):
+    if value in dct:
         print(f"{value} is in users")
     else:
         print(f"{value} is not in users")
 
 
-def iterate(dict):
+def iterate(dct):
     print("Dictionary iteration:")
 
-    for key in dict:
-        print(f"\tkey: {key}\t value: {dict[key]}")
+    for key in dct:
+        print(f"\tkey: {key}\t value: {dct[key]}")
 
 
-def sort_by_value(dict):
+def sort_by_value(dct):
     # It is not possible to sort a dictionary, only to get a representation of a dictionary that is sorted.
     # Dictionaries are inherently orderless.
     # You need an ordered data type to represent sorted values.
-    print(f"Sorting {dict} by values:")
+    print(f"Sorting {dct} by values:")
 
-    sorted_list = sorted(dict.items(), key=lambda item: item[1], reverse=True)  # sorted will return a list of tuples
+    sorted_list = sorted(dct.items(), key=lambda item: item[1], reverse=True)  # sorted will return a list of tuples
     print(f"\t{sorted_list}")
 
-    sorted_dict = {k: v for k, v in sorted(dict.items(), key=lambda item: item[1], reverse=True)}  # returns a dictionary
+    sorted_dict = {k: v for k, v in sorted(dct.items(), key=lambda item: item[1], reverse=True)}  # returns a dictionary
     print(f"\t{sorted_dict}")
 
 

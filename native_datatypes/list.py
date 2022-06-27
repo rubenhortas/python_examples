@@ -84,7 +84,7 @@ def join():
     print("Join lists:")
 
     lst1 = ['a', 'b', 'c']
-    lst2 = ['d', 'e', 'f']
+    lst2 = ['dct', 'e', 'f']
 
     joined_list_1 = lst1 + lst2
     lst1.extend(lst2)  # Adds lst2 to end of lst1
