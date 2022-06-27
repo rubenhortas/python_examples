@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/env python3
 
 # A set is an unordered “bag” of unique values. A single set can contain values of any immutable datatype.
 # Once you have two sets, you can do standard set operations like union, intersection, and set difference

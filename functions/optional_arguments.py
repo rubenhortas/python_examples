@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/env python3
 
 # Python does not support overloading
 # So if you want to overload a function this is the way
