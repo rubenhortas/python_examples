@@ -12,7 +12,7 @@ if __name__ == '__main__':
     # Tuples in a boolean context
     # An empty tuple is False otherwise is True
     if items_tuple:
-        print(f"{items_tuple} is has items")
+        print(f"{items_tuple} has items")
 
     if not empty_tuple:
         print(f"{empty_tuple} is empty")
