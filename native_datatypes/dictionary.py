@@ -1,6 +1,24 @@
 #!/usr/bin/env python3
 
-# noinspection PyShadowingNames
+EMPTY_DICT = {}
+USERS = {
+    "root": "r00t.h4x0r.p455",
+    "guest": "",
+    "bob": "123456",
+    "alice": "qwerty"
+}
+NEW_USERS = {
+    "sysadmin": "r2@l.r00t",
+    "anonymous": "anonymous"
+}
+
+USERS_COUNTER = {
+    "root": 1,
+    "USERS": 50,
+    "admins": 4
+}
+
+
 def add_users(users):
     # Modify dictionary values
     users["bob"] = "temporaryPassword"
@@ -12,14 +30,13 @@ def add_users(users):
     print(f"Updated Bob password: {users}")  # We have a new Bob
 
 
-# noinspection PyShadowingBuiltins
-def is_empty(dict):
+def is_empty(dct):
     # Dictionaries in a boolean context
     # An empty dictionary is False otherwise is true
-    if dict:
-        print(f"{dict} is not empty")
+    if dct:
+        print(f"{dct} is not empty")
     else:
-        print(f"{dict} is empty")
+        print(f"{dct} is empty")
 
 
 # noinspection PyShadowingNames
@@ -27,8 +44,8 @@ def merge(dict1, dict2):
     # Merging dictionaries Python >= 3.5
     merged_dict = {**dict1, **dict2}
 
-    print(f"New users: {dict2}")
-    print(f"Merged users: {merged_dict}")
+    print(f"New USERS: {dict2}")
+    print(f"Merged USERS: {merged_dict}")
 
 
 def comprehensions():
@@ -41,9 +58,9 @@ def comprehensions():
 
 def search(value, dct):
     if value in dct:
-        print(f"{value} is in users")
+        print(f"{value} is in USERS")
     else:
-        print(f"{value} is not in users")
+        print(f"{value} is not in USERS")
 
 
 def iterate(dct):
@@ -67,30 +84,12 @@ def sort_by_value(dct):
 
 
 if __name__ == '__main__':
-    empty_dictionary = {}
-    users = {
-        "root": "r00t.h4x0r.p455",
-        "guest": "",
-        "bob": "123456",
-        "alice": "qwerty"
-    }
-    new_users = {
-        "sysadmin": "r2@l.r00t",
-        "anonymous": "anonymous"
-    }
+    print(f"Passwords: {USERS}")
 
-    users_counter = {
-        "root": 1,
-        "users": 50,
-        "admins": 4
-    }
-
-    print(f"Passwords: {users}")
-
-    is_empty(users)
-    is_empty(empty_dictionary)
-    merge(users, new_users)
+    is_empty(USERS)
+    is_empty(EMPTY_DICT)
+    merge(USERS, NEW_USERS)
     comprehensions()
-    search("root", users)
-    iterate(users)
-    sort_by_value(users_counter)
+    search("root", USERS)
+    iterate(USERS)
+    sort_by_value(USERS_COUNTER)
