@@ -1,5 +1,8 @@
 #!/usr/bin/env python3
 
+EMPTY_LIST = []
+
+
 def add_items(lst):
     print("Adding items")
 
@@ -96,7 +99,6 @@ def join():
 
 if __name__ == '__main__':
     item_list = []
-    empty_list = []
 
     print(f"List: {item_list}")
 
@@ -105,10 +107,10 @@ if __name__ == '__main__':
     get_value_position(item_list, 'a')
     get_value_position(item_list, 'non_existing_value')
     get_value_by_position(item_list, -1)
-    get_value_by_position(empty_list, -1)
+    get_value_by_position(EMPTY_LIST, -1)
     popping(item_list)
     is_empty(item_list)
-    is_empty(empty_list)
+    is_empty(EMPTY_LIST)
     comprehensions()
     reverse()
     join()
