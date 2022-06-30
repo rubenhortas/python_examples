@@ -5,7 +5,6 @@ import os
 KEY_LENGTH = 4
 
 
-# noinspection SpellCheckingInspection,PyShadowingNames
 def initialize():
     print("Initializing values...")
 
@@ -21,7 +20,6 @@ def initialize():
     return plain_text_string, xor_key, xor_string
 
 
-# noinspection PyShadowingNames
 def xor(key: bytes, data: bytes) -> bytes:
     xor_data = b''
 
@@ -30,7 +28,6 @@ def xor(key: bytes, data: bytes) -> bytes:
     return xor_data
 
 
-# noinspection PyShadowingNames
 def get_xor_key(data: bytes, cipher_data: bytes) -> bytes:
     key = b''
 
