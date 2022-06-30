@@ -5,14 +5,14 @@
 # Tuples are faster than lists
 # With tuples you can protect data from read/write
 
-if __name__ == '__main__':
-    items_tuple = ("a", "b", "c")
-    empty_tuple = ()
+EMPTY = ()
+ITEMS = ("a", "b", "c")
 
+if __name__ == '__main__':
     # Tuples in a boolean context
     # An empty tuple is False otherwise is True
-    if items_tuple:
-        print(f"{items_tuple} has items")
+    if ITEMS:
+        print(f"{ITEMS} has items")
 
-    if not empty_tuple:
-        print(f"{empty_tuple} is empty")
+    if not EMPTY:
+        print(f"{EMPTY} is empty")

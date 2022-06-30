@@ -1,15 +1,15 @@
 #!/usr/bin/env python3
 
-if __name__ == '__main__':
-    condition = True
-    message_condition_true = "Condition is true"
-    message_condition_false = "Condition is false"
+CONDITION = True
+MESSAGE_TRUE = "Condition is true"
+MESSAGE_FALSE = "Condition is false"
 
+if __name__ == '__main__':
     # First way
-    result = message_condition_true if condition else message_condition_false
+    result = MESSAGE_TRUE if CONDITION else MESSAGE_FALSE
     print(result)
 
     # Second way (Less intuitive, inmo)
     # (if_condition_is_false, if_condition_is_true)[condition]
-    result = (message_condition_false, message_condition_true)[condition]
+    result = (MESSAGE_FALSE, MESSAGE_TRUE)[CONDITION]
     print(result)
