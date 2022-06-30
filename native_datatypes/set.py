@@ -3,7 +3,16 @@
 # A set is an unordered “bag” of unique values. A single set can contain values of any immutable datatype.
 # Once you have two sets, you can do standard set operations like union, intersection, and set difference
 
-# noinspection PyShadowingNames
+CHARS = ["a", "b", "c"]
+CHAR_2 = {"c", "dct", "e"}
+EMPTY = {}
+ODD = {1, 3, 5, 7, 9}
+MINI_ODD = {1, 3}
+REVERSED_ODD = {9, 7, 5, 3, 1}
+EVEN = {2, 4, 6, 8, 10}
+NUMBERS = {3, 4}
+
+
 def create_from_list(lst):
     print("Create a set from a list:")
     print(f"\tList: {lst}")
@@ -66,7 +75,7 @@ def search_value(set, value):
 def common_operations(set1, set2, set3):
     union_set = set1.union(set2)
     intersection_set = set1.intersection(set3)
-    # The difference() method returns a new set containing all the elements that are in odd_set but not in mixed_set
+    # The difference() method returns a new set containing all the elements that are in ODD_SET but not in MIXED_SET
     difference_set = set1.difference(set3)
     # The symmetric_difference() method returns a new set containing all the elements that are in exactly one of the sets.
     symmetric_difference_set = set1.symmetric_difference(set3)
@@ -111,24 +120,15 @@ def get_max(set):
 
 
 if __name__ == '__main__':
-    lst = ["a", "b", "c"]
-    char_set_two = {"c", "dct", "e"}
-    odd_set = {1, 3, 5, 7, 9}
-    mini_odd_set = {1, 3}
-    reversed_odd_set = {9, 7, 5, 3, 1}
-    even_set = {2, 4, 6, 8, 10}
-    mixed_set = {3, 4}
-    empty_set = {}
-
-    char_set = create_from_list(lst)
-    merged_set = merge(char_set, char_set_two)
+    char_1 = create_from_list(CHARS)
+    merged_set = merge(char_1, CHAR_2)
     remove_item(merged_set, 'e')
     pop(merged_set)
     search_value(merged_set, 'a')
-    common_operations(odd_set, even_set, mixed_set)
-    compare(odd_set, reversed_odd_set)
-    is_subset(mini_odd_set, odd_set)
-    is_superset(odd_set, mini_odd_set)
-    is_empty(odd_set)
-    is_empty(empty_set)
-    get_max(odd_set)
+    common_operations(ODD, EVEN, NUMBERS)
+    compare(ODD, REVERSED_ODD)
+    is_subset(MINI_ODD, ODD)
+    is_superset(ODD, MINI_ODD)
+    is_empty(ODD)
+    is_empty(EMPTY)
+    get_max(ODD)

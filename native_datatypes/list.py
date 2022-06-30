@@ -7,7 +7,7 @@ def add_items(lst):
     print("Adding items")
 
     lst = lst + ["a"]
-    lst.append(1)  # In a lst items don"t need to be the same type
+    lst.append(1)  # In a list items don"t need to be the same type
     lst.extend(["a", 2])
     lst.insert(0, True)
 
