@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 # Since version 3.7, Python offers data classes.
 # Advantages:
 #    - requires a minimal amount of code
