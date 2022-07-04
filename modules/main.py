@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 from modules import module
 
 if __name__ == '__main__':
