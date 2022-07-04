@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 # None is a null value
 # Comparing None to anything other than None will always return False
 # None is the only null value
