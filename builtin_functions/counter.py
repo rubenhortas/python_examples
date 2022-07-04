@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 # You can use Counter from the collections' library to get a dictionary with counts of all the unique elements in a list
 from collections import Counter
 
