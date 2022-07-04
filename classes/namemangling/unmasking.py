@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 from classes.namemangling.Hero import Hero
 
 if __name__ == '__main__':
