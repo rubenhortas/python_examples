@@ -1,6 +1,6 @@
 # Class
 
-CamelCase style.
+UpperCamelCase style.
 
 **MyClass**
 
