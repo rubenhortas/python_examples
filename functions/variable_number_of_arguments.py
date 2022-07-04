@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 def variable_number_of_arguments(arg1, arg2, *args):
     # Parameters will be a tuple
     print('Variable number of arguments')
