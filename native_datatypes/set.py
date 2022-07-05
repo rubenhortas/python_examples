@@ -55,10 +55,9 @@ def pop(set):
     # The pop() method removes a single value from a set and returns the value. However, since sets are unordered,
     # there is no “last” value in a set, so there is no way to control which value gets removed.
     # It is completely arbitrary.
-    print("Popping a item from the set:")
-
     set.pop()
 
+    print("Popping a item from the set:")
     print(f"\t{set}")
 
 
@@ -75,8 +74,10 @@ def search_value(set, value):
 def common_operations(set1, set2, set3):
     union_set = set1.union(set2)
     intersection_set = set1.intersection(set3)
+
     # The difference() method returns a new set containing all the elements that are in ODD_SET but not in MIXED_SET
     difference_set = set1.difference(set3)
+
     # The symmetric_difference() method returns a new set containing all the elements that are in exactly one of the sets.
     symmetric_difference_set = set1.symmetric_difference(set3)
 
