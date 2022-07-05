@@ -6,6 +6,7 @@ MESSAGE_FALSE = "Condition is false"
 
 if __name__ == '__main__':
     # First way
+    # if_condition_is_true if condition else if_condition_is_false
     result = MESSAGE_TRUE if CONDITION else MESSAGE_FALSE
     print(result)
 
