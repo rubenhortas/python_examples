@@ -4,7 +4,15 @@
 # Minimize the number of times we access elements from the list.
 
 def locate_position(lst, number):
-    if lst.count() > 0:
-        pass
-    
-    return -1
+    if len(lst) > 0:
+        pos = len(lst) // 2
+        mid = lst[pos]
+
+        if number > mid:
+            return locate_position(lst[:pos], number)
+        elif number < mid:
+            return pos + locate_position(lst[pos:], number)
+        else:
+            return pos
+    else:
+        return -1
