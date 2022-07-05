@@ -97,6 +97,24 @@ def join():
     print(f"\tJoin with extend: {lst1}")
 
 
+def slicing():
+    # Lst[ Initial : End : IndexJump ]
+    numbers = [i for i in range(0, 10)]
+
+    print(f"Slicing {numbers}:")
+    print(f"\t{{lst[0:5]}}: {numbers[0:5]}")  # [0, 1, 2, 3, 4]
+
+    # Negative Indexes
+    # Index -1 represents the last element and -n represents the first element
+    print(f"\t{{lst[-5::1]}}: {numbers[-5::1]}")  # [5, 6, 7, 8, 9]
+
+    print(f"\t{{lst[0:5]}}: {numbers[::2]}")  # [0, 2, 4, 6, 8]
+
+    # List slicing can be used to delete elements from a list
+    new_list = numbers[:2] + numbers[-2:]  # [0, 1, 8, 9]
+    print(f"\tnew_list = {new_list}")
+
+
 if __name__ == '__main__':
     item_list = []
 
@@ -114,3 +132,4 @@ if __name__ == '__main__':
     comprehensions()
     reverse()
     join()
+    slicing()
