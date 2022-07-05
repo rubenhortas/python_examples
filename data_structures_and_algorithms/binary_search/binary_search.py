@@ -1,8 +1,10 @@
 #!/usr/bin/env python3
 
-# Write a program to find the position of a given number in a list of numbers arranged in decreasing order.
+# Write a program to find the position of a given number in a list of numbers arranged in **decreasing** order.
 # Minimize the number of times we access elements from the list.
 
+# Time Complexity: O(log n)
+# Auxiliary Space: O(1)
 def locate_position(lst, number):
     if len(lst) > 0:
         pos = len(lst) // 2
