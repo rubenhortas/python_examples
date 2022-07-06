@@ -1,6 +1,6 @@
 import unittest
 
-from binary_search import locate_position
+from binary_search_traditional import locate_position
 
 
 class Test(unittest.TestCase):
@@ -37,8 +37,8 @@ class Test(unittest.TestCase):
         self.assertEquals(result, 9)
 
     def test_several_appearances(self):
-        result = locate_position(self.numbers2, 5)
-        self.assertEquals(result, 10)
+        result = locate_position(self.numbers2, 4)
+        self.assertEquals(result, 13)
 
 
 if __name__ == '__main__':
