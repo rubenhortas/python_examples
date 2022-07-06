@@ -1,12 +1,14 @@
 #!/usr/bin/env python3
 
 EMPTY_DICT = {}
+
 USERS = {
     "root": "r00t.h4x0r.p455",
     "guest": "",
     "bob": "123456",
     "alice": "qwerty"
 }
+
 NEW_USERS = {
     "sysadmin": "r2@l.r00t",
     "anonymous": "anonymous"
