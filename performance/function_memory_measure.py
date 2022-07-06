@@ -6,10 +6,14 @@ def trace(func):
     @wraps(func)
     def trace_wrapper(*args, **kwargs):
         tracemalloc.start()
+
         result = func(*args, **kwargs)
+
         size, peak = tracemalloc.get_traced_memory()
         tracemalloc.stop()
+
         print(f"{func.__name__}: current memory size: {size} KiB, peak memory size: {peak} KiB")
+
         return result
 
     return trace_wrapper
