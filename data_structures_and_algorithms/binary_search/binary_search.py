@@ -3,28 +3,25 @@
 # Write a program to find the position of a given number in a list of numbers arranged in **decreasing** order.
 # Minimize the number of times we access elements from the list.
 
-# This is my pythonic way to implement a binary search
-# Instead passing the same arguments as in the traditional implementation (whole list, number sought,
-# min position, max position) I decided to pass as arguments only the half of the list that interests
-# (through list slicing) and the number sought.
-# It turned out to be slightly more memory efficient
-
 # Time Complexity: O(log n)
 # Auxiliary Space: O(1)
 def locate_position(lst, number):
-    if len(lst) > 0:
-        pos = len(lst) // 2
-        mid = lst[pos]
+    return _binary_search(lst, number, 0, len(lst) - 1)
 
-        if number > mid:
-            return locate_position(lst[:pos], number)
-        elif number < mid:
-            return pos + locate_position(lst[pos:], number)
+
+def _binary_search(lst, number, min_pos, max_pos):
+    if min_pos <= max_pos:
+        mid_pos = (min_pos + max_pos) // 2
+
+        if lst[mid_pos] > number:
+            return _binary_search(lst, number, (mid_pos + 1), max_pos)
+        elif lst[mid_pos] < number:
+            return _binary_search(lst, number, min_pos, (mid_pos - 1))
         else:
-            if _is_first_appearance(lst, number, pos):
-                return pos
+            if _is_first_appearance(lst, number, mid_pos):
+                return mid_pos
             else:
-                return locate_position(lst[:pos], number)
+                return _binary_search(lst, number, min_pos, (mid_pos - 1))
     else:
         return -1
 
