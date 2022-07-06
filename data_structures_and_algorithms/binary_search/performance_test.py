@@ -2,18 +2,34 @@ import tracemalloc
 
 from data_structures_and_algorithms.binary_search import binary_search, binary_search_traditional
 
-if __name__ == '__main__':
-    numbers = [9, 9, 9, 8, 8, 8, 7, 7, 7, 6, 5, 5, 5, 4, 4, 4, 3, 3, 3, 2, 2, 2, 1, 1, 1, 0, 0, 0]
-    number = 5
+
+def _trace(lst, number):
+    print(f"Looking for {number} in {lst}")
 
     tracemalloc.start()
-    binary_search.locate_position(numbers, number)
+    binary_search.locate_position(lst, number)
     size, peak = tracemalloc.get_traced_memory()
     tracemalloc.stop()
     print(f"binary_search: current memory size: {size} KiB, peak memory size: {peak} KiB")
 
     tracemalloc.start()
-    binary_search_traditional.locate_position(numbers, number)
+    binary_search_traditional.locate_position(lst, number)
     size, peak = tracemalloc.get_traced_memory()
-    print(f"binary_search_traditional: current memory size: {size} KiB, peak memory size: {peak} KiB")
     tracemalloc.stop()
+    print(f"binary_search_traditional: current memory size: {size} KiB, peak memory size: {peak} KiB")
+
+    print()
+
+
+if __name__ == '__main__':
+    lst1 = [9, 8, 7, 6, 5, 4, 3, 2, 1, 0]
+    numbers1 = [9, 4, 0, 11]
+
+    lst2 = [9, 9, 9, 8, 8, 8, 7, 7, 7, 6, 5, 5, 5, 4, 4, 4, 3, 3, 3, 2, 2, 2, 1, 1, 1, 0, 0, 0]
+    numbers2 = [6, 4]
+
+    for number in numbers1:
+        _trace(lst1, number)
+
+    for number in numbers2:
+        _trace(lst2, number)
