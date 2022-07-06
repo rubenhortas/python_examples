@@ -4,9 +4,10 @@
 # Minimize the number of times we access elements from the list.
 
 # This is my pythonic way to implement a binary search
-# Instead passing as arguments the whole list, the number sought, the min position and the max position
-# I decided to pass only the half of the list that interests and the number sought
-# Which turned out to be slightly more memory efficient
+# Instead passing the same arguments as in the traditional implementation (whole list, number sought,
+# min position, max position) I decided to pass as arguments only the half of the list that interests
+# (through list slicing) and the number sought.
+# It turned out to be slightly more memory efficient
 
 # Time Complexity: O(log n)
 # Auxiliary Space: O(1)
