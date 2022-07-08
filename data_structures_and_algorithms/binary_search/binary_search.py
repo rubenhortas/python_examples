@@ -3,7 +3,7 @@
 # Write a program to find the position of a given number in a list of numbers arranged in **decreasing** order.
 # Minimize the number of times we access elements from the list.
 
-# Time Complexity: O(log n)
+# Time Complexity: O(log(n))
 # Auxiliary Space: O(1)
 def locate_position(lst, number):
     return _binary_search(lst, number, 0, len(lst) - 1)
