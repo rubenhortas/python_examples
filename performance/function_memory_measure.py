@@ -2,9 +2,9 @@ import tracemalloc
 from functools import wraps
 
 
-def trace(func):
+def mmalloc(func):
     @wraps(func)
-    def trace_wrapper(*args, **kwargs):
+    def mmalloc_wrapper(*args, **kwargs):
         tracemalloc.start()
 
         result = func(*args, **kwargs)
@@ -16,10 +16,10 @@ def trace(func):
 
         return result
 
-    return trace_wrapper
+    return mmalloc_wrapper
 
 
-@trace
+@mmalloc
 def create_list(size):
     lst = []
 
