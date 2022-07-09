@@ -11,11 +11,11 @@ ITERATIONS = 1000
 
 def timeit(func):
     @wraps(func)
-    def timeit_wrapper():
+    def timeit_wrapper(*args, **kwargs):
         start_time = time.perf_counter()
 
         for i in range(1, ITERATIONS):
-            func()
+            func(*args, **kwargs)
 
         end_time = time.perf_counter()
         total_time = end_time - start_time
@@ -26,96 +26,105 @@ def timeit(func):
 
 
 @timeit
-def naive_appending():
+def naive_appending(lst):
     str_out = ""
 
-    for i in range(1, ITEM_NUMBERS):
-        str_out = str_out + str(i)
+    for item in lst:
+        str_out = str_out + item
 
 
 @timeit
-def format_specifiers():
+def format_specifiers(lst):
     str_out = ""
 
-    for i in range(1, ITEM_NUMBERS):
-        str_out = "%s%s" % (str_out, str(i))
+    for item in lst:
+        str_out = "%s%s" % (str_out, item)
 
 
 @timeit
-def string_format():
+def string_format(lst):
     str_out = ""
 
-    for i in range(1, ITEM_NUMBERS):
-        str_out = "{0}{1}".format(str_out, str(i))
+    for item in lst:
+        str_out = "{0}{1}".format(str_out, item)
 
 
 @timeit
-def string_format_without_positional_arguments():  # python >= 3.1
+def string_format_without_positional_arguments(lst):  # python >= 3.1
     str_out = ""
 
-    for i in range(1, ITEM_NUMBERS):
-        str_out = "{}{}".format(str_out, str(i))
+    for item in lst:
+        str_out = "{}{}".format(str_out, item)
 
 
 @timeit
-def character_array():
+def character_array(lst):
     char_array = array("b")
 
-    for i in range(1, ITEM_NUMBERS):
-        char_array.frombytes(bytes(i))
+    for item in lst:
+        char_array.frombytes(bytes(item, "UTF-8"))
 
 
 @timeit
-def build_list():
+def join_creating_list(lst):
     strings = []
 
-    for i in range(1, ITEM_NUMBERS):
-        strings.append(str(i))
+    for item in lst:
+        strings.append(item)
 
     "".join(strings)
 
 
 @timeit
-def write_pseudo_file():
+def join_without_creating_list(lst):
+    "".join(lst)
+
+
+@timeit
+def write_pseudo_file(lst):
     file_str = StringIO()
 
-    for i in range(1, ITEM_NUMBERS):
-        file_str.write(str(i))
-        file_str.write(" ")
+    for item in lst:
+        file_str.write(item)
 
 
 if __name__ == '__main__':
+    numbers = [str(i) for i in range(0, ITEM_NUMBERS)]
     results = {}
     pos = 1
 
     print("Starting measurements...")
 
     print("Concatenating with naive appending...")
-    function_name, execution_time = naive_appending()
+    function_name, execution_time = naive_appending(numbers)
     results[function_name] = execution_time
 
     print("Concatenating with format specifiers...")
-    function_name, execution_time = format_specifiers()
+    function_name, execution_time = format_specifiers(numbers)
     results[function_name] = execution_time
 
     print("Concatenating with string format...")
-    function_name, execution_time = string_format()
+    function_name, execution_time = string_format(numbers)
     results[function_name] = execution_time
 
     print("Concatenating with string format without positional arguments...")
-    function_name, execution_time = string_format_without_positional_arguments()
+    function_name, execution_time = string_format_without_positional_arguments(numbers)
     results[function_name] = execution_time
 
     print("Concatenating with character array...")
-    function_name, execution_time = character_array()
+    function_name, execution_time = character_array(numbers)
     results[function_name] = execution_time
 
-    print("Concatenating with build list...")
-    function_name, execution_time = build_list()
+    print("Concatenating with join creating list...")
+    function_name, execution_time = join_creating_list(numbers)
+    results[function_name] = execution_time
+
+    print("Concatenating with join without creating list...")
+    function_name, execution_time = join_without_creating_list(numbers)
     results[function_name] = execution_time
 
     print("Concatenating with write pseudo file...")
-    function_name, execution_time = write_pseudo_file()
+    function_name, execution_time = write_pseudo_file(numbers)
     results[function_name] = execution_time
 
     print("Results:")
@@ -127,11 +136,12 @@ if __name__ == '__main__':
 
     """"
     My results (sorted from faster to slowest):
-       1 - naive_appending
-       2 - build_list
-       3 - write_pseudo_file
-       4 - format_specifiers
-       5 - string_format_without_positional_arguments
-       6 - string_format
-       7 - character_array
+        1 - join_without_creating_list
+        2 - join_creating_list
+        3 - write_pseudo_file
+        4 - naive_appending
+        5 - character_array
+        6 - format_specifiers
+        7 - string_format_without_positional_arguments
+        8 - string_format
     """
