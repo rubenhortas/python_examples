@@ -5,7 +5,7 @@ from array import array
 from functools import wraps
 from io import StringIO
 
-ITEM_NUMBERS = 10000
+LIST_LENGTH = 10000
 ITERATIONS = 1000
 
 
@@ -89,7 +89,7 @@ def write_pseudo_file(lst):
 
 
 if __name__ == '__main__':
-    numbers = [str(i) for i in range(0, ITEM_NUMBERS)]
+    numbers = [str(i) for i in range(0, LIST_LENGTH)]
     results = {}
     pos = 1
 
