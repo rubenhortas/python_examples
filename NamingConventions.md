@@ -11,11 +11,11 @@
 
 # Private elements
 
-| Private element | Notation   | Example                   | Notes                       |
-|-----------------|------------|---------------------------|-----------------------------|
-| Class Method    | snake_case | __my_private_class_method | Starts with two underscore. |
-| Function/Method | snake_case | _my_private_function      | Starts with one underscore. |
+| Private element | Notation   | Example                     | Notes                       |
+|-----------------|------------|-----------------------------|-----------------------------|
+| Class Method    | snake_case | \_\_my_private_class_method | Starts with two underscores.|
+| Function/Method | snake_case | \_my_private_function       | Starts with one underscore. |
 
 # Sources
 
-- [PEP 8](https://peps.python.org/pep-0008/)
+* [PEP 8](https://peps.python.org/pep-0008/)
