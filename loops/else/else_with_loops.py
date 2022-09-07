@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-# Python also allows us to use the else condition with for and while loops.
+# Python allows us to use the else condition with for and while loops.
 # The else block just after for/while is executed only when the loop is NOT terminated by a break statement.
 
 def run_for_example():
