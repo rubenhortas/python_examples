@@ -88,6 +88,14 @@ def write_pseudo_file(lst):
         file_str.write(item)
 
 
+@timeit
+def fstrings(lst):
+    str_out = ''
+
+    for item in lst:
+        str_out = f'{str_out}{item}'
+
+
 if __name__ == '__main__':
     numbers = [str(i) for i in range(0, LIST_LENGTH)]
     results = {}
@@ -127,6 +135,10 @@ if __name__ == '__main__':
     function_name, execution_time = write_pseudo_file(numbers)
     results[function_name] = execution_time
 
+    print("Concatenating with fstrings...")
+    function_name, execution_time = fstrings(numbers)
+    results[function_name] = execution_time
+
     print("Results:")
     sorted_results = sorted(results.items(), key=lambda item: item[1], reverse=False)
 
@@ -137,11 +149,14 @@ if __name__ == '__main__':
     """"
     My results (sorted from faster to slowest):
         1 - join_without_creating_list
-        2 - join_creating_list
+        2 - join_creating_list 
         3 - write_pseudo_file
         4 - naive_appending
         5 - character_array
+        6 - fstrings
         6 - format_specifiers
         7 - string_format_without_positional_arguments
         8 - string_format
+        
+    * Sometimes write_pseudo_file is faster than join_creating_list
     """
