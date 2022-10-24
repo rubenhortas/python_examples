@@ -8,7 +8,7 @@ if __name__ == '__main__':
     print(f"message: {MESSAGE}")
 
     # Encode
-    message_bytes = MESSAGE.encode('ascii')
+    message_bytes = MESSAGE.encode()
     base64_message = base64.b64encode(message_bytes).decode()  # .decode() to convert from bytes to string
     print(f"base64_message: {base64_message}")
 
