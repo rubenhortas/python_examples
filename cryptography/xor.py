@@ -2,7 +2,6 @@
 
 KEY = b'123456'
 PLAINTEXT_STRING = b'hello world!'
-ENCODING = 'UTF-8'
 
 
 def xor(key: bytes, data: bytes) -> bytes:
@@ -17,6 +16,6 @@ if __name__ == '__main__':
     xored_string = xor(KEY, PLAINTEXT_STRING)
     unxored_string = xor(KEY, xored_string)
 
-    print('Plaintext string: "' + PLAINTEXT_STRING.decode(ENCODING) + '"')
-    print('Xored string: "' + xored_string.decode(ENCODING) + '"')
-    print('Unxored string: "' + unxored_string.decode(ENCODING) + '"')
+    print('Plaintext string: "' + PLAINTEXT_STRING.decode() + '"')
+    print('Xored string: "' + xored_string.decode() + '"')
+    print('Unxored string: "' + unxored_string.decode() + '"')
