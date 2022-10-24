@@ -3,18 +3,17 @@
 import os
 
 KEY_LENGTH = 4
-ENCODING = 'UTF-8'
 
 
 # noinspection PyShadowingNames
 def initialize():
     print("Initializing values...")
 
-    plain_text_string = "Hello world!".encode(ENCODING)  # string to bytes
+    plain_text_string = "Hello world!".encode()  # string to bytes
     xor_key = os.urandom(KEY_LENGTH)  # Random KEY_LENGTH bytes KEY
     xor_string = xor(xor_key, plain_text_string)
 
-    print(f"\tplain_text_string: {plain_text_string.decode(ENCODING)}")
+    print(f"\tplain_text_string: {plain_text_string.decode()}")
     print(f"\txor_key: {xor_key}")
     print(f"\tciphertext: {xor_string}")
     print()
@@ -65,6 +64,6 @@ if __name__ == '__main__':
     print(("\t\tKeys are different", "\t\tKeys are equals")[key == guessed_key])  # keys are equal
     print()
     print("Initial strings:")
-    print(f"\t\tInitial plain text string: {plain_text_string.decode(ENCODING)}")
-    print(f"\t\tGuessed initial plain text string: {guessed_plain_text_string.decode(ENCODING)}")
+    print(f"\t\tInitial plain text string: {plain_text_string.decode()}")
+    print(f"\t\tGuessed initial plain text string: {guessed_plain_text_string.decode()}")
     print(("\t\tStrings are different", "\t\tStrings are equals")[plain_text_string == guessed_plain_text_string])  # strings are equal
