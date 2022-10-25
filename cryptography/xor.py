@@ -13,9 +13,9 @@ def xor(key: bytes, data: bytes) -> bytes:
 
 
 if __name__ == '__main__':
-    xored_string = xor(KEY, PLAINTEXT_STRING)
-    unxored_string = xor(KEY, xored_string)
+    xored_data = xor(KEY, PLAINTEXT_STRING)
+    unxored_data = xor(KEY, xored_data)
 
     print('Plaintext string: "' + PLAINTEXT_STRING.decode() + '"')
-    print('Xored string: "' + xored_string.decode() + '"')
-    print('Unxored string: "' + unxored_string.decode() + '"')
+    print('Xored string: "' + xored_data.decode() + '"')
+    print('Unxored string: "' + unxored_data.decode() + '"')
