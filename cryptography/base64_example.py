@@ -9,9 +9,9 @@ if __name__ == '__main__':
 
     # Encode
     message_bytes = MESSAGE.encode()
-    base64_message = base64.b64encode(message_bytes).decode()  # .decode() to convert from bytes to string
+    base64_message = base64.b64encode(message_bytes).decode()  # convert from bytes to string
     print(f"base64_message: {base64_message}")
 
     # Decode
-    decoded_message = base64.b64decode(base64_message).decode()   # .decode() to convert from bytes to string
+    decoded_message = base64.b64decode(base64_message).decode()   # convert from bytes to string
     print(f"decoded_message: {decoded_message}")
