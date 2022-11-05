@@ -5,7 +5,7 @@ from numpy import median
 
 # Vigenere decrypter script
 # Based on the method explained by @Theoretically in https://www.youtube.com/watch?v=LaWp_Kq0cKs
-# Developed for solve levels 4 and 5 of the Krypton game on OverTheWire.
+# Developed to solve levels 4 and 5 of the Krypton game on OverTheWire.
 # OverTheWire: https://overthewire.org/
 # Krypton Level 4: https://overthewire.org/wargames/krypton/krypton4.html
 # Krypton Level 5: https://overthewire.org/wargames/krypton/krypton5.html
