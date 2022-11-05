@@ -42,18 +42,18 @@ def remove_item(set, item):
     print(f"Removing 'e' from {set}:")
 
     try:
-        set.remove(item)  # Remove raises a KeyError exception if the value doesn't exist in the set
+        set.remove(item)  # Remove raises a KeyError exception if the number doesn't exist in the set
     except KeyError:
         print(f"\t{item} is not in {set}")
 
-    set.discard("e")  # Discard does nothing if the value doesn't exist in the set
+    set.discard("e")  # Discard does nothing if the number doesn't exist in the set
 
 
 # noinspection PyShadowingBuiltins
 def pop(set):
     # Popping items
-    # The pop() method removes a single value from a set and returns the value. However, since sets are unordered,
-    # there is no “last” value in a set, so there is no way to control which value gets removed.
+    # The pop() method removes a single number from a set and returns the number. However, since sets are unordered,
+    # there is no “last” number in a set, so there is no way to control which number gets removed.
     # It is completely arbitrary.
     set.pop()
 

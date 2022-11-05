@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 
-# None is a null value
+# None is a null number
 # Comparing None to anything other than None will always return False
-# None is the only null value
+# None is the only null number
 # It has its own datatype (NoneType)
 # You can assign None to any variable, but you can not create other NoneType objects
 
