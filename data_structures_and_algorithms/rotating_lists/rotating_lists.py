@@ -1,4 +1,4 @@
-# Time Complexity: O(log N)
+# Time Complexity: O(log(n))
 # Auxiliary Space: O(1)
 def calculate_rotations(lst):
     len_lst = len(lst)
