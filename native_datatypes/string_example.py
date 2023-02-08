@@ -55,11 +55,20 @@ def string_formatting():
     print("str.format with {0}".format(str_one_argument))
 
     # str.format Changed in version 3.1: The positional argument specifiers can be omitted for str.format()
-    print("str.format with {}{}".format(str_one_argument, " or two.."))
+    print("str.format with {}{}".format(str_one_argument, " or two..."))
 
     # template
     str_template = Template("I have a template with $what")
     print(str_template.substitute(what=str_one_argument))
+
+
+def string_formatting_types_based_on_placeholders():
+    print(f"This is a {'left':<10} align.")
+    print(f"This is a {'right':>10} align.")
+    print(f"This is a {'center':^10} align.")
+    print(f"10 in binary is {10:b}")
+    print(f"0.55 is {0.55:.0%}")  # Percentage format
+    print(f"I want {1000000:,}USD")  # Use comma as a thousand separator
 
 
 def split():
@@ -91,6 +100,7 @@ if __name__ == '__main__':
     capitalize()
     number_formatting()
     string_formatting()
+    string_formatting_types_based_on_placeholders()
     split()
     join()
     reverse()
