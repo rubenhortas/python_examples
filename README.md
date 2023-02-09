@@ -1,9 +1,6 @@
 # python examples
 Small examples of Python3 code, data structures and algorithms.
 
-# Support
-If you find these examples useful you can star this repo.
-
 # Python naming conventions
 ## Public elements
 
@@ -61,6 +58,9 @@ If you find these examples useful you can star this repo.
   """
   ```
 
-## Sources
+# Sources
 
 * [PEP 8](https://peps.python.org/pep-0008/)
+
+# Support
+If you find these examples useful you can star this repo.
