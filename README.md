@@ -1,7 +1,7 @@
 # python examples
 Small examples of Python3 code, data structures and algorithms.
 
-# Python naming conventions
+## Python naming conventions
 ## Public elements
 
 | Public element  | Notation                    | Example      | Notes                                                                     |
@@ -13,14 +13,14 @@ Small examples of Python3 code, data structures and algorithms.
 | Package         | lowercase                   | mypackage.py | Short. Lowercase word or words. Do not separate words with underscores.   |
 | Variable        | snake_case                  | my_variable  | Lowercase single letter, word, or words. Separate words with underscores. |
 
-## Private elements
+### Private elements
 
 | Private element | Notation   | Example                     | Notes                       |
 |-----------------|------------|-----------------------------|-----------------------------|
 | Class Method    | snake_case | \_\_my_private_class_method | Starts with two underscores.|
 | Function/Method | snake_case | \_my_private_function       | Starts with one underscore. |
 
-## Comments
+### Comments
 
 * Should be complete sentences. The first word should be capitalized, unless it is an identifier that begins with a lower case letter.
 * Block comments generally consist of one or more paragraphs built out of complete sentences, with each sentence ending in a period.
@@ -45,7 +45,7 @@ Small examples of Python3 code, data structures and algorithms.
     if len(commits) > 0:   # Make sure that there is commits
     ```
 
-## Documentation strings
+### Documentation strings
 
 * Write docstrings for all public modules, functions, classes, and methods. Docstrings are not necessary for non-public methods, but you should have a comment that describes what the method does. This comment should appear after the def line.
 * The """ that ends a multiline docstring should be on a line by itself.
@@ -58,9 +58,9 @@ Small examples of Python3 code, data structures and algorithms.
   """
   ```
 
-# Sources
+## Sources
 
 * [PEP 8](https://peps.python.org/pep-0008/)
 
-# Support
+## Support
 If you find these examples useful you can star this repo.
