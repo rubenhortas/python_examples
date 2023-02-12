@@ -15,10 +15,10 @@ Small examples of Python3 code, data structures and algorithms.
 
 ### Private elements
 
-| Private element | Notation   | Example                     | Notes                       |
-|-----------------|------------|-----------------------------|-----------------------------|
-| Class Method    | snake_case | \_\_my_private_class_method | Starts with two underscores.|
-| Function/Method | snake_case | \_my_private_function       | Starts with one underscore. |
+| Private element | Notation   | Example                     | Notes                        |
+|-----------------|------------|-----------------------------|------------------------------|
+| Class Method    | snake_case | \_\_my_private_class_method | Starts with two underscores. |
+| Function/Method | snake_case | \_my_private_function       | Starts with one underscore.  |
 
 ### Comments
 
