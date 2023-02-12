@@ -43,7 +43,7 @@ LANGUAGE_FREQUENCIES = {
 }
 
 
-def __read_file(encrypted_file):
+def _read_file(encrypted_file):
     ciphertext = ''
 
     with open(encrypted_file, 'r') as f:
@@ -51,33 +51,33 @@ def __read_file(encrypted_file):
 
     for line in encrypted_file_lines:
         for character in line:
-            if __is_alphabetic(character):
+            if _is_alphabetic(character):
                 ciphertext = ciphertext + character.upper()
 
     return ciphertext
 
 
-def __is_alphabetic(character):
+def _is_alphabetic(character):
     return ('a' <= character <= 'z') or ('A' <= character <= 'Z')
 
 
-def __get_key_shifts(cipher_text, key_length):
+def _get_key_shifts(cipher_text, key_length):
     shifts = []
-    language_frequency_values = __get_frequency_values(LANGUAGE_FREQUENCIES)
+    language_frequency_values = _get_frequency_values(LANGUAGE_FREQUENCIES)
 
     for i in range(key_length):
         ciphertext_chars = cipher_text[i::key_length]
-        ciphertext_chars_frequencies = __get_frequencies(ciphertext_chars)
-        ciphertext_chars_complete_frequencies = __complete_frequencies(ciphertext_chars_frequencies)
-        ciphertext_chars_frequency_values = __get_frequency_values(ciphertext_chars_complete_frequencies)
+        ciphertext_chars_frequencies = _get_frequencies(ciphertext_chars)
+        ciphertext_chars_complete_frequencies = _complete_frequencies(ciphertext_chars_frequencies)
+        ciphertext_chars_frequency_values = _get_frequency_values(ciphertext_chars_complete_frequencies)
 
-        shift = __get_key_shift(language_frequency_values, ciphertext_chars_frequency_values)
+        shift = _get_key_shift(language_frequency_values, ciphertext_chars_frequency_values)
         shifts.append(shift)
 
     return shifts
 
 
-def __get_frequency_values(character_frequencies):
+def _get_frequency_values(character_frequencies):
     frequency_values = []
 
     for character_frequency in character_frequencies:
@@ -86,7 +86,7 @@ def __get_frequency_values(character_frequencies):
     return frequency_values
 
 
-def __get_frequencies(characters):
+def _get_frequencies(characters):
     characters_length = len(characters)
     frequencies = {}
 
@@ -100,7 +100,7 @@ def __get_frequencies(characters):
 # Finding numbers
 # Multiply the frequencies of the alphabet (in order) by rotations of the frequencies of the cipher characters
 # until the greatest sum is found. The largest sum will indicate the number of rotations or shift.
-def __get_key_shift(language_frequency_values, ciphertext_frequency_values):
+def _get_key_shift(language_frequency_values, ciphertext_frequency_values):
     alphabet_length = len(LANGUAGE_FREQUENCIES)
     shift = 0
     max_sum = 0
@@ -119,7 +119,7 @@ def __get_key_shift(language_frequency_values, ciphertext_frequency_values):
     return shift
 
 
-def __get_key(shifts):
+def _get_key(shifts):
     key = ''
 
     for shift in shifts:
@@ -135,8 +135,8 @@ def __get_key(shifts):
     return key
 
 
-def __decrypt(ciphertext, ciphertext_length, key_shifts, key_length):
-    alphabet = __get_alphabet()
+def _decrypt(ciphertext, ciphertext_length, key_shifts, key_length):
+    alphabet = _get_alphabet()
     plaintext = ''
 
     for i in range(ciphertext_length):
@@ -146,7 +146,7 @@ def __decrypt(ciphertext, ciphertext_length, key_shifts, key_length):
     return plaintext
 
 
-def __complete_frequencies(frequencies):
+def _complete_frequencies(frequencies):
     complete_frequencies = {}
 
     for character_frequency in LANGUAGE_FREQUENCIES:
@@ -158,7 +158,7 @@ def __complete_frequencies(frequencies):
     return complete_frequencies
 
 
-def __get_alphabet():
+def _get_alphabet():
     alphabet = []
 
     for character_frequency in LANGUAGE_FREQUENCIES:
@@ -167,7 +167,7 @@ def __get_alphabet():
     return alphabet
 
 
-def __get_shifts_from_key(key):
+def _get_shifts_from_key(key):
     shifts = []
 
     for key_character in key:
@@ -183,10 +183,10 @@ def __get_shifts_from_key(key):
     return shifts
 
 
-def __get_key_length(ciphertext, ciphertext_length):
-    coincidences = __get_coincidences(ciphertext, ciphertext_length)
+def _get_key_length(ciphertext, ciphertext_length):
+    coincidences = _get_coincidences(ciphertext, ciphertext_length)
 
-    return __get_max_coincidences(coincidences)
+    return _get_max_coincidences(coincidences)
 
 
 # Finding coincidences
@@ -196,7 +196,7 @@ def __get_key_length(ciphertext, ciphertext_length):
 # RCT 1:  ABCABCAB Coincidences = 0
 # RCT 2:   ABCABCA Coincidences = 0
 # RCT 3:    ABCABC Coincidences = 6
-def __get_coincidences(ciphertext, ciphertext_length):
+def _get_coincidences(ciphertext, ciphertext_length):
     max_length = ciphertext_length - 1
     coincidences = []
 
@@ -216,7 +216,7 @@ def __get_coincidences(ciphertext, ciphertext_length):
 
 # Find the position in the list with the largest match values.
 # The position will be the key length.
-def __get_max_coincidences(coincidences):
+def _get_max_coincidences(coincidences):
     key_length = 0
     coincidences_length = len(coincidences)
     max_median = 0
@@ -245,25 +245,25 @@ if __name__ == '__main__':
     key_shifts = []
     key = ''
     pt = ''
-    ciphertext = __read_file(args.encrypted_file[0])
+    ciphertext = _read_file(args.encrypted_file[0])
     ciphertext_length = len(ciphertext)
 
     if args.key is None and args.key_length is None:
-        key_length = __get_key_length(ciphertext, ciphertext_length)
-        key_shifts = __get_key_shifts(ciphertext, key_length)
-        key = __get_key(key_shifts)
+        key_length = _get_key_length(ciphertext, ciphertext_length)
+        key_shifts = _get_key_shifts(ciphertext, key_length)
+        key = _get_key(key_shifts)
 
     if args.key_length is not None:
         key_length = int(args.key_length[0])
-        key_shifts = __get_key_shifts(ciphertext, key_length)
-        key = __get_key(key_shifts)
+        key_shifts = _get_key_shifts(ciphertext, key_length)
+        key = _get_key(key_shifts)
 
     if args.key is not None:
         key = args.key[0].upper()
         key_length = len(key)
-        key_shifts = __get_shifts_from_key(key)
+        key_shifts = _get_shifts_from_key(key)
 
-    pt = __decrypt(ciphertext, ciphertext_length, key_shifts, key_length)
+    pt = _decrypt(ciphertext, ciphertext_length, key_shifts, key_length)
 
     print(f'key: {key}\n')
     print(f'ct: {ciphertext}\n')
