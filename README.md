@@ -15,16 +15,16 @@ Small examples of Python3 code, data structures and algorithms.
 
 ### Private elements
 
-| Private element | Notation   | Example                     | Notes                       |
-|-----------------|------------|-----------------------------|-----------------------------|
-| Class Method    | snake_case | \_\_my_private_class_method | Starts with two underscores.|
-| Function/Method | snake_case | \_my_private_function       | Starts with one underscore. |
+| Private element | Notation   | Example                     | Notes                        |
+|-----------------|------------|-----------------------------|------------------------------|
+| Class Method    | snake_case | \_\_my_private_class_method | Starts with two underscores. |
+| Function/Method | snake_case | \_my_private_function       | Starts with one underscore.  |
 
 ### Comments
 
 * Should be complete sentences. The first word should be capitalized, unless it is an identifier that begins with a lower case letter.
 * Block comments generally consist of one or more paragraphs built out of complete sentences, with each sentence ending in a period.
-* Use two spaces after a sentence-ending period in multi- sentence comments except after the final sentence.
+* Use two spaces after a sentence-ending period in multi-sentence comments except after the final sentence.
   * ### Block Comments
     Block comments generally apply to some (or all) code that follows them, and are indented to the same level as that code. Each line of a block comment starts with a # and a single space (unless it is indented text inside the comment).  
     Paragraphs inside a block comment are separated by a line containing a single #. 

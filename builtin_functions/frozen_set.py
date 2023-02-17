@@ -9,6 +9,7 @@ if __name__ == '__main__':
 
     try:
         # If you want to change the frozenset an exception will raise
+        # noinspection PyUnresolvedReferences
         frozen_numbers[1] = 0
     except TypeError as ex:
         print(ex)
