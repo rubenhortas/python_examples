@@ -30,6 +30,7 @@ def _xor(key: bytes, stream: bytes) -> bytes:
     # We assume that key_length <= stream_length
     for i in range(stream_length):
         xord_stream += bytes([stream[i] ^ key[i % key_length]])
+
     return xord_stream
 
 
