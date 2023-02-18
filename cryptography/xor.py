@@ -1,21 +1,21 @@
 #!/usr/bin/env python3
 
-KEY = b'123456'
-PLAINTEXT_STRING = b'hello world!'
+def _xor(key: bytes, stream: bytes) -> bytes:
+    xord_stream = b''
 
-
-def _xor(key: bytes, data: bytes) -> bytes:
-    xored_data = b''
-
-    for i in range(len(data)):
-        xored_data += bytes([data[i] ^ key[i % len(key)]])
-    return xored_data
+    # We assume that the len(key) <= len(stream)
+    for i in range(len(stream)):
+        xord_stream += bytes([stream[i] ^ key[i % len(key)]])
+    return xord_stream
 
 
 if __name__ == '__main__':
-    xored_data = _xor(KEY, PLAINTEXT_STRING)
-    unxored_data = _xor(KEY, xored_data)
+    key = b'123456'
+    plaintext = b'hello world!'
 
-    print('Plaintext string: "' + PLAINTEXT_STRING.decode() + '"')
-    print('Xored string: "' + xored_data.decode() + '"')
-    print('Unxored string: "' + unxored_data.decode() + '"')
+    ciphertext = _xor(key, plaintext)
+    decrypted_text = _xor(key, ciphertext)
+
+    print(f"Plaintext: '{plaintext.decode()}'")
+    print(f"Ciphertext: '{ciphertext.decode()}'")
+    print(f"Decrypted text: '{decrypted_text.decode()}'")
