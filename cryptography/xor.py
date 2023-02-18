@@ -2,10 +2,13 @@
 
 def _xor(key: bytes, stream: bytes) -> bytes:
     xord_stream = b''
+    stream_length = len(stream)
+    key_length = len(key)
 
-    # We assume that the len(key) <= len(stream)
-    for i in range(len(stream)):
-        xord_stream += bytes([stream[i] ^ key[i % len(key)]])
+    # We assume that key_length <= stream_length
+    for i in range(stream_length):
+        xord_stream += bytes([stream[i] ^ key[i % key_length]])
+
     return xord_stream
 
 
