@@ -9,25 +9,28 @@ KEY_LENGTH = 4
 def _initialize():
     print("Initializing values...")
 
-    plain_text_string = "Hello world!".encode()  # string to bytes
-    xor_key = os.urandom(KEY_LENGTH)  # Random KEY_LENGTH bytes KEY
-    xor_string = _xor(xor_key, plain_text_string)
+    plaintext = "Hello world!".encode()  # string to bytes
+    key = os.urandom(KEY_LENGTH)  # Random KEY_LENGTH bytes KEY
+    ciphertext = _xor(key, plaintext)
 
-    print(f"\tplain_text_string: {plain_text_string.decode()}")
-    print(f"\txor_key: {xor_key}")
-    print(f"\tciphertext: {xor_string}")
+    print(f"\tplaintext: {plaintext.decode()}")
+    print(f"\tkey: {key}")
+    print(f"\tciphertext: {ciphertext}")
     print()
 
-    return plain_text_string, xor_key, xor_string
+    return plaintext, key, ciphertext
 
 
 # noinspection PyShadowingNames
-def _xor(key: bytes, data: bytes) -> bytes:
-    xord_data = b''
+def _xor(key: bytes, stream: bytes) -> bytes:
+    xord_stream = b''
+    stream_length = len(stream)
+    key_length = len(key)
 
-    for i in range(len(data)):
-        xord_data += bytes([data[i] ^ key[i % len(key)]])
-    return xord_data
+    # We assume that key_length <= stream_length
+    for i in range(stream_length):
+        xord_stream += bytes([stream[i] ^ key[i % key_length]])
+    return xord_stream
 
 
 # noinspection PyShadowingNames
@@ -47,23 +50,23 @@ def _get_xor_key(plaintext: bytes, ciphertext: bytes) -> bytes:
 
 # Example of how to perform a Known-plaintext attack (KPA) on a xor'd ciphertext
 if __name__ == '__main__':
-    plain_text_string, key, ciphertext = _initialize()
+    plaintext, key, ciphertext = _initialize()
 
     # If we have the initial plain text string (or at least a part) and the result ciphertext
     # we can guess the KEY used for cipher the string.
-    guessed_key = _get_xor_key(plain_text_string, ciphertext)
+    guessed_key = _get_xor_key(plaintext, ciphertext)
 
     # If we have guessed the KEY we can guess the initial string
-    guessed_plain_text_string = _xor(guessed_key, ciphertext)
-    
+    decrypted_text = _xor(guessed_key, ciphertext)
+
     # Check the results
     print("Results:")
     print("\tKeys:")
-    print(f"\t\tRandom generated KEY: {key}")
-    print(f"\t\tGuessed KEY: {guessed_key}")
+    print(f"\t\tRandom generated key: {key}")
+    print(f"\t\tGuessed key: {guessed_key}")
     print(("\t\tKeys are different", "\t\tKeys are equals")[key == guessed_key])  # keys are equal
     print()
     print("Initial strings:")
-    print(f"\t\tInitial plain text string: {plain_text_string.decode()}")
-    print(f"\t\tGuessed initial plain text string: {guessed_plain_text_string.decode()}")
-    print(("\t\tStrings are different", "\t\tStrings are equals")[plain_text_string == guessed_plain_text_string])  # strings are equal
+    print(f"\t\tInitial plaintext: {plaintext.decode()}")
+    print(f"\t\tDecrypted text: {decrypted_text.decode()}")
+    print(("\t\tStrings are different", "\t\tStrings are equals")[plaintext == decrypted_text])  # strings are equal
