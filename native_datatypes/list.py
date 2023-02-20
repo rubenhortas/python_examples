@@ -108,7 +108,7 @@ def slicing():
     # Index -1 represents the last element and -n represents the first element
     print(f"\t{{lst[-5::1]}}: {numbers[-5::1]}")  # [5, 6, 7, 8, 9]
 
-    print(f"\t{{lst[0:5]}}: {numbers[::2]}")  # [0, 2, 4, 6, 8]
+    print(f"\t{{lst[::2]}}: {numbers[::2]}")  # [0, 2, 4, 6, 8]
 
     # List slicing can be used to delete elements from a list
     new_list = numbers[:2] + numbers[-2:]  # [0, 1, 8, 9]
