@@ -1,6 +1,21 @@
 #!/usr/bin/env python3
 import sys
 
+# Operators:
+# a & b  AND
+# a | b  OR
+# a ^ b  XOR
+# ~a     NOT
+# a << n Left shift
+# a >> n Right shift
+#
+# Compound operators:
+# a &= b ->	a = a & b
+# a |= b -> a = a | b
+# a ^= b -> a = a ^ b
+# a <<= n -> a = a << n
+# a >>= n -> a = a >> n
+
 
 # Read the value of a bit on a given position
 def get_bit(number, index):
