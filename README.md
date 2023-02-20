@@ -57,6 +57,10 @@ Small examples of Python3 code, data structures and algorithms.
   Draws a circle.
   """
   ```
+* For one liner docstrings keep the closing """ on the same line:  
+  ```python
+  """Returns a circle."""
+  ```
 
 ## Sources
 
