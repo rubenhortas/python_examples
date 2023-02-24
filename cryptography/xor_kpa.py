@@ -23,15 +23,15 @@ def _initialize():
 
 # noinspection PyShadowingNames
 def _xor(key: bytes, stream: bytes) -> bytes:
-    xord_stream = b''
+    xored_stream = b''
     stream_length = len(stream)
     key_length = len(key)
 
     # We assume that key_length <= stream_length
     for i in range(stream_length):
-        xord_stream += bytes([stream[i] ^ key[i % key_length]])
+        xored_stream += bytes([stream[i] ^ key[i % key_length]])
 
-    return xord_stream
+    return xored_stream
 
 
 # noinspection PyShadowingNames
