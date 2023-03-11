@@ -5,10 +5,12 @@
 from psutil import cpu_percent, process_iter, NoSuchProcess, AccessDenied, ZombieProcess
 from signal import signal, SIGINT
 from datetime import datetime
+from time import sleep
 
 CPU_THRESHOLD = 95  # Percentage, ex: 95%
 NUMBER_OF_PROCESSES = 3
 LOG_FILE = 'process_hunter.log'
+SLEEP_SECONDS = 60
 
 
 # noinspection PyUnusedLocal
@@ -32,8 +34,8 @@ def main():
                     pass
 
             sorted_processes = sorted(processes[0:NUMBER_OF_PROCESSES], key=lambda p: p['cpu_percent'], reverse=True)
-
             write_log(sorted_processes)
+            sleep(SLEEP_SECONDS)
 
 
 def write_log(processes):
