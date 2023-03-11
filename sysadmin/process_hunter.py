@@ -33,7 +33,7 @@ def main():
                 except (NoSuchProcess, AccessDenied, ZombieProcess):
                     pass
 
-            sorted_processes = sorted(processes[0:NUMBER_OF_PROCESSES], key=lambda p: p['cpu_percent'], reverse=True)
+            sorted_processes = sorted(processes, key=lambda p: p['cpu_percent'], reverse=True)[0:NUMBER_OF_PROCESSES]
             write_log(sorted_processes)
             sleep(SLEEP_SECONDS)
 
