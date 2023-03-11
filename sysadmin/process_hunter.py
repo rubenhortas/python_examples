@@ -20,6 +20,8 @@ def exit_signal_handler(signal_, frame):
 
 def main():
     while True:
+        sleep(1)  # Avoid logging the CPU increase caused by this script
+
         if cpu_percent() >= CPU_THRESHOLD:
             processes = []
 
