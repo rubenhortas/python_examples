@@ -43,6 +43,7 @@ def write_log(processes):
 
     for process in processes:
         log_line = log_line + f"{process['name']}: {process['cpu_percent']}% "
+    log_line = log_line + '\n'
 
     try:
         with open(LOG_FILE, 'a') as log:
