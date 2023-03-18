@@ -21,8 +21,6 @@ class LinkedList:
             nodes.append(node.data)
             node = node.next
 
-        nodes.append("None")
-
         return " -> ".join(nodes)
 
     def __iter__(self):
@@ -108,27 +106,23 @@ class Node:
 
 
 if __name__ == '__main__':
-    nodes = ['c', 'd', 'e', 'f']
+    nodes = ['b', 'c', 'd', 'e']
 
     linked_list = LinkedList(nodes)
 
     print(linked_list)
 
-    for node in linked_list:
-        print(node)
-    print()
-
-    linked_list.add_first(Node('b'))
+    linked_list.add_first(Node('0'))
     print(linked_list)
 
-    linked_list.add_last(Node('g'))
+    linked_list.add_last(Node('z'))
     print(linked_list)
 
-    linked_list.add_after('f', Node('g'))
+    linked_list.add_after('e', Node('f'))
     print(linked_list)
 
     linked_list.add_before('b', Node('a'))
     print(linked_list)
 
-    linked_list.remove_node('a')
+    linked_list.remove_node('0')
     print(linked_list)
