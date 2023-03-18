@@ -64,6 +64,8 @@ class LinkedList:
         if self.head.data == target_node_data:
             return self.add_first(new_node)
 
+        prev_node = self.head
+
         for node in self:
             if node.data == target_node_data:
                 prev_node.next = new_node
