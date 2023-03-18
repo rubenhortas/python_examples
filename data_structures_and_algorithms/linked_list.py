@@ -109,7 +109,6 @@ if __name__ == '__main__':
     nodes = ['b', 'c', 'd', 'e']
 
     linked_list = LinkedList(nodes)
-
     print(linked_list)
 
     linked_list.add_first(Node('0'))
