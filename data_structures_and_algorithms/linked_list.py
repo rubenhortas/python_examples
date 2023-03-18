@@ -110,25 +110,25 @@ class Node:
 if __name__ == '__main__':
     nodes = ['c', 'd', 'e', 'f']
 
-    linkedList = LinkedList(nodes)
+    linked_list = LinkedList(nodes)
 
-    print(linkedList)
+    print(linked_list)
 
-    for node in linkedList:
+    for node in linked_list:
         print(node)
     print()
 
-    linkedList.add_first(Node('b'))
-    print(linkedList)
+    linked_list.add_first(Node('b'))
+    print(linked_list)
 
-    linkedList.add_last(Node('g'))
-    print(linkedList)
+    linked_list.add_last(Node('g'))
+    print(linked_list)
 
-    linkedList.add_after('f', Node('g'))
-    print(linkedList)
+    linked_list.add_after('f', Node('g'))
+    print(linked_list)
 
-    linkedList.add_before('b', Node('a'))
-    print(linkedList)
+    linked_list.add_before('b', Node('a'))
+    print(linked_list)
 
-    linkedList.remove_node('a')
-    print(linkedList)
+    linked_list.remove_node('a')
+    print(linked_list)
