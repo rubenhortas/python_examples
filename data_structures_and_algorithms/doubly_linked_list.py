@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 
+# noinspection PyShadowingNames
 class DoublyLinkedList:
     def __init__(self, nodes=None):
         self.head = None
