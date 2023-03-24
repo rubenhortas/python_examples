@@ -14,6 +14,23 @@ class DoublyLinkedList:
                 node.next.prev = node
                 node = node.next
 
+    def __repr__(self):
+        node = self.head
+        nodes = []
+
+        while node is not None:
+            nodes.append(node.data)
+            node = node.next
+
+        return " <-> ".join(nodes)
+
+    def __iter__(self):
+        node = self.head
+
+        while node is not None:
+            yield node
+            node = node.next
+
     def add_first(self, node):
         node.next = self.head
         self.head = node
@@ -80,23 +97,6 @@ class DoublyLinkedList:
             prev_node = node
 
         raise Exception(f"Node with data '{target_node_data}' not found")
-
-    def __repr__(self):
-        node = self.head
-        nodes = []
-
-        while node is not None:
-            nodes.append(node.data)
-            node = node.next
-
-        return " <-> ".join(nodes)
-
-    def __iter__(self):
-        node = self.head
-
-        while node is not None:
-            yield node
-            node = node.next
 
 
 # noinspection PyShadowingBuiltins
