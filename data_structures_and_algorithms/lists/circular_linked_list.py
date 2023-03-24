@@ -28,7 +28,9 @@ class CircularLinkedList:
                 nodes.append(node.next.data)
                 node = node.next
 
-        return " -> ".join(nodes)
+            return f"<- {' -> '.join(nodes)} ->"
+        else:
+            return ""
 
     def __iter__(self):
         if self.head is not None:
