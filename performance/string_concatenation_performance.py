@@ -97,7 +97,7 @@ def fstrings(lst):
 
 
 if __name__ == '__main__':
-    numbers = [str(i) for i in range(0, LIST_LENGTH)]
+    numbers = [str(i) for i in range(LIST_LENGTH)]
     results = {}
     pos = 1
 

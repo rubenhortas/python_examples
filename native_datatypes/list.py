@@ -69,15 +69,15 @@ def comprehensions():
     # [ expression for item in list if conditional ]
     print("List comprehensions:")
 
-    numbers = [i for i in range(0, 10)]
-    even_numbers = [i for i in range(0, 10) if i % 2 == 0]
+    numbers = [i for i in range(10)]
+    even_numbers = [i for i in range(10) if i % 2 == 0]
 
     print(f"\tnumbers: {numbers}")
     print(f"\teven numbers: {even_numbers}")
 
 
 def reverse():
-    numbers = [i for i in range(0, 10)]
+    numbers = [i for i in range(10)]
     reversed_numbers = numbers[::-1]
 
     print(f"Reversing: {numbers} backwards is {reversed_numbers}")
@@ -99,7 +99,7 @@ def join():
 
 def slicing():
     # Lst[ Initial : End : IndexJump ]
-    numbers = [i for i in range(0, 10)]
+    numbers = [i for i in range(10)]
 
     print(f"Slicing {numbers}:")
     print(f"\t{{lst[0:5]}}: {numbers[0:5]}")  # [0, 1, 2, 3, 4]

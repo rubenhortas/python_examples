@@ -4,7 +4,7 @@
 # The else block just after for/while is executed only when the loop is NOT terminated by a break statement.
 
 def run_for_example():
-    for i in range(0, 9):
+    for i in range(9):
         print(i)
         # break
     else:

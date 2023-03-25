@@ -3,8 +3,8 @@
 import sys
 
 if __name__ == '__main__':
-    numbers_range = range(0, 100)
-    numbers_list = [i for i in range(0, 100)]
+    numbers_range = range(100)
+    numbers_list = [i for i in range(100)]
 
     # The range function returns a class that behaves like a list
     # A range is much more memory efficient than a list
