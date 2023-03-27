@@ -12,7 +12,7 @@ through the closure's copies of their values or references, even when the functi
 
 def outer_function(outer_text):
     def inner_function(inner_text):
-        greeting = "\(^-^)/"
+        greeting = "\\(^-^)/"
         print(f'{outer_text} {inner_text}! {greeting}')
 
     return inner_function
