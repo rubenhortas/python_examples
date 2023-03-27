@@ -1,18 +1,19 @@
 #!/usr/bin/env python3
 
 """
-A closure is a function object that remembers values in enclosing scopes even if they are not present in memory.
-- It is a record that stores a function together with an environment
-- A closure (unlike a plain function) allows the function to access those captured variables through the closure's
-  copies of their values or references, even when the function is invoked outside their scope.
-
-https://www.geeksforgeeks.org/python-closures/
+A closure, also lexical closure or function closure, is a technique for implementing lexically scoped name binding
+in a language with first-class functions. Operationally, a closure is a record storing a function together
+with an environment. The environment is a mapping associating each free variable of the function (variables that are
+used locally, but defined in an enclosing scope) with the value or reference to which the name was bound when
+the closure was created. Unlike a plain function, a closure allows the function to access those captured variables
+through the closure's copies of their values or references, even when the function is invoked outside their scope.
 """
 
 
 def outer_function(outer_text):
     def inner_function(inner_text):
-        print(f'{outer_text} {inner_text}!')
+        greeting = "\(^-^)/"
+        print(f'{outer_text} {inner_text}! {greeting}')
 
     return inner_function
 
