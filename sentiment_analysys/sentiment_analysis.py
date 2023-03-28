@@ -7,8 +7,8 @@ DECIMAL_NUMBERS = 2
 if __name__ == '__main__':
     f_input = open('input.txt', 'r', encoding=ENCODING)
     f_results = open('results.txt', 'w+', encoding=ENCODING)
-
     f_results.write("line,polarity,subjectivity\n")
+
     for line in f_input.read().split('\n'):
         try:
             analysis = TextBlob(line)

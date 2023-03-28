@@ -28,4 +28,5 @@ def _binary_search(lst, number, min_pos, max_pos):
 
 def _is_first_appearance(lst, number, pos):
     prev_pos = pos - 1
+
     return not (prev_pos > 0 and lst[prev_pos] == number)

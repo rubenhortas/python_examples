@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
+
 import sys
+
 
 # Operators:
 # a & b  AND
@@ -8,7 +10,7 @@ import sys
 # ~a     NOT
 # a << n Left shift
 # a >> n Right shift
-#
+
 # Compound operators:
 # a &= b ->	a = a & b
 # a |= b -> a = a | b
@@ -16,8 +18,8 @@ import sys
 # a <<= n -> a = a << n
 # a >>= n -> a = a >> n
 
-
 # Read the value of a bit on a given position
+# noinspection PyShadowingNames
 def get_bit(number, index):
     return number & (1 << index)
 
@@ -30,16 +32,19 @@ def get_bit_value(number, index):
 
 
 # Set the number of a bit on a given position to 1
+# noinspection PyShadowingNames
 def set_bit(number, index):
     return number | (1 << index)
 
 
 # Set the number of a bit on a given position to 0
+# noinspection PyShadowingNames
 def clear_bit(number, index):
     return number & ~(1 << index)
 
 
 # Toggle the number of a bit on a given position
+# noinspection PyShadowingNames
 def toggle_bit(number, index):
     return number ^ (1 << index)
 

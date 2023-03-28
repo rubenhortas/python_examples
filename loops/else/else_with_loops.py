@@ -23,5 +23,5 @@ def run_while_example():
 
 
 if __name__ == '__main__':
-    # run_for_example()
+    run_for_example()
     run_while_example()

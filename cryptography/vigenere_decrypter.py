@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+
 import argparse
 
 from numpy import median
@@ -11,9 +12,8 @@ from numpy import median
 # Krypton Level 5: https://overthewire.org/wargames/krypton/krypton5.html
 
 # https://www3.nd.edu/~busiforc/handouts/cryptography/letterfrequencies.html
-# English frequencies
 # Alphabet in order!
-LANGUAGE_FREQUENCIES = {
+LANGUAGE_FREQUENCIES = {  # English frequencies
     'A': 8.4966,
     'B': 2.0720,
     'C': 4.5388,
@@ -43,6 +43,7 @@ LANGUAGE_FREQUENCIES = {
 }
 
 
+# noinspection PyShadowingNames
 def _read_file(encrypted_file):
     ciphertext = ''
 
@@ -61,6 +62,7 @@ def _is_alphabetic(character):
     return ('a' <= character <= 'z') or ('A' <= character <= 'Z')
 
 
+# noinspection PyShadowingNames
 def _get_key_shifts(cipher_text, key_length):
     shifts = []
     language_frequency_values = _get_frequency_values(LANGUAGE_FREQUENCIES)
@@ -110,7 +112,8 @@ def _get_key_shift(language_frequency_values, ciphertext_frequency_values):
 
         for j in range(alphabet_length):
             m = (i + j) % alphabet_length  # mod, used for rotation
-            ciphertext_frequency_sum = ciphertext_frequency_sum + (language_frequency_values[j] * ciphertext_frequency_values[m])
+            ciphertext_frequency_sum = ciphertext_frequency_sum + (
+                        language_frequency_values[j] * ciphertext_frequency_values[m])
 
         if ciphertext_frequency_sum > max_sum:
             max_sum = ciphertext_frequency_sum
@@ -119,6 +122,7 @@ def _get_key_shift(language_frequency_values, ciphertext_frequency_values):
     return shift
 
 
+# noinspection PyShadowingNames
 def _get_key(shifts):
     key = ''
 
@@ -135,6 +139,7 @@ def _get_key(shifts):
     return key
 
 
+# noinspection PyShadowingNames
 def _decrypt(ciphertext, ciphertext_length, key_shifts, key_length):
     alphabet = _get_alphabet()
     plaintext = ''
@@ -167,6 +172,7 @@ def _get_alphabet():
     return alphabet
 
 
+# noinspection PyShadowingNames
 def _get_shifts_from_key(key):
     shifts = []
 
@@ -183,6 +189,7 @@ def _get_shifts_from_key(key):
     return shifts
 
 
+# noinspection PyShadowingNames
 def _get_key_length(ciphertext, ciphertext_length):
     coincidences = _get_coincidences(ciphertext, ciphertext_length)
 
@@ -190,12 +197,13 @@ def _get_key_length(ciphertext, ciphertext_length):
 
 
 # Finding coincidences
-# Rotate the ciphertext from 1 to n positions to the right nd count the character matches with the original ciphertext by position.
+# Rotate the ciphertext from 1 to n positions to the right and count the character matches with the original ciphertext by position.
 # For instance:
 #    CT: ABCABCABC
 # RCT 1:  ABCABCAB Coincidences = 0
 # RCT 2:   ABCABCA Coincidences = 0
 # RCT 3:    ABCABC Coincidences = 6
+# noinspection PyShadowingNames
 def _get_coincidences(ciphertext, ciphertext_length):
     max_length = ciphertext_length - 1
     coincidences = []
@@ -216,6 +224,7 @@ def _get_coincidences(ciphertext, ciphertext_length):
 
 # Find the position in the list with the largest match values.
 # The position will be the key length.
+# noinspection PyShadowingNames
 def _get_max_coincidences(coincidences):
     key_length = 0
     coincidences_length = len(coincidences)
@@ -224,7 +233,8 @@ def _get_max_coincidences(coincidences):
     for i in range(coincidences_length):
         list_slice = coincidences[i::i + 1]
 
-        if len(list_slice) >= (i + 1):  # len(lst) < key length = i + 1 (The key length cannot be greater than the list slice)
+        if len(list_slice) >= (
+                i + 1):  # len(lst) < key length = i + 1 (The key length cannot be greater than the list slice)
             if median(list_slice) > max_median:
                 max_median = median(list_slice)
                 key_length = i + 1

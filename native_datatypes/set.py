@@ -38,7 +38,6 @@ def merge(set1, set2):
 
 # noinspection PyShadowingBuiltins
 def remove_item(set, item):
-    # Removing items from a set
     print(f"Removing 'e' from {set}:")
 
     try:
@@ -51,7 +50,6 @@ def remove_item(set, item):
 
 # noinspection PyShadowingBuiltins
 def pop(set):
-    # Popping items
     # The pop() method removes a single number from a set and returns the number. However, since sets are unordered,
     # there is no “last” number in a set, so there is no way to control which number gets removed.
     # It is completely arbitrary.
