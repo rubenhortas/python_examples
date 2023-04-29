@@ -17,7 +17,6 @@ def add_items(lst):
 
 
 def search(lst, value):
-    # Searching for values
     print("Searching for values")
 
     if value in lst:
@@ -66,11 +65,10 @@ def is_empty(lst):
 
 
 def comprehensions():
-    # [ expression for item in list if conditional ]
     print("List comprehensions:")
 
     numbers = [i for i in range(10)]
-    even_numbers = [i for i in range(10) if i % 2 == 0]
+    even_numbers = [i for i in range(10) if i % 2 == 0]   # [ expression for item in list if conditional ]
 
     print(f"\tnumbers: {numbers}")
     print(f"\teven numbers: {even_numbers}")

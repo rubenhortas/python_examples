@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 
+# noinspection PyShadowingNames
 def _xor(key: bytes, stream: bytes) -> bytes:
     xored_stream = b''
     stream_length = len(stream)

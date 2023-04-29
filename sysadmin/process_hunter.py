@@ -1,11 +1,13 @@
 #!/usr/bin/env python3
 
-# This script looks for programs consuming CPU above a certain threshold and logs the results.
-
 from psutil import cpu_percent, process_iter, NoSuchProcess, AccessDenied, ZombieProcess
 from signal import signal, SIGINT
 from datetime import datetime
 from time import sleep
+
+"""
+This script looks for programs consuming CPU above a certain threshold and logs the results.
+"""
 
 CPU_THRESHOLD = 95  # Percentage, ex: 95%
 NUMBER_OF_PROCESSES = 3
@@ -45,6 +47,7 @@ def write_log(processes):
 
     for process in processes:
         log_line = log_line + f"{process['name']}: {process['cpu_percent']}% "
+
     log_line = log_line + '\n'
 
     try:

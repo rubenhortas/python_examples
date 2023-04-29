@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+
 from stegano import lsb
 
 MESSAGE = 'https://www.youtube.com/watch?v=QH2-TGUlwu4'
