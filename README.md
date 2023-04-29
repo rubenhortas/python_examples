@@ -2,7 +2,7 @@
 Small examples of Python3 code, data structures and algorithms.
 
 ## Python naming conventions
-## Public elements
+### Public elements
 
 | Public element  | Notation                    | Example      | Notes                                                                     |
 |-----------------|-----------------------------|--------------|---------------------------------------------------------------------------|
