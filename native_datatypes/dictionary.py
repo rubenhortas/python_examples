@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+import copy
 
 EMPTY_DICT = {}
 
@@ -85,6 +86,16 @@ def sort_by_value(dct):
     print(f"\t{sorted_dict}")
 
 
+def do_shallow_copy(dct):
+    copy_dictionary = {**dct}
+    print(f"Shallow copied dictionary: ${copy_dictionary}")
+
+
+def do_deep_copy(dct):
+    copy_dictionary = copy.deepcopy(dct)
+    print(f"Deep copied dictionary: ${copy_dictionary}")
+
+
 if __name__ == '__main__':
     print(f"Passwords: {USERS}")
 
@@ -95,3 +106,5 @@ if __name__ == '__main__':
     search("root", USERS)
     iterate(USERS)
     sort_by_value(USERS_COUNTER)
+    do_shallow_copy(USERS)
+    do_deep_copy(USERS)
