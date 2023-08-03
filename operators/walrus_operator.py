@@ -2,8 +2,8 @@
 import random
 
 
-# Since python 3.8, the walrus operator ( := ) gives a new syntax for assigning variables in the middle of expresssions.
-# A traditional assignment doesn't return the value, an assigment expresion, with :=, it does.
+# Since python 3.8, the walrus operator ( := ) gives a new syntax for assigning variables in the middle of expressions.
+# A traditional assignment doesn't return the value, an assignment expression, with :=, it does.
 #
 # Walrus operator use cases
 # * Repeated function calls can make your code slower than necessary.
