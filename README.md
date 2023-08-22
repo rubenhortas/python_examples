@@ -32,8 +32,8 @@ Small examples of Python3 code, data structures and algorithms.
     ```python
     # Use this function to check code quality. 
     # Code quality is defined by the following parameters: 
-    # - Follows naming conventios
-    # - Is easy to understand
+    # - The code follows naming conventions
+    # - The code it's easy to understand
     # - ...
     def check_code_quality(code):
     ```
@@ -42,7 +42,7 @@ Small examples of Python3 code, data structures and algorithms.
     Inline comments should be separated by at least two spaces from the statement. They should start with a # and a single space.
     
     ```python
-    if len(commits) > 0:   # Make sure that there is commits
+    if len(commits) > 0:  # Make sure that there is commits
     ```
 
 ### Documentation strings
