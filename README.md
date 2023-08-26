@@ -33,7 +33,7 @@ Small examples of Python3 code, data structures and algorithms.
     # Use this function to check code quality. 
     # Code quality is defined by the following parameters: 
     # - The code follows naming conventions
-    # - The code it's easy to understand
+    # - The code is easy to understand
     # - ...
     def check_code_quality(code):
     ```
