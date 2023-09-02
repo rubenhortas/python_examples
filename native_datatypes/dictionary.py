@@ -18,7 +18,7 @@ NEW_USERS = {
 
 USERS_COUNTER = {
     "root": 1,
-    "USERS": 50,
+    "users": 50,
     "admins": 4
 }
 
@@ -54,11 +54,16 @@ def comprehensions():
     print(f"\tPowers: {powers}")
 
 
-def search(value: str, dct: dict):
-    if value in dct:
-        print(f"{value} is in USERS")
+def check_key(dct: dict, key: str):
+    if key in dct:
+        print(f"'{key}' exists.")
     else:
-        print(f"{value} is not in USERS")
+        print(f"'{key}' does not exist.")
+
+
+def get_value_with_default(dct: dict, key: str):
+    value = dct.get(key, "default_value")
+    print(f"The value of '{key}' is: {value}.")
 
 
 def iterate(dct: dict):
@@ -98,8 +103,8 @@ if __name__ == '__main__':
     is_empty(EMPTY_DICT)
     merge(USERS, NEW_USERS)
     comprehensions()
-    search("root", USERS)
+    check_key(USERS, "root")
+    get_value_with_default(USERS, "ruben")
     iterate(USERS)
-    sort_by_value(USERS_COUNTER)
     do_shallow_copy(USERS)
     do_deep_copy(USERS)
