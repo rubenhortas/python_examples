@@ -4,12 +4,16 @@ import argparse
 
 from numpy import median
 
-# Vigenere decrypter script
-# Based on the method explained by @Theoretically in https://www.youtube.com/watch?v=LaWp_Kq0cKs
-# Developed to solve levels 4 and 5 of the Krypton game on OverTheWire.
-# OverTheWire: https://overthewire.org/
-# Krypton Level 4: https://overthewire.org/wargames/krypton/krypton4.html
-# Krypton Level 5: https://overthewire.org/wargames/krypton/krypton5.html
+"""
+Vigenere decrypter script
+
+Based on the method explained by @Theoretically in https://www.youtube.com/watch?v=LaWp_Kq0cKs
+
+Developed to solve levels 4 and 5 of the Krypton game on OverTheWire.
+OverTheWire: https://overthewire.org/
+Krypton Level 4: https://overthewire.org/wargames/krypton/krypton4.html
+Krypton Level 5: https://overthewire.org/wargames/krypton/krypton5.html
+"""
 
 # https://www3.nd.edu/~busiforc/handouts/cryptography/letterfrequencies.html
 # Alphabet in order!
@@ -99,10 +103,16 @@ def _get_frequencies(characters):
     return frequencies
 
 
-# Finding numbers
-# Multiply the frequencies of the alphabet (in order) by rotations of the frequencies of the cipher characters
-# until the greatest sum is found. The largest sum will indicate the number of rotations or shift.
 def _get_key_shift(language_frequency_values, ciphertext_frequency_values):
+    """
+    Finding numbers
+    Multiply the frequencies of the alphabet (in order) by rotations of the frequencies of the cipher characters
+    until the greatest sum is found. The largest sum will indicate the number of rotations or "shift".
+
+    :param language_frequency_values: Frequency values of the language.
+    :param ciphertext_frequency_values: Freqeuncy values of the ciphertext.
+    :return: Number of rotations or "shift".
+    """
     alphabet_length = len(LANGUAGE_FREQUENCIES)
     shift = 0
     max_sum = 0
@@ -196,15 +206,21 @@ def _get_key_length(ciphertext, ciphertext_length):
     return _get_max_coincidences(coincidences)
 
 
-# Finding coincidences
-# Rotate the ciphertext from 1 to n positions to the right and count the character matches with the original ciphertext by position.
-# For instance:
-#    CT: ABCABCABC
-# RCT 1:  ABCABCAB Coincidences = 0
-# RCT 2:   ABCABCA Coincidences = 0
-# RCT 3:    ABCABC Coincidences = 6
 # noinspection PyShadowingNames
 def _get_coincidences(ciphertext, ciphertext_length):
+    """
+    Finding coincidences
+    Rotate the ciphertext from 1 to n positions to the right and count the character matches with the original ciphertext by position.
+    For instance:
+       CT: ABCABCABC
+    RCT 1:  ABCABCAB Coincidences = 0
+    RCT 2:   ABCABCA Coincidences = 0
+    RCT 3:    ABCABC Coincidences = 6
+
+    :param ciphertext: Ciphertext.
+    :param ciphertext_length: Ciphertext_lenght.
+    :return: Array with the number of coincidences for each rotation.
+    """
     max_length = ciphertext_length - 1
     coincidences = []
 
@@ -222,10 +238,15 @@ def _get_coincidences(ciphertext, ciphertext_length):
     return coincidences
 
 
-# Find the position in the list with the largest match values.
-# The position will be the key length.
 # noinspection PyShadowingNames
 def _get_max_coincidences(coincidences):
+    """
+    Find the position in the list with the largest match values.
+    The position will be the key length.
+
+    :param coincidences: Number of coincidences.
+    :return: The position in the list with the largest match values.
+    """
     key_length = 0
     coincidences_length = len(coincidences)
     max_median = 0
@@ -273,8 +294,11 @@ if __name__ == '__main__':
         key_length = len(key)
         key_shifts = _get_shifts_from_key(key)
 
-    pt = _decrypt(ciphertext, ciphertext_length, key_shifts, key_length)
+    if key_length > 0:
+        pt = _decrypt(ciphertext, ciphertext_length, key_shifts, key_length)
 
-    print(f'key: {key}\n')
-    print(f'ct: {ciphertext}\n')
-    print(f'pt: {pt}\n')
+        print(f'key: {key}\n')
+        print(f'ct: {ciphertext}\n')
+        print(f'pt: {pt}\n')
+    else:
+        print(f'Key length = 0.')
