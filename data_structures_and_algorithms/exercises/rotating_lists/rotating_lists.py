@@ -8,7 +8,7 @@
 
 # Time Complexity: O(log(n))
 # Auxiliary Space: O(1)
-def calculate_rotations(lst):
+def calculate_rotations(lst: list) -> int:
     len_lst = len(lst)
 
     if lst:
