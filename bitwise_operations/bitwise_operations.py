@@ -107,14 +107,14 @@ if __name__ == '__main__':
     number = clear_bit(number, 0)
     print(f'Least significant bit cleared: {number:08b}')
     # param: 01000001
-    # Least significant bit cleared: 01000000
+    # return: Least significant bit cleared: 01000000
 
     number = set_bit(number, 0)
     print(f'Least significant bit set: {number:08b}')
     # param: 01000001
-    # Least significant bit set: 01000001
+    # return: Least significant bit set: 01000001
 
     number = toggle_bit(number, 0)
     print(f'Least significant bit toggled: {number:08b}')
     # param: 01000001
-    # Least significant bit toggled: 01000000
+    # return: Least significant bit toggled: 01000000
