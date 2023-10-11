@@ -33,6 +33,7 @@ def get_bit(number: int, index: int) -> int:
     return number & (1 << index)
 
 
+# noinspection PyShadowingNames
 def get_bit_value(number: int, index: int) -> int:
     """
     Shifts the bit int the given index to the right and then check the least significant bit
