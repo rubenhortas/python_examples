@@ -1,5 +1,6 @@
 from sympy.ntheory.modular import crt
 
+# n mod(MODULUS) = RESULT
 # n mod(3) = 2
 # n mod(5) = 3
 # n mod(7) = 2
