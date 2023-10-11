@@ -4,19 +4,19 @@ import sys
 
 """
 Operators:
-a & b  AND
-a | b  OR
-a ^ b  XOR
-~a     NOT
-a << n Left shift
-a >> n Right shift
+    a & b  AND
+    a | b  OR
+    a ^ b  XOR
+    ~a     NOT
+    a << n Left shift
+    a >> n Right shift
 
 Compound operators:
-a &= b ->	a = a & b
-a |= b -> a = a | b
-a ^= b -> a = a ^ b
-a <<= n -> a = a << n
-a >>= n -> a = a >> n
+    a &= b -> a = a & b
+    a |= b -> a = a | b
+    a ^= b -> a = a ^ b
+    a <<= n -> a = a << n
+    a >>= n -> a = a >> n
 """
 
 
