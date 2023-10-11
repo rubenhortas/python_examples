@@ -6,7 +6,7 @@ KEY_LENGTH = 4
 
 
 # noinspection PyShadowingNames
-def _initialize():
+def _initialize() -> (str, str, str):
     print("Initializing values...")
 
     plaintext = "Hello world!".encode()  # string to bytes
