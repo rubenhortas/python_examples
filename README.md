@@ -14,11 +14,12 @@ Small examples of Python3 code, data structures and algorithms.
 | Variable        | snake_case                  | my_variable  | Lowercase single letter, word, or words. Separate words with underscores. |
 
 ### Private elements
+# Class private methods starts with two underscores
+No attribute is really private in Python (without a generally unnecessary amount of work), but there are conventions:
 
-| Private element | Notation   | Example                     | Notes                        |
-|-----------------|------------|-----------------------------|------------------------------|
-| Class Method    | snake_case | \_\_my_private_class_method | Starts with two underscores. |
-| Function/Method | snake_case | \_my_private_function       | Starts with one underscore.  |
+| ----------------------------|------------------------------|-----------------------------------------------------------------------------------------------|
+| _single_leading_underscore  | Weak internal use indicator. | The object is meant to be private, and shouldn't be directly accessed from outside the class. |
+| __double_leading_underscore | Invokes name mangling.       | A way to make instance variables less likely to collide with variables in subclasses.         |
 
 ### Comments
 
@@ -36,6 +37,7 @@ Small examples of Python3 code, data structures and algorithms.
     # - The code is easy to understand
     # - ...
     def check_code_quality(code):
+      ...
     ```
     
   * ### Inline Comments
@@ -43,6 +45,7 @@ Small examples of Python3 code, data structures and algorithms.
     
     ```python
     if len(commits) > 0:  # Make sure that there is commits
+      ...
     ```
 
 ### Documentation strings
@@ -56,6 +59,7 @@ Small examples of Python3 code, data structures and algorithms.
   Returns a circle
   Draws a circle.
   """
+  ...
   ```
 * For one liner docstrings keep the closing """ on the same line:  
   ```python
