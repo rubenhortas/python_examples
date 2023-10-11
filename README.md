@@ -17,7 +17,8 @@ Small examples of Python3 code, data structures and algorithms.
 # Class private methods starts with two underscores
 No attribute is really private in Python (without a generally unnecessary amount of work), but there are conventions:
 
-| ----------------------------|------------------------------|-----------------------------------------------------------------------------------------------|
+|                             | Meaning                      | Use                                                                                           |
+|-----------------------------|------------------------------|-----------------------------------------------------------------------------------------------|
 | _single_leading_underscore  | Weak internal use indicator. | The object is meant to be private, and shouldn't be directly accessed from outside the class. |
 | __double_leading_underscore | Invokes name mangling.       | A way to make instance variables less likely to collide with variables in subclasses.         |
 
