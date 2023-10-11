@@ -14,3 +14,4 @@ if __name__ == '__main__':
 
     # noinspection PyUnresolvedReferences,PyProtectedMember
     print(batman._Hero__real_name)  # Access to a protected (name mangled) attribute
+    # return: Bruce Wayne
