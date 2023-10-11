@@ -10,14 +10,16 @@ Vigenere decrypter script
 Based on the method explained by @Theoretically in https://www.youtube.com/watch?v=LaWp_Kq0cKs
 
 Developed to solve levels 4 and 5 of the Krypton game on OverTheWire.
+You can read my post here: https://rubenhortas.github.io/posts/overthewire-krytpon-levels-4-and-5-vigenere-cipher/
+
 OverTheWire: https://overthewire.org/
 Krypton Level 4: https://overthewire.org/wargames/krypton/krypton4.html
 Krypton Level 5: https://overthewire.org/wargames/krypton/krypton5.html
 """
 
-# https://www3.nd.edu/~busiforc/handouts/cryptography/letterfrequencies.html
-# Alphabet in order!
-LANGUAGE_FREQUENCIES = {  # English frequencies
+# English frequencies from: https://www3.nd.edu/~busiforc/handouts/cryptography/letterfrequencies.html
+# Ordered alphabet!
+LANGUAGE_FREQUENCIES = {
     'A': 8.4966,
     'B': 2.0720,
     'C': 4.5388,
@@ -110,7 +112,7 @@ def _get_key_shift(language_frequency_values, ciphertext_frequency_values):
     until the greatest sum is found. The largest sum will indicate the number of rotations or "shift".
 
     :param language_frequency_values: Frequency values of the language.
-    :param ciphertext_frequency_values: Freqeuncy values of the ciphertext.
+    :param ciphertext_frequency_values: Frequency values of the ciphertext.
     :return: Number of rotations or "shift".
     """
     alphabet_length = len(LANGUAGE_FREQUENCIES)
@@ -218,7 +220,7 @@ def _get_coincidences(ciphertext, ciphertext_length):
     RCT 3:    ABCABC Coincidences = 6
 
     :param ciphertext: Ciphertext.
-    :param ciphertext_length: Ciphertext_lenght.
+    :param ciphertext_length: Ciphertext_length.
     :return: Array with the number of coincidences for each rotation.
     """
     max_length = ciphertext_length - 1
