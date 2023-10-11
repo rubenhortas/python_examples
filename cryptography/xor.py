@@ -21,5 +21,10 @@ if __name__ == '__main__':
     decrypted_text = _xor(key, ciphertext)
 
     print(f"Plaintext: '{plaintext.decode()}'")
+    # return: Plaintext: 'hello world!'
+
     print(f"Ciphertext: '{ciphertext.decode()}'")
+    # return: Ciphertext: 'YW_XZF]AXQ'
+
     print(f"Decrypted text: '{decrypted_text.decode()}'")
+    # return: Decrypted text: 'hello world!'
