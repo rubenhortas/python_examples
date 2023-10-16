@@ -115,15 +115,20 @@ if __name__ == '__main__':
 
     circular_linked_list = CircularLinkedList(nodes)
     print(circular_linked_list)
+    # return: <- 1 -> 2 -> 3 -> 4 -> 5 ->
 
     circular_linked_list.add_first(Node('0'))
     print(circular_linked_list)
+    # return: <- 0 -> 1 -> 2 -> 3 -> 4 -> 5 ->
 
     circular_linked_list.add_last(Node('100'))
     print(circular_linked_list)
+    # return: <- 0 -> 1 -> 2 -> 3 -> 4 -> 5 -> 100 ->
 
     circular_linked_list.add_after('5', Node('6'))
     print(circular_linked_list)
+    # return: <- 0 -> 1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 100 ->
 
     circular_linked_list.add_before('100', Node('99'))
     print(circular_linked_list)
+    # return: <- 0 -> 1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 99 -> 100 ->
