@@ -1,8 +1,17 @@
 #!/usr/bin/env python3
 
+class Node:
+    def __init__(self, data: str):
+        self.data = data
+        self.next = None
+
+    def __repr__(self):
+        return self.data
+
+
 # noinspection PyShadowingNames
 class LinkedList:
-    def __init__(self, nodes=None):
+    def __init__(self, nodes: list = None):
         self.head = None
 
         if nodes:
@@ -30,11 +39,11 @@ class LinkedList:
             yield node
             node = node.next
 
-    def add_first(self, node):
+    def add_first(self, node: Node):
         node.next = self.head
         self.head = node
 
-    def add_last(self, node):
+    def add_last(self, node: Node):
         if self.head is None:
             self.head = node
             return
@@ -45,7 +54,7 @@ class LinkedList:
         # noinspection PyUnboundLocalVariable
         current_node.next = node
 
-    def add_after(self, target_node_data, new_node):
+    def add_after(self, target_node_data: str, new_node: Node):
         if self.head is None:
             raise Exception('List is empty')
 
@@ -57,7 +66,7 @@ class LinkedList:
 
         raise Exception(f"Node with data '{target_node_data}' not found")
 
-    def add_before(self, target_node_data, new_node):
+    def add_before(self, target_node_data: str, new_node: Node):
         if self.head is None:
             raise Exception('List is empty')
 
@@ -76,7 +85,7 @@ class LinkedList:
 
         raise Exception(f"Node with data '{target_node_data}' not found")
 
-    def remove(self, target_node_data):
+    def remove(self, target_node_data: str):
         if self.head is None:
             raise Exception('List is empty')
 
@@ -96,32 +105,29 @@ class LinkedList:
         raise Exception(f"Node with data '{target_node_data}' not found")
 
 
-class Node:
-    def __init__(self, data):
-        self.data = data
-        self.next = None
-
-    def __repr__(self):
-        return self.data
-
-
 if __name__ == '__main__':
     nodes = ['b', 'c', 'd', 'e']
 
     linked_list = LinkedList(nodes)
     print(linked_list)
+    # return: b -> c -> d -> e
 
     linked_list.add_first(Node('0'))
     print(linked_list)
+    # return: 0 -> b -> c -> d -> e
 
     linked_list.add_last(Node('z'))
     print(linked_list)
+    # return: 0 -> b -> c -> d -> e -> z
 
     linked_list.add_after('e', Node('f'))
     print(linked_list)
+    # return: 0 -> b -> c -> d -> e -> f -> z
 
     linked_list.add_before('b', Node('a'))
     print(linked_list)
+    # return: 0 -> a -> b -> c -> d -> e -> f -> z
 
     linked_list.remove('0')
     print(linked_list)
+    # return: a -> b -> c -> d -> e -> f -> z
