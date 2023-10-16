@@ -1,9 +1,18 @@
 #!/usr/bin/env python3
 
 
+class Node:
+    def __init__(self, data: str):
+        self.data = data
+        self.next = None
+
+    def __repr__(self):
+        return self.data
+
+
 # noinspection PyShadowingNames
 class CircularLinkedList:
-    def __init__(self, nodes=None):
+    def __init__(self, nodes: list = None):
         self.head = None
 
         if nodes:
@@ -42,7 +51,7 @@ class CircularLinkedList:
                 node = node.next
 
     # noinspection PyUnboundLocalVariable
-    def add_first(self, node):
+    def add_first(self, node: Node):
         if self.head is None:
             self.head = node
             self.head.next = node
@@ -55,7 +64,7 @@ class CircularLinkedList:
         node.next = self.head
         self.head = node
 
-    def add_last(self, node):
+    def add_last(self, node: Node):
         if self.head is None:
             self.head = node
             self.head.next = node
@@ -69,7 +78,7 @@ class CircularLinkedList:
         n.next = node
         node.next = self.head
 
-    def add_after(self, target_node_data, new_node):
+    def add_after(self, target_node_data: Node, new_node: Node):
         if self.head is None:
             raise Exception('List is empty')
 
@@ -81,7 +90,7 @@ class CircularLinkedList:
 
         raise Exception(f"Node with data '{target_node_data}' not found")
 
-    def add_before(self, target_node_data, new_node):
+    def add_before(self, target_node_data: Node, new_node: Node):
         if self.head is None:
             raise Exception('List is empty')
 
@@ -99,15 +108,6 @@ class CircularLinkedList:
             prev_node = node
 
         raise Exception(f"Node with data '{target_node_data}' not found")
-
-
-class Node:
-    def __init__(self, data):
-        self.data = data
-        self.next = None
-
-    def __repr__(self):
-        return self.data
 
 
 if __name__ == '__main__':
