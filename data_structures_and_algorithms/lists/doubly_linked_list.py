@@ -1,8 +1,22 @@
 #!/usr/bin/env python3
 
+# noinspection PyShadowingBuiltins
+class Node:
+    def __init__(self, data: str):
+        self.data = data
+        self.prev = None
+        self.next = None
+
+    def __repr__(self):
+        prev = "None" if self.prev is None else self.prev.data
+        next = "None" if self.next is None else self.next.data
+
+        return f"{prev} <- {self.data} -> {next}"
+
+
 # noinspection PyShadowingNames
 class DoublyLinkedList:
-    def __init__(self, nodes=None):
+    def __init__(self, nodes: list = None):
         self.head = None
 
         if nodes:
@@ -31,23 +45,23 @@ class DoublyLinkedList:
             yield node
             node = node.next
 
-    def add_first(self, node):
+    def add_first(self, node: Node):
         node.next = self.head
         self.head = node
 
-        # noinspection PyUnboundLocalVariable
-
-    def add_last(self, node):
+    def add_last(self, node: Node):
         if self.head is None:
             self.head = node
             return
 
-        for current_node in self:
-            print(current_node)
+        n = self.head
 
-        current_node.next = node
+        while n.next is not None:
+            n = n.next
 
-    def add_after(self, target_node_data, new_node):
+        n.next = node
+
+    def add_after(self, target_node_data: str, new_node: Node):
         if self.head is None:
             raise Exception('List is empty')
 
@@ -60,7 +74,7 @@ class DoublyLinkedList:
 
         raise Exception(f"Node with data '{target_node_data}' not found")
 
-    def add_before(self, target_node_data, new_node):
+    def add_before(self, target_node_data: str, new_node: Node):
         if self.head is None:
             raise Exception('List is empty')
 
@@ -78,7 +92,7 @@ class DoublyLinkedList:
 
         raise Exception(f"Node with data '{target_node_data}' not found")
 
-    def remove(self, target_node_data):
+    def remove(self, target_node_data: str):
         if self.head is None:
             raise Exception('List is empty')
 
@@ -99,37 +113,29 @@ class DoublyLinkedList:
         raise Exception(f"Node with data '{target_node_data}' not found")
 
 
-# noinspection PyShadowingBuiltins
-class Node:
-    def __init__(self, data):
-        self.data = data
-        self.prev = None
-        self.next = None
-
-    def __repr__(self):
-        prev = "None" if self.prev is None else self.prev.data
-        next = "None" if self.next is None else self.next.data
-
-        return f"{prev} <- {self.data} -> {next}"
-
-
 if __name__ == '__main__':
     nodes = ['b', 'c', 'd', 'e']
 
     doubly_linked_list = DoublyLinkedList(nodes)
     print(doubly_linked_list)
+    # return: b <-> c <-> d <-> e
 
     doubly_linked_list.add_first(Node('a'))
     print(doubly_linked_list)
+    # return: a <-> b <-> c <-> d <-> e
 
     doubly_linked_list.add_last(Node('z'))
     print(doubly_linked_list)
+    # return: a <-> b <-> c <-> d <-> e <-> z
 
-    doubly_linked_list.add_after('e', Node('z'))
+    doubly_linked_list.add_after('e', Node('y'))
     print(doubly_linked_list)
+    # return: a <-> b <-> c <-> d <-> e <-> y <-> z
 
     doubly_linked_list.add_before('a', Node('0'))
     print(doubly_linked_list)
+    # return: 0 <-> a <-> b <-> c <-> d <-> e <-> y <-> z
 
     doubly_linked_list.remove('a')
     print(doubly_linked_list)
+    # return: 0 <-> b <-> c <-> d <-> e <-> y <-> z
