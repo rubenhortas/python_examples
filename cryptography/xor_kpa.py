@@ -1,5 +1,9 @@
 #!/usr/bin/env python3
 
+"""
+Example of how to perform a Known-plaintext attack (KPA) on a xor'd ciphertext.
+"""
+
 import os
 
 KEY_LENGTH = 4
@@ -49,7 +53,6 @@ def _get_xor_key(plaintext: bytes, ciphertext: bytes) -> bytes:
     return key
 
 
-# Example of how to perform a Known-plaintext attack (KPA) on a xor'd ciphertext
 if __name__ == '__main__':
     plaintext, key, ciphertext = _initialize()
 
