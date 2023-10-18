@@ -50,7 +50,7 @@ LANGUAGE_FREQUENCIES = {
 
 
 # noinspection PyShadowingNames
-def _read_file(encrypted_file):
+def _read_file(encrypted_file: str) -> str:
     ciphertext = ''
 
     with open(encrypted_file, 'r') as f:
@@ -64,12 +64,12 @@ def _read_file(encrypted_file):
     return ciphertext
 
 
-def _is_alphabetic(character):
+def _is_alphabetic(character: chr) -> bool:
     return ('a' <= character <= 'z') or ('A' <= character <= 'Z')
 
 
 # noinspection PyShadowingNames
-def _get_key_shifts(cipher_text, key_length):
+def _get_key_shifts(cipher_text: str, key_length: int) -> list:
     shifts = []
     language_frequency_values = _get_frequency_values(LANGUAGE_FREQUENCIES)
 
@@ -85,7 +85,7 @@ def _get_key_shifts(cipher_text, key_length):
     return shifts
 
 
-def _get_frequency_values(character_frequencies):
+def _get_frequency_values(character_frequencies: dict) -> list:
     frequency_values = []
 
     for character_frequency in character_frequencies:
@@ -94,7 +94,7 @@ def _get_frequency_values(character_frequencies):
     return frequency_values
 
 
-def _get_frequencies(characters):
+def _get_frequencies(characters: str) -> dict:
     characters_length = len(characters)
     frequencies = {}
 
@@ -105,7 +105,7 @@ def _get_frequencies(characters):
     return frequencies
 
 
-def _get_key_shift(language_frequency_values, ciphertext_frequency_values):
+def _get_key_shift(language_frequency_values: list, ciphertext_frequency_values: list) -> int:
     """
     Finding numbers
     Multiply the frequencies of the alphabet (in order) by rotations of the frequencies of the cipher characters
@@ -125,7 +125,7 @@ def _get_key_shift(language_frequency_values, ciphertext_frequency_values):
         for j in range(alphabet_length):
             m = (i + j) % alphabet_length  # mod, used for rotation
             ciphertext_frequency_sum = ciphertext_frequency_sum + (
-                        language_frequency_values[j] * ciphertext_frequency_values[m])
+                    language_frequency_values[j] * ciphertext_frequency_values[m])
 
         if ciphertext_frequency_sum > max_sum:
             max_sum = ciphertext_frequency_sum
@@ -135,7 +135,7 @@ def _get_key_shift(language_frequency_values, ciphertext_frequency_values):
 
 
 # noinspection PyShadowingNames
-def _get_key(shifts):
+def _get_key(shifts: list) -> str:
     key = ''
 
     for shift in shifts:
@@ -152,7 +152,7 @@ def _get_key(shifts):
 
 
 # noinspection PyShadowingNames
-def _decrypt(ciphertext, ciphertext_length, key_shifts, key_length):
+def _decrypt(ciphertext: str, ciphertext_length: int, key_shifts: list, key_length: int) -> str:
     alphabet = _get_alphabet()
     plaintext = ''
 
@@ -163,7 +163,7 @@ def _decrypt(ciphertext, ciphertext_length, key_shifts, key_length):
     return plaintext
 
 
-def _complete_frequencies(frequencies):
+def _complete_frequencies(frequencies: dict) -> dict:
     complete_frequencies = {}
 
     for character_frequency in LANGUAGE_FREQUENCIES:
@@ -175,7 +175,7 @@ def _complete_frequencies(frequencies):
     return complete_frequencies
 
 
-def _get_alphabet():
+def _get_alphabet() -> list:
     alphabet = []
 
     for character_frequency in LANGUAGE_FREQUENCIES:
@@ -185,7 +185,7 @@ def _get_alphabet():
 
 
 # noinspection PyShadowingNames
-def _get_shifts_from_key(key):
+def _get_shifts_from_key(key: str) -> list:
     shifts = []
 
     for key_character in key:
@@ -202,14 +202,14 @@ def _get_shifts_from_key(key):
 
 
 # noinspection PyShadowingNames
-def _get_key_length(ciphertext, ciphertext_length):
+def _get_key_length(ciphertext: str, ciphertext_length: int) -> int:
     coincidences = _get_coincidences(ciphertext, ciphertext_length)
 
     return _get_max_coincidences(coincidences)
 
 
 # noinspection PyShadowingNames
-def _get_coincidences(ciphertext, ciphertext_length):
+def _get_coincidences(ciphertext: str, ciphertext_length: int) -> list:
     """
     Finding coincidences
     Rotate the ciphertext from 1 to n positions to the right and count the character matches with the original ciphertext by position.
@@ -221,7 +221,7 @@ def _get_coincidences(ciphertext, ciphertext_length):
 
     :param ciphertext: Ciphertext.
     :param ciphertext_length: Ciphertext_length.
-    :return: Array with the number of coincidences for each rotation.
+    :return: List with the number of coincidences for each rotation.
     """
     max_length = ciphertext_length - 1
     coincidences = []
@@ -241,7 +241,7 @@ def _get_coincidences(ciphertext, ciphertext_length):
 
 
 # noinspection PyShadowingNames
-def _get_max_coincidences(coincidences):
+def _get_max_coincidences(coincidences: list) -> int:
     """
     Find the position in the list with the largest match values.
     The position will be the key length.
