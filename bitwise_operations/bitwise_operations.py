@@ -1,7 +1,5 @@
 #!/usr/bin/env python3
 
-import sys
-
 """
 Operators:
     a & b  AND
@@ -18,6 +16,8 @@ Compound operators:
     a <<= n -> a = a << n
     a >>= n -> a = a >> n
 """
+
+import sys
 
 
 # noinspection PyShadowingNames
