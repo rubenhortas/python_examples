@@ -17,8 +17,8 @@ if __name__ == '__main__':
     key = b'123456'
     plaintext = b'hello world!'
 
-    ciphertext = _xor(key, plaintext)
-    decrypted_text = _xor(key, ciphertext)
+    ciphertext = _xor(key, plaintext)  # key ⊕ plaintext = ciphertext
+    decrypted_text = _xor(key, ciphertext)  # ciphertext ⊕ key = plaintext
 
     print(f"Plaintext: '{plaintext.decode()}'")
     # return: Plaintext: 'hello world!'
