@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-def variable_number_of_arguments(arg1, arg2, *args):
+def variable_number_of_arguments(arg1, arg2, *args) -> None:
     # Parameters will be a tuple
     print("Variable number of arguments")
     print(f"Mandatory parameters: {arg1}, {arg2}")
@@ -8,7 +8,7 @@ def variable_number_of_arguments(arg1, arg2, *args):
     print()
 
 
-def variable_number_of_named_arguments(arg1, arg2, **args):
+def variable_number_of_named_arguments(arg1, arg2, **args) -> None:
     # Parameters will be a dictionary
     print("Variable number of named arguments")
     print(f"Mandatory parameters: {arg1}, {arg2}")
@@ -18,4 +18,11 @@ def variable_number_of_named_arguments(arg1, arg2, **args):
 
 if __name__ == '__main__':
     variable_number_of_arguments('argument1', 'argument2', 'argument3', 'argument4')
+    # return: Variable number of arguments
+    #           Mandatory parameters: argument1, argument2
+    #           Variable number of arguments: ('argument3', 'argument4')
+
     variable_number_of_named_arguments('argument1', 'argument2', arg3='argument3', arg4='argument4')
+    # return: Variable number of named arguments
+    #           Mandatory parameters: argument1, argument2
+    #           Variable number of named arguments: {'arg3': 'argument3', 'arg4': 'argument4'}
