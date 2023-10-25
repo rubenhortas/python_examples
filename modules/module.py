@@ -1,7 +1,7 @@
-def public_method():
+def public_method() -> None:
     print('Public method')
 
 
-# In modules private method names starts with one underscore
-def _private_method():
-    print('private method')
+# By convention, private method names starts with one underscore.
+def _private_method() -> None:
+    print('Private method!')
