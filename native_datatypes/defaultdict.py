@@ -21,6 +21,11 @@ if __name__ == '__main__':
     user_names['users'].append('alice')
     user_names['users'].append('bob')
 
-    print(f"Roots: {user_names['root']}")  # ['ruben']
-    print(f"Admins: {user_names['admin']}")  # ['ruben', 'ctrl', 'demonsito', 'kaian']
-    print(f"Users: {user_names['users']}")  # ['alice', 'bob']
+    print(f"Roots: {user_names['root']}")
+    # return: ['ruben']
+
+    print(f"Admins: {user_names['admin']}")
+    # return: ['ruben', 'ctrl', 'demonsito', 'kaian']
+
+    print(f"Users: {user_names['users']}")
+    # return: ['alice', 'bob']
