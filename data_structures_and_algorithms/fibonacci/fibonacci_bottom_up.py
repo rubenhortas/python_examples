@@ -5,6 +5,8 @@ This approach consists of build the solution for one case off the previous case 
 """
 
 
+# Time complexity: O(n)
+# Auxiliary space: O(1)
 def fibonacci(n: int) -> int:
     # We don't need to store the computed values into an array.
     # We only need the last two values.

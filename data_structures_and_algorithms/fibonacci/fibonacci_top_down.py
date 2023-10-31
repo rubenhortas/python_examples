@@ -7,6 +7,8 @@ This approach consists of dividing the problem case N into subproblems.
 """
 
 
+# Time complexity: O(n)
+# Auxiliary space: O(n)
 def fibonacci(n: int) -> int:
     values = [-1] * (n + 1)
 
