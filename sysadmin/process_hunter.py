@@ -6,10 +6,10 @@ from datetime import datetime
 from time import sleep
 
 """
-This script looks for programs consuming CPU above a certain threshold and logs the results.
+Script that looks for programs consuming CPU above a certain threshold and logs the results.
 """
 
-CPU_THRESHOLD = 95  # Percentage, ex: 95%
+CPU_THRESHOLD = 95  # Percentage, e.g.: 95%
 NUMBER_OF_PROCESSES = 3
 LOG_FILE = 'process_hunter.log'
 SLEEP_SECONDS = 60
