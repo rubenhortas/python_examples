@@ -22,7 +22,7 @@ def _fibonacci_bottom_up() -> None:
 
 if __name__ == '__main__':
     results = {
-        "Fibonacci recursive O(2^n),  O(n)": _fib_recursive(),
+        "Fibonacci recursive O(2^n), O(n)": _fib_recursive(),
         "Fibonacci top down O(n), O(n)": _fibonacci_top_down(),
         "Fibonacci bottom up O(n), O(1)": _fibonacci_bottom_up()
     }
