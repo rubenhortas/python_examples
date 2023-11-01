@@ -1,6 +1,4 @@
 #!/usr/bin/python 3
-
-import collections
 import time
 from functools import wraps
 from typing import Callable
