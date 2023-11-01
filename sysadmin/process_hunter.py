@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
 
+"""
+Script that looks for programs consuming CPU above a certain threshold and logs the results.
+"""
+
 from psutil import cpu_percent, process_iter, NoSuchProcess, AccessDenied, ZombieProcess
 from signal import signal, SIGINT
 from datetime import datetime
 from time import sleep
-
-"""
-Script that looks for programs consuming CPU above a certain threshold and logs the results.
-"""
 
 CPU_THRESHOLD = 95  # Percentage, e.g.: 95%
 NUMBER_OF_PROCESSES = 3

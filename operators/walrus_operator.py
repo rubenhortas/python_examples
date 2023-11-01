@@ -1,6 +1,4 @@
 #!/usr/bin/env python3
-import random
-
 
 # Since python 3.8, the walrus operator ( := ) gives a new syntax for assigning variables in the middle of expressions.
 # A traditional assignment doesn't return the value, an assignment expression, with :=, it does.
@@ -9,6 +7,9 @@ import random
 # * Repeated function calls can make your code slower than necessary.
 # * Repeated statements can make your code hard to maintain.
 # * Repeated calls that exhaust iterators can make your code overly complex.
+
+import random
+
 
 def get_numbers_descriptive_statistics(numbers):
     # The variables num_length and num_sum are only used to optimize the calculations inside the dictionary.

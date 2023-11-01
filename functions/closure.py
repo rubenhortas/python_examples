@@ -8,6 +8,7 @@ used locally, but defined in an enclosing scope) with the value or reference to 
 the closure was created. Unlike a plain function, a closure allows the function to access those captured variables
 through the closure's copies of their values or references, even when the function is invoked outside their scope.
 """
+
 from typing import Callable
 
 

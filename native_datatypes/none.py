@@ -7,6 +7,7 @@ None is the only null number.
 It has its own datatype (NoneType).
 You can assign None to any variable, but you can not create other NoneType objects.
 """
+
 if __name__ == '__main__':
     print("None:")
     print(f"None == False -> {None == False}")  # False

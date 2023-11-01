@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+
 from collections import defaultdict
 
 if __name__ == '__main__':

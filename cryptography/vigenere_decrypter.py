@@ -1,9 +1,5 @@
 #!/usr/bin/env python3
 
-import argparse
-
-from numpy import median
-
 """
 Vigenere decrypter script
 
@@ -16,6 +12,10 @@ OverTheWire: https://overthewire.org/
 Krypton Level 4: https://overthewire.org/wargames/krypton/krypton4.html
 Krypton Level 5: https://overthewire.org/wargames/krypton/krypton5.html
 """
+
+import argparse
+
+from numpy import median
 
 # English frequencies from: https://www3.nd.edu/~busiforc/handouts/cryptography/letterfrequencies.html
 # Ordered alphabet!

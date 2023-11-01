@@ -2,7 +2,6 @@
 
 from array import array
 from io import StringIO
-
 from performance.execution_time import get_execution_time
 
 LIST_LENGTH = 10000
@@ -89,7 +88,8 @@ if __name__ == '__main__':
     results = {"Naive appending": _measure_function_time(_naive_appending, numbers),
                "Format specifiers": _measure_function_time(_format_specifiers, numbers),
                "String format": _measure_function_time(_string_format, numbers),
-               "String format without positional arguments": _measure_function_time(_string_format_without_positional_arguments, numbers),
+               "String format without positional arguments": _measure_function_time(
+                   _string_format_without_positional_arguments, numbers),
                "Character array": _measure_function_time(_character_array, numbers),
                "Join creating list": _measure_function_time(_join_creating_list, numbers),
                "Join without creating list": _measure_function_time(_join_without_creating_list, numbers),
