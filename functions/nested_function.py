@@ -2,7 +2,7 @@
 
 """
 A function defined inside another function is known as a nested function.
-Nested functions are able to access variables of the enclosing scope.
+If a nested function don't access variables that are local to enclosing scopes isn't a closure.
 """
 
 

@@ -1,9 +1,8 @@
 #!/usr/bin/env python3
 
 """
-Python closure is a nested function that allows us to access variables of the outer function even after the outer function is closed.
-
-Simplest definition I saw, extracted from: https://www.programiz.com/python-programming/closure
+Closure are Nested functions that are able to access variables of the enclosing scope (even after the outer function is closed).
+A closure occurs when a function has access to a local variable from an enclosing scope that has finished its execution.
 """
 
 from typing import Callable
