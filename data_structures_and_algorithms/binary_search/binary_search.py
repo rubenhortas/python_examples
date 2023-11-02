@@ -5,7 +5,7 @@
 
 # Time complexity: O(log(n))
 # Auxiliary space: O(1)
-def locate_position(lst: list, number: int) -> int:
+def get_position(lst: list, number: int) -> int:
     return _binary_search(lst, number, 0, len(lst) - 1)
 
 
