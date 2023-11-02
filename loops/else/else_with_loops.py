@@ -6,7 +6,7 @@ The else block just after for/while is executed only when the loop is NOT termin
 """
 
 
-def run_for_example(break_loop: bool) -> None:
+def _run_for_example(break_loop: bool) -> None:
     for i in range(10):
         print(i, end="")
 
@@ -17,7 +17,7 @@ def run_for_example(break_loop: bool) -> None:
         print(" <- The for loop has finished without breaking.")
 
 
-def run_while_example(break_loop: bool) -> None:
+def _run_while_example(break_loop: bool) -> None:
     i = 0
 
     while i < 10:
@@ -33,14 +33,14 @@ def run_while_example(break_loop: bool) -> None:
 
 
 if __name__ == '__main__':
-    run_for_example(True)
+    _run_for_example(True)
     # return: 012345 <- The loop has been break!
 
-    run_for_example(False)
+    _run_for_example(False)
     # return: 0123456789 <- The for loop has finished without breaking.
 
-    run_while_example(True)
+    _run_while_example(True)
     # return: 012345 <- The loop has been break!
 
-    run_while_example(False)
+    _run_while_example(False)
     # return: 0123456789 <- The while loop has finished without breaking.
