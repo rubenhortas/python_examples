@@ -1,12 +1,9 @@
 #!/usr/bin/env python3
 
 """
-A closure, also lexical closure or function closure, is a technique for implementing lexically scoped name binding
-in a language with first-class functions. Operationally, a closure is a record storing a function together
-with an environment. The environment is a mapping associating each free variable of the function (variables that are
-used locally, but defined in an enclosing scope) with the value or reference to which the name was bound when
-the closure was created. Unlike a plain function, a closure allows the function to access those captured variables
-through the closure's copies of their values or references, even when the function is invoked outside their scope.
+Python closure is a nested function that allows us to access variables of the outer function even after the outer function is closed.
+
+Simplest definition I saw, extracted from: https://www.programiz.com/python-programming/closure
 """
 
 from typing import Callable
