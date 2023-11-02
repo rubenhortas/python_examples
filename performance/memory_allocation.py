@@ -11,7 +11,7 @@ def get_memory_allocation(func: Callable) -> Callable:
     """
 
     @wraps(func)
-    def get_memory_allocation_wrapper(*args, **kwargs):
+    def _get_memory_allocation(*args, **kwargs):
         tracemalloc.start()
 
         _ = func(*args, **kwargs)  # Allocate the result to keep the object in memory
@@ -22,4 +22,4 @@ def get_memory_allocation(func: Callable) -> Callable:
 
         return size, peak
 
-    return get_memory_allocation_wrapper
+    return _get_memory_allocation

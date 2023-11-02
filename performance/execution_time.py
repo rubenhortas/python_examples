@@ -13,7 +13,7 @@ def get_execution_time(func: Callable) -> Callable:
     """
 
     @wraps(func)
-    def get_execution_time_wrapper(*args, **kwargs) -> float:
+    def _get_execution_time_wrapper(*args, **kwargs) -> float:
         start_time = time.perf_counter()
 
         func(*args, **kwargs)
@@ -23,4 +23,4 @@ def get_execution_time(func: Callable) -> Callable:
 
         return total_time
 
-    return get_execution_time_wrapper
+    return _get_execution_time_wrapper
