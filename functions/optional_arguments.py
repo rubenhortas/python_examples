@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 # Python does not support overloading, so if you want to overload a function this is the way.
-def function(optional_argument: bool = True) -> None:
+def _function(optional_argument: bool = True) -> None:
     if optional_argument is True:
         print("Ok, it's true")
     else:
@@ -9,8 +9,8 @@ def function(optional_argument: bool = True) -> None:
 
 
 if __name__ == '__main__':
-    function()
+    _function()
     # return: Ok, it's true
 
-    function(False)
+    _function(False)
     # return: It's false
