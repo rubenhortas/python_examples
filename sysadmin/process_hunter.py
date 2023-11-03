@@ -3,6 +3,7 @@
 """
 Script that looks for programs consuming CPU above a certain threshold and logs the results.
 """
+from types import FrameType
 
 from psutil import cpu_percent, process_iter, NoSuchProcess, AccessDenied, ZombieProcess
 from signal import signal, SIGINT
@@ -16,11 +17,11 @@ SLEEP_SECONDS = 60
 
 
 # noinspection PyUnusedLocal
-def exit_signal_handler(signal_, frame):
+def _exit_signal_handler(signal_: signal, frame: FrameType) -> None:
     exit(0)
 
 
-def main():
+def _main() -> None:
     while True:
         sleep(1)  # Avoid logging the CPU increase caused by this script
 
@@ -38,25 +39,25 @@ def main():
                     pass
 
             sorted_processes = sorted(processes, key=lambda p: p['cpu_percent'], reverse=True)[0:NUMBER_OF_PROCESSES]
-            write_log(sorted_processes)
+            _write_log(sorted_processes)
             sleep(SLEEP_SECONDS)
 
 
-def write_log(processes):
-    log_line = f"{datetime.now().strftime('%Y/%m/%d %H:%M:%S')} "
+def _write_log(processes):
+    line = f"{datetime.now().strftime('%Y/%m/%d %H:%M:%S')} "
 
     for process in processes:
-        log_line = log_line + f"{process['name']}: {process['cpu_percent']}% "
+        line = line + f"{process['name']}: {process['cpu_percent']}% "
 
-    log_line = log_line + '\n'
+    line = line + '\n'
 
     try:
         with open(LOG_FILE, 'a') as log:
-            log.write(log_line)
+            log.write(line)
     except (IOError, OSError, PermissionError):
         pass
 
 
 if __name__ == '__main__':
-    signal(SIGINT, exit_signal_handler)
-    main()
+    signal(SIGINT, _exit_signal_handler)
+    _main()
