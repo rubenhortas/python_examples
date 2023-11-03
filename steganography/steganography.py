@@ -7,7 +7,7 @@ ORIGINAL_IMAGE = 'nyancat.png'
 IMAGE_WITH_SECRET_MESSAGE = 'nyan_with_secret.png'
 
 
-def hide_message():
+def _hide_message() -> None:
     try:
         # Hide a message (string) in an image with the LSB technique.
         secret = lsb.hide(ORIGINAL_IMAGE, MESSAGE)
@@ -20,14 +20,14 @@ def hide_message():
         print(e)
 
 
-def find_message():
+def _get_hidden_message() -> None:
     try:
-        # Find the message in the image (with the LSB technique).
+        # Get the message hidden in the image (with the LSB technique).
         print(f'Our secret is: {lsb.reveal(IMAGE_WITH_SECRET_MESSAGE)}!')
     except Exception as e:
         print(e)
 
 
 if __name__ == '__main__':
-    hide_message()
-    find_message()
+    _hide_message()
+    _get_hidden_message()
