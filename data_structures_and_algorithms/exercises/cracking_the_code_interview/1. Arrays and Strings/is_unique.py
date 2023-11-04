@@ -26,13 +26,13 @@ def _is_unique(string: str) -> bool:
     return True
 
 
+# What if you cannot use additional data structures?
 def _is_Unique_without_structures(string: str) -> bool:
     # Time complexity: O(n^2)
     # Auxiliary space: O(1)
 
-    # What if you cannot use additional data structures?
     for i in range(len(string)):
-        for j in range(i+1, len(string)):
+        for j in range(i + 1, len(string)):
             if string[i] == string[j]:
                 return False
 
