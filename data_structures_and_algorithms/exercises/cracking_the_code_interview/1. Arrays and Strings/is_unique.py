@@ -27,7 +27,7 @@ def _is_unique(string: str) -> bool:
 
 
 # What if you cannot use additional data structures?
-def _is_Unique_without_structures(string: str) -> bool:
+def _is_unique_without_structures(string: str) -> bool:
     # Time complexity: O(n^2)
     # Auxiliary space: O(1)
 
@@ -43,5 +43,5 @@ if __name__ == '__main__':
     print(_is_unique(UNIQUE_STRING))  # True
     print(_is_unique(NOT_UNIQUE_STRING))  # False
 
-    print(_is_Unique_without_structures(UNIQUE_STRING))  # True
-    print(_is_Unique_without_structures(NOT_UNIQUE_STRING))  # False
+    print(_is_unique_without_structures(UNIQUE_STRING))  # True
+    print(_is_unique_without_structures(NOT_UNIQUE_STRING))  # False
