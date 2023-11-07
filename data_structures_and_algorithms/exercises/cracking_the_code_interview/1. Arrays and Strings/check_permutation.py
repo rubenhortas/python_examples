@@ -29,14 +29,14 @@ def _is_permutation(str1: str, str2: str) -> bool:
         return False
 
     for i in range(len(str1)):
-        char_position = ord(str1[i])
-        counter[char_position] = counter[char_position] + 1
+        position = ord(str1[i])
+        counter[position] = counter[position] + 1
 
     for i in range(len(str2)):
-        char_position = ord(str2[i])
-        counter[char_position] = counter[char_position] - 1
+        position = ord(str2[i])
+        counter[position] = counter[position] - 1
 
-        if counter[ord(str2[i])] < 0:
+        if counter[position] < 0:
             return False
 
     return True
