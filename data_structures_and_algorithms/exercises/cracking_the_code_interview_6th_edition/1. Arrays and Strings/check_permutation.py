@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+from collections import Counter
 
 # Given two strings, write a method to decide if one is a permutation of the other.
 
@@ -42,6 +43,12 @@ def _is_permutation(str1: str, str2: str) -> bool:
     return True
 
 
+def _is_permutation_count(str1: str, str2: str) -> bool:
+    # Pythonic way using Counter
+    return Counter(str1) == Counter(str2)
+
+
 if __name__ == '__main__':
     print(_is_permutation(STR1, STR2))  # True
     print(_is_permutation_sorting(STR1, STR2))  # True
+    print(_is_permutation_count(STR1, STR2))  # True
