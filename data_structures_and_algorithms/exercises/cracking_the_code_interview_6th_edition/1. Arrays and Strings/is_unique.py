@@ -56,7 +56,7 @@ def _is_unique_counter(string: str) -> bool:
     return True
 
 
-def _is_unique_using_count(string: str) -> bool:
+def _is_unique_count(string: str) -> bool:
     # Pythonic way using count
     for char in string:
         if string.count(char) > 1:
@@ -81,5 +81,5 @@ if __name__ == '__main__':
     print(_is_unique_counter(NOT_UNIQUE_STRING))  # False
 
     # Pythonic way using count
-    print(_is_unique_using_count(UNIQUE_STRING))  # True
-    print(_is_unique_using_count(NOT_UNIQUE_STRING))  # False
+    print(_is_unique_count(UNIQUE_STRING))  # True
+    print(_is_unique_count(NOT_UNIQUE_STRING))  # False
