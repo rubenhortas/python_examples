@@ -43,5 +43,5 @@ def _is_permutation(str1: str, str2: str) -> bool:
 
 
 if __name__ == '__main__':
-    print(_is_permutation(STR1, STR2))
-    print(_is_permutation_sorting(STR1, STR2))
+    print(_is_permutation(STR1, STR2))  # True
+    print(_is_permutation_sorting(STR1, STR2))  # True
