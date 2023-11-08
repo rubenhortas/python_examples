@@ -66,4 +66,3 @@ if __name__ == '__main__':
     url = _get_url_pythonic(list(INPUT), INPUT_TRUE_LENGTH)
     print(f"\"{''.join(url)}\" -> {url} (length = {len(url)})")
     # return: "Mr%20John%20Smith" -> ['M', 'r', '%', '2', '0', 'J', 'o', 'h', 'n', '%', '2', '0', 'S', 'm', 'i', 't', 'h'] (length = 17)
-
