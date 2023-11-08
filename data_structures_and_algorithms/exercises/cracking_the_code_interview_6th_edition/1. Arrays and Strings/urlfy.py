@@ -13,6 +13,8 @@ INPUT_TRUE_LENGTH = 13
 
 
 def _get_url(string: list, true_length: int) -> list:
+    # Time complexity: O(n)
+    # Auxiliary space: O(1)
     spaces = 0
 
     for i in range(true_length - 1, 0, -1):
@@ -38,9 +40,30 @@ def _get_url(string: list, true_length: int) -> list:
     return string
 
 
+def _get_url_pythonic(string: list, true_length: int) -> list:
+    # Time complexity: O(n)
+    # Auxiliary space: O(1)
+    index = len(string)
+
+    for i in reversed(range(true_length)):
+        if string[i] == ' ':
+            string[index - 3:index] = '%20'
+            index = index - 3
+        else:
+            string[index - 1] = string[i]
+            index = index - 1
+
+    return string
+
+
 if __name__ == '__main__':
     # We will use a list because, in python, strings are immutable
     url = _get_url(list(INPUT), INPUT_TRUE_LENGTH)
 
     print(f"\"{''.join(url)}\" -> {url} (length = {len(url)})")
     # return: "Mr%20John%20Smith" -> ['M', 'r', '%', '2', '0', 'J', 'o', 'h', 'n', '%', '2', '0', 'S', 'm', 'i', 't', 'h'] (length = 17)
+
+    url = _get_url_pythonic(list(INPUT), INPUT_TRUE_LENGTH)
+    print(f"\"{''.join(url)}\" -> {url} (length = {len(url)})")
+    # return: "Mr%20John%20Smith" -> ['M', 'r', '%', '2', '0', 'J', 'o', 'h', 'n', '%', '2', '0', 'S', 'm', 'i', 't', 'h'] (length = 17)
+
