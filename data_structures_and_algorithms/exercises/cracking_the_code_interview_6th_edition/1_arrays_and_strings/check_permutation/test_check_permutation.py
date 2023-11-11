@@ -15,13 +15,13 @@ class CheckPermutationTest(unittest.TestCase):
         ]
 
     def test_is_permutation_sorting(self):
-        for [string, result] in self.data:
+        for string, result in self.data:
             self.assertEqual(is_permutation_sorting(self.string1, string), result)
 
     def test_check_is_permutation(self):
-        for [string, result] in self.data:
+        for string, result in self.data:
             self.assertEqual(is_permutation(self.string1, string), result)
 
     def test_is_permutation_count(self):
-        for [string, result] in self.data:
+        for string, result in self.data:
             self.assertEqual(is_permutation_count(self.string1, string), result)
