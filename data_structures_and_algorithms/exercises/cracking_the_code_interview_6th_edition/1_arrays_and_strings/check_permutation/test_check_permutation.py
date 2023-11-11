@@ -8,45 +8,20 @@ from check_permutation import is_permutation_sorting, is_permutation, is_permuta
 class CheckPermutationTest(unittest.TestCase):
     def setUp(self):
         self.string1 = 'check permutations'
-        self.string2 = 'permutations check'
-        self.string3 = 'p3rmut4t10n5 ch3ck'
-        self.string4 = 'permutations check '
+        self.data = [
+            ('permutations check', True),
+            ('p3rmut4t10n5 ch3ck', False),
+            ('permutations check ', False)
+        ]
 
     def test_is_permutation_sorting(self):
-        result = is_permutation_sorting(self.string1, self.string2)
-        self.assertTrue(result)
-
-        result = is_permutation_sorting(self.string1, self.string3)
-        self.assertFalse(result)
-
-        result = is_permutation_sorting(self.string1, self.string4)
-        self.assertFalse(result)
-
-        result = is_permutation_sorting("", "")
-        self.assertTrue(result)
+        for [string, result] in self.data:
+            self.assertEqual(is_permutation_sorting(self.string1, string), result)
 
     def test_check_is_permutation(self):
-        result = is_permutation(self.string1, self.string2)
-        self.assertTrue(result)
-
-        result = is_permutation(self.string1, self.string3)
-        self.assertFalse(result)
-
-        result = is_permutation_sorting(self.string1, self.string4)
-        self.assertFalse(result)
-
-        result = is_permutation_sorting("", "")
-        self.assertTrue(result)
+        for [string, result] in self.data:
+            self.assertEqual(is_permutation(self.string1, string), result)
 
     def test_is_permutation_count(self):
-        result = is_permutation_count(self.string1, self.string2)
-        self.assertTrue(result)
-
-        result = is_permutation_count(self.string1, self.string3)
-        self.assertFalse(result)
-
-        result = is_permutation_sorting(self.string1, self.string4)
-        self.assertFalse(result)
-
-        result = is_permutation_sorting("", "")
-        self.assertTrue(result)
+        for [string, result] in self.data:
+            self.assertEqual(is_permutation_count(self.string1, string), result)
