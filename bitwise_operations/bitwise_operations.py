@@ -73,7 +73,7 @@ def toggle_bit(number: int, index: int) -> int:
     Toggle the number of a bit on a given position.
     :param number: 01000001
     :param index: 0
-    :return: 01000001
+    :return: 01000000
     """
     return number ^ (1 << index)
 
