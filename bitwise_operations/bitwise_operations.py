@@ -112,7 +112,7 @@ if __name__ == '__main__':
 
     number = set_bit(number, 0)
     print(f'Least significant bit set: {number:08b}')
-    # param: 01000001
+    # param: 01000000
     # return: Least significant bit set: 01000001
 
     number = toggle_bit(number, 0)
