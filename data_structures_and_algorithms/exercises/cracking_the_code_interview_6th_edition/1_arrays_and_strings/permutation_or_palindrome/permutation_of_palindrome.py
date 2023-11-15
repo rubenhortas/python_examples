@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-# Given a strign, write a function to check if it is a permutation of a palindrome.
+# Given a string, write a function to check if it is a permutation of a palindrome.
 # A palindrome is a word or phrase that is the same forwards and backwards.
 # A permutation is a rearrangement of letters.
 # The palindrome does not need to be limited to just dictionary words.
@@ -25,6 +25,7 @@ def is_permutation_of_palindrome_pythonic(string: str) -> bool:
 
 def is_permutation_of_palindrome(string: str) -> bool:
     bit_vector = _create_bit_vector(string.replace(' ', '').lower())
+
     return bit_vector == 0 or _check_exactly_one_bit_set(bit_vector)
 
 
@@ -53,7 +54,3 @@ def _toggle(bit_vector: int, index: int) -> int:
 
 def _check_exactly_one_bit_set(bit_vector: int) -> bool:
     return bit_vector & (bit_vector - 1) == 0
-
-
-if __name__ == '__main__':
-    is_permutation_of_palindrome('Tact Coa')
