@@ -20,7 +20,10 @@ def is_permutation_of_palindrome_pythonic(string: str) -> bool:
             else:
                 odd_chars = odd_chars + 1
 
-    return odd_chars < 2
+                if odd_chars > 1:
+                    return False
+
+    return odd_chars <= 1
 
 
 def is_permutation_of_palindrome(string: str) -> bool:
