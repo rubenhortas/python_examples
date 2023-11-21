@@ -23,7 +23,7 @@ def is_permutation_of_palindrome_pythonic(string: str) -> bool:
                 if odd_chars > 1:
                     return False
 
-    return odd_chars <= 1
+    return True
 
 
 def is_permutation_of_palindrome(string: str) -> bool:
