@@ -19,11 +19,11 @@ def shunting_yard(expression: str) -> str:
     :param expression: '1+2*3+(4+5*6)'
     :return: '123*+456*++'
     """
-    normalized_expression = list(expression.replace(' ', '').strip())
+    expression = expression.replace(' ', '').strip()
     output_queue = []
     operator_stack = []
 
-    for token in normalized_expression:
+    for token in expression:
         if token in PRECEDENCES:
             while (operator_stack and operator_stack[-1] in PRECEDENCES and
                    PRECEDENCES[token] <= PRECEDENCES[operator_stack[-1]]):
