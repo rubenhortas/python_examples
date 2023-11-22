@@ -16,15 +16,17 @@ PRECEDENCES = {  # PEMDAS: Parentheses, Exponents, Multiplication/Division, Addi
 def shunting_yard(expression: str) -> str:
     """
     Converts an expression from infix notation to Reverse Polish Notation (RPN).
-    :param expression: '1+2*3+(4+5*6)'
-    :return: '123*+456*++'
+    :param expression: '1 + 2 * 3 + (4 + 5 * 6)'
+    :return: '1 2 3 * + 4 5 6 * + +'
     """
-    expression = expression.replace(' ', '').strip()
+    expression = expression.strip().replace('(', '( ').replace(')', ' )').split()
     output_queue = []
     operator_stack = []
 
     for token in expression:
-        if token in PRECEDENCES:
+        if token == ' ':
+            continue
+        elif token in PRECEDENCES:
             while (operator_stack and operator_stack[-1] in PRECEDENCES and
                    PRECEDENCES[token] <= PRECEDENCES[operator_stack[-1]]):
                 output_queue.append(operator_stack.pop())
@@ -41,4 +43,4 @@ def shunting_yard(expression: str) -> str:
     while operator_stack:
         output_queue.append(operator_stack.pop())
 
-    return "".join(output_queue)
+    return " ".join(output_queue)

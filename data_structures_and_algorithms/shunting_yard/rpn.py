@@ -10,13 +10,15 @@ OPERATORS = ['**', '*', '/', '+', '-']
 def rpn_to_infix(expression: str) -> str:
     """
     Converts an expression from Reverse Polish Notation (RPN) to infix.
-    :param expression:
+    :param expression: '1 2 3 * + 4 5 6 * + +'
     :return: '((1+(2*3))+(4+(5*6)))'
     """
     output_queue = []
 
     for token in expression:
-        if token in OPERATORS:
+        if token == ' ':
+            continue
+        elif token in OPERATORS:
             b = output_queue.pop()
             a = output_queue.pop()
             output_queue.append(f"({a}{token}{b})")
