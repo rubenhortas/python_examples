@@ -1,6 +1,6 @@
 import unittest
 
-from data_structures_and_algorithms.shunting_yard.rpn import rpn_to_infix
+from data_structures_and_algorithms.shunting_yard.reverse_polish_notation import rpn_to_infix
 from data_structures_and_algorithms.shunting_yard.shunting_yard import shunting_yard
 
 
