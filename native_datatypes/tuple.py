@@ -8,15 +8,15 @@ With tuples you can protect data from read/write.
 """
 
 EMPTY = ()
-ITEMS = ("a", "b", "c")
+ITEMS = ('a', 'b', 'c')
 
 if __name__ == '__main__':
     # Tuples in a boolean context.
     # An empty tuple is False otherwise is True.
     if ITEMS:
-        print(f"{ITEMS} has items")
+        print(f'{ITEMS} has items')
         # return: ('a', 'b', 'c') has items
 
     if not EMPTY:
-        print(f"{EMPTY} is empty")
+        print(f'{EMPTY} is empty')
         # return: () is empty

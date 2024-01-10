@@ -44,7 +44,7 @@ class CircularLinkedList:
                 nodes.append(node.next.data)
                 node = node.next
 
-        return f"<- {' <-> '.join(nodes)} ->"
+        return f'<- {" <-> ".join(nodes)} ->'
 
     def __iter__(self):
         if self.head is not None:
@@ -96,7 +96,7 @@ class CircularLinkedList:
                 node.next = new_node
                 return
 
-        raise Exception(f"Node with data '{target_node_data}' not found")
+        raise Exception(f'Node with data \'{target_node_data}\' not found')
 
     def add_before(self, target_node_data: str, new_node: Node):
         if self.head is None:
@@ -117,7 +117,7 @@ class CircularLinkedList:
 
             prev_node = node
 
-        raise Exception(f"Node with data '{target_node_data}' not found")
+        raise Exception(f'Node with data \'{target_node_data}\' not found')
 
 
 if __name__ == '__main__':

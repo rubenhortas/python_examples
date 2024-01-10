@@ -26,12 +26,12 @@ def _get_numbers_descriptive_statistics(numbers: list) -> None:
 
     description = {
         # Without the walrus operator we would need the following two lines:
-        # "length": numbers_length,
-        # "sum": numbers_sum,
+        # 'length': numbers_length,
+        # 'sum': numbers_sum,
 
-        "length": (numbers_length := len(numbers)),
-        "sum": (numbers_sum := sum(numbers)),
-        "mean": numbers_sum / numbers_length,
+        'length': (numbers_length := len(numbers)),
+        'sum': (numbers_sum := sum(numbers)),
+        'mean': numbers_sum / numbers_length,
     }
 
     print(description)  # {'length': 8, 'sum': 35, 'mean': 4.375}

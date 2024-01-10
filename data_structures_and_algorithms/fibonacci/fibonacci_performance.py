@@ -23,19 +23,17 @@ def _fibonacci_bottom_up() -> None:
 
 if __name__ == '__main__':
     results = {
-        "Fibonacci recursive O(2^n), O(n)": _fib_recursive(),
-        "Fibonacci top down O(n), O(n)": _fibonacci_top_down(),
-        "Fibonacci bottom up O(n), O(1)": _fibonacci_bottom_up()
+        'Fibonacci recursive O(2^n), O(n)': _fib_recursive(),
+        'Fibonacci top down O(n), O(n)': _fibonacci_top_down(),
+        'Fibonacci bottom up O(n), O(1)': _fibonacci_bottom_up()
     }
 
     sorted_results = sorted(results.items(), key=lambda item: item[1], reverse=False)
 
     for result in sorted_results:
-        print(f"* {result[0]}: {result[1]:.5f}")
+        print(f'* {result[0]}: {result[1]:.5f}')
 
-    """
-        Results (sorted from faster to slower):
-           * Fibonacci bottom up O(n), O(1)
-           * Fibonacci top down O(n), O(n)
-           * Fibonacci recursive O(2^n), O(n)
-    """
+    # Results (sorted from faster to slower):
+    #    * Fibonacci bottom up O(n), O(1)
+    #    * Fibonacci top down O(n), O(n)
+    #    * Fibonacci recursive O(2^n), O(n)

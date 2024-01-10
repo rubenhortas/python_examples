@@ -10,7 +10,7 @@ from typing import Callable
 
 def _outer_function(outer_text: str) -> Callable[[str], None]:
     def inner_function(inner_text: str) -> None:
-        greeting = "\\(^-^)/"
+        greeting = '\\(^-^)/'
         print(f'{outer_text} {inner_text}! {greeting}')
 
     return inner_function

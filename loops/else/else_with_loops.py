@@ -8,28 +8,28 @@ The else block just after for/while is executed only when the loop is NOT termin
 
 def _run_for_example(break_loop: bool) -> None:
     for i in range(10):
-        print(i, end="")
+        print(i, end='')
 
         if i == 5 and break_loop:
-            print(" <- The loop has been break!")
+            print(' <- The loop has been break!')
             break
     else:
-        print(" <- The for loop has finished without breaking.")
+        print(' <- The for loop has finished without breaking.')
 
 
 def _run_while_example(break_loop: bool) -> None:
     i = 0
 
     while i < 10:
-        print(i, end="")
+        print(i, end='')
 
         if i == 5 and break_loop:
-            print(" <- The loop has been break!")
+            print(' <- The loop has been break!')
             break
 
         i += 1
     else:
-        print(" <- The while loop has finished without breaking.")
+        print(' <- The while loop has finished without breaking.')
 
 
 if __name__ == '__main__':

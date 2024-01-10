@@ -11,15 +11,15 @@ KEY_LENGTH = 4
 
 # noinspection PyShadowingNames
 def _initialize() -> (str, str, str):
-    print("Initializing values...")
+    print('Initializing values...')
 
-    plaintext = "Hello world!".encode()  # string to bytes
+    plaintext = 'Hello world!'.encode()  # string to bytes
     key = os.urandom(KEY_LENGTH)  # Random KEY_LENGTH bytes KEY
     ciphertext = _xor(key, plaintext)
 
-    print(f"\tplaintext: {plaintext.decode()}")
-    print(f"\tkey: {key}")
-    print(f"\tciphertext: {ciphertext}")
+    print(f'\tplaintext: {plaintext.decode()}')
+    print(f'\tkey: {key}')
+    print(f'\tciphertext: {ciphertext}')
     print()
 
     return plaintext, key, ciphertext
@@ -42,12 +42,12 @@ def _xor(key: bytes, stream: bytes) -> bytes:
 def _get_xor_key(plaintext: bytes, ciphertext: bytes) -> bytes:
     key = b''
 
-    print("Guessing the secret (random) KEY used for xor...")
+    print('Guessing the secret (random) KEY used for xor...')
 
     for i in range(KEY_LENGTH):
         key += bytes([plaintext[i] ^ ciphertext[i]])
 
-    print(f"\tGuessed KEY: {key}")
+    print(f'\tGuessed KEY: {key}')
     print()
 
     return key
@@ -64,13 +64,13 @@ if __name__ == '__main__':
     decrypted_text = _xor(guessed_key, ciphertext)
 
     # Check the results
-    print("Results:")
-    print("\tKeys:")
-    print(f"\t\tRandom generated key: {key}")
-    print(f"\t\tGuessed key: {guessed_key}")
-    print(("\t\tKeys are different", "\t\tKeys are equals")[key == guessed_key])  # keys are equal
+    print('Results:')
+    print('\tKeys:')
+    print(f'\t\tRandom generated key: {key}')
+    print(f'\t\tGuessed key: {guessed_key}')
+    print(('\t\tKeys are different', '\t\tKeys are equals')[key == guessed_key])  # keys are equal
     print()
-    print("Initial strings:")
-    print(f"\t\tInitial plaintext: {plaintext.decode()}")
-    print(f"\t\tDecrypted text: {decrypted_text.decode()}")
-    print(("\t\tStrings are different", "\t\tStrings are equals")[plaintext == decrypted_text])  # strings are equal
+    print('Initial strings:')
+    print(f'\t\tInitial plaintext: {plaintext.decode()}')
+    print(f'\t\tDecrypted text: {decrypted_text.decode()}')
+    print(('\t\tStrings are different', '\t\tStrings are equals')[plaintext == decrypted_text])  # strings are equal

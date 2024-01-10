@@ -2,4 +2,4 @@
 class Parent(object):
 
     def __init__(self):
-        print("parent constructor called!")
+        print('parent constructor called!')

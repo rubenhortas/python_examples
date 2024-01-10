@@ -14,7 +14,7 @@ class Hero:
         self.__real_name = real_name
 
     def print_name(self):
-        print(f"I'm {self.__hero_name}!")
+        print(f'I\'m {self.__hero_name}!')
 
     def _print_real_name(self):
-        print(f"PWNED! I'm {self.__real_name} :(")
+        print(f'PWNED! I\'m {self.__real_name} :(')

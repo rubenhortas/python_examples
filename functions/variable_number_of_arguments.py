@@ -2,17 +2,17 @@
 
 def _variable_number_of_arguments(arg1, arg2, *args) -> None:
     # Parameters will be a tuple
-    print("Variable number of arguments")
-    print(f"Mandatory parameters: {arg1}, {arg2}")
-    print(f"Variable number of arguments: {args}")
+    print('Variable number of arguments')
+    print(f'Mandatory parameters: {arg1}, {arg2}')
+    print(f'Variable number of arguments: {args}')
     print()
 
 
 def _variable_number_of_named_arguments(arg1, arg2, **args) -> None:
     # Parameters will be a dictionary
-    print("Variable number of named arguments")
-    print(f"Mandatory parameters: {arg1}, {arg2}")
-    print(f"Variable number of named arguments: {args}")
+    print('Variable number of named arguments')
+    print(f'Mandatory parameters: {arg1}, {arg2}')
+    print(f'Variable number of named arguments: {args}')
     print()
 
 

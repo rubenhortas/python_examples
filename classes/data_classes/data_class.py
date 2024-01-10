@@ -19,8 +19,8 @@ if __name__ == '__main__':
         suit: str
 
 
-    fighter1 = Fighter("Ryu", "black")
-    fighter2 = Fighter("Ryu", "black")
+    fighter1 = Fighter('Ryu', 'black')
+    fighter2 = Fighter('Ryu', 'black')
 
     print(fighter1 == fighter2)
     # return: True

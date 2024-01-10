@@ -18,11 +18,11 @@ def _create_list(size: int) -> list:
 
 def _get_function_memory_allocation() -> None:
     size, peak = _create_list(100)
-    print(f"Current memory size: {size} KiB, peak memory size: {peak} KiB")
+    print(f'Current memory size: {size} KiB, peak memory size: {peak} KiB')
     # return: Current memory size: 864 KiB, peak memory size: 896 KiB
 
     size, peak = _create_list(1000)
-    print(f"Current memory size: {size} KiB, peak memory size: {peak} KiB")
+    print(f'Current memory size: {size} KiB, peak memory size: {peak} KiB')
     # return: Current memory size: 29576 KiB, peak memory size: 29608 KiB
 
 
@@ -32,10 +32,10 @@ def _get_object_memory_allocation() -> None:
     numbers_range = range(100)
     numbers_list = [i for i in range(100)]
 
-    print(f"Size of range: {sys.getsizeof(numbers_range)} bytes")
+    print(f'Size of range: {sys.getsizeof(numbers_range)} bytes')
     # return: Size of range: 48 bytes
 
-    print(f"Size of list: {sys.getsizeof(numbers_list)} bytes")
+    print(f'Size of list: {sys.getsizeof(numbers_list)} bytes')
     # Size of list: 920 bytes
 
 
