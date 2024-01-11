@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 
 CONDITION = True
-MESSAGE_TRUE = "Condition is true"
-MESSAGE_FALSE = "Condition is false"
+MESSAGE_TRUE = 'Condition is true'
+MESSAGE_FALSE = 'Condition is false'
 
 if __name__ == '__main__':
     # First way

@@ -299,8 +299,8 @@ if __name__ == '__main__':
     if key_length > 0:
         pt = _decrypt(ciphertext, ciphertext_length, key_shifts, key_length)
 
-        print(f'key: {key}\n')
-        print(f'ct: {ciphertext}\n')
-        print(f'pt: {pt}\n')
+        print(f"key: {key}\n")
+        print(f"ct: {ciphertext}\n")
+        print(f"pt: {pt}\n")
     else:
-        print(f'Key length = 0.')
+        print(f"Key length = 0.")

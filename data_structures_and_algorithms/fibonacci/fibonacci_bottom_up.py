@@ -5,9 +5,10 @@ This approach consists of build the solution for one case off the previous case 
 """
 
 
-# Time complexity: O(n)
-# Auxiliary space: O(1)
 def fibonacci(n: int) -> int:
+    # Time complexity: O(n)
+    # Auxiliary space: O(1)
+
     if n <= 1:
         return n
 

@@ -23,7 +23,7 @@ def _hide_message() -> None:
 def _get_hidden_message() -> None:
     try:
         # Get the message hidden in the image (with the LSB technique).
-        print(f'Our secret is: {lsb.reveal(IMAGE_WITH_SECRET_MESSAGE)}!')
+        print(f"Our secret is: {lsb.reveal(IMAGE_WITH_SECRET_MESSAGE)}!")
     except Exception as e:
         print(e)
 

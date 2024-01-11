@@ -9,10 +9,10 @@ FRUITS = ['apple', 'banana', 'cherry']
 
 if __name__ == '__main__':
     print('Map:')
-    print(f'\tFruits: {FRUITS}')
+    print(f"\tFruits: {FRUITS}")
 
     # map(function, iterables)
-    print(f'\tLengths of fruits: {list(map(len, FRUITS))}')
+    print(f"\tLengths of fruits: {list(map(len, FRUITS))}")
     # return: Map:
     # 	        Fruits: ['apple', 'banana', 'cherry']
     # 	        Lengths of fruits: [5, 6, 6]

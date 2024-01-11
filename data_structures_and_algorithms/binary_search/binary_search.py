@@ -3,13 +3,14 @@
 # Write a program to find the position of a given number in a list of numbers arranged in **decreasing** order.
 # Minimize the number of times we access elements from the list.
 
-# Time complexity: O(log(n))
-# Auxiliary space: O(1)
 def get_position(lst: list, number: int) -> int:
     return _binary_search(lst, number, 0, len(lst) - 1)
 
 
 def _binary_search(lst: list, number: int, min_pos: int, max_pos: int) -> int:
+    # Time complexity: O(log(n))
+    # Auxiliary space: O(1)
+
     if min_pos <= max_pos:
         mid_pos = (min_pos + max_pos) // 2
 

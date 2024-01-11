@@ -6,9 +6,9 @@ if __name__ == '__main__':
     queue = deque()
 
     # Adding elements as they arrive
-    queue.append("First")
-    queue.appendleft("Second")  # Add to the left side!
-    queue.appendleft("Third")
+    queue.append('First')
+    queue.appendleft('Second')  # Add to the left side!
+    queue.appendleft('Third')
 
     print(queue)
     # return: deque(['Third', 'Second', 'First'])

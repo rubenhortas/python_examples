@@ -10,10 +10,10 @@ You can assign None to any variable, but you can not create other NoneType objec
 
 if __name__ == '__main__':
     print('None:')
-    print(f'None == False -> {None == False}')  # False
-    print(f'None == 0 -> {None == 0}')  # False
-    print(f'None == '' -> {None == ''}')  # False
-    print(f'None == None -> {None is None}')  # True
+    print(f"None == False -> {None == False}")  # False
+    print(f"None == 0 -> {None == 0}")  # False
+    print(f"None == '' -> {None == ''}")  # False
+    print(f"None == None -> {None is None}")  # True
 
     # In a boolean context None is False
     if not None:

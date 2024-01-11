@@ -106,15 +106,13 @@ if __name__ == '__main__':
         pos = pos + 1
         print(f'{pos}) {result[0]}: {result[1]:.5f} secs')
 
-    '''
-    My results (sorted from faster to slowest):
-        1) Join without creating list
-        2) Join creating list
-        3) Write pseudo file
-        4) Character array
-        5) Naive appending
-        6) Fstrings
-        7) Format specifiers
-        8) String format without positional arguments
-        9) String format
-    '''
+    # My results (sorted from faster to slowest):
+    #     1) Join without creating list
+    #     2) Join creating list
+    #     3) Write pseudo file
+    #     4) Character array
+    #     5) Naive appending
+    #     6) Fstrings
+    #     7) Format specifiers
+    #     8) String format without positional arguments
+    #     9) String format

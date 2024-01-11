@@ -17,53 +17,53 @@ def add_items(lst) -> list:
 
 def search(lst: list, value) -> None:
     if value in lst:
-        print(f'\'{value}\' is in the list')
+        print(f"'{value}' is in the list")
     else:
-        print(f'\'{value}\' is not in the list')
+        print(f"'{value}' is not in the list")
 
 
 def get_value_position(lst: list, value) -> None:
     try:
-        print(f'Position of {value}: {lst.index(value)}')  # Returns the position of the first occurrence
+        print(f"Position of {value}: {lst.index(value)}")  # Returns the position of the first occurrence
     except ValueError:
-        print(f'{value} not found')
+        print(f"{value} not found")
 
 
 def get_value_by_position(lst: list, position: int) -> None:
     # A negative index accesses items from the end of the list counting backwards.
     # Negative index are valid, so raises an exception if the item is not found.
     try:
-        print(f'Item in {position}: {lst[position]}')
+        print(f"Item in {position}: {lst[position]}")
     except IndexError:
-        print(f'Position {position} not found')
+        print(f"Position {position} not found")
 
 
 def popping(lst: list) -> None:
     lst.pop()
 
-    print(f'{lst}')
+    print(f"{lst}")
 
 
 def is_empty(lst: list) -> None:
     # Empty list is false otherwise is true
     if lst:
-        print(f'{lst} is not empty')
+        print(f"{lst} is not empty")
     else:
-        print(f'{lst} is empty')
+        print(f"{lst} is empty")
 
 
 def comprehensions() -> None:
     numbers = [i for i in range(10)]
     even_numbers = [i for i in range(10) if i % 2 == 0]  # [ expression for item in list if conditional ]
 
-    print(f'numbers: {numbers}, even numbers: {even_numbers}')
+    print(f"numbers: {numbers}, even numbers: {even_numbers}")
 
 
 def reverse() -> None:
     numbers = [i for i in range(10)]
     reversed_numbers = numbers[::-1]
 
-    print(f'{numbers} backwards is {reversed_numbers}')
+    print(f"{numbers} backwards is {reversed_numbers}")
 
 
 def join() -> None:
@@ -73,9 +73,9 @@ def join() -> None:
     joined_list_1 = lst1 + lst2
     lst1.extend(lst2)  # Adds lst2 at the end of lst1
 
-    print(f'Join {lst1} and {lst2}')
-    print(f'Join with +: {joined_list_1}')
-    print(f'Join with extend: {lst1}')
+    print(f"Join {lst1} and {lst2}")
+    print(f"Join with +: {joined_list_1}")
+    print(f"Join with extend: {lst1}")
 
 
 # noinspection PyShadowingBuiltins
@@ -83,17 +83,17 @@ def slice() -> None:
     # Lst[ Initial : End : IndexJump ]
     numbers = [i for i in range(10)]
 
-    print(f'{{lst[0:5]}}: {numbers[0:5]}')  # [0, 1, 2, 3, 4]
+    print(f"{{lst[0:5]}}: {numbers[0:5]}")  # [0, 1, 2, 3, 4]
 
     # Negative Indexes
     # Index -1 represents the last element and -n represents the first element
-    print(f'{{lst[-5::1]}}: {numbers[-5::1]}')  # [5, 6, 7, 8, 9]
+    print(f"{{lst[-5::1]}}: {numbers[-5::1]}")  # [5, 6, 7, 8, 9]
 
-    print(f'{{lst[::2]}}: {numbers[::2]}')  # [0, 2, 4, 6, 8]
+    print(f"{{lst[::2]}}: {numbers[::2]}")  # [0, 2, 4, 6, 8]
 
     # List slicing can be used to delete elements from a list
     new_list = numbers[:2] + numbers[-2:]  # [0, 1, 8, 9]
-    print(f'new_list = {new_list}')
+    print(f"new_list = {new_list}")
 
 
 if __name__ == '__main__':

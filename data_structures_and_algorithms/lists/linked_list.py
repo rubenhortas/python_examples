@@ -30,7 +30,7 @@ class LinkedList:
             nodes.append(node.data)
             node = node.next
 
-        return " -> ".join(nodes)
+        return ' -> '.join(nodes)
 
     def __iter__(self):
         node = self.head

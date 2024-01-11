@@ -1,5 +1,5 @@
-# Parent class has to inherit from 'object' class
+# Parent class has to inherit from "object" class
 class Parent(object):
 
     def __init__(self):
-        print('parent constructor called!')
+        print('Parent constructor called!')

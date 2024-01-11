@@ -14,9 +14,9 @@ if __name__ == '__main__':
     # Tuples in a boolean context.
     # An empty tuple is False otherwise is True.
     if ITEMS:
-        print(f'{ITEMS} has items')
-        # return: ('a', 'b', 'c') has items
+        print(f"{ITEMS} has items")
+        # return: ("a", "b", "c") has items
 
     if not EMPTY:
-        print(f'{EMPTY} is empty')
+        print(f"{EMPTY} is empty")
         # return: () is empty

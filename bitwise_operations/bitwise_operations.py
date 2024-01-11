@@ -79,43 +79,43 @@ def toggle_bit(number: int, index: int) -> int:
 
 
 if __name__ == '__main__':
-    print(f'Byteorder: {sys.byteorder}')  # little/big endian
+    print(f"Byteorder: {sys.byteorder}")  # little/big endian
     # Byteorder: little
 
-    number = 0b01000001  # ord('A') = 65
-    print(f'{number:08b}')  # 01000001
+    number = 0b01000001  # ord("A") = 65
+    print(f"{number:08b}")  # 01000001
 
     most_significant_bit = get_bit(number, 7)
-    print(f'Most Significant Bit: {most_significant_bit:b} ({most_significant_bit})')
+    print(f"Most Significant Bit: {most_significant_bit:b} ({most_significant_bit})")
     # number: 01000001
     # return: Most Significant Bit: 0 (0)
 
     second_most_significant_bit = get_bit(number, 6)
-    print(f'Second Most Significant Bit: {second_most_significant_bit:b} ({second_most_significant_bit})')
+    print(f"Second Most Significant Bit: {second_most_significant_bit:b} ({second_most_significant_bit})")
     # number: 01000001
     # return: Second Most Significant Bit: 1000000 (64)
 
     most_significant_bit_value = get_bit_value(number, 7)
-    print(f'Most significant bit value: {most_significant_bit_value}')
+    print(f"Most significant bit value: {most_significant_bit_value}")
     # number: 01000001
     # return: Most significant bit value: 0
 
     least_significant_bit_value = get_bit_value(number, 0)
-    print(f'Least significant bit value: {least_significant_bit_value}')
+    print(f"Least significant bit value: {least_significant_bit_value}")
     # number: 01000001
     # return: Least significant bit value: 1
 
     number = clear_bit(number, 0)
-    print(f'Least significant bit cleared: {number:08b}')
+    print(f"Least significant bit cleared: {number:08b}")
     # number: 01000001
     # return: Least significant bit cleared: 01000000
 
     number = set_bit(number, 0)
-    print(f'Least significant bit set: {number:08b}')
+    print(f"Least significant bit set: {number:08b}")
     # number: 01000000
     # return: Least significant bit set: 01000001
 
     number = toggle_bit(number, 0)
-    print(f'Least significant bit toggled: {number:08b}')
+    print(f"Least significant bit toggled: {number:08b}")
     # number: 01000001
     # return: Least significant bit toggled: 01000000

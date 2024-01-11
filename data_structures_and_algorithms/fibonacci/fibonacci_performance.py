@@ -31,7 +31,7 @@ if __name__ == '__main__':
     sorted_results = sorted(results.items(), key=lambda item: item[1], reverse=False)
 
     for result in sorted_results:
-        print(f'* {result[0]}: {result[1]:.5f}')
+        print(f"* {result[0]}: {result[1]:.5f}")
 
     # Results (sorted from faster to slower):
     #    * Fibonacci bottom up O(n), O(1)

@@ -7,9 +7,10 @@ This approach consists of dividing the problem case N into subproblems.
 """
 
 
-# Time complexity: O(n)
-# Auxiliary space: O(n)
 def fibonacci(n: int) -> int:
+    # Time complexity: O(n)
+    # Auxiliary space: O(n)
+
     values = [-1] * (n + 1)
 
     # noinspection PyShadowingNames

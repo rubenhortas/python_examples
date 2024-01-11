@@ -8,8 +8,8 @@ class Node:
         self.next = None
 
     def __repr__(self):
-        prev = "None" if self.prev is None else self.prev.data
-        next = "None" if self.next is None else self.next.data
+        prev = 'None' if self.prev is None else self.prev.data
+        next = 'None' if self.next is None else self.next.data
 
         return f"{prev} <- {self.data} -> {next}"
 
@@ -36,7 +36,7 @@ class DoublyLinkedList:
             nodes.append(node.data)
             node = node.next
 
-        return " <-> ".join(nodes)
+        return ' <-> '.join(nodes)
 
     def __iter__(self):
         node = self.head

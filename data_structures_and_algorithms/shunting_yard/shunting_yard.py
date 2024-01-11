@@ -43,4 +43,4 @@ def shunting_yard(expression: str) -> str:
     while operator_stack:
         output_queue.append(operator_stack.pop())
 
-    return " ".join(output_queue)
+    return ' '.join(output_queue)
