@@ -18,6 +18,6 @@ if __name__ == '__main__':
         print(queue)
 
     # return:
-    #   deque(['Second', 'Third'])
-    #   deque(['Third'])
-    #   deque([])
+    # deque(['Second', 'Third'])
+    # deque(['Third'])
+    # deque([])
