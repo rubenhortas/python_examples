@@ -256,8 +256,8 @@ def _get_max_coincidences(coincidences: list) -> int:
     for i in range(coincidences_length):
         list_slice = coincidences[i::i + 1]
 
-        if len(list_slice) >= (
-                i + 1):  # len(lst) < key length = i + 1 (The key length cannot be greater than the list slice)
+        # len(lst) < key length = i + 1 (The key length cannot be greater than the list slice)
+        if len(list_slice) >= (i + 1):
             if median(list_slice) > max_median:
                 max_median = median(list_slice)
                 key_length = i + 1
