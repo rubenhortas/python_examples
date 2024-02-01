@@ -32,7 +32,7 @@ if __name__ == '__main__':
     # return: - We can travel anywhere between 1AC and 9999AC
 
     print(f"- We could go to {_get_delorean_date_format(first_dest)}!")
-    # return:  We could go to 'OCT 26 1985 09:00'!
+    # return: - We could go to 'OCT 26 1985 09:00'!
 
     print(f"- We could also go to {_get_delorean_date_format(second_dest_date)}... But we need a time, what about {_get_delorean_time_format(second_dest_time)}?")
     # return: - We could also go to 'OCT 21 2015 00:00'... But we need a time, what about '07:28'?
