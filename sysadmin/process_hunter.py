@@ -21,7 +21,25 @@ def _exit_signal_handler(signal_: signal, frame: FrameType) -> None:
     exit(0)
 
 
-def _main() -> None:
+# noinspection PyShadowingNames
+def _write_log(processes):
+    line = f"{datetime.now().strftime('%Y/%m/%d %H:%M:%S')} "
+
+    for process in processes:
+        line = line + f"{process['name']}: {process['cpu_percent']}% "
+
+    line = line + '\n'
+
+    try:
+        with open(LOG_FILE, 'a') as log:
+            log.write(line)
+    except (IOError, OSError, PermissionError):
+        pass
+
+
+if __name__ == '__main__':
+    signal(SIGINT, _exit_signal_handler)
+
     while True:
         sleep(1)  # Avoid logging the CPU increase caused by this script
 
@@ -41,23 +59,3 @@ def _main() -> None:
             sorted_processes = sorted(processes, key=lambda p: p['cpu_percent'], reverse=True)[0:NUMBER_OF_PROCESSES]
             _write_log(sorted_processes)
             sleep(SLEEP_SECONDS)
-
-
-def _write_log(processes):
-    line = f"{datetime.now().strftime('%Y/%m/%d %H:%M:%S')} "
-
-    for process in processes:
-        line = line + f"{process['name']}: {process['cpu_percent']}% "
-
-    line = line + '\n'
-
-    try:
-        with open(LOG_FILE, 'a') as log:
-            log.write(line)
-    except (IOError, OSError, PermissionError):
-        pass
-
-
-if __name__ == '__main__':
-    signal(SIGINT, _exit_signal_handler)
-    _main()
