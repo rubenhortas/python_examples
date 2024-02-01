@@ -47,7 +47,7 @@ def _write_log(processes):
     line = f"{datetime.now().strftime('%Y/%m/%d %H:%M:%S')} "
 
     for process in processes:
-        line = line + f'{process["name"]}: {process["cpu_percent"]}% '
+        line = line + f"{process['name']}: {process['cpu_percent']}% "
 
     line = line + '\n'
 
