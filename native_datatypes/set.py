@@ -156,14 +156,15 @@ if __name__ == '__main__':
     # return: 'a' is in {'b', 'a', 'c'}
 
     common_operations(ODD, EVEN, NUMBERS)
-    # return: Common set operations:
+    # return:
+    # Common set operations:
     #   odd set: {1, 3, 5, 7, 9}
-    # 	even set: {2, 4, 6, 8, 10}
-    # 	mixed set: {3, 4}
-    # 	Union of odd set and even set: {1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
-    # 	Intersection of odd set and mixed set: {3}
-    # 	Difference of odd set and mixed set: {1, 5, 9, 7}
-    # 	Symmetric difference of odd set and mixed set: {1, 4, 5, 7, 9}
+    #   even set: {2, 4, 6, 8, 10}
+    #   mixed set: {3, 4}
+    #   Union of odd set and even set: {1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
+    #   Intersection of odd set and mixed set: {3}
+    #   Difference of odd set and mixed set: {1, 5, 9, 7}
+    #   Symmetric difference of odd set and mixed set: {1, 4, 5, 7, 9}
 
     compare(ODD, REVERSED_ODD)
     # return: {1, 3, 5, 7, 9} and {1, 3, 5, 7, 9} are equals
