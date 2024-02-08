@@ -18,7 +18,7 @@ import argparse
 from numpy import median
 
 # English frequencies from: https://www3.nd.edu/~busiforc/handouts/cryptography/letterfrequencies.html
-# Ordered alphabetically!
+# Alphabetically ordered !
 LANGUAGE_FREQUENCIES = {
     'A': 8.4966,
     'B': 2.0720,
