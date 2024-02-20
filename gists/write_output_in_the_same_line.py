@@ -2,6 +2,7 @@
 
 """
 Write output in the same line.
+We can overwrite the text on the same line using the carriage return '\r'.
 """
 
 import time

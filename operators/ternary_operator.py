@@ -9,8 +9,10 @@ if __name__ == '__main__':
     # if_condition_is_true if condition else if_condition_is_false
     result = MESSAGE_TRUE if CONDITION else MESSAGE_FALSE
     print(result)
+    # return: Condition is true
 
     # Second way (Less intuitive, inmo)
     # (if_condition_is_false, if_condition_is_true)[condition]
     result = (MESSAGE_FALSE, MESSAGE_TRUE)[CONDITION]
     print(result)
+    # return: Condition is true

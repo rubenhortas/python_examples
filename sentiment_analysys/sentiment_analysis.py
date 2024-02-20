@@ -21,3 +21,9 @@ if __name__ == '__main__':
             pass
         except Exception as e:
             print(e)
+
+    # results.txt:
+    # line, polarity, subjectivity
+    # Hackers is a great movie, 0.8, 0.75
+    # Hackers is a bad movie, -0.7, 0.67
+    # Hackers is a movie, 0.0, 0.0
