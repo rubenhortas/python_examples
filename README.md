@@ -1,6 +1,6 @@
 # python examples
 
-Small examples of Python3 code, data structures and algorithms.
+Small examples of Python code, data structures and algorithms.
 
 ## Python naming conventions
 
