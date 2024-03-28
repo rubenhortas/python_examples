@@ -12,7 +12,8 @@ class Informational(Enum):
 
 def _get_status(code: Informational) -> str:
     match code:
-        # # Constant value pattern. like the literal but for certain named constants.
+        # # Constant value pattern.
+        # Like the literal patterns but for certain named constants.
         # It must be a qualified (dotted) name.
         # Only matches values equal to the corresponding value.
         # It never binds.
