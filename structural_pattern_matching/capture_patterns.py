@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-def _get_cat(code: int):
+def _get_cat(code: int) -> None:
     # A capture pattern serves as an assignment target for the matched expression.
     # Only a single name is allowed.
     # A capture pattern always succeeds.
