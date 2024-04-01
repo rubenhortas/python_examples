@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 
+# Literal pattern types: number, string, 'True', 'False', None
 
 def _get_http_status(code: int) -> str:
-    # Literal pattern: number, string, 'True', 'False', None
     match code:
         case None:
             return 'None'
