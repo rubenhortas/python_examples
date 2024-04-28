@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 
+# Queues are implemented in the module queue: https://docs.python.org/3/library/queue.html#module-queue
+
 from collections import deque
 
 if __name__ == '__main__':
