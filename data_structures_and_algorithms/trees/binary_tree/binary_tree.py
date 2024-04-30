@@ -18,6 +18,9 @@ class BinaryTree:
     def insert(self, new_node: Node):
         """
         Insertion in level order.
+
+        Time complexity: O(n)
+        Auxiliary space: O(n)
         """
         if self.root:
             queue = Queue()
