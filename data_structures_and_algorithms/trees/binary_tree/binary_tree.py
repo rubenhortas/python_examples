@@ -1,5 +1,3 @@
-#!/usr/bin/env python3
-
 from queue import Queue
 
 
@@ -14,8 +12,34 @@ class Node:
 
 
 class BinaryTree:
-    def __init__(self, node: Node):
-        self.root = node
+    def __init__(self):
+        self.root = None
+
+    def insert(self, new_node: Node):
+        """
+        Insertion in level order.
+        """
+        if self.root:
+            queue = Queue()
+            queue.put(self.root)
+
+            while not queue.empty():
+                node = queue.get()
+
+                if node:
+                    if node.left:
+                        queue.put(node.left)
+                    else:
+                        node.left = new_node
+                        break
+
+                    if node.right:
+                        queue.put(node.right)
+                    else:
+                        node.right = new_node
+                        break
+        else:
+            self.root = new_node
 
     def get_inorder_traversal(self) -> list:
         """
