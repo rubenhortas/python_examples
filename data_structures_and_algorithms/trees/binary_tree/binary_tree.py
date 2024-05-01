@@ -7,9 +7,9 @@ class BinaryTree:
     def __init__(self):
         self.root = None
 
-    def insert(self, new_node: BinaryTreeNode):
+    def insert(self, new_node: BinaryTreeNode) -> None:
         """
-        Insertion in level order.
+        Insertion in level order traversal.
 
         Time complexity: O(n)
         Auxiliary space: O(n)
@@ -35,6 +35,57 @@ class BinaryTree:
                         break
         else:
             self.root = new_node
+
+    def delete(self, value: str) -> None:
+        """
+        Deletion of a node using Level Order Traversal.
+        The deleted node is replaced by the bottom-most and rightmost node.
+
+        Time complexity: O(n)
+        Auxiliary Space: O(n)
+        """
+        def delete_node(node_to_delete: BinaryTreeNode) -> None:
+            queue = Queue()
+            queue.put(self.root)
+
+            while not queue.empty():
+                node = queue.get()
+
+                if node.left == node_to_delete:
+                    node.left = None
+                    return
+                else:
+                    queue.put(node.left)
+
+                if node.right == node_to_delete:
+                    node.right = None
+                    return
+                else:
+                    queue.put(node.right)
+
+        if self.root:
+            queue = Queue()
+            queue.put(self.root)
+            deepest_rightmost_node = None
+            node_to_delete = None
+
+            while not queue.empty():
+                node = queue.get()
+
+                if node:
+                    deepest_rightmost_node = node
+
+                    if str(node.value) == value:
+                        node_to_delete = node
+
+                    queue.put(node.left)
+                    queue.put(node.right)
+
+            if node_to_delete:
+                if node_to_delete != deepest_rightmost_node:
+                    node_to_delete.value = deepest_rightmost_node.value
+
+                delete_node(deepest_rightmost_node)
 
     def get_inorder_traversal(self) -> list:
         """

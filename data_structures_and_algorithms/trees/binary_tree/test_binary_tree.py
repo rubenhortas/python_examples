@@ -29,3 +29,15 @@ class Test(unittest.TestCase):
 
     def test_print_level_order_traversal(self):
         self.assertEqual(self.binary_tree.get_level_order_traversal(), self.level_order_traversal_expected_values)
+
+    def test_delete_value(self):
+        self.binary_tree.delete('5')
+        self.assertEqual(self.binary_tree.get_level_order_traversal(), ['1', '2', '3', '4', '7', '6'])
+
+    def test_delete_root(self):
+        self.binary_tree.delete(str(self.binary_tree.root))
+        self.assertEqual(self.binary_tree.get_level_order_traversal(), ['7', '2', '3', '4', '5', '6'])
+
+    def test_delete_deepest_rightmost(self):
+        self.binary_tree.delete('7')
+        self.assertEqual(self.binary_tree.get_level_order_traversal(), ['1', '2', '3', '4', '5', '6'])
