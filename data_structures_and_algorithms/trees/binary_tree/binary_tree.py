@@ -14,7 +14,6 @@ class BinaryTree:
         Time complexity: O(n)
         Auxiliary space: O(n)
         """
-
         new_node = BinaryTreeNode(new_value)
 
         if self.root:
@@ -41,7 +40,7 @@ class BinaryTree:
 
     def delete(self, value: str) -> None:
         """
-        Deletion of a node using Level Order Traversal.
+        Deletion of a node using level order traversal.
         The deleted node is replaced by the bottom-most and rightmost node.
 
         Time complexity: O(n)
@@ -159,7 +158,6 @@ class BinaryTree:
         Time complexity: O(n)
         Auxiliary space: O(1)
         """
-
         values = []
 
         if self.root:
