@@ -1,21 +1,13 @@
 from queue import Queue
 
-
-class Node:
-    def __init__(self, value):
-        self.value = value
-        self.left = None
-        self.right = None
-
-    def __str__(self):
-        return str(self.value)
+from binary_tree_node import BinaryTreeNode
 
 
 class BinaryTree:
     def __init__(self):
         self.root = None
 
-    def insert(self, new_node: Node):
+    def insert(self, new_node: BinaryTreeNode):
         """
         Insertion in level order.
 
@@ -54,7 +46,7 @@ class BinaryTree:
         Auxiliary space: O(1)
         """
 
-        def traverse_inorder(node: Node, values: list) -> None:
+        def traverse_inorder(node: BinaryTreeNode, values: list) -> None:
             if node:
                 traverse_inorder(node.left, values)
                 values.append(str(node))
@@ -74,7 +66,7 @@ class BinaryTree:
         Auxiliary space: O(1)
         """
 
-        def traverse_preorder(node: Node, values: list) -> None:
+        def traverse_preorder(node: BinaryTreeNode, values: list) -> None:
             if node:
                 values.append(str(node))
                 traverse_preorder(node.left, values)
@@ -94,7 +86,7 @@ class BinaryTree:
         Auxiliary space: O(1)
         """
 
-        def traverse_postorder(node: Node, values: list) -> None:
+        def traverse_postorder(node: BinaryTreeNode, values: list) -> None:
             if node:
                 traverse_postorder(node.left, values)
                 traverse_postorder(node.right, values)

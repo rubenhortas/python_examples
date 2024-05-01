@@ -1,18 +1,18 @@
 import unittest
 
-from binary_tree import Node, BinaryTree
+from binary_tree import BinaryTreeNode, BinaryTree
 
 
 class Test(unittest.TestCase):
     def setUp(self):
         self.binary_tree = BinaryTree()
-        self.binary_tree.insert(Node(1))
-        self.binary_tree.insert(Node(2))
-        self.binary_tree.insert(Node(3))
-        self.binary_tree.insert(Node(4))
-        self.binary_tree.insert(Node(5))
-        self.binary_tree.insert(Node(6))
-        self.binary_tree.insert(Node(7))
+        self.binary_tree.insert(BinaryTreeNode(1))
+        self.binary_tree.insert(BinaryTreeNode(2))
+        self.binary_tree.insert(BinaryTreeNode(3))
+        self.binary_tree.insert(BinaryTreeNode(4))
+        self.binary_tree.insert(BinaryTreeNode(5))
+        self.binary_tree.insert(BinaryTreeNode(6))
+        self.binary_tree.insert(BinaryTreeNode(7))
         self.inorder_traversal_expected_values = ['4', '2', '5', '1', '6', '3', '7']
         self.preorder_traversal_expected_values = ['1', '2', '4', '5', '3', '6', '7']
         self.postorder_traversal_expected_values = ['4', '5', '2', '6', '7', '3', '1']
