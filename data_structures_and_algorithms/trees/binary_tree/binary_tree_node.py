@@ -1,8 +1,8 @@
 class BinaryTreeNode:
-    def __init__(self, value):
+    def __init__(self, value: str):
         self.value = value
         self.left = None
         self.right = None
 
     def __str__(self):
-        return str(self.value)
+        return self.value

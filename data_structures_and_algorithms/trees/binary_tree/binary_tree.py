@@ -7,13 +7,16 @@ class BinaryTree:
     def __init__(self):
         self.root = None
 
-    def insert(self, new_node: BinaryTreeNode) -> None:
+    def insert(self, new_value: str) -> None:
         """
         Insertion in level order traversal.
 
         Time complexity: O(n)
         Auxiliary space: O(n)
         """
+
+        new_node = BinaryTreeNode(new_value)
+
         if self.root:
             queue = Queue()
             queue.put(self.root)
@@ -44,6 +47,7 @@ class BinaryTree:
         Time complexity: O(n)
         Auxiliary Space: O(n)
         """
+
         def delete_node(node_to_delete: BinaryTreeNode) -> None:
             queue = Queue()
             queue.put(self.root)
@@ -155,6 +159,7 @@ class BinaryTree:
         Time complexity: O(n)
         Auxiliary space: O(1)
         """
+
         values = []
 
         if self.root:
