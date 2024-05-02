@@ -100,14 +100,14 @@ class BinaryTree:
         Auxiliary space: O(1)
         """
 
-        def traverse_inorder(node: BinaryTreeNode, values: list) -> None:
+        def traverse_inorder(node: BinaryTreeNode) -> None:
             if node:
-                traverse_inorder(node.left, values)
+                traverse_inorder(node.left)
                 values.append(str(node))
-                traverse_inorder(node.right, values)
+                traverse_inorder(node.right)
 
         values = []
-        traverse_inorder(self.root, values)
+        traverse_inorder(self.root)
         return values
 
     def get_preorder_traversal(self) -> list:
@@ -120,14 +120,14 @@ class BinaryTree:
         Auxiliary space: O(1)
         """
 
-        def traverse_preorder(node: BinaryTreeNode, values: list) -> None:
+        def traverse_preorder(node: BinaryTreeNode) -> None:
             if node:
                 values.append(str(node))
-                traverse_preorder(node.left, values)
-                traverse_preorder(node.right, values)
+                traverse_preorder(node.left)
+                traverse_preorder(node.right)
 
         values = []
-        traverse_preorder(self.root, values)
+        traverse_preorder(self.root)
         return values
 
     def get_postorder_traversal(self) -> list:
@@ -140,14 +140,14 @@ class BinaryTree:
         Auxiliary space: O(1)
         """
 
-        def traverse_postorder(node: BinaryTreeNode, values: list) -> None:
+        def traverse_postorder(node: BinaryTreeNode) -> None:
             if node:
-                traverse_postorder(node.left, values)
-                traverse_postorder(node.right, values)
+                traverse_postorder(node.left)
+                traverse_postorder(node.right)
                 values.append(str(node))
 
         values = []
-        traverse_postorder(self.root, values)
+        traverse_postorder(self.root)
         return values
 
     def get_level_order_traversal(self) -> list:
