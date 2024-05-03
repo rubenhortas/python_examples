@@ -28,7 +28,7 @@ class Test(unittest.TestCase):
 
     def test_one_element_list(self):
         result = calculate_rotations(self.one_element_list)
-        self.assertEqual(result, 0)
+        self.assertEqual(0, result)
 
     def test_list(self):
         result = calculate_rotations(self.lst1)
