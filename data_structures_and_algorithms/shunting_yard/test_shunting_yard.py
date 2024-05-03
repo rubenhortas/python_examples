@@ -16,12 +16,12 @@ class Test(unittest.TestCase):
         ]
 
     def test_shunting_yard(self):
-        for expression, result in self.infix_expressions:
-            self.assertEquals(shunting_yard(expression), result)
+        for expression, expected_result in self.infix_expressions:
+            self.assertEquals(expected_result, shunting_yard(expression))
 
     def test_rpn_to_infix(self):
-        for expression, result in self.rpn_expressions:
-            self.assertEquals(rpn_to_infix(expression), result)
+        for expression, expected_result in self.rpn_expressions:
+            self.assertEquals(expected_result, rpn_to_infix(expression))
 
 
 if __name__ == '__main__':
