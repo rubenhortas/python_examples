@@ -20,37 +20,38 @@ class Test(unittest.TestCase):
         self.level_order_traversal_spiral_expected_values = ['1', '2', '3', '7', '6', '5', '4']
 
     def test_print_inorder_traversal(self):
-        self.assertEqual(self.binary_tree.get_inorder_traversal(), self.inorder_traversal_expected_values)
+        self.assertEqual(self.inorder_traversal_expected_values, self.binary_tree.get_inorder_traversal())
 
     def test_print_preorder_traversal(self):
-        self.assertEquals(self.binary_tree.get_preorder_traversal(), self.preorder_traversal_expected_values)
+        self.assertEquals(self.preorder_traversal_expected_values, self.binary_tree.get_preorder_traversal())
 
     def test_print_postorder_traversal(self):
-        self.assertEqual(self.binary_tree.get_postorder_traversal(), self.postorder_traversal_expected_values)
+        self.assertEqual(self.postorder_traversal_expected_values, self.binary_tree.get_postorder_traversal())
 
     def test_print_level_order_traversal(self):
-        self.assertEqual(self.binary_tree.get_level_order_traversal(), self.level_order_traversal_expected_values)
+        self.assertEqual(self.level_order_traversal_expected_values, self.binary_tree.get_level_order_traversal())
 
     def test_delete_value(self):
         self.binary_tree.delete('5')
-        self.assertEqual(self.binary_tree.get_level_order_traversal(), ['1', '2', '3', '4', '7', '6'])
+        self.assertEqual(['1', '2', '3', '4', '7', '6'],self.binary_tree.get_level_order_traversal())
 
     def test_delete_root(self):
         self.binary_tree.delete(str(self.binary_tree.root))
-        self.assertEqual(self.binary_tree.get_level_order_traversal(), ['7', '2', '3', '4', '5', '6'])
+        self.assertEqual(['7', '2', '3', '4', '5', '6'], self.binary_tree.get_level_order_traversal())
 
     def test_delete_deepest_rightmost(self):
         self.binary_tree.delete('7')
-        self.assertEqual(self.binary_tree.get_level_order_traversal(), ['1', '2', '3', '4', '5', '6'])
+        self.assertEqual(['1', '2', '3', '4', '5', '6'], self.binary_tree.get_level_order_traversal())
 
     def test_get_height(self):
         self.binary_tree.delete('7')
-        self.assertEqual(self.binary_tree.get_height(), 3)
+        self.assertEqual(3, self.binary_tree.get_height())
 
         self.binary_tree = BinaryTree()
-        self.assertEqual(self.binary_tree.get_height(), 0)
+        self.assertEqual(0, self.binary_tree.get_height())
 
     def test_get_lot_spiral(self):
-        self.assertEqual(self.binary_tree.get_lot_spiral(), self.level_order_traversal_spiral_expected_values)
+        self.assertEqual(self.level_order_traversal_spiral_expected_values, self.binary_tree.get_lot_spiral())
 
-
+    def test_get_lot_spiral_stacks(self):
+        self.assertEqual(self.level_order_traversal_spiral_expected_values, self.binary_tree.get_lot_spiral_stacks())
