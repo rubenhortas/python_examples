@@ -1,3 +1,4 @@
+from collections import deque
 from queue import Queue
 
 from binary_tree_node import BinaryTreeNode
@@ -187,6 +188,13 @@ class BinaryTree:
         return values
 
     def get_lot_spiral(self) -> list:
+        """
+        Level order traversal in spiral form.
+
+        Time complexity: O(n)
+        Auxiliary space: O(n)
+        """
+
         def get_level(node: BinaryTreeNode, level: int, left_to_right: bool) -> None:
             if node:
                 if level == 1:
@@ -199,12 +207,44 @@ class BinaryTree:
                         get_level(node.right, level - 1, left_to_right)
                         get_level(node.left, level - 1, left_to_right)
 
-        height = self.get_height()
-        left_to_right = False
         values = []
 
-        for i in range(1, height + 1):
-            get_level(self.root, i, left_to_right)
-            left_to_right = not left_to_right
+        if self.root:
+            height = self.get_height()
+            left_to_right = False
+
+            for i in range(1, height + 1):
+                get_level(self.root, i, left_to_right)
+                left_to_right = not left_to_right
+
+        return values
+
+    def get_lot_spiral_stacks(self) -> list:
+        values = []
+
+        if self.root:
+            q1 = deque()
+            q2 = deque()
+
+            q1.appendleft(self.root)
+
+            while q1 or q2:
+                while q1:
+                    node = q1.popleft()
+
+                    if node:
+                        values.append(node.value)
+
+                        q2.appendleft(node.right)
+                        q2.appendleft(node.left)
+
+                while q2:
+                    node = q2.popleft()
+
+                    if node:
+                        values.append(node.value)
+
+                        q1.appendleft(node.left)
+                        q1.appendleft(node.right)
 
         return values
