@@ -90,6 +90,18 @@ class BinaryTree:
 
                 delete_node(deepest_rightmost_node)
 
+    def get_height(self) -> int:
+        def get_node_height(node: BinaryTreeNode) -> int:
+            if not node:
+                return 0
+
+            left_height = get_node_height(node.left)
+            right_height = get_node_height(node.right)
+
+            return 1 + (left_height if left_height > right_height else right_height)
+
+        return get_node_height(self.root)
+
     def get_inorder_traversal(self) -> list:
         """
         1. Traverse the left subtree
@@ -171,5 +183,28 @@ class BinaryTree:
                     values.append(str(node))
                     queue.put(node.left)
                     queue.put(node.right)
+
+        return values
+
+    def get_lot_spiral(self) -> list:
+        def get_level(node: BinaryTreeNode, level: int, left_to_right: bool) -> None:
+            if node:
+                if level == 1:
+                    values.append(node.value)
+                else:
+                    if left_to_right:
+                        get_level(node.left, level - 1, left_to_right)
+                        get_level(node.right, level - 1, left_to_right)
+                    else:
+                        get_level(node.right, level - 1, left_to_right)
+                        get_level(node.left, level - 1, left_to_right)
+
+        height = self.get_height()
+        left_to_right = False
+        values = []
+
+        for i in range(1, height + 1):
+            get_level(self.root, i, left_to_right)
+            left_to_right = not left_to_right
 
         return values
