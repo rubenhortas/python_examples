@@ -210,10 +210,9 @@ class BinaryTree:
         values = []
 
         if self.root:
-            height = self.get_height()
             left_to_right = False
 
-            for i in range(1, height + 1):
+            for i in range(1, self.get_height() + 1):
                 get_level(self.root, i, left_to_right)
                 left_to_right = not left_to_right
 
@@ -253,4 +252,27 @@ class BinaryTree:
                         stack1.appendleft(node.left)
                         stack1.appendleft(node.right)
 
+        return values
+
+    def get_reverse_level_order_traversal(self) -> list:
+        """
+        Reverse level order traversal.
+
+        Time complexity:  O(n^2)
+        Auxiliary space: O(h)
+        """
+
+        def get_level(node: BinaryTreeNode, level: int) -> None:
+            if node:
+                if level == 0:
+                    values.append(node.value)
+                    return
+
+                get_level(node.left, level - 1)
+                get_level(node.right, level - 1)
+
+        values = []
+
+        for i in reversed(range(self.get_height())):
+            get_level(self.root, i)
         return values

@@ -18,6 +18,7 @@ class Test(unittest.TestCase):
         self.postorder_traversal_expected_values = ['4', '5', '2', '6', '7', '3', '1']
         self.level_order_traversal_expected_values = ['1', '2', '3', '4', '5', '6', '7']
         self.level_order_traversal_spiral_expected_values = ['1', '2', '3', '7', '6', '5', '4']
+        self.reverse_level_order_traversal_expected_values = ['4', '5', '6', '7', '2', '3', '1']
 
     def test_print_inorder_traversal(self):
         self.assertEqual(self.inorder_traversal_expected_values, self.binary_tree.get_inorder_traversal())
@@ -33,7 +34,7 @@ class Test(unittest.TestCase):
 
     def test_delete_value(self):
         self.binary_tree.delete('5')
-        self.assertEqual(['1', '2', '3', '4', '7', '6'],self.binary_tree.get_level_order_traversal())
+        self.assertEqual(['1', '2', '3', '4', '7', '6'], self.binary_tree.get_level_order_traversal())
 
     def test_delete_root(self):
         self.binary_tree.delete(str(self.binary_tree.root))
@@ -55,3 +56,6 @@ class Test(unittest.TestCase):
 
     def test_get_lot_spiral_stacks(self):
         self.assertEqual(self.level_order_traversal_spiral_expected_values, self.binary_tree.get_lot_spiral_stacks())
+
+    def test_reverse_level_order_traversal(self):
+        self.assertEqual(self.reverse_level_order_traversal_expected_values, self.binary_tree.get_reverse_level_order_traversal())
