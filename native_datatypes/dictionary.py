@@ -82,6 +82,15 @@ def sort_by_value(dct: dict) -> None:
     print(f"\t{sorted_dict}")
 
 
+def sort_by_key(dct: dict):
+    # Check collections.OrderedDict https://docs.python.org/3/library/collections.html#collections.OrderedDict
+    print(f"Sorting {dct} by keys:")
+
+    sorted_dict = dict(sorted(dct.items()))
+
+    print(f"\t{sorted_dict}")
+
+
 def do_shallow_copy(original_dict: dict) -> dict:
     # We will have new and independent object with the same contents as original_dict.
     # copy_dict still contains references to the original child objects stored in original_dict.
@@ -128,6 +137,11 @@ if __name__ == '__main__':
     # Sorting {'root': 'r00t.h4x0r.p455', 'guest': '', 'bob': '123456', 'Bob': 'temp1234', 'alice': 'qwerty'} by values:
     # 	[('Bob', 'temp1234'), ('root', 'r00t.h4x0r.p455'), ('alice', 'qwerty'), ('bob', '123456'), ('guest', '')]
     # 	{'Bob': 'temp1234', 'root': 'r00t.h4x0r.p455', 'alice': 'qwerty', 'bob': '123456', 'guest': ''}
+
+    sort_by_key(USERS)
+    # return:
+    # Sorting {'root': 'r00t.h4x0r.p455', 'guest': '', 'bob': '123456', 'Bob': 'temp1234', 'alice': 'qwerty'} by keys:
+    # 	{'Bob': 'temp1234', 'alice': 'qwerty', 'bob': '123456', 'guest': '', 'root': 'r00t.h4x0r.p455'}
 
     merge(USERS, NEW_USERS)
     # return: Merged dict: {'root': 'r00t.h4x0r.p455', 'guest': '', 'bob': '123456', 'Bob': 'temp1234', 'alice': 'qwerty', 'sysadmin': 'r2@l.r00t', 'anonymous': 'anonymous'}
