@@ -276,3 +276,54 @@ class BinaryTree:
         for i in reversed(range(self.get_height())):
             get_level(self.root, i)
         return values
+
+    def get_reverse_level_order_traversal_queue_stack(self):
+        """
+        Reverse level order traversal using queue and stack.
+
+        Time complexity:  O(n)
+        Auxiliary space: O(h)
+        """
+        stack = deque()
+
+        if self.root:
+            queue = deque()
+            queue.append(self.root)
+
+            while queue:
+                node = queue.popleft()
+
+                if node:
+                    stack.appendleft(node.value)
+                    queue.append(node.right)
+                    queue.append(node.left)
+
+        return list(stack)
+
+    def get_reverse_level_order_traversal_dictionary(self):
+        """
+        Reverse level order traversal using a dictionary.
+
+        Time complexity:  O(n)
+        Auxiliary space: O(h)
+        """
+
+        def map_node(node: BinaryTreeNode, level: int) -> None:
+            if node:
+                if level not in map:
+                    map[level] = []
+
+                map[level].append(node.value)
+                map_node(node.left, level + 1)
+                map_node(node.right, level + 1)
+
+        values = []
+
+        if self.root:
+            map = {}
+            map_node(self.root, 1)
+
+            for level in reversed(range(1, len(map) + 1)):
+                values.extend(map[level])
+
+        return values

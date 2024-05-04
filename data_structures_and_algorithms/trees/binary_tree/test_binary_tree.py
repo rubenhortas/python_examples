@@ -59,3 +59,9 @@ class Test(unittest.TestCase):
 
     def test_reverse_level_order_traversal(self):
         self.assertEqual(self.reverse_level_order_traversal_expected_values, self.binary_tree.get_reverse_level_order_traversal())
+
+    def test_reverse_level_order_traversal_queue_stack(self):
+        self.assertEqual(self.reverse_level_order_traversal_expected_values, self.binary_tree.get_reverse_level_order_traversal_queue_stack())
+
+    def test_reverse_level_order_traversal_dictionary(self):
+        self.assertEqual(self.reverse_level_order_traversal_expected_values, self.binary_tree.get_reverse_level_order_traversal_dictionary())
