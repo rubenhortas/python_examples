@@ -123,6 +123,12 @@ if __name__ == '__main__':
     is_empty(EMPTY_DICT)
     # return: {} is empty
 
+    sort_by_value(USERS)
+    # return:
+    # Sorting {'root': 'r00t.h4x0r.p455', 'guest': '', 'bob': '123456', 'Bob': 'temp1234', 'alice': 'qwerty'} by values:
+    # 	[('Bob', 'temp1234'), ('root', 'r00t.h4x0r.p455'), ('alice', 'qwerty'), ('bob', '123456'), ('guest', '')]
+    # 	{'Bob': 'temp1234', 'root': 'r00t.h4x0r.p455', 'alice': 'qwerty', 'bob': '123456', 'guest': ''}
+
     merge(USERS, NEW_USERS)
     # return: Merged dict: {'root': 'r00t.h4x0r.p455', 'guest': '', 'bob': '123456', 'Bob': 'temp1234', 'alice': 'qwerty', 'sysadmin': 'r2@l.r00t', 'anonymous': 'anonymous'}
 
