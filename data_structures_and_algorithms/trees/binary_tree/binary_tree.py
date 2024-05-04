@@ -191,7 +191,7 @@ class BinaryTree:
         """
         Level order traversal in spiral form.
 
-        Time complexity: O(n)
+        Time complexity: O(n^2)
         Auxiliary space: O(n)
         """
 
@@ -220,31 +220,37 @@ class BinaryTree:
         return values
 
     def get_lot_spiral_stacks(self) -> list:
+        """
+        Level order traversal in spiral form using stacks.
+
+        Time complexity: O(n)
+        Auxiliary space: O(n)
+        """
         values = []
 
         if self.root:
-            q1 = deque()
-            q2 = deque()
+            stack1 = deque()
+            stack2 = deque()
 
-            q1.appendleft(self.root)
+            stack1.appendleft(self.root)
 
-            while q1 or q2:
-                while q1:
-                    node = q1.popleft()
-
-                    if node:
-                        values.append(node.value)
-
-                        q2.appendleft(node.right)
-                        q2.appendleft(node.left)
-
-                while q2:
-                    node = q2.popleft()
+            while stack1 or stack2:
+                while stack1:
+                    node = stack1.popleft()
 
                     if node:
                         values.append(node.value)
 
-                        q1.appendleft(node.left)
-                        q1.appendleft(node.right)
+                        stack2.appendleft(node.right)
+                        stack2.appendleft(node.left)
+
+                while stack2:
+                    node = stack2.popleft()
+
+                    if node:
+                        values.append(node.value)
+
+                        stack1.appendleft(node.left)
+                        stack1.appendleft(node.right)
 
         return values
