@@ -14,7 +14,7 @@ def _initialize() -> (str, str, str):
     print('Initializing values...')
 
     plaintext = 'Hello world!'.encode()  # string to bytes
-    key = os.urandom(KEY_LENGTH)  # Random KEY_LENGTH bytes KEY
+    key = os.urandom(KEY_LENGTH)  # Random KEY of length KEY_LENGTH
     ciphertext = _xor(key, plaintext)
 
     print(f"\tplaintext: {plaintext.decode()}")
