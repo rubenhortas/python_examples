@@ -8,5 +8,6 @@ MODULUS = [3, 5, 7]
 RESULTS = [2, 3, 2]
 
 if __name__ == '__main__':
-    crt_result = crt(MODULUS, RESULTS)[0]
-    print(f"Result of the Chinese Remainder Theorem = {crt_result}")  # crt_result = 23
+    result = crt(MODULUS, RESULTS)[0]
+    print(f"Result of the Chinese Remainder Theorem = {result}")
+    # return: Result of the Chinese Remainder Theorem = 23
