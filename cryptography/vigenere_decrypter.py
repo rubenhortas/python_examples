@@ -54,9 +54,9 @@ def _read_file(encrypted_file: str) -> str:
     ciphertext = ''
 
     with open(encrypted_file, 'r') as f:
-        encrypted_file_lines = f.readlines()
+        lines = f.readlines()
 
-    for line in encrypted_file_lines:
+    for line in lines:
         for character in line:
             if _is_alphabetic(character):
                 ciphertext = ciphertext + character.upper()
