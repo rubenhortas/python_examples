@@ -19,7 +19,7 @@ def _xor(key: bytes, stream: bytes) -> bytes:
 
 if __name__ == '__main__':
     ciphertext = _xor(KEY, PLAINTEXT)  # key ⊕ plaintext = ciphertext
-    decrypted_text = _xor(KEY, ciphertext)  # ciphertext ⊕ key = plaintext
+    decrypted_text = _xor(KEY, ciphertext)  # key ⊕ ciphertext = plaintext
 
     print(f"Plaintext: '{PLAINTEXT.decode()}'")
     # return: Plaintext: 'hello world!'
