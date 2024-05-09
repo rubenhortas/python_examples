@@ -123,6 +123,32 @@ class BinaryTree:
         traverse_inorder(self.root)
         return values
 
+    def get_inorder_traversal_stack(self) -> list:
+        """
+        Inorder Tree Traversal without Recursion
+
+        Time complexity: O(n)
+        Auxiliary space: O(n)
+        """
+        values = []
+
+        if self.root:
+            node = self.root
+            stack = deque()
+
+            while True:
+                if node:
+                    stack.append(node)
+                    node = node.left
+                elif stack:
+                    node = stack.pop()
+                    values.append(node.value)
+                    node = node.right
+                else:
+                    break
+
+        return values
+
     def get_preorder_traversal(self) -> list:
         """
         1. Visit the root
@@ -218,7 +244,7 @@ class BinaryTree:
 
         return values
 
-    def get_lot_spiral_stacks(self) -> list:
+    def get_level_order_traversal_spiral_stacks(self) -> list:
         """
         Level order traversal in spiral form using stacks.
 
@@ -231,26 +257,26 @@ class BinaryTree:
             stack1 = deque()
             stack2 = deque()
 
-            stack1.appendleft(self.root)
+            stack1.append(self.root)
 
             while stack1 or stack2:
                 while stack1:
-                    node = stack1.popleft()
+                    node = stack1.pop()
 
                     if node:
                         values.append(node.value)
 
-                        stack2.appendleft(node.right)
-                        stack2.appendleft(node.left)
+                        stack2.append(node.right)
+                        stack2.append(node.left)
 
                 while stack2:
-                    node = stack2.popleft()
+                    node = stack2.pop()
 
                     if node:
                         values.append(node.value)
 
-                        stack1.appendleft(node.left)
-                        stack1.appendleft(node.right)
+                        stack1.append(node.left)
+                        stack1.append(node.right)
 
         return values
 
