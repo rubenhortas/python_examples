@@ -149,6 +149,37 @@ class BinaryTree:
 
         return values
 
+    def get_inorder_traversal_morris(self) -> list:
+        """
+        Inorder Tree Traversal using Morris Traversal.
+
+        Time complexity: O(n)
+        Auxiliary space: O(1)
+        """
+        values = []
+        node = self.root
+
+        while node:
+            if node.left is None:
+                values.append(node.value)
+                node = node.right
+            else:
+                predecessor = node.left
+
+                # Find the rightmost node in current left subtree or the node whose right child == current
+                while predecessor.right and predecessor.right != node:
+                    predecessor = predecessor.right
+
+                if predecessor.right is None:
+                    predecessor.right = node
+                    node = node.left
+                else:
+                    predecessor.right = None
+                    values.append(node.value)
+                    node = node.right
+
+        return values
+
     def get_preorder_traversal(self) -> list:
         """
         1. Visit the root
