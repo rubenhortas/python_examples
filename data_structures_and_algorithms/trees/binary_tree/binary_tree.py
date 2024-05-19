@@ -277,6 +277,33 @@ class BinaryTree:
         traverse_postorder(self.root)
         return values
 
+    def get_postorder_traversal_iterative(self):
+        """"
+        Iterative Postorder Traversal (Using two stacks)
+        """
+        values = []
+
+        if self.root:
+            stack1 = deque()
+            stack2 = deque()
+            stack1.append(self.root)
+
+            while stack1:
+                node = stack1.pop()
+                stack2.append(node)
+
+                if node.left:
+                    stack1.append(node.left)
+
+                if node.right:
+                    stack1.append(node.right)
+
+            while stack2:
+                node = stack2.pop()
+                values.append(node.value)
+
+        return values
+
     def get_level_order_traversal(self) -> list:
         """
         Level order tree traversal algorithm is a breadth-first tree traversal algorithm.

@@ -41,6 +41,9 @@ class Test(unittest.TestCase):
     def test_get_postorder_traversal(self):
         self.assertEqual(self.postorder_traversal_expected_values, self.binary_tree.get_postorder_traversal())
 
+    def test_get_postorder_traversal_iterative(self):
+        self.assertEqual(self.postorder_traversal_expected_values, self.binary_tree.get_postorder_traversal_iterative())
+
     def test_get_level_order_traversal(self):
         self.assertEqual(self.level_order_traversal_expected_values, self.binary_tree.get_level_order_traversal())
 
