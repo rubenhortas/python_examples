@@ -277,7 +277,7 @@ class BinaryTree:
         traverse_postorder(self.root)
         return values
 
-    def get_postorder_traversal_iterative(self):
+    def get_postorder_traversal_iterative(self) -> list:
         """
         Iterative Postorder Traversal (Using two stacks)
 
@@ -419,9 +419,10 @@ class BinaryTree:
 
         for i in reversed(range(self.get_height())):
             get_level(self.root, i)
+
         return values
 
-    def get_reverse_level_order_traversal_queue_stack(self):
+    def get_reverse_level_order_traversal_queue_stack(self) -> list:
         """
         Reverse level order traversal using queue and stack.
 
@@ -444,7 +445,7 @@ class BinaryTree:
 
         return list(stack)
 
-    def get_reverse_level_order_traversal_dictionary(self):
+    def get_reverse_level_order_traversal_dictionary(self) -> list:
         """
         Reverse level order traversal using a dictionary.
 
@@ -472,7 +473,7 @@ class BinaryTree:
 
         return values
 
-    def get_diagonal_traversal(self):
+    def get_diagonal_traversal(self) -> list:
         """
         Diagonal Traversal of binary tree
 
@@ -494,10 +495,33 @@ class BinaryTree:
         values = []
 
         if self.root:
-            map = dict()
+            map = {}
             map_node(self.root, 0, map)
 
             for k in map:
                 values.extend(map[k])
+
+        return values
+
+    def get_diagonal_traversal_iterative(self) -> list:
+        """
+        Iterative Diagonal Traversal of binary tree (Using a queue)
+
+        Time complexity:  O(n)
+        Auxiliary space: O(n)
+        """
+        values = []
+
+        if self.root:
+            queue = deque()
+            queue.append(self.root)
+
+            while queue:
+                node = queue.popleft()
+
+                while node:
+                    values.append(node.value)
+                    queue.append(node.left)
+                    node = node.right
 
         return values

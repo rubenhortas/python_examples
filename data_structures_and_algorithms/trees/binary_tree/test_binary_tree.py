@@ -73,14 +73,17 @@ class Test(unittest.TestCase):
     def test_get_lot_spiral_stacks(self):
         self.assertEqual(self.level_order_traversal_spiral_expected_values, self.binary_tree.get_level_order_traversal_spiral_stacks())
 
-    def test_reverse_level_order_traversal(self):
+    def test_get_reverse_level_order_traversal(self):
         self.assertEqual(self.reverse_level_order_traversal_expected_values, self.binary_tree.get_reverse_level_order_traversal())
 
-    def test_reverse_level_order_traversal_queue_stack(self):
+    def test_get_reverse_level_order_traversal_queue_stack(self):
         self.assertEqual(self.reverse_level_order_traversal_expected_values, self.binary_tree.get_reverse_level_order_traversal_queue_stack())
 
-    def test_reverse_level_order_traversal_dictionary(self):
+    def test_get_reverse_level_order_traversal_dictionary(self):
         self.assertEqual(self.reverse_level_order_traversal_expected_values, self.binary_tree.get_reverse_level_order_traversal_dictionary())
 
-    def test_diagonal(self):
+    def test_get_diagonal_traversal(self):
         self.assertEqual(self.diagonal_traversal_expected_values, self.binary_tree.get_diagonal_traversal())
+
+    def test_get_diagonal_traversal_iterative(self):
+        self.assertEqual(self.diagonal_traversal_expected_values, self.binary_tree.get_diagonal_traversal_iterative())
