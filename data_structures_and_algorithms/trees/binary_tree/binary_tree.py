@@ -278,8 +278,11 @@ class BinaryTree:
         return values
 
     def get_postorder_traversal_iterative(self):
-        """"
+        """
         Iterative Postorder Traversal (Using two stacks)
+
+        Time complexity: O(n)
+        Auxiliary space: O(1)
         """
         values = []
 
