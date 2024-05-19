@@ -19,6 +19,7 @@ class Test(unittest.TestCase):
         self.level_order_traversal_expected_values = ['1', '2', '3', '4', '5', '6', '7']
         self.level_order_traversal_spiral_expected_values = ['1', '2', '3', '7', '6', '5', '4']
         self.reverse_level_order_traversal_expected_values = ['4', '5', '6', '7', '2', '3', '1']
+        self.diagonal_traversal_expected_values = ['1', '3', '7', '2', '5', '6', '4']
 
     def test_get_inorder_traversal(self):
         self.assertEqual(self.inorder_traversal_expected_values, self.binary_tree.get_inorder_traversal())
@@ -73,13 +74,13 @@ class Test(unittest.TestCase):
         self.assertEqual(self.level_order_traversal_spiral_expected_values, self.binary_tree.get_level_order_traversal_spiral_stacks())
 
     def test_reverse_level_order_traversal(self):
-        self.assertEqual(self.reverse_level_order_traversal_expected_values,
-                         self.binary_tree.get_reverse_level_order_traversal())
+        self.assertEqual(self.reverse_level_order_traversal_expected_values, self.binary_tree.get_reverse_level_order_traversal())
 
     def test_reverse_level_order_traversal_queue_stack(self):
-        self.assertEqual(self.reverse_level_order_traversal_expected_values,
-                         self.binary_tree.get_reverse_level_order_traversal_queue_stack())
+        self.assertEqual(self.reverse_level_order_traversal_expected_values, self.binary_tree.get_reverse_level_order_traversal_queue_stack())
 
     def test_reverse_level_order_traversal_dictionary(self):
-        self.assertEqual(self.reverse_level_order_traversal_expected_values,
-                         self.binary_tree.get_reverse_level_order_traversal_dictionary())
+        self.assertEqual(self.reverse_level_order_traversal_expected_values, self.binary_tree.get_reverse_level_order_traversal_dictionary())
+
+    def test_diagonal(self):
+        self.assertEqual(self.diagonal_traversal_expected_values, self.binary_tree.get_diagonal_traversal())

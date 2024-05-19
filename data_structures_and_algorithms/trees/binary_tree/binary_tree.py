@@ -471,3 +471,33 @@ class BinaryTree:
                 values.extend(map[level])
 
         return values
+
+    def get_diagonal_traversal(self):
+        """
+        Diagonal Traversal of binary tree
+
+        Time complexity:  O(n*log(n))
+        Auxiliary space: O(n)
+        """
+
+        def map_node(node: BinaryTreeNode, distance: int, map: dict) -> None:
+            if node:
+                # distance of current line from rightmost-topmost slope
+                if distance in map:
+                    map[distance].append(node.value)
+                else:
+                    map[distance] = [node.value]
+
+                map_node(node.left, distance + 1, map)
+                map_node(node.right, distance, map)  # Same distance
+
+        values = []
+
+        if self.root:
+            map = dict()
+            map_node(self.root, 0, map)
+
+            for k in map:
+                values.extend(map[k])
+
+        return values
