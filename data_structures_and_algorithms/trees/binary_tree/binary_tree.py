@@ -167,7 +167,7 @@ class BinaryTree:
                 predecessor = node.left
 
                 # Find the rightmost node in current left subtree or the node whose right child == current
-                while predecessor.right and predecessor.right != node:
+                while predecessor.right and predecessor.right is not node:
                     predecessor = predecessor.right
 
                 if predecessor.right is None:
@@ -198,6 +198,37 @@ class BinaryTree:
 
         values = []
         traverse_preorder(self.root)
+        return values
+
+    def get_preorder_traversal_morris(self) -> list:
+        """
+        Preordedr Tree Traversal using Morris Traversal.
+
+        Time complexity: O(n)
+        Auxiliary space: O(1)
+        """
+        values = []
+        node = self.root
+
+        while node:
+            if node.left is None:
+                values.append(node.value)
+                node = node.right
+            else:
+                predecessor = node.left
+
+                # Find the rightmost node in current left subtree or the node whose right child == current
+                while predecessor.right and predecessor.right is not node:
+                    predecessor = predecessor.right
+
+                if predecessor.right is node:
+                    predecessor.right = None
+                    node = node.right
+                else:
+                    predecessor.right = node
+                    values.append(node.value)
+                    node = node.left
+
         return values
 
     def get_postorder_traversal(self) -> list:
