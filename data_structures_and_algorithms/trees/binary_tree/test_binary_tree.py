@@ -23,8 +23,8 @@ class Test(unittest.TestCase):
     def test_get_inorder_traversal(self):
         self.assertEqual(self.inorder_traversal_expected_values, self.binary_tree.get_inorder_traversal())
 
-    def test_get_inorder_traversal_stack(self):
-        self.assertEqual(self.inorder_traversal_expected_values, self.binary_tree.get_inorder_traversal_stack())
+    def test_get_inorder_traversal_iterative_stack(self):
+        self.assertEqual(self.inorder_traversal_expected_values, self.binary_tree.get_inorder_traversal_iterative_stack())
 
     def test_get_inorder_traversal_morris(self):
         self.assertEqual(self.inorder_traversal_expected_values, self.binary_tree.get_inorder_traversal_morris())
@@ -34,6 +34,9 @@ class Test(unittest.TestCase):
 
     def test_get_preorder_traversal_morris(self):
         self.assertEquals(self.preorder_traversal_expected_values, self.binary_tree.get_preorder_traversal_morris())
+
+    def test_get_preorder_traversal_iterative_stack(self):
+        self.assertEqual(self.preorder_traversal_expected_values, self.binary_tree.get_preorder_traversal_iterative_stack())
 
     def test_get_postorder_traversal(self):
         self.assertEqual(self.postorder_traversal_expected_values, self.binary_tree.get_postorder_traversal())

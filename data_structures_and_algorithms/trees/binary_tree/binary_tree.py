@@ -123,9 +123,9 @@ class BinaryTree:
         traverse_inorder(self.root)
         return values
 
-    def get_inorder_traversal_stack(self) -> list:
+    def get_inorder_traversal_iterative_stack(self) -> list:
         """
-        Inorder Tree Traversal without Recursion
+        Iterative Inorder Tree Traversal using a stack.
 
         Time complexity: O(n)
         Auxiliary space: O(n)
@@ -198,6 +198,32 @@ class BinaryTree:
 
         values = []
         traverse_preorder(self.root)
+        return values
+
+    def get_preorder_traversal_iterative_stack(self) -> list:
+        """
+        Iterative Preorder Tree Traversal using a stack.
+
+        Time complexity: O(n)
+        Auxiliary space: O(h) *the height of the tree
+        """
+        values = []
+
+        if self.root:
+            stack = deque()
+
+            stack.append(self.root)
+
+            while stack:
+                node = stack.pop()
+                values.append(node.value)
+
+                if node.right:
+                    stack.append(node.right)
+
+                if node.left:
+                    stack.append(node.left)
+
         return values
 
     def get_preorder_traversal_morris(self) -> list:
