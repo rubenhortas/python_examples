@@ -19,13 +19,14 @@ class Test(unittest.TestCase):
         self.level_order_traversal_expected_values = ['1', '2', '3', '4', '5', '6', '7']
         self.level_order_traversal_spiral_expected_values = ['1', '2', '3', '7', '6', '5', '4']
         self.reverse_level_order_traversal_expected_values = ['4', '5', '6', '7', '2', '3', '1']
+        self.diagonal_traversal_expected_values = ['1', '3', '7', '2', '5', '6', '4']
         self.boundary_traversal_expected_values = ['1', '2', '4', '5', '6', '7', '3']
 
     def test_get_inorder_traversal(self):
         self.assertEqual(self.inorder_traversal_expected_values, self.binary_tree.get_inorder_traversal())
 
-    def test_get_inorder_traversal_stack(self):
-        self.assertEqual(self.inorder_traversal_expected_values, self.binary_tree.get_inorder_traversal_stack())
+    def test_get_inorder_traversal_iterative_stack(self):
+        self.assertEqual(self.inorder_traversal_expected_values, self.binary_tree.get_inorder_traversal_iterative_stack())
 
     def test_get_inorder_traversal_morris(self):
         self.assertEqual(self.inorder_traversal_expected_values, self.binary_tree.get_inorder_traversal_morris())
@@ -33,8 +34,17 @@ class Test(unittest.TestCase):
     def test_get_preorder_traversal(self):
         self.assertEquals(self.preorder_traversal_expected_values, self.binary_tree.get_preorder_traversal())
 
+    def test_get_preorder_traversal_morris(self):
+        self.assertEquals(self.preorder_traversal_expected_values, self.binary_tree.get_preorder_traversal_morris())
+
+    def test_get_preorder_traversal_iterative_stack(self):
+        self.assertEqual(self.preorder_traversal_expected_values, self.binary_tree.get_preorder_traversal_iterative_stack())
+
     def test_get_postorder_traversal(self):
         self.assertEqual(self.postorder_traversal_expected_values, self.binary_tree.get_postorder_traversal())
+
+    def test_get_postorder_traversal_iterative(self):
+        self.assertEqual(self.postorder_traversal_expected_values, self.binary_tree.get_postorder_traversal_iterative())
 
     def test_get_level_order_traversal(self):
         self.assertEqual(self.level_order_traversal_expected_values, self.binary_tree.get_level_order_traversal())
@@ -66,9 +76,16 @@ class Test(unittest.TestCase):
                          self.binary_tree.get_level_order_traversal_spiral_stacks())
 
     def test_get_reverse_level_order_traversal(self):
+        self.assertEqual(self.reverse_level_order_traversal_expected_values, self.binary_tree.get_reverse_level_order_traversal())
+
+    def test_get_reverse_level_order_traversal_queue_stack(self):
+        self.assertEqual(self.reverse_level_order_traversal_expected_values, self.binary_tree.get_reverse_level_order_traversal_queue_stack())
+    def test_get_reverse_level_order_traversal(self):
         self.assertEqual(self.reverse_level_order_traversal_expected_values,
                          self.binary_tree.get_reverse_level_order_traversal())
 
+    def test_get_reverse_level_order_traversal_dictionary(self):
+        self.assertEqual(self.reverse_level_order_traversal_expected_values, self.binary_tree.get_reverse_level_order_traversal_dictionary())
     def test_get_reverse_level_order_traversal_queue_stack(self):
         self.assertEqual(self.reverse_level_order_traversal_expected_values,
                          self.binary_tree.get_reverse_level_order_traversal_queue_stack())
@@ -76,6 +93,11 @@ class Test(unittest.TestCase):
     def test_get_reverse_level_order_traversal_dictionary(self):
         self.assertEqual(self.reverse_level_order_traversal_expected_values,
                          self.binary_tree.get_reverse_level_order_traversal_dictionary())
+    def test_get_diagonal_traversal(self):
+        self.assertEqual(self.diagonal_traversal_expected_values, self.binary_tree.get_diagonal_traversal())
+
+    def test_get_diagonal_traversal_iterative(self):
+        self.assertEqual(self.diagonal_traversal_expected_values, self.binary_tree.get_diagonal_traversal_iterative())
 
     def test_get_boundary_traversal(self):
         self.assertEqual(self.boundary_traversal_expected_values, self.binary_tree.get_boundary_traversal())

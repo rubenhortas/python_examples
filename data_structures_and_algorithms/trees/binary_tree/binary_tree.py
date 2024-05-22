@@ -125,7 +125,7 @@ class BinaryTree:
 
     def get_inorder_traversal_stack(self) -> list:
         """
-        Inorder Tree Traversal without Recursion
+        Iterative Inorder Tree Traversal using a stack.
 
         Time complexity: O(n)
         Auxiliary space: O(n)
@@ -200,6 +200,63 @@ class BinaryTree:
         traverse_preorder(self.root)
         return values
 
+    def get_preorder_traversal_iterative_stack(self) -> list:
+        """
+        Iterative Preorder Tree Traversal using a stack.
+
+        Time complexity: O(n)
+        Auxiliary space: O(h) *the height of the tree
+        """
+        values = []
+
+        if self.root:
+            stack = deque()
+
+            stack.append(self.root)
+
+            while stack:
+                node = stack.pop()
+                values.append(node.value)
+
+                if node.right:
+                    stack.append(node.right)
+
+                if node.left:
+                    stack.append(node.left)
+
+        return values
+
+    def get_preorder_traversal_morris(self) -> list:
+        """
+        Preordedr Tree Traversal using Morris Traversal.
+
+        Time complexity: O(n)
+        Auxiliary space: O(1)
+        """
+        values = []
+        node = self.root
+
+        while node:
+            if node.left is None:
+                values.append(node.value)
+                node = node.right
+            else:
+                predecessor = node.left
+
+                # Find the rightmost node in current left subtree or the node whose right child == current
+                while predecessor.right and predecessor.right is not node:
+                    predecessor = predecessor.right
+
+                if predecessor.right is node:
+                    predecessor.right = None
+                    node = node.right
+                else:
+                    predecessor.right = node
+                    values.append(node.value)
+                    node = node.left
+
+        return values
+
     def get_postorder_traversal(self) -> list:
         """
         1. Traverse the left subtree
@@ -218,6 +275,36 @@ class BinaryTree:
 
         values = []
         traverse_postorder(self.root)
+        return values
+
+    def get_postorder_traversal_iterative(self) -> list:
+        """
+        Iterative Postorder Traversal (Using two stacks)
+
+        Time complexity: O(n)
+        Auxiliary space: O(1)
+        """
+        values = []
+
+        if self.root:
+            stack1 = deque()
+            stack2 = deque()
+            stack1.append(self.root)
+
+            while stack1:
+                node = stack1.pop()
+                stack2.append(node)
+
+                if node.left:
+                    stack1.append(node.left)
+
+                if node.right:
+                    stack1.append(node.right)
+
+            while stack2:
+                node = stack2.pop()
+                values.append(node.value)
+
         return values
 
     def get_level_order_traversal(self) -> list:
@@ -332,9 +419,10 @@ class BinaryTree:
 
         for i in reversed(range(self.get_height())):
             get_level(self.root, i)
+
         return values
 
-    def get_reverse_level_order_traversal_queue_stack(self):
+    def get_reverse_level_order_traversal_queue_stack(self) -> list:
         """
         Reverse level order traversal using queue and stack.
 
@@ -357,7 +445,7 @@ class BinaryTree:
 
         return list(stack)
 
-    def get_reverse_level_order_traversal_dictionary(self):
+    def get_reverse_level_order_traversal_dictionary(self) -> list:
         """
         Reverse level order traversal using a dictionary.
 
@@ -382,6 +470,59 @@ class BinaryTree:
 
             for level in reversed(range(1, len(map) + 1)):
                 values.extend(map[level])
+
+        return values
+
+    def get_diagonal_traversal(self) -> list:
+        """
+        Diagonal Traversal of binary tree
+
+        Time complexity:  O(n*log(n))
+        Auxiliary space: O(n)
+        """
+
+        def map_node(node: BinaryTreeNode, distance: int, map: dict) -> None:
+            if node:
+                # distance of current line from rightmost-topmost slope
+                if distance in map:
+                    map[distance].append(node.value)
+                else:
+                    map[distance] = [node.value]
+
+                map_node(node.left, distance + 1, map)
+                map_node(node.right, distance, map)  # Same distance
+
+        values = []
+
+        if self.root:
+            map = {}
+            map_node(self.root, 0, map)
+
+            for k in map:
+                values.extend(map[k])
+
+        return values
+
+    def get_diagonal_traversal_iterative(self) -> list:
+        """
+        Iterative Diagonal Traversal of binary tree (Using a queue)
+
+        Time complexity:  O(n)
+        Auxiliary space: O(n)
+        """
+        values = []
+
+        if self.root:
+            queue = deque()
+            queue.append(self.root)
+
+            while queue:
+                node = queue.popleft()
+
+                while node:
+                    values.append(node.value)
+                    queue.append(node.left)
+                    node = node.right
 
         return values
 
