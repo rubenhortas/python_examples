@@ -211,7 +211,6 @@ class BinaryTree:
 
         if self.root:
             stack = deque()
-
             stack.append(self.root)
 
             while stack:
@@ -374,7 +373,6 @@ class BinaryTree:
         if self.root:
             stack1 = deque()
             stack2 = deque()
-
             stack1.append(self.root)
 
             while stack1 or stack2:
@@ -383,7 +381,6 @@ class BinaryTree:
 
                     if node:
                         values.append(node.value)
-
                         stack2.append(node.right)
                         stack2.append(node.left)
 
@@ -392,7 +389,6 @@ class BinaryTree:
 
                     if node:
                         values.append(node.value)
-
                         stack1.append(node.left)
                         stack1.append(node.right)
 
