@@ -428,16 +428,16 @@ class BinaryTree:
         stack = deque()
 
         if self.root:
-            queue = deque()
-            queue.append(self.root)
+            queue = Queue()
+            queue.put(self.root)
 
-            while queue:
-                node = queue.popleft()
+            while not queue.empty():
+                node = queue.get()
 
                 if node:
                     stack.appendleft(node.value)
-                    queue.append(node.right)
-                    queue.append(node.left)
+                    queue.put(node.right)
+                    queue.put(node.left)
 
         return list(stack)
 
@@ -509,15 +509,15 @@ class BinaryTree:
         values = []
 
         if self.root:
-            queue = deque()
-            queue.append(self.root)
+            queue = Queue()
+            queue.put(self.root)
 
-            while queue:
-                node = queue.popleft()
+            while not queue.empty():
+                node = queue.get()
 
                 while node:
                     values.append(node.value)
-                    queue.append(node.left)
+                    queue.put(node.left)
                     node = node.right
 
         return values
