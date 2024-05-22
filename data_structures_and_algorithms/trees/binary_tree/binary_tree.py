@@ -123,7 +123,7 @@ class BinaryTree:
         traverse_inorder(self.root)
         return values
 
-    def get_inorder_traversal_stack(self) -> list:
+    def get_inorder_traversal_iterative_stack(self) -> list:
         """
         Iterative Inorder Tree Traversal using a stack.
 
