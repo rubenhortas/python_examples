@@ -384,3 +384,50 @@ class BinaryTree:
                 values.extend(map[level])
 
         return values
+
+    def get_boundary_traversal(self):
+        """
+        Get boundary nodes of the binary tree Anti-Clockwise starting from the root.
+
+        Time complexity:  O(n)
+        Auxiliary space: O(n)
+        """
+
+        def get_left_boundary(node: BinaryTreeNode) -> None:
+            if node:
+                if node.left:
+                    values.append(node.value)
+                    get_left_boundary(node.left)
+                elif node.right:
+                    values.append(node.value)
+                    get_left_boundary(node.right)
+
+        def get_leaves(node: BinaryTreeNode) -> None:
+            if node:
+                get_leaves(node.left)
+
+                if not node.left and not node.right:
+                    values.append(node.value)
+
+                get_leaves(node.right)
+
+        def get_right_boundary(node: BinaryTreeNode) -> None:
+            if node:
+                if node.right:
+                    values.append(node.value)
+                    get_right_boundary(node.right)
+                elif node.left:
+                    values.append(node.value)
+                    get_right_boundary(node.left)
+
+        values = []
+
+        if self.root:
+            values.append(self.root.value)
+
+            get_left_boundary(self.root.left)
+            get_leaves(self.root.left)
+            get_leaves(self.root.right)
+            get_right_boundary(self.root.right)
+
+        return values
