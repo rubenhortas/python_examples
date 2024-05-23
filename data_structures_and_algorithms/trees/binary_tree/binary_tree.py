@@ -1,5 +1,4 @@
 from collections import deque
-from queue import Queue
 
 from binary_tree_node import BinaryTreeNode
 
@@ -18,21 +17,21 @@ class BinaryTree:
         new_node = BinaryTreeNode(new_value)
 
         if self.root:
-            queue = Queue()
-            queue.put(self.root)
+            queue = deque()
+            queue.append(self.root)
 
-            while not queue.empty():
-                node = queue.get()
+            while queue:
+                node = queue.popleft()
 
                 if node:
                     if node.left:
-                        queue.put(node.left)
+                        queue.append(node.left)
                     else:
                         node.left = new_node
                         break
 
                     if node.right:
-                        queue.put(node.right)
+                        queue.append(node.right)
                     else:
                         node.right = new_node
                         break
@@ -49,32 +48,32 @@ class BinaryTree:
         """
 
         def delete_node(node_to_delete: BinaryTreeNode) -> None:
-            queue = Queue()
-            queue.put(self.root)
+            queue = deque()
+            queue.append(self.root)
 
-            while not queue.empty():
-                node = queue.get()
+            while queue:
+                node = queue.popleft()
 
                 if node.left == node_to_delete:
                     node.left = None
                     return
                 else:
-                    queue.put(node.left)
+                    queue.append(node.left)
 
                 if node.right == node_to_delete:
                     node.right = None
                     return
                 else:
-                    queue.put(node.right)
+                    queue.append(node.right)
 
         if self.root:
-            queue = Queue()
-            queue.put(self.root)
+            queue = deque()
+            queue.append(self.root)
             deepest_rightmost_node = None
             node_to_delete = None
 
-            while not queue.empty():
-                node = queue.get()
+            while queue:
+                node = queue.popleft()
 
                 if node:
                     deepest_rightmost_node = node
@@ -82,8 +81,8 @@ class BinaryTree:
                     if str(node.value) == value:
                         node_to_delete = node
 
-                    queue.put(node.left)
-                    queue.put(node.right)
+                    queue.append(node.left)
+                    queue.append(node.right)
 
             if node_to_delete:
                 if node_to_delete != deepest_rightmost_node:
@@ -317,16 +316,16 @@ class BinaryTree:
         values = []
 
         if self.root:
-            queue = Queue()
-            queue.put(self.root)
+            queue = deque()
+            queue.append(self.root)
 
-            while not queue.empty():
-                node = queue.get()
+            while queue:
+                node = queue.popleft()
 
                 if node:
                     values.append(str(node))
-                    queue.put(node.left)
-                    queue.put(node.right)
+                    queue.append(node.left)
+                    queue.append(node.right)
 
         return values
 
@@ -428,16 +427,16 @@ class BinaryTree:
         stack = deque()
 
         if self.root:
-            queue = Queue()
-            queue.put(self.root)
+            queue = deque()
+            queue.append(self.root)
 
-            while not queue.empty():
-                node = queue.get()
+            while queue:
+                node = queue.popleft()
 
                 if node:
                     stack.appendleft(node.value)
-                    queue.put(node.right)
-                    queue.put(node.left)
+                    queue.append(node.right)
+                    queue.append(node.left)
 
         return list(stack)
 
@@ -509,15 +508,15 @@ class BinaryTree:
         values = []
 
         if self.root:
-            queue = Queue()
-            queue.put(self.root)
+            queue = deque()
+            queue.append(self.root)
 
-            while not queue.empty():
-                node = queue.get()
+            while queue:
+                node = queue.popleft()
 
                 while node:
                     values.append(node.value)
-                    queue.put(node.left)
+                    queue.append(node.left)
                     node = node.right
 
         return values
