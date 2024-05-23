@@ -1,6 +1,6 @@
 from collections import deque
 
-from binary_tree_node import BinaryTreeNode
+from node import Node
 
 
 class BinaryTree:
@@ -14,7 +14,7 @@ class BinaryTree:
         Time complexity: O(n)
         Auxiliary space: O(n)
         """
-        new_node = BinaryTreeNode(new_value)
+        new_node = Node(new_value)
 
         if self.root:
             queue = deque()
@@ -47,7 +47,7 @@ class BinaryTree:
         Auxiliary Space: O(n)
         """
 
-        def delete_node(node_to_delete: BinaryTreeNode) -> None:
+        def delete_node(node_to_delete: Node) -> None:
             queue = deque()
             queue.append(self.root)
 
@@ -91,7 +91,7 @@ class BinaryTree:
                 delete_node(deepest_rightmost_node)
 
     def get_height(self) -> int:
-        def get_node_height(node: BinaryTreeNode) -> int:
+        def get_node_height(node: Node) -> int:
             if not node:
                 return 0
 
@@ -112,7 +112,7 @@ class BinaryTree:
         Auxiliary space: O(1)
         """
 
-        def traverse_inorder(node: BinaryTreeNode) -> None:
+        def traverse_inorder(node: Node) -> None:
             if node:
                 traverse_inorder(node.left)
                 values.append(str(node))
@@ -189,7 +189,7 @@ class BinaryTree:
         Auxiliary space: O(1)
         """
 
-        def traverse_preorder(node: BinaryTreeNode) -> None:
+        def traverse_preorder(node: Node) -> None:
             if node:
                 values.append(str(node))
                 traverse_preorder(node.left)
@@ -265,7 +265,7 @@ class BinaryTree:
         Auxiliary space: O(1)
         """
 
-        def traverse_postorder(node: BinaryTreeNode) -> None:
+        def traverse_postorder(node: Node) -> None:
             if node:
                 traverse_postorder(node.left)
                 traverse_postorder(node.right)
@@ -337,7 +337,7 @@ class BinaryTree:
         Auxiliary space: O(n)
         """
 
-        def get_level(node: BinaryTreeNode, level: int, left_to_right: bool) -> None:
+        def get_level(node: Node, level: int, left_to_right: bool) -> None:
             if node:
                 if level == 1:
                     values.append(node.value)
@@ -401,7 +401,7 @@ class BinaryTree:
         Auxiliary space: O(h)
         """
 
-        def get_level(node: BinaryTreeNode, level: int) -> None:
+        def get_level(node: Node, level: int) -> None:
             if node:
                 if level == 0:
                     values.append(node.value)
@@ -448,7 +448,7 @@ class BinaryTree:
         Auxiliary space: O(h)
         """
 
-        def map_node(node: BinaryTreeNode, level: int) -> None:
+        def map_node(node: Node, level: int) -> None:
             if node:
                 if level not in map:
                     map[level] = []
@@ -476,7 +476,7 @@ class BinaryTree:
         Auxiliary space: O(n)
         """
 
-        def map_node(node: BinaryTreeNode, distance: int, map: dict) -> None:
+        def map_node(node: Node, distance: int, map: dict) -> None:
             if node:
                 # distance of current line from rightmost-topmost slope
                 if distance in map:
@@ -529,7 +529,7 @@ class BinaryTree:
         Auxiliary space: O(n)
         """
 
-        def get_left_boundary(node: BinaryTreeNode) -> None:
+        def get_left_boundary(node: Node) -> None:
             if node:
                 if node.left:
                     values.append(node.value)
@@ -538,7 +538,7 @@ class BinaryTree:
                     values.append(node.value)
                     get_left_boundary(node.right)
 
-        def get_leaves(node: BinaryTreeNode) -> None:
+        def get_leaves(node: Node) -> None:
             if node:
                 get_leaves(node.left)
 
@@ -547,7 +547,7 @@ class BinaryTree:
 
                 get_leaves(node.right)
 
-        def get_right_boundary(node: BinaryTreeNode) -> None:
+        def get_right_boundary(node: Node) -> None:
             if node:
                 if node.right:
                     values.append(node.value)
