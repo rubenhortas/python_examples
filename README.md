@@ -79,6 +79,13 @@ No attribute is really private in Python (without a generally unnecessary amount
   """Returns a circle."""
   ```
 
+## Python file format
+
+  * Hashbang
+  * Docstrings
+  * Imports
+  * Code
+
 ## Sources
 
 * [PEP 8](https://peps.python.org/pep-0008)
