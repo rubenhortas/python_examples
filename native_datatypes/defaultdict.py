@@ -13,20 +13,23 @@ if __name__ == '__main__':
 
     # defaultdicts are very useful when we are using a table collection (e.g. a list) as value.
     # This way we don't need to initialize the keys before first use, and we will not get a KeyError.
-    user_names = defaultdict(list)
-    user_names['root'].append('ruben')
-    user_names['admin'].append('ruben')
-    user_names['admin'].append('ctrl')
-    user_names['admin'].append('demonsito')
-    user_names['admin'].append('kaian')
-    user_names['users'].append('alice')
-    user_names['users'].append('bob')
+    usernames = defaultdict(list)
+    usernames['root'].append('trazi')
+    usernames['admin'].append('trazi')
+    usernames['admin'].append('ctrl')
+    usernames['admin'].append('demonsito')
+    usernames['admin'].append('kaian')
+    usernames['users'].append('alice')
+    usernames['users'].append('bob')
 
-    print(f"Roots: {user_names['root']}")
-    # return: ['ruben']
+    print(f"Roots: {usernames['root']}")
+    # return: Roots: ['trazi']
 
-    print(f"Admins: {user_names['admin']}")
-    # return: ['ruben', 'ctrl', 'demonsito', 'kaian']
+    print(f"Admins: {usernames['admin']}")
+    # return: Admins: ['trazi', 'ctrl', 'demonsito', 'kaian']
 
-    print(f"Users: {user_names['users']}")
-    # return: ['alice', 'bob']
+    print(f"Users: {usernames['users']}")
+    # return: Users: ['alice', 'bob']
+
+    print(f"Users: {usernames['ftp']}")
+    # return: Users: []
