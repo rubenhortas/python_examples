@@ -5,7 +5,7 @@ Vigenere decrypter script
 
 Based on the method explained by @Theoretically in https://www.youtube.com/watch?v=LaWp_Kq0cKs
 
-Developed to solve levels 4 and 5 of the Krypton game on OverTheWire.
+Developed to solve levels 4 and 5 of the Krypton game in OverTheWire.
 You can read my post here: https://rubenhortas.github.io/posts/overthewire-krytpon-levels-4-and-5-vigenere-cipher/
 
 OverTheWire: https://overthewire.org/
@@ -49,49 +49,45 @@ LANGUAGE_FREQUENCIES = {
 }
 
 
-# noinspection PyShadowingNames
-def _read_file(encrypted_file: str) -> str:
-    ciphertext = ''
+def _read_encrypted_file(file: str) -> str:
+    try:
+        text = ''
 
-    with open(encrypted_file, 'r') as f:
-        lines = f.readlines()
+        with open(file, 'r') as f:
+            lines = f.readlines()
 
-    for line in lines:
-        for character in line:
-            if _is_alphabetic(character):
-                ciphertext = ciphertext + character.upper()
+        for line in lines:
+            for character in line:
+                if character.isalpha():
+                    text = text + character.upper()
 
-    return ciphertext
-
-
-def _is_alphabetic(character: chr) -> bool:
-    return ('a' <= character <= 'z') or ('A' <= character <= 'Z')
+        return text
+    except FileNotFoundError as file_not_found_error:
+        print(f"'{file_not_found_error.filename}' no such file or directory.")
+        exit(-1)
+    except PermissionError:
+        print(f"Permission denied: '{file}'")
+        exit(-1)
+    except OSError as os_error:
+        print(f"'{file}' OSError: {os_error}")
+        exit(-1)
 
 
 # noinspection PyShadowingNames
 def _get_key_shifts(cipher_text: str, key_length: int) -> list:
     shifts = []
-    language_frequency_values = _get_frequency_values(LANGUAGE_FREQUENCIES)
+    language_frequency_values = list(LANGUAGE_FREQUENCIES.values())
 
     for i in range(key_length):
         ciphertext_chars = cipher_text[i::key_length]
         ciphertext_chars_frequencies = _get_frequencies(ciphertext_chars)
         ciphertext_chars_complete_frequencies = _complete_frequencies(ciphertext_chars_frequencies)
-        ciphertext_chars_frequency_values = _get_frequency_values(ciphertext_chars_complete_frequencies)
+        ciphertext_chars_frequency_values = list(ciphertext_chars_complete_frequencies.values())
 
         shift = _get_key_shift(language_frequency_values, ciphertext_chars_frequency_values)
         shifts.append(shift)
 
     return shifts
-
-
-def _get_frequency_values(character_frequencies: dict) -> list:
-    frequency_values = []
-
-    for character_frequency in character_frequencies:
-        frequency_values.append(character_frequencies[character_frequency])
-
-    return frequency_values
 
 
 def _get_frequencies(characters: str) -> dict:
@@ -123,9 +119,9 @@ def _get_key_shift(language_frequency_values: list, ciphertext_frequency_values:
         ciphertext_frequency_sum = 0
 
         for j in range(alphabet_length):
-            m = (i + j) % alphabet_length  # mod, used for rotation
+            mod_ = (i + j) % alphabet_length  # mod, used for rotation
             ciphertext_frequency_sum = ciphertext_frequency_sum + (
-                    language_frequency_values[j] * ciphertext_frequency_values[m])
+                        language_frequency_values[j] * ciphertext_frequency_values[mod_])
 
         if ciphertext_frequency_sum > max_sum:
             max_sum = ciphertext_frequency_sum
@@ -134,7 +130,6 @@ def _get_key_shift(language_frequency_values: list, ciphertext_frequency_values:
     return shift
 
 
-# noinspection PyShadowingNames
 def _get_key(shifts: list) -> str:
     key = ''
 
@@ -151,9 +146,8 @@ def _get_key(shifts: list) -> str:
     return key
 
 
-# noinspection PyShadowingNames
 def _decrypt(ciphertext: str, ciphertext_length: int, key_shifts: list, key_length: int) -> str:
-    alphabet = _get_alphabet()
+    alphabet = list(LANGUAGE_FREQUENCIES.keys())
     plaintext = ''
 
     for i in range(ciphertext_length):
@@ -175,16 +169,6 @@ def _complete_frequencies(frequencies: dict) -> dict:
     return complete_frequencies
 
 
-def _get_alphabet() -> list:
-    alphabet = []
-
-    for character_frequency in LANGUAGE_FREQUENCIES:
-        alphabet.append(character_frequency)
-
-    return alphabet
-
-
-# noinspection PyShadowingNames
 def _get_shifts_from_key(key: str) -> list:
     shifts = []
 
@@ -201,14 +185,12 @@ def _get_shifts_from_key(key: str) -> list:
     return shifts
 
 
-# noinspection PyShadowingNames
 def _get_key_length(ciphertext: str, ciphertext_length: int) -> int:
     coincidences = _get_coincidences(ciphertext, ciphertext_length)
 
     return _get_max_coincidences(coincidences)
 
 
-# noinspection PyShadowingNames
 def _get_coincidences(ciphertext: str, ciphertext_length: int) -> list:
     """
     Finding coincidences
@@ -240,7 +222,6 @@ def _get_coincidences(ciphertext: str, ciphertext_length: int) -> list:
     return coincidences
 
 
-# noinspection PyShadowingNames
 def _get_max_coincidences(coincidences: list) -> int:
     """
     Find the position in the list with the largest match values.
@@ -278,20 +259,20 @@ if __name__ == '__main__':
     key_shifts = []
     key = ''
     pt = ''
-    ciphertext = _read_file(args.encrypted_file[0])
+    ciphertext = _read_encrypted_file(args.encrypted_file[0])
     ciphertext_length = len(ciphertext)
 
-    if args.key is None and args.key_length is None:
+    if not args.key and not args.key_length:
         key_length = _get_key_length(ciphertext, ciphertext_length)
         key_shifts = _get_key_shifts(ciphertext, key_length)
         key = _get_key(key_shifts)
 
-    if args.key_length is not None:
+    if args.key_length:
         key_length = int(args.key_length[0])
         key_shifts = _get_key_shifts(ciphertext, key_length)
         key = _get_key(key_shifts)
 
-    if args.key is not None:
+    if args.key:
         key = args.key[0].upper()
         key_length = len(key)
         key_shifts = _get_shifts_from_key(key)
