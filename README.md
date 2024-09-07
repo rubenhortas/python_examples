@@ -14,7 +14,7 @@ Small examples of Python code, data structures and algorithms.
 | Exception       | PascalCase (UpperCamelCase) | MyException   |                                                                                   |
 | Function/Method | snake_case                  | my_function() | Lowercase word or words. Separate words by underscores.                           |
 | Module          | snake_case                  | my_module.py  | Short. Lowercase word or words.  Underscores can be used if improves readability. |
-| Package         | lowercase                   | mypackage.py  | Short. Lowercase word or words. The use of underscores is discouraged.            |
+| Package         | lowercase                   | mypackage     | Short. Lowercase word or words. The use of underscores is discouraged.            |
 | Variable        | snake_case                  | my_variable   | Lowercase single letter, word, or words. Separate words with underscores.         |
 
 ### Private elements
