@@ -1,5 +1,3 @@
-#!/usr/bin/env python3
-
 # You are given a list of numbers, obtained by rotating a sorted list an unknown number of times.
 # Write a function to determine the minimum number of times the original **sorted list** was rotated to obtain the given list.
 # Your function should have the worst-case complexity of **O(log(n))**.
