@@ -1,7 +1,7 @@
 import unittest
 
-from data_structures_and_algorithms.shunting_yard.reverse_polish_notation import rpn_to_infix
-from data_structures_and_algorithms.shunting_yard.shunting_yard import shunting_yard
+from data_structures_and_algorithms.algorithms.shunting_yard.reverse_polish_notation import rpn_to_infix
+from data_structures_and_algorithms.algorithms.shunting_yard.shunting_yard import shunting_yard
 
 
 class Test(unittest.TestCase):

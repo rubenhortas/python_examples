@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
-from data_structures_and_algorithms.fibonacci import fibonacci_recursive, fibonacci_top_down, fibonacci_bottom_up
+from data_structures_and_algorithms.algorithms.fibonacci import fibonacci_top_down, fibonacci_bottom_up, \
+    fibonacci_recursive
 from performance.execution_time import get_execution_time
 
 N = 100
