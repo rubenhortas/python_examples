@@ -2,6 +2,8 @@
 A binary heap is a heap data structure that takes the form of a binary tree.
 It's a fundamental data structure used in various algorithms like heap sort, priority queues, and graph algorithms.
 """
+
+
 class BinaryHeap:
     def __init__(self, capacity):
         self.capacity = capacity  # Maximum size of the heap
@@ -32,14 +34,6 @@ class BinaryHeap:
         """
         raise Exception('Not implemented')
 
-    def insert(self, x):
-        if self.size == self.capacity:
-            return None
-
-        self.heap[self.size] = x
-        self.size += 1
-        self._heapify_up(self.size - 1)
-
     def _extract_root(self):
         """
         Removes and returns the minimum element (root) and heapifies down.
@@ -62,3 +56,11 @@ class BinaryHeap:
             return None
 
         return self.heap[0]
+
+    def insert(self, x):
+        if self.size == self.capacity:
+            return None
+
+        self.heap[self.size] = x
+        self.size += 1
+        self._heapify_up(self.size - 1)
