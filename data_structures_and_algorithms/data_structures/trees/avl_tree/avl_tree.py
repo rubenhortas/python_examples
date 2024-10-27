@@ -1,7 +1,7 @@
 from node import Node
 
 
-class AVLTree:
+class AvlTree:
     def __init__(self):
         self.root = None
 
@@ -140,8 +140,13 @@ class AVLTree:
     def search_value(self, value):
         return self._search(self.root, value)
 
-    def preorder(self, node):
-        if node:
-            print(node.value, end=" ")
-            self.preorder(node.left)
-            self.preorder(node.right)
+    def preorder(self):
+        def traverse_preorder(node):
+            if node:
+                values.append(node.value)
+                traverse_preorder(node.left)
+                traverse_preorder(node.right)
+
+        values = []
+        traverse_preorder(self.root)
+        return values
