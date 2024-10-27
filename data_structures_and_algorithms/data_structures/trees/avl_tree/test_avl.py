@@ -11,7 +11,9 @@ class Test(unittest.TestCase):
         self.avl.insert_value(3)
         self.avl.insert_value(4)
         self.avl.insert_value(5)
-        self.expected_preorder = [2, 1, 4, 3, 5]
 
     def test_avl(self):
-        self.assertEqual(self.expected_preorder, self.avl.preorder())
+        self.assertEqual([3, 2, 1, 4, 5], self.avl.preorder())
+
+        self.avl.delete_value(2)
+        self.assertEqual([3, 1, 5, 4], self.avl.preorder())
