@@ -31,33 +31,31 @@ class AvlTree:
 
         return self._get_height(node.left) - self._get_height(node.right)
 
-    def _insert(self, root, value):
-        if not root:
+    def _insert(self, node, value):
+        if not node:
             return Node(value)
 
-        if value < root.value:
-            root.left = self._insert(root.left, value)
+        if value < node.value:
+            node.left = self._insert(node.left, value)
         else:
-            root.right = self._insert(root.right, value)
+            node.right = self._insert(node.right, value)
 
-        root.height = max(self._get_height(root.left), self._get_height(root.right)) + 1
-        balance_factor = self._get_balance_factor(root)
+        node.height = max(self._get_height(node.left), self._get_height(node.right)) + 1
+        balance_factor = self._get_balance_factor(node)
 
-        if balance_factor > 1 and value < root.left.value:
-            return self._rotate_right(root)
+        if balance_factor > 1:
+            if value > node.left.value:
+                node.left = self._rotate_left(node.left)
 
-        if balance_factor < -1 and value > root.right.value:
-            return self._rotate_left(root)
+            return self._rotate_right(node)
 
-        if balance_factor > 1 and value > root.left.value:
-            root.left = self._rotate_left(root.left)
-            return self._rotate_right(root)
+        if balance_factor < -1:
+            if value < node.right.value:
+                node.right = self._rotate_right(node.right)
 
-        if balance_factor < -1 and value < root.right.value:
-            root.right = self._rotate_right(root.right)
-            return self._rotate_left(root)
+            return self._rotate_left(node)
 
-        return root
+        return node
 
     def _delete(self, root, value):
         if not root:
