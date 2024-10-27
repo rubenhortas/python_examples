@@ -21,7 +21,7 @@ class AVLTree:
 
         return current
 
-    def _get_balance(self, node):
+    def _get_balance_factor(self, node):
         if not node:
             return 0
 
@@ -36,7 +36,7 @@ class AVLTree:
             root.right = self._insert(root.right, value)
 
         root.height = 1 + max(self._get_height(root.left), self._get_height(root.right))
-        balance = self._get_balance(root)
+        balance = self._get_balance_factor(root)
 
         if balance > 1 and value < root.left.value:
             return self._rotate_right(root)
@@ -80,19 +80,19 @@ class AVLTree:
             return root
 
         root._get_height = 1 + max(self._get_height(root.left), self._get_height(root.right))
-        balance = self._get_balance(root)
+        balance = self._get_balance_factor(root)
 
-        if balance > 1 and self._get_balance(root.left) >= 0:
+        if balance > 1 and self._get_balance_factor(root.left) >= 0:
             return self._rotate_right(root)
 
-        if balance < -1 and self._get_balance(root.right) <= 0:
+        if balance < -1 and self._get_balance_factor(root.right) <= 0:
             return self._rotate_left(root)
 
-        if balance > 1 and self._get_balance(root.left) < 0:
+        if balance > 1 and self._get_balance_factor(root.left) < 0:
             root.left = self._rotate_left(root.left)
             return self._rotate_right(root)
 
-        if balance < -1 and self._get_balance(root.right) > 0:
+        if balance < -1 and self._get_balance_factor(root.right) > 0:
             root.right = self._rotate_right(root.right)
             return self._rotate_left(root)
 
