@@ -139,3 +139,9 @@ class AVLTree:
 
     def search_value(self, value):
         return self._search(self.root, value)
+
+    def preorder(self, node):
+        if node:
+            print(node.value, end=" ")
+            self.preorder(node.left)
+            self.preorder(node.right)
