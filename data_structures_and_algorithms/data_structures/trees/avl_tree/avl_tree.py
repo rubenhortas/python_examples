@@ -39,18 +39,18 @@ class AVLTree:
         balance = self._get_balance(root)
 
         if balance > 1 and value < root.left.value:
-            return self._right_rotate(root)
+            return self._rotate_right(root)
 
         if balance < -1 and value > root.right.value:
-            return self._left_rotate(root)
+            return self._rotate_left(root)
 
         if balance > 1 and value > root.left.value:
-            root.left = self._left_rotate(root.left)
-            return self._right_rotate(root)
+            root.left = self._rotate_left(root.left)
+            return self._rotate_right(root)
 
         if balance < -1 and value < root.right.value:
-            root.right = self._right_rotate(root.right)
-            return self._left_rotate(root)
+            root.right = self._rotate_right(root.right)
+            return self._rotate_left(root)
 
         return root
 
@@ -83,22 +83,22 @@ class AVLTree:
         balance = self._get_balance(root)
 
         if balance > 1 and self._get_balance(root.left) >= 0:
-            return self._right_rotate(root)
+            return self._rotate_right(root)
 
         if balance < -1 and self._get_balance(root.right) <= 0:
-            return self._left_rotate(root)
+            return self._rotate_left(root)
 
         if balance > 1 and self._get_balance(root.left) < 0:
-            root.left = self._left_rotate(root.left)
-            return self._right_rotate(root)
+            root.left = self._rotate_left(root.left)
+            return self._rotate_right(root)
 
         if balance < -1 and self._get_balance(root.right) > 0:
-            root.right = self._right_rotate(root.right)
-            return self._left_rotate(root)
+            root.right = self._rotate_right(root.right)
+            return self._rotate_left(root)
 
         return root
 
-    def _left_rotate(self, node):
+    def _rotate_left(self, node):
         right_node = node.right
         temp = right_node.left
 
@@ -110,7 +110,7 @@ class AVLTree:
 
         return right_node
 
-    def _right_rotate(self, node):
+    def _rotate_right(self, node):
         left_node = node.left
         temp = left_node.right
 
