@@ -1,3 +1,7 @@
+"""
+The AVL tree is a self–balancing binary search tree that guarantees the difference of the heights of the left and right subtrees of a node is at most 1.
+"""
+
 from node import Node
 
 
