@@ -57,49 +57,47 @@ class AvlTree:
 
         return node
 
-    def _delete(self, root, value):
-        if not root:
-            return root
+    def _delete(self, node, value):
+        if not node:
+            return node
 
-        if value < root.value:
-            root.left = self._delete(root.left, value)
-        elif value > root.value:
-            root.right = self._delete(root.right, value)
+        if value < node.value:
+            node.left = self._delete(node.left, value)
+        elif value > node.value:
+            node.right = self._delete(node.right, value)
         else:
-            if not root.left:
-                temp = root.right
-                root = None
+            if not node.left:
+                temp = node.right
+                node = None
                 return temp
-            elif not root.right:
-                temp = root.left
-                root = None
+            elif not node.right:
+                temp = node.left
+                node = None
                 return temp
 
-            temp = self._get_min_value_node(root.right)
-            root.value = temp.value
-            root.right = self._delete(root.right, temp.value)
+            temp = self._get_min_value_node(node.right)
+            node.value = temp.value
+            node.right = self._delete(node.right, temp.value)
 
-        if not root:
-            return root
+        if not node:
+            return node
 
-        root._get_height = 1 + max(self._get_height(root.left), self._get_height(root.right))
-        balance = self._get_balance_factor(root)
+        node._get_height = max(self._get_height(node.left), self._get_height(node.right)) + 1
+        balance = self._get_balance_factor(node)
 
-        if balance > 1 and self._get_balance_factor(root.left) >= 0:
-            return self._rotate_right(root)
+        if balance > 1:
+            if self._get_balance_factor(node.left) < 0:
+                node.left = self._rotate_left(node.left)
 
-        if balance < -1 and self._get_balance_factor(root.right) <= 0:
-            return self._rotate_left(root)
+            return self._rotate_right(node)
 
-        if balance > 1 and self._get_balance_factor(root.left) < 0:
-            root.left = self._rotate_left(root.left)
-            return self._rotate_right(root)
+        if balance < -1:
+            if self._get_balance_factor(node.right) > 0:
+                node.right = self._rotate_right(node.right)
 
-        if balance < -1 and self._get_balance_factor(root.right) > 0:
-            root.right = self._rotate_right(root.right)
-            return self._rotate_left(root)
+            return self._rotate_left(node)
 
-        return root
+        return node
 
     def _rotate_left(self, node):
         right_node = node.right
