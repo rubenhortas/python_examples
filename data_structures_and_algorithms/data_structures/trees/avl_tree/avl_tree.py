@@ -106,8 +106,8 @@ class AvlTree:
         right_node.left = node
         node.right = temp
 
-        node._get_height = 1 + max(self._get_height(node.left), self._get_height(node.right))
-        right_node._get_height = 1 + max(self._get_height(right_node.left), self._get_height(right_node.right))
+        node._get_height = max(self._get_height(node.left), self._get_height(node.right)) + 1
+        right_node._get_height = max(self._get_height(right_node.left), self._get_height(right_node.right)) + 1
 
         return right_node
 
@@ -118,8 +118,8 @@ class AvlTree:
         left_node.right = node
         node.left = temp
 
-        node._get_height = 1 + max(self._get_height(node.left), self._get_height(node.right))
-        left_node._get_height = 1 + max(self._get_height(left_node.left), self._get_height(left_node.right))
+        node._get_height = max(self._get_height(node.left), self._get_height(node.right)) + 1
+        left_node._get_height = max(self._get_height(left_node.left), self._get_height(left_node.right)) + 1
 
         return left_node
 
@@ -150,4 +150,5 @@ class AvlTree:
 
         values = []
         traverse_preorder(self.root)
+
         return values
