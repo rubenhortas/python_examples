@@ -67,13 +67,9 @@ class AvlTree:
             node.right = self._delete(node.right, value)
         else:
             if not node.left:
-                temp = node.right
-                node = None
-                return temp
+                return node.right
             elif not node.right:
-                temp = node.left
-                node = None
-                return temp
+                return node.left
 
             temp = self._get_min_value_node(node.right)
             node.value = temp.value
