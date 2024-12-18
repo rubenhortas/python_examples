@@ -4,9 +4,9 @@
 # You can assume that **all the numbers in the list are unique**.
 # Example: The list [5, 6, 9, 0, 2, 3, 4] was obtained by rotating the sorted list [0, 2, 3, 4, 5, 6, 9] three times.
 
-# Time complexity: O(log(n))
-# Auxiliary space: O(1)
 def calculate_rotations(lst: list) -> int:
+    # Time complexity: O(log(n))
+    # Auxiliary space: O(1)
     len_lst = len(lst)
 
     if lst:
