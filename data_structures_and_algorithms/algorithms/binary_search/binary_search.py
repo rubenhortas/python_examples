@@ -1,8 +1,3 @@
-#!/usr/bin/env python3
-
-# Write a program to find the position of a given number in a list of numbers arranged in **decreasing** order.
-# Minimize the number of times we access elements from the list.
-
 def get_position(lst: list, number: int) -> int:
     return _binary_search(lst, number, 0, len(lst) - 1)
 

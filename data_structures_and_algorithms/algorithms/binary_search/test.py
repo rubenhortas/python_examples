@@ -1,3 +1,6 @@
+# Write a program to find the position of a given number in a list of numbers arranged in **decreasing** order.
+# Minimize the number of times we access elements from the list.
+
 import unittest
 
 from binary_search import get_position
