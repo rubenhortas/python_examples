@@ -34,6 +34,9 @@ class Test(unittest.TestCase):
         combination = Combination([1, 1, 1, 1, 1, 1], 6, [[1, 1, 1, 1, 1, 1]])
         self.combinations.append(combination)
 
+        combination = Combination([1, 2, 1, 1, 1, 1, 2, 1], 6, [[1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 2], [1, 1, 2, 2]])
+        self.combinations.append(combination)
+
     def test_sums(self):
         for combination in self.combinations:
             self.assertEqual(combination.solutions, get_sums(combination.numbers, combination.target))

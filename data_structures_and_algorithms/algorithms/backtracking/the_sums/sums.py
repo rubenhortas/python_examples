@@ -1,16 +1,16 @@
 #!/usr/bin/env python3
 
 def get_sums(numbers: list, target: int) -> list:
-    def get_sum(combination: list, index: int, target: int) -> list | None:
+    def get_sum(combination: list, start: int, target: int) -> list | None:
         if target == 0:  # Solution found
             solutions.append(combination[:])  # Shallow copy
             return
 
-        if target < 0 or index == len(numbers):  # It has not solution
+        if target < 0 or start == len(numbers):  # It has not solution
             return
 
-        for i in range(index, len(numbers)):  # Backtracking
-            if i > index and numbers[i] == numbers[i - 1]:
+        for i in range(start, len(numbers)):  # Backtracking
+            if i > start and numbers[i] == numbers[i - 1]:
                 continue
 
             combination.append(numbers[i])
@@ -19,6 +19,7 @@ def get_sums(numbers: list, target: int) -> list:
 
     solutions = []
 
+    numbers.sort()
     get_sum([], 0, target)
 
     return solutions
