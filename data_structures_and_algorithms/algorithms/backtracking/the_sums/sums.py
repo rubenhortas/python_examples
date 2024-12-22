@@ -9,12 +9,12 @@ def get_sums(numbers: list, target: int) -> list:
         if target < 0 or index == len(numbers):  # It has not solution
             return
 
-        for index in range(index, len(numbers)):  # Backtracking
-            if numbers[index] == numbers[index - 1]:
+        for i in range(index, len(numbers)):  # Backtracking
+            if i > index and numbers[i] == numbers[i - 1]:
                 continue
 
-            combination.append(numbers[index])
-            get_sum(combination, index + 1, target - numbers[index])
+            combination.append(numbers[i])
+            get_sum(combination, i + 1, target - numbers[i])
             combination.pop()
 
     solutions = []
