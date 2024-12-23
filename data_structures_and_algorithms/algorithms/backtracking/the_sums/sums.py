@@ -6,7 +6,7 @@ def get_sums(numbers: list, target: int) -> list:
     If there are no combinations, return an empty list.
     :param numbers: [1, 5, 3, 2]
     :param target: 6
-    :return: [[1, 5],  [1, 3, 2]]
+    :return: [[1, 5], [1, 3, 2]]
     """
 
     def get_sum(combination: list, start: int, target: int) -> list | None:
