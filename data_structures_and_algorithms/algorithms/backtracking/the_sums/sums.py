@@ -31,7 +31,3 @@ def get_sums(numbers: list, target: int) -> list:
     get_sum([], 0, target)
 
     return solutions
-
-
-if __name__ == '__main__':
-    print(get_sums([1, 5, 3, 2], 6))
