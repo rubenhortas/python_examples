@@ -1,4 +1,10 @@
 def get_position(lst: list, number: int) -> int:
+    """
+    Finds the position of a given number in a list of numbers arranged in decreasing order.
+    :param lst: [9, 8, 7, 6, 5, 4, 3, 2, 1, 0]
+    :param number: 4
+    :return: 5
+    """
     return _binary_search(lst, number, 0, len(lst) - 1)
 
 
