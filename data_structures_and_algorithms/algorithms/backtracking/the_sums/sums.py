@@ -14,10 +14,10 @@ def get_sums(numbers: list, target: int) -> list:
             solutions.append(combination[:])  # Shallow copy
             return
 
-        if target < 0 or start == len(numbers):  # It has not solution
+        if target < 0 or start == lenght:  # It has not solution
             return
 
-        for i in range(start, len(numbers)):
+        for i in range(start, lenght):
             if i > start and numbers[i] == numbers[i - 1]:
                 continue
 
@@ -26,6 +26,7 @@ def get_sums(numbers: list, target: int) -> list:
             combination.pop()  # Backtracking
 
     solutions = []
+    lenght = len(numbers)
 
     numbers.sort()
     get_sum([], 0, target)

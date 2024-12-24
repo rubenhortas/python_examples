@@ -22,13 +22,13 @@ class Test(unittest.TestCase):
     def setUp(self):
         self.combinations = []
 
-        combination = Combination([1, 5, 3, 2], 6, [[1, 5], [1, 3, 2]])
+        combination = Combination([1, 5, 3, 2], 6, [[1, 5], [1, 2, 3]])
         self.combinations.append(combination)
 
         combination = Combination([1, 7], 6, [])
         self.combinations.append(combination)
 
-        combination = Combination([1, 7, 3, 2], 6, [[1, 3, 2]])
+        combination = Combination([1, 7, 3, 2], 6, [[1, 2, 3]])
         self.combinations.append(combination)
 
         combination = Combination([1, 1, 1, 1, 1, 1], 6, [[1, 1, 1, 1, 1, 1]])
@@ -39,4 +39,4 @@ class Test(unittest.TestCase):
 
     def test_sums(self):
         for combination in self.combinations:
-            self.assertEqual(combination.solutions, get_sums(combination.numbers, combination.target))
+            self.assertCountEqual(combination.solutions, get_sums(combination.numbers, combination.target))
