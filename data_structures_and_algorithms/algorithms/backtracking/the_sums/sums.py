@@ -17,13 +17,13 @@ def get_sums(numbers: list, target: int) -> list:
         if target < 0 or start == len(numbers):  # It has not solution
             return
 
-        for i in range(start, len(numbers)):  # Backtracking
+        for i in range(start, len(numbers)):
             if i > start and numbers[i] == numbers[i - 1]:
                 continue
 
             combination.append(numbers[i])
             get_sum(combination, i + 1, target - numbers[i])
-            combination.pop()
+            combination.pop()  # Backtracking
 
     solutions = []
 
