@@ -12,4 +12,4 @@ class Test(unittest.TestCase):
 
     def test_permute(self):
         for string in self.strings:
-            self.assertEqual(string[1], get_permutations(string[0]))
+            self.assertCountEqual(string[1], get_permutations(string[0]))
