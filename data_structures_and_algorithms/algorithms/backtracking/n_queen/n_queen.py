@@ -6,8 +6,6 @@ Placing N chess queens on an N×N chessboard so that no two queens attack each o
 from data_structures_and_algorithms.algorithms.backtracking.n_queen.board import Board
 
 
-# https://www.geeksforgeeks.org/n-queen-problem-backtracking-3/
-
 def play(board_size: int) -> None:
     def place_queen(column: int) -> bool:
         if column == board.size:
