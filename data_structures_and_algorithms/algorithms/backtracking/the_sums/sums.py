@@ -2,8 +2,8 @@
 
 def get_sums(numbers: list, target: int) -> list:
     """
-    Finds all combinations of numbers in a list that add up to the target value.
-    If there are no combinations, return an empty list.
+    Find all combinations of numbers in a list that add up to the target value.
+    If there are no combinations return an empty list.
     :param numbers: [1, 5, 3, 2]
     :param target: 6
     :return: [[1, 5], [1, 3, 2]]
