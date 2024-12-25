@@ -24,7 +24,7 @@ class Board:
                 return False
 
         # Check upper left diagonal
-        for i, j in zip(reversed(range(row + 1)), reversed(range(column + 1))):
+        for i, j in zip(reversed(range(row)), reversed(range(column))):
             if self.board[i][j] == '♛':
                 return False
 
