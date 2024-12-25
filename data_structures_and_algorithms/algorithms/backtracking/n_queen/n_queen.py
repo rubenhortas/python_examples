@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 """
-Placing N chess queens on an N×N chessboard so that no two queens attack each other.
+Place N chess queens on an N×N chessboard such that none of them attack each other.
 """
 from data_structures_and_algorithms.algorithms.backtracking.n_queen.board import Board
 
