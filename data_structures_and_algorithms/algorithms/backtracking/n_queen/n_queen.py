@@ -6,7 +6,7 @@ Place N chess queens on an N×N chessboard such that none of them attack each ot
 from data_structures_and_algorithms.algorithms.backtracking.n_queen.board import Board
 
 
-def play(board_size: int) -> None:
+def play(board_size: int) -> list:
     def place_queen(column: int) -> bool:
         if column == board.size:
             return True
@@ -28,6 +28,7 @@ def play(board_size: int) -> None:
 
     if place_queen(0):
         board.print()
+        return board.squares
     else:
         print('There is no solution')
 
