@@ -1,5 +1,3 @@
-#!/usr/bin/env python3
-
 """
 Place N chess queens on an N×N chessboard such that none of them attack each other.
 """
