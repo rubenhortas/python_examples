@@ -7,7 +7,7 @@ from data_structures_and_algorithms.algorithms.backtracking.n_queen.board import
 
 
 def play(board_size: int) -> list:
-    def place_queen(column: int) -> bool:
+    def is_queen_placed(column: int) -> bool:
         if column == board.size:
             return True
 
@@ -15,7 +15,7 @@ def play(board_size: int) -> list:
             if board.is_safe(row, column):
                 board.place_queen(row, column)
 
-                if place_queen(column + 1):
+                if is_queen_placed(column + 1):
                     return True
 
                 # If placing queen in the square doesn't lead to a solution:
@@ -26,7 +26,7 @@ def play(board_size: int) -> list:
 
     board = Board(board_size)
 
-    if place_queen(0):
+    if is_queen_placed(0):
         board.print()
         return board.squares
     else:
