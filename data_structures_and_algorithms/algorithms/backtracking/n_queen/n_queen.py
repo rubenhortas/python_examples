@@ -31,7 +31,3 @@ def play(board_size: int) -> list:
         return board.squares
     else:
         print('There is no solution')
-
-
-if __name__ == '__main__':
-    play(4)
