@@ -15,8 +15,8 @@ class Board:
 
     def is_safe(self, row: int, column: int) -> bool:
         # Check row
-        for box in self.squares[row]:
-            if box == '♛':
+        for square in self.squares[row]:
+            if square == '♛':
                 return False
 
         # Check column
