@@ -18,7 +18,7 @@ class Test(unittest.TestCase):
         for box in safe_boxes:
             self.assertEqual(box[1], board.is_safe(*box[0]))
 
-    def test_result(self):
+    def test_play(self):
         result = [
             [' ', ' ', '♛', ' '],
             ['♛', ' ', ' ', ' '],
