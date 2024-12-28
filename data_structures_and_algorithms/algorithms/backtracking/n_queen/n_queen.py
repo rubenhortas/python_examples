@@ -31,3 +31,4 @@ def play(board_size: int) -> list:
         return board.squares
     else:
         print('There is no solution')
+        return []
