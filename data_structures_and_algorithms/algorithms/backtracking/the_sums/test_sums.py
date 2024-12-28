@@ -19,24 +19,23 @@ class Combination:
 
 
 class Test(unittest.TestCase):
-    def setUp(self):
-        self.combinations = []
+    def test_sums(self):
+        combinations = []
 
         combination = Combination([1, 5, 3, 2], 6, [[1, 5], [1, 2, 3]])
-        self.combinations.append(combination)
+        combinations.append(combination)
 
         combination = Combination([1, 7], 6, [])
-        self.combinations.append(combination)
+        combinations.append(combination)
 
         combination = Combination([1, 7, 3, 2], 6, [[1, 2, 3]])
-        self.combinations.append(combination)
+        combinations.append(combination)
 
         combination = Combination([1, 1, 1, 1, 1, 1], 6, [[1, 1, 1, 1, 1, 1]])
-        self.combinations.append(combination)
+        combinations.append(combination)
 
         combination = Combination([1, 2, 1, 1, 1, 1, 2, 1], 6, [[1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 2], [1, 1, 2, 2]])
-        self.combinations.append(combination)
+        combinations.append(combination)
 
-    def test_sums(self):
-        for combination in self.combinations:
+        for combination in combinations:
             self.assertCountEqual(combination.solutions, get_sums(combination.numbers, combination.target))
