@@ -25,4 +25,5 @@ class Test(unittest.TestCase):
             [' ', ' ', ' ', '♛'],
             [' ', '♛', ' ', ' ']
         ]
+
         self.assertEqual(result, play(4))
