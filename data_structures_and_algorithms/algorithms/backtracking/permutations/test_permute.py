@@ -4,12 +4,11 @@ from data_structures_and_algorithms.algorithms.backtracking.permutations.permute
 
 
 class Test(unittest.TestCase):
-    def setUp(self):
-        self.strings = [
+    def test_permute(self):
+        strings = [
             ('ABC', ['ABC', 'ACB', 'BAC', 'BCA', 'CBA', 'CAB']),
             ('XY', ['XY', 'YX'])
         ]
 
-    def test_permute(self):
-        for string in self.strings:
+        for string in strings:
             self.assertCountEqual(string[1], get_permutations(string[0]))
