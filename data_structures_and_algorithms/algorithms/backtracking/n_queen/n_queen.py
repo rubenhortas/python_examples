@@ -1,10 +1,15 @@
-"""
-Place N chess queens on an N×N chessboard such that none of them attack each other.
-"""
 from data_structures_and_algorithms.algorithms.backtracking.n_queen.board import Board
 
 
 def get_solution(board_size: int) -> Board | None:
+    """
+    Places N chess queens on an n*n chessboard such that none of them attack each other.
+    :param board_size:
+    :return: Board | None
+    """
+
+    # Time complexity: O(n!) (n = board_size)
+    # Auxiliary space: O(n^2)
     def has_solution(column: int) -> bool:
         if column == board.size:
             return True
