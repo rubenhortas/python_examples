@@ -16,7 +16,7 @@ def get_solution(board_size: int) -> Board | None:
                 if has_solution(column + 1):
                     return True
 
-                # If placing queen in the square doesn't lead to a solution:
+                # If placing the queen in the square doesn't lead to a solution:
                 # Remove the queen from the square
                 board.clear_square(row, column)  # Backtracking
 
