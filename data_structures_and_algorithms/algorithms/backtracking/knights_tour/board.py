@@ -6,12 +6,6 @@ class Board:
         self.size = len(self.squares)
         self.max_position = self.size ** 2
 
-    def _is_in_range(self, row: int, column: int) -> bool:
-        return 0 <= row < self.size and 0 <= column < self.size
-
-    def _is_empty(self, row: int, column: int) -> bool:
-        return self.squares[row][column] == self._BLANK
-
     def print(self) -> None:
         for row in self.squares:
             for column in row:
@@ -28,3 +22,9 @@ class Board:
 
     def clear(self, row: int, column: int) -> None:
         self.squares[row][column] = self._BLANK
+
+    def _is_in_range(self, row: int, column: int) -> bool:
+        return 0 <= row < self.size and 0 <= column < self.size
+
+    def _is_empty(self, row: int, column: int) -> bool:
+        return self.squares[row][column] == self._BLANK
