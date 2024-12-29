@@ -16,7 +16,7 @@ class Board:
             print()
         print()
 
-    def is_square_safe(self, row: int, column: int) -> bool:
+    def is_safe(self, row: int, column: int) -> bool:
         return self._is_row_safe(row) and self._is_column_safe(column) and self._are_diagonals_safe(row, column)
 
     def place_queen(self, row: int, column: int) -> None:
