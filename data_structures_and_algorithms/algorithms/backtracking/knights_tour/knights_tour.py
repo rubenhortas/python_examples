@@ -4,7 +4,7 @@ from data_structures_and_algorithms.algorithms.backtracking.knights_tour.knight 
 
 def get_solution(board_size: int) -> Board | None:
     """
-    Given an empty board of size board_size*board_size, with a knight placed in the first block,
+    Given an empty board of size n*n, with a knight placed in the first block,
     prints the order of each square visited (according to the rules of chess)
     if the knight can only visit each square once.
 
@@ -12,8 +12,8 @@ def get_solution(board_size: int) -> Board | None:
     :return: Board | None
     """
 
-    # Time complexity: O(8*board_size^2)  (8 is the number of possible moves of the knight)
-    # Auxiliary space: O(board_size^2)
+    # Time complexity: O(8*n^2)  (8 is the number of possible moves of the knight, n is the board size)
+    # Auxiliary space: O(n^2)
     def has_solution(row: int, column: int, position: int) -> bool:
         if position == board.max_position:
             return True
