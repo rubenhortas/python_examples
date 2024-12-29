@@ -5,7 +5,7 @@ from data_structures_and_algorithms.algorithms.backtracking.n_queen.board import
 
 
 def get_solution(board_size: int) -> Board | None:
-    def is_queen_placed(column: int) -> bool:
+    def has_solution(column: int) -> bool:
         if column == board.size:
             return True
 
@@ -13,7 +13,7 @@ def get_solution(board_size: int) -> Board | None:
             if board.is_safe(row, column):
                 board.place_queen(row, column)
 
-                if is_queen_placed(column + 1):
+                if has_solution(column + 1):
                     return True
 
                 # If placing queen in the square doesn't lead to a solution:
@@ -24,7 +24,7 @@ def get_solution(board_size: int) -> Board | None:
 
     board = Board(board_size)
 
-    if is_queen_placed(0):
+    if has_solution(0):
         return board
 
     return None
