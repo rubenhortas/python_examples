@@ -21,7 +21,7 @@ class Test(unittest.TestCase):
             board_.place_queen(0, 0)
 
             for square in board[1]:
-                self.assertEqual(square[1], board_.is_safe(*square[0]))
+                self.assertEqual(square[1], board_.is_square_safe(*square[0]))
 
     def test_get_solutions(self):
         board_4_solution = Board(4)

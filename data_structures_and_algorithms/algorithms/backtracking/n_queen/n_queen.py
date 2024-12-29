@@ -15,7 +15,7 @@ def get_solution(board_size: int) -> Board | None:
             return True
 
         for row in range(board.size):
-            if board.is_safe(row, column):
+            if board.is_square_safe(row, column):
                 board.place_queen(row, column)
 
                 if has_solution(column + 1):
