@@ -1,5 +1,3 @@
-#!/usr/bin/env python3
-
 """
 Shunting yard algorithm: https://en.wikipedia.org/wiki/Shunting_yard_algorithm
 """
