@@ -7,10 +7,9 @@ class Board:
         self.max_position = self.size ** 2
 
     def print(self) -> None:
-        for row in self.squares:
-            for column in row:
+        for row, columns in zip(self.squares, self.squares):
+            for column in columns:
                 print(f"[{column}]", end='')
-
             print()
         print()
 
