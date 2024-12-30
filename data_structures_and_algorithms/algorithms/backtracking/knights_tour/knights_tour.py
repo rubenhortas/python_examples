@@ -1,5 +1,5 @@
 from data_structures_and_algorithms.algorithms.backtracking.knights_tour.board import Board
-from data_structures_and_algorithms.algorithms.backtracking.knights_tour.knight import MOVES
+from data_structures_and_algorithms.algorithms.backtracking.knights_tour.knight import Knight
 
 
 def get_solution(board_size: int) -> Board | None:
@@ -18,7 +18,7 @@ def get_solution(board_size: int) -> Board | None:
         if position == board.max_position:
             return True
 
-        for move in MOVES:
+        for move in Knight.MOVES:
             next_square = (row + move[0], column + move[1])
 
             if board.is_valid(next_square[0], next_square[1]):
