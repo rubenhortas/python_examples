@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-def get_sums(numbers: list, target: int) -> list:
+def get_subsets(numbers: list, target: int) -> list:
     """
     Find all combinations of numbers in a list that add up to the target value.
     If there are no combinations return an empty list.
@@ -9,7 +9,7 @@ def get_sums(numbers: list, target: int) -> list:
     :return: [[1, 5], [1, 3, 2]]
     """
 
-    def get_sum(combination: list, start: int, target: int) -> list | None:
+    def get_subset(combination: list, start: int, target: int) -> list | None:
         if target == 0:  # Solution found
             solutions.append(combination[:])  # Shallow copy
             return
@@ -22,13 +22,13 @@ def get_sums(numbers: list, target: int) -> list:
                 continue
 
             combination.append(numbers[i])
-            get_sum(combination, i + 1, target - numbers[i])
+            get_subset(combination, i + 1, target - numbers[i])
             combination.pop()  # Backtracking
 
     solutions = []
     lenght = len(numbers)
 
     numbers.sort()
-    get_sum([], 0, target)
+    get_subset([], 0, target)
 
     return solutions
