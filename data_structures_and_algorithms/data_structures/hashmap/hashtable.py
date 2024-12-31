@@ -13,7 +13,7 @@ class HashTable:
         if self.data[index]:
             return self.data[index][1]
         else:
-            raise f"'{key}' does not exists."
+            raise f"'{key}' does not exist."
 
     def update(self, key: str, value: str) -> None:
         index = self._get_index(key)
@@ -21,7 +21,7 @@ class HashTable:
         if self.data[index]:
             self.data[index][1] = value
         else:
-            raise f"'{key}' does not exists."
+            raise f"'{key}' does not exist."
 
     def list(self) -> None:
         for data in self.data:
