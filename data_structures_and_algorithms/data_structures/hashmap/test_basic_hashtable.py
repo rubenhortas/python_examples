@@ -5,7 +5,7 @@ from data_structures_and_algorithms.data_structures.hashmap.basic_hashtable impo
 
 class Test(unittest.TestCase):
     def setUp(self):
-        self.hashtable = BasicHashTable(444)
+        self.hashtable = BasicHashTable(15)
         self.hashtable.insert('one', '1')
         self.hashtable.insert('two', '2')
         self.hashtable.insert('three', '3')
@@ -14,7 +14,6 @@ class Test(unittest.TestCase):
 
     def test_list(self):
         self.hashtable.list()
-        return True
 
     def test_get_value(self):
         self.assertEqual('1', self.hashtable.get('one'))

@@ -12,7 +12,6 @@ class Test(unittest.TestCase):
 
     def test_list(self):
         self.hashtable.list()
-        return True
 
     def test_get_value(self):
         self.assertEqual('l', self.hashtable.get('listen'))
