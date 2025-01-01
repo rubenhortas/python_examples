@@ -1,11 +1,11 @@
 import unittest
 
-from data_structures_and_algorithms.data_structures.hashmap.hashtable import HashTable
+from data_structures_and_algorithms.data_structures.hashmap.basic_hashtable import BasicHashTable
 
 
 class Test(unittest.TestCase):
     def setUp(self):
-        self.hashtable = HashTable(444)
+        self.hashtable = BasicHashTable(444)
         self.hashtable.insert('one', '1')
         self.hashtable.insert('two', '2')
         self.hashtable.insert('three', '3')

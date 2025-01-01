@@ -1,40 +1,44 @@
-class HashTable:
+class BasicHashTable:
     def __init__(self, size):
-        self.size = size
-        self.data = [None] * self.size
+        self._size = size
+        self._data = [None] * self._size
 
     def insert(self, key: str, value: str) -> None:
         index = self._get_index(key)
-        self.data[index] = [key, value]
+        self._data[index] = [key, value]
 
     def get(self, key: str) -> str | None:
         index = self._get_index(key)
 
-        if self.data[index]:
-            return self.data[index][1]
+        if self._data[index]:
+            return self._data[index][1]
         else:
             raise f"'{key}' does not exist."
 
     def update(self, key: str, value: str) -> None:
         index = self._get_index(key)
 
-        if self.data[index]:
-            self.data[index][1] = value
+        if self._data[index]:
+            self._data[index][1] = value
         else:
             raise f"'{key}' does not exist."
 
     def list(self) -> None:
-        for data in self.data:
-            if data:
-                print(f"'{data[0]}': '{data[1]}'")
+        index = 0
 
-    def _get_index(self, string: str) -> int:
+        for data in self._data:
+            if data:
+                print(f"[{index}] '{data[0]}': '{data[1]}'")
+
+            index += 1
+
+    def _get_index(self, key: str) -> int:
         result = 0
 
-        for character in string:
+        for character in key:
             number = ord(character)
             result += number
 
-        index = result % self.size
+        index = result % self._size
 
         return index
