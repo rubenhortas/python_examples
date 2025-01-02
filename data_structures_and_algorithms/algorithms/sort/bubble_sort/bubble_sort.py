@@ -5,10 +5,7 @@ def sort(lst: list) -> list:
     # Time complexity: O(n^2)
     # Auxiliary space: O(1)
 
-    if not lst:
-        return []
-
-    if len(lst) == 1:
+    if len(lst) <= 1:
         return lst
 
     lst_ = copy.deepcopy(lst)  # Create a copy of the list so as not modify the original list
