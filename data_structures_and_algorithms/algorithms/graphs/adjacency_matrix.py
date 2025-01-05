@@ -16,10 +16,13 @@ Disadvantages of Adjacency Matrix:
 
 
 class AdjacencyMatrix:
+    """
+    Adjacency Matrix for undirected and unwighted graph.
+    """
+
     def __init__(self, nodes, edges):
         self.data = [[0] * nodes for _ in range(nodes)]
 
-        # ꝏ
         for node1, node2 in edges:
             # In an adjacency matrix for a directed and weighted graph, we will replace the '1' with:
             # * 'ꝏ' (infinite, -1, etc.) if there is no edge
