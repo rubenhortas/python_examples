@@ -1,4 +1,8 @@
 class Graph:
+    """
+    Directed and unweighted graph.
+    """
+
     def __init__(self, num_nodes: int, edges: list):
         self.num_nodes = num_nodes
         self.data = [[] for _ in range(num_nodes)]
