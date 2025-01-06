@@ -1,7 +1,7 @@
 import unittest
 
-from data_structures_and_algorithms.algorithms.graphs.adjacency_matrix import AdjacencyMatrix
-from data_structures_and_algorithms.algorithms.graphs.graph import Graph
+from data_structures_and_algorithms.data_structures.graphs.adjacency_matrix import AdjacencyMatrix
+from data_structures_and_algorithms.data_structures.graphs.graph import Graph
 
 
 class Test(unittest.TestCase):
