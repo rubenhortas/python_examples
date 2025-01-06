@@ -92,10 +92,10 @@ No attribute is really private in Python (without a generally unnecessary amount
 
 ## Python file format
 
-  * Hashbang
-  * Docstrings
-  * Imports
-  * Code
+  1. Hashbang
+  2. Docstrings
+  3. Imports
+  4. Code
 
 ## Sources
 
