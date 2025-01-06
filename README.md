@@ -6,13 +6,12 @@ Small examples of Python code, data structures and algorithms.
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/rubenhortas/python_examples)
 ![GitHub repo size](https://img.shields.io/github/repo-size/rubenhortas/python_examples)
 
-![PyPI - Python Version](https://img.shields.io/pypi/pyversions/python_examples?logo=python&logoColor=yellow)
-![PyPI - Implementation](https://img.shields.io/pypi/implementation/python_examples?logo=python&logoColor=yellow)
-
 ![GitHub issues](https://img.shields.io/github/issues-raw/rubenhortas/python_examples?logo=github)
 ![GitHub closed issues](https://img.shields.io/github/issues-closed-raw/rubenhortas/python_examples?logo=github)
 ![GitHub pull requests](https://img.shields.io/github/issues-pr-raw/rubenhortas/python_examples?&logo=github)
 ![GitHub closed pull requests](https://img.shields.io/github/issues-pr-closed-raw/rubenhortas/python_examples?logo=github)
+
+![GitHub](https://img.shields.io/github/license/rubenhortas/python_examples)
 
 ## Python naming conventions
 
