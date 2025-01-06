@@ -2,6 +2,18 @@
 
 Small examples of Python code, data structures and algorithms.
 
+![GitHub repo file count](https://img.shields.io/github/directory-file-count/rubenhortas/python_examples)
+![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/rubenhortas/python_examples)
+![GitHub repo size](https://img.shields.io/github/repo-size/rubenhortas/python_examples)
+
+![PyPI - Python Version](https://img.shields.io/pypi/pyversions/python_examples?logo=python&logoColor=yellow)
+![PyPI - Implementation](https://img.shields.io/pypi/implementation/python_examples?logo=python&logoColor=yellow)
+
+![GitHub issues](https://img.shields.io/github/issues-raw/rubenhortas/python_examples?logo=github)
+![GitHub closed issues](https://img.shields.io/github/issues-closed-raw/rubenhortas/python_examples?logo=github)
+![GitHub pull requests](https://img.shields.io/github/issues-pr-raw/rubenhortas/python_examples?&logo=github)
+![GitHub closed pull requests](https://img.shields.io/github/issues-pr-closed-raw/rubenhortas/python_examples?logo=github)
+
 ## Python naming conventions
 
 ### Public elements
@@ -64,17 +76,17 @@ No attribute is really private in Python (without a generally unnecessary amount
   A docstring is the first statement in a package, module, class or function.
   Docstrings are not necessary for non-public methods, but you should have a comment that describes what the method
   does.
-* The """ that ends a multiline docstring should be on a line by itself.
+  * The """ that ends a multiline docstring should be on a line by itself.
 
-  ```python
-  def draw_circle():
-  """
-  Returns a circle
-  Draws a circle.
-  """
-  ...
-  ```
-* For one liner docstrings keep the closing """ on the same line:
+    ```python
+    def draw_circle():
+        """
+        Returns a circle
+        Draws a circle.
+        """
+        ...
+    ```
+* For one-liner docstrings keep the closing """ on the same line:
   ```python
   """Returns a circle."""
   ```
