@@ -13,4 +13,4 @@ class Test(unittest.TestCase):
             graph[node1].append(node2)
             graph[node2].append(node1)
 
-        self.assertCountEqual([0, 1, 4, 2, 3], bfs(graph, 0))
+        self.assertEqual([0, 1, 4, 2, 3], bfs(graph, 0))
