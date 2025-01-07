@@ -15,8 +15,8 @@ from collections import deque
 def bfs(graph: list, source_node: int) -> list:
     bfs_tour = []
     queue = deque()
-    visited = [False] * len(graph)
-    visited[source_node] = True
+    visited_nodes = [False] * len(graph)
+    visited_nodes[source_node] = True
     queue.append(source_node)
 
     while queue:
@@ -24,8 +24,8 @@ def bfs(graph: list, source_node: int) -> list:
         bfs_tour.append(current_node)
 
         for adjacent_node in graph[current_node]:
-            if not visited[adjacent_node]:
-                visited[adjacent_node] = True
+            if not visited_nodes[adjacent_node]:
+                visited_nodes[adjacent_node] = True
                 queue.append(adjacent_node)
 
     return bfs_tour
