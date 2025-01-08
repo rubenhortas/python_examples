@@ -1,6 +1,15 @@
 """
 Depth-first search (DFS) is an algorithm for traversing or searching tree or graph data structures.
 The algorithm starts at the root node and explores as far as possible along each branch before backtracking.
+
+Main uses:
+* Finding connected components
+* Topological sort
+* Cycle detection
+* Maze solving
+* Web crawling
+* Social network analysis
+* AI decision-making (game AI)
 """
 from collections import deque
 

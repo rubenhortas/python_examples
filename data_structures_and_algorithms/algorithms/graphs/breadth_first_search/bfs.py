@@ -8,6 +8,11 @@ Once all the adjacent nodes have been visited, its adjacent node is traversed.
 Popular graph algorithms such as Dijkstra's shortest path, Kahn's algorithm, and Prim's algorithm are based on BFS.
 
 BFS can be used to detect cycles in a directed and undirected graph, find the shortest path in an unweighted graph, and many other problems.
+
+Main uses:
+* Finding the shortest paths
+* Level order traversal
+* Bipartite graph check
 """
 from collections import deque
 
