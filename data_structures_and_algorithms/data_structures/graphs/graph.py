@@ -1,6 +1,6 @@
 class Graph:
     """
-    Directed and unweighted graph.
+    Undirected and unweighted graph.
     """
 
     def __init__(self, num_nodes: int, edges: list):
