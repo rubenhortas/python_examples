@@ -31,7 +31,7 @@ class Graph:
 
     def __str__(self):
         if self.weighted:
-            result = '# node1: [(node2, weight), ..., (node_n, weight)\n)]'
+            result = '# node1: [(node2, weight), ..., (node_n, weight)]\n'
         else:
             result = '# node1: [node2, ..., node_n]\n'
 
