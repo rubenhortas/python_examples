@@ -22,16 +22,19 @@ class Graph:
         result = ''
 
         if self.weighted:
-            print('# node1: [(node2, weight), ..., (node_n, weight)]')
-
             for i, (nodes, weights) in enumerate(zip(self.nodes, self.weights)):
                 result += f"{i}: {list(zip(nodes, weights))}\n"
         else:
-            print('# node1: [node2, ..., node_n]')
-
             for i, nodes in enumerate(self.nodes):
                 result += f"{i}: {nodes}\n"
         return result
 
     def __str__(self):
-        return self.__repr__()
+        if self.weighted:
+            result = '# node1: [(node2, weight), ..., (node_n, weight)\n)]'
+        else:
+            result = '# node1: [node2, ..., node_n]\n'
+
+        result += self.__repr__()
+
+        return result
