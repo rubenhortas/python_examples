@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
+from typing import List, Union
 
 EMPTY_LIST = []
 
 
-# Add type hint to lst causes IDE warnings.
-def add_items(lst) -> list:
+def add_items(lst: List[Union[str, int, bool]]) -> List[Union[str, int, bool]]:
     lst = lst + ['a']
     lst.append(1)  # In a list items don't need to be the same type
     lst.extend(['b', 2])
