@@ -20,9 +20,7 @@ from collections import deque
 def bfs(graph: list, source_node: int) -> list:
     bfs_tour = []
     queue = deque()
-    visited = set()
-
-    visited.add(source_node)
+    visited = {source_node}
     queue.append(source_node)
 
     while queue:
