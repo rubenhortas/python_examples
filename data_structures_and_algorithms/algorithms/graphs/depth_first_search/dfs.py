@@ -11,23 +11,21 @@ Main uses:
 * Social network analysis
 * AI decision-making (game AI)
 """
-from collections import deque
 
 
 def dfs(graph: list, source_node: int) -> list:
     dfs_tour = []
-    stack = deque()
-    visited_nodes = [False] * len(graph)
-    stack.append(source_node)
+    stack = [source_node]  # For simple stack operations (push and pop) a list is more efficient than deque
+    visited = set()
 
     while stack:
         current_node = stack.pop()
 
-        if not visited_nodes[current_node]:
-            visited_nodes[current_node] = True
+        if current_node not in visited:
+            visited.add(current_node)
             dfs_tour.append(current_node)
 
-            for adjacent_node in graph[current_node]:
-                stack.append(adjacent_node)
+            for neighbor in graph[current_node]:
+                stack.append(neighbor)
 
     return dfs_tour
