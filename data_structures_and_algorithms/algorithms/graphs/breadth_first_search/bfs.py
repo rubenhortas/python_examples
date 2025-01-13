@@ -20,17 +20,18 @@ from collections import deque
 def bfs(graph: list, source_node: int) -> list:
     bfs_tour = []
     queue = deque()
-    visited_nodes = [False] * len(graph)
-    visited_nodes[source_node] = True
+    visited = set()
+
+    visited.add(source_node)
     queue.append(source_node)
 
     while queue:
         current_node = queue.popleft()
         bfs_tour.append(current_node)
 
-        for adjacent_node in graph[current_node]:
-            if not visited_nodes[adjacent_node]:
-                visited_nodes[adjacent_node] = True
-                queue.append(adjacent_node)
+        for neighbor in graph[current_node]:
+            if neighbor not in visited:
+                visited.add(neighbor)
+                queue.append(neighbor)
 
     return bfs_tour
