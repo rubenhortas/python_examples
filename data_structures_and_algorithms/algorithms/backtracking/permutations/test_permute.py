@@ -6,8 +6,11 @@ from data_structures_and_algorithms.algorithms.backtracking.permutations.permute
 class Test(unittest.TestCase):
     def test_permute(self):
         strings = [
-            ('ABC', ['ABC', 'ACB', 'BAC', 'BCA', 'CBA', 'CAB']),
-            ('XY', ['XY', 'YX'])
+            ('', []),
+            ('a', ['a']),
+            ('ab', ['ab', 'ba']),
+            ('abc', ['abc', 'acb', 'bac', 'bca', 'cab', 'cba']),
+            ('aa', ['aa', 'aa'])
         ]
 
         for string in strings:

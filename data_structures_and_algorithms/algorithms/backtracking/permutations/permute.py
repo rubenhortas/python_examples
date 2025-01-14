@@ -1,40 +1,22 @@
-#!/usr/bin/env python3
+def get_permutations(string: str):
+    def permute(lst: list, start: int, end: int) -> None:
+        def swap(i: int, j: int) -> None:
+            lst[i], lst[j] = lst[j], lst[i]
 
-def _swap(s: str, index: int, position: int) -> str:
-    if position == index:
-        return s
+        if start == end:
+            permutations.append(''.join(lst))
+        else:
+            for i in range(start, end):
+                swap(start, i)  # Swap chars
 
-    s = list(s)
-    s[index], s[position] = s[position], s[index]
+                permute(lst, start + 1, end)
 
-    return ''.join(s)
-
-
-def get_permutations(string: str) -> list:
-    """
-    Gets all the permutations of a given string.
-    :param string: 'ABC'
-    :return: ['ABC', 'ACB', 'BAC', 'BCA', 'CBA', 'CAB']
-    """
-
-    def get_permutation(s: str, index: int) -> list | None:
-        if index == length - 1:
-            solutions.append(s)
-            return
-
-        for i in range(index, length):
-            s = _swap(s, index, i)
-
-            get_permutation(s, index + 1)
-
-            s = _swap(s, index, i)  # Backtrack
+                swap(start, i)  # Backtrack -> Swap back
 
     if not string:
         return []
 
-    solutions = []
-    length = len(string)
+    permutations = []
+    permute(list(string), 0, len(string))
 
-    get_permutation(string, 0)
-
-    return solutions
+    return permutations
