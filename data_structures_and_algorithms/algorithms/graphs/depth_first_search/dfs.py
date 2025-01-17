@@ -10,10 +10,14 @@ Main uses:
 * Web crawling
 * Social network analysis
 * AI decision-making (game AI)
+
+Choose DFS for tasks like topological sorting, finding connected components, and cycle detection.
 """
 
 
 def dfs(graph: list, source_node: int) -> list:
+    # Time complexity: O(nodes+edges)
+    # Auxiliary space: O(nodes+edges)
     dfs_tour = []
     stack = [source_node]  # For simple stack operations (push and pop) a list is more efficient than deque
     visited = set()

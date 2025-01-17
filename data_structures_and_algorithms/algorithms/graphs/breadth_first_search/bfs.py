@@ -13,11 +13,16 @@ Main uses:
 * Finding the shortest paths
 * Level order traversal
 * Bipartite graph check
+
+* Choose BFS to find the shortest path.
 """
 from collections import deque
 
 
 def bfs(graph: list, source_node: int) -> list:
+    # Time complexity: O(nodes+edges)
+    # Auxiliary space: O(nodes)
+
     bfs_tour = []
     queue = deque()
     visited = {source_node}
