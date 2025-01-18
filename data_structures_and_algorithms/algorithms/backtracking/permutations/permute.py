@@ -17,6 +17,7 @@ def get_permutations(string: str):
         return []
 
     permutations = []
+
     permute(list(string), 0, len(string))
 
     return permutations
