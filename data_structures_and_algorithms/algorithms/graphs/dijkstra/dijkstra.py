@@ -1,5 +1,6 @@
-from data_structures_and_algorithms.data_structures.graphs.graph import Graph
 import heapq
+
+from data_structures_and_algorithms.data_structures.graphs.graph import Graph
 
 
 def get_shortest_path(graph: Graph, source_node: int, end_node: int) -> (list, float):
@@ -20,6 +21,7 @@ def get_shortest_path(graph: Graph, source_node: int, end_node: int) -> (list, f
     # Use a priority queue (min-heap) to efficiently select the next node
     priority_queue = [(0, source_node)]  # (distance, node)
     distances[source_node] = 0
+    path = []
 
     while priority_queue:
         current_distance, current_node = heapq.heappop(priority_queue)
@@ -38,7 +40,6 @@ def get_shortest_path(graph: Graph, source_node: int, end_node: int) -> (list, f
             if neighbor not in visited:
                 heapq.heappush(priority_queue, (distances[neighbor], neighbor))
 
-    path = []
     current = end_node
 
     while current is not None:
