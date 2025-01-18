@@ -13,4 +13,4 @@ class Test(unittest.TestCase):
                           (4, 8, 8), (5, 6, 8)])
 
         # self.assertEqual(([0, 1, 7], 7), get_shortest_path(graph, 0, 7))
-        self.assertEqual(([2, 3, 4, 8], 15), get_shortest_path(graph, 2, 8))  # TODO: Check this result
+        self.assertEqual(([2, 3, 0, 8], 12), get_shortest_path(graph, 2, 8))
