@@ -2,6 +2,8 @@ from collections import defaultdict
 
 
 def get_shortest_path(graph: dict, start: str, end: str) -> (list, int):
+    # Time complexity: O((nodes+edges)*log(nodes))
+    # Auxiliary space: O(nodes)
     distances = defaultdict(lambda: float('inf'))
     distances[start] = 0
     predecessors = {}
