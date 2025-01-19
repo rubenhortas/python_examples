@@ -16,7 +16,7 @@ class Maze:
     def unblock(self, row: int, colum: int) -> None:
         self.squares[row][colum] = 1
 
-    def print(self):
+    def print(self) -> None:
         for row, columns in zip(self.squares, self.squares):
             for column in columns:
                 print(f"[{column}]", end='')
