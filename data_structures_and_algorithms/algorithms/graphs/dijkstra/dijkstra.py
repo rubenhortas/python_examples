@@ -1,4 +1,5 @@
 import heapq
+from typing import Tuple
 
 from data_structures_and_algorithms.data_structures.graphs.graph import Graph
 
@@ -19,7 +20,7 @@ def get_shortest_path(graph: Graph, start: int, end: int) -> (list, float):
     visited = set()
     predecessors = [None] * graph.num_nodes
     # Use a priority queue (min-heap) to efficiently select the next node
-    priority_queue = [(0, start)]  # (distance, node)
+    priority_queue: list[Tuple[float, float]] = [(0, start)]  # (distance, node)
     distances[start] = 0
     path = []
 
