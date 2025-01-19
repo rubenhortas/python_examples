@@ -17,7 +17,7 @@ def sort(lst: list) -> list:
     return result
 
 
-def _merge(left, right):
+def _merge(left, right) -> list:
     result = []
     left_index = 0
     right_index = 0
