@@ -17,7 +17,7 @@ Disadvantages of Adjacency Matrix:
 
 class AdjacencyMatrix:
     """
-    Adjacency Matrix for undirected and unwighted graph.
+    Adjacency Matrix for undirected and unweighted graph.
     """
 
     def __init__(self, nodes, edges):
