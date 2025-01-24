@@ -3,7 +3,7 @@ class Hero:
     Name mangling is used for class attributes that one does not want subclasses to use which are designated as such
     by giving them a name with two or more leading underscores and no more than one trailing underscore
 
-    Python"s runtime does not restrict access to such attributes, the mangling only prevents name collisions
+    Python's runtime does not restrict access to such attributes, the mangling only prevents name collisions
     if a derived class defines an attribute with the same name.
     """
     __hero_name: str = None
