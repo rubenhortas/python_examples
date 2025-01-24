@@ -1,5 +1,3 @@
-#!/usr/bin/env python3
-
 def get_subsets(numbers: list, target: int) -> list:
     """
     Find all combinations of numbers in a list that add up to the target value.
