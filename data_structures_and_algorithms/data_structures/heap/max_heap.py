@@ -6,6 +6,12 @@ from binary_heap import BinaryHeap
 
 
 class MaxHeap(BinaryHeap):
+    def extract_max(self):
+        return self._extract_root()
+
+    def get_max(self):
+        return self._get_root()
+
     def _heapify_up(self, i):
         while i > 0 and self.heap[i] > self.heap[self._parent(i)]:
             self.heap[i], self.heap[self._parent(i)] = self.heap[self._parent(i)], self.heap[i]
@@ -25,9 +31,3 @@ class MaxHeap(BinaryHeap):
         if largest != i:
             self.heap[i], self.heap[largest] = self.heap[largest], self.heap[i]
             self._heapify_down(largest)
-
-    def extract_max(self):
-        return self._extract_root()
-
-    def get_max(self):
-        return self._get_root()
