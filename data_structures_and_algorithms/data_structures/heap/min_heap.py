@@ -6,6 +6,12 @@ from binary_heap import BinaryHeap
 
 
 class MinHeap(BinaryHeap):
+    def extract_min(self):
+        return self._extract_root()
+
+    def get_min(self):
+        return self._get_root()
+
     def _heapify_up(self, i):
         while i > 0 and self.heap[i] < self.heap[self._parent(i)]:
             self.heap[i], self.heap[self._parent(i)] = self.heap[self._parent(i)], self.heap[i]
@@ -25,9 +31,3 @@ class MinHeap(BinaryHeap):
         if smallest != i:
             self.heap[i], self.heap[smallest] = self.heap[smallest], self.heap[i]
             self._heapify_down(smallest)
-
-    def extract_min(self):
-        return self._extract_root()
-
-    def get_min(self):
-        return self._get_root()
