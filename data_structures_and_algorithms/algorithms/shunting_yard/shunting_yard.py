@@ -2,7 +2,7 @@
 Shunting yard algorithm: https://en.wikipedia.org/wiki/Shunting_yard_algorithm
 """
 
-PRECEDENCES = {  # PEMDAS: Parentheses, Exponents, Multiplication/Division, Addition/Subtraction.
+_PRECEDENCES = {  # PEMDAS: Parentheses, Exponents, Multiplication/Division, Addition/Subtraction.
     '**': 3,
     '*': 2,
     '/': 2,
@@ -24,9 +24,9 @@ def shunting_yard(expression: str) -> str:
     for token in expression:
         if token == ' ':
             continue
-        elif token in PRECEDENCES:
-            while (operator_stack and operator_stack[-1] in PRECEDENCES and
-                   PRECEDENCES[token] <= PRECEDENCES[operator_stack[-1]]):
+        elif token in _PRECEDENCES:
+            while (operator_stack and operator_stack[-1] in _PRECEDENCES and
+                   _PRECEDENCES[token] <= _PRECEDENCES[operator_stack[-1]]):
                 output_queue.append(operator_stack.pop())
             operator_stack.append(token)
         elif token == '(':
