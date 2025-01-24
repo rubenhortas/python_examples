@@ -10,6 +10,14 @@ class BinaryHeap:
         self.size = 0  # Current number of elements in the heap
         self.heap = [0] * capacity  # Array to store the heap elements
 
+    def insert(self, x):
+        if self.size == self.capacity:
+            return None
+
+        self.heap[self.size] = x
+        self.size += 1
+        self._heapify_up(self.size - 1)
+
     @staticmethod
     def _parent(i):
         return (i - 1) // 2
@@ -56,11 +64,3 @@ class BinaryHeap:
             return None
 
         return self.heap[0]
-
-    def insert(self, x):
-        if self.size == self.capacity:
-            return None
-
-        self.heap[self.size] = x
-        self.size += 1
-        self._heapify_up(self.size - 1)
