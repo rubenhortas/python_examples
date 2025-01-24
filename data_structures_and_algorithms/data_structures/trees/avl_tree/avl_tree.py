@@ -9,6 +9,27 @@ class AvlTree:
     def __init__(self):
         self.root = None
 
+    def insert_value(self, value):
+        self.root = self._insert(self.root, value)
+
+    def delete_value(self, value):
+        self.root = self._delete(self.root, value)
+
+    def search_value(self, value):
+        return self._search(self.root, value)
+
+    def preorder(self):
+        def traverse_preorder(node):
+            if node:
+                values.append(node.value)
+                traverse_preorder(node.left)
+                traverse_preorder(node.right)
+
+        values = []
+        traverse_preorder(self.root)
+
+        return values
+
     @staticmethod
     def _get_height(node):
         if not node:
@@ -127,24 +148,3 @@ class AvlTree:
             return self._search(node.right, value)
 
         return self._search(node.left, value)
-
-    def insert_value(self, value):
-        self.root = self._insert(self.root, value)
-
-    def delete_value(self, value):
-        self.root = self._delete(self.root, value)
-
-    def search_value(self, value):
-        return self._search(self.root, value)
-
-    def preorder(self):
-        def traverse_preorder(node):
-            if node:
-                values.append(node.value)
-                traverse_preorder(node.left)
-                traverse_preorder(node.right)
-
-        values = []
-        traverse_preorder(self.root)
-
-        return values
