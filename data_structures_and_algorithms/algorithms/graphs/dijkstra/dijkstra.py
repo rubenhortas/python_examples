@@ -7,6 +7,7 @@ from data_structures_and_algorithms.data_structures.graphs.graph import Graph
 def get_shortest_path(graph: Graph, start: int, end: int) -> (list, float):
     # Time complexity: O((nodes+edges)*log(nodes))
     # Auxiliary space: O(nodes)
+
     def update_distances() -> None:
         neighbors = graph.nodes[current]
         weights = graph.weights[current]

@@ -11,9 +11,9 @@ def get_solution(board_size: int) -> Board | None:
     :param board_size: board size
     :return: Board | None
     """
-
     # Time complexity: O(8*n^2)  (8 is the number of possible moves of the knight, n is the board size)
     # Auxiliary space: O(n^2)
+
     def has_solution(row: int, column: int, position: int) -> bool:
         if position == board.max_position:
             return True

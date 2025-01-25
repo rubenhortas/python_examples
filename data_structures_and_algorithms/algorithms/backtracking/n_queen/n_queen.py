@@ -7,9 +7,9 @@ def get_solution(board_size: int) -> Board | None:
     :param board_size:
     :return: Board | None
     """
-
     # Time complexity: O(n!) (n = board_size)
     # Auxiliary space: O(n^2)
+
     def has_solution(column: int) -> bool:
         if column == board.size:
             return True

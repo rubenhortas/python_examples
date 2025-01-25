@@ -1,6 +1,7 @@
 def sort(lst: list) -> list:
     # Time complexity: O(n*log(n))
     # Auxiliary space: O(n)
+
     def merge() -> list:
         result = []
         left_index = 0

@@ -18,6 +18,7 @@ Choose DFS for tasks like topological sorting, finding connected components, and
 def dfs(graph: list, source_node: int) -> list:
     # Time complexity: O(nodes+edges)
     # Auxiliary space: O(nodes+edges)
+
     dfs_tour = []
     stack = [source_node]  # For simple stack operations (push and pop) a list is more efficient than deque
     visited = set()

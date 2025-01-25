@@ -49,7 +49,6 @@ class BinaryTree:
         Time complexity: O(n)
         Auxiliary Space: O(n)
         """
-
         def delete_node(node_to_delete: Node) -> None:
             queue = deque()
             queue.append(self.root)
@@ -114,7 +113,6 @@ class BinaryTree:
         Time complexity: O(n)
         Auxiliary space: O(1)
         """
-
         def traverse_inorder(node: Node) -> None:
             if node:
                 traverse_inorder(node.left)
@@ -191,7 +189,6 @@ class BinaryTree:
         Time complexity: O(n)
         Auxiliary space: O(1)
         """
-
         def traverse_preorder(node: Node) -> None:
             if node:
                 values.append(str(node))
@@ -267,7 +264,6 @@ class BinaryTree:
         Time complexity: O(n)
         Auxiliary space: O(1)
         """
-
         def traverse_postorder(node: Node) -> None:
             if node:
                 traverse_postorder(node.left)
@@ -339,7 +335,6 @@ class BinaryTree:
         Time complexity: O(n^2)
         Auxiliary space: O(n)
         """
-
         def get_level(node: Node, level: int, left_to_right: bool) -> None:
             if node:
                 if level == 1:
@@ -403,7 +398,6 @@ class BinaryTree:
         Time complexity:  O(n^2)
         Auxiliary space: O(h)
         """
-
         def get_level(node: Node, level: int) -> None:
             if node:
                 if level == 0:
@@ -450,7 +444,6 @@ class BinaryTree:
         Time complexity:  O(n)
         Auxiliary space: O(h)
         """
-
         def map_node(node: Node, level: int) -> None:
             if node:
                 if level not in map:
@@ -478,7 +471,6 @@ class BinaryTree:
         Time complexity:  O(n*log(n))
         Auxiliary space: O(n)
         """
-
         def map_node(node: Node, distance: int, map: dict) -> None:
             if node:
                 # distance of current line from rightmost-topmost slope
@@ -531,7 +523,6 @@ class BinaryTree:
         Time complexity:  O(n)
         Auxiliary space: O(n)
         """
-
         def get_left_boundary(node: Node) -> None:
             if node:
                 if node.left:
