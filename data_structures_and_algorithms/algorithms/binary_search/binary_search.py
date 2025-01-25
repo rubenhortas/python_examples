@@ -6,6 +6,7 @@ def get_position(lst: list, number: int) -> int:
     :return: 5
     """
 
+    # noinspection PyShadowingNames
     def binary_search(lst: list, number: int, min_pos: int, max_pos: int) -> int:
         # Time complexity: O(log(n))
         # Auxiliary space: O(1)

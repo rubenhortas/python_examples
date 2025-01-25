@@ -4,7 +4,7 @@ from data_structures_and_algorithms.algorithms.graphs.dijkstra.dijkstra_dictiona
 
 
 class Test(unittest.TestCase):
-    def test_dikjstra_dictionary(self):
+    def test_dijkstra_dictionary(self):
         graph = {
             '0': {'1': 3, '3': 2, '8': 4},
             '1': {'0': 3, '7': 4},

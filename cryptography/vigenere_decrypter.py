@@ -130,6 +130,7 @@ def _get_key_shift(language_frequency_values: list, ciphertext_frequency_values:
     return shift
 
 
+# noinspection PyShadowingNames
 def _get_key(shifts: list) -> str:
     key = ''
 
@@ -146,6 +147,7 @@ def _get_key(shifts: list) -> str:
     return key
 
 
+# noinspection PyShadowingNames
 def _decrypt(ciphertext: str, ciphertext_length: int, key_shifts: list, key_length: int) -> str:
     alphabet = list(LANGUAGE_FREQUENCIES.keys())
     plaintext = ''
@@ -169,6 +171,7 @@ def _complete_frequencies(frequencies: dict) -> dict:
     return complete_frequencies
 
 
+# noinspection PyShadowingNames
 def _get_shifts_from_key(key: str) -> list:
     shifts = []
 
@@ -185,12 +188,14 @@ def _get_shifts_from_key(key: str) -> list:
     return shifts
 
 
+# noinspection PyShadowingNames
 def _get_key_length(ciphertext: str, ciphertext_length: int) -> int:
     coincidences = _get_coincidences(ciphertext, ciphertext_length)
 
     return _get_max_coincidences(coincidences)
 
 
+# noinspection PyShadowingNames
 def _get_coincidences(ciphertext: str, ciphertext_length: int) -> list:
     """
     Finding coincidences
@@ -222,6 +227,7 @@ def _get_coincidences(ciphertext: str, ciphertext_length: int) -> list:
     return coincidences
 
 
+# noinspection PyShadowingNames
 def _get_max_coincidences(coincidences: list) -> int:
     """
     Find the position in the list with the largest match values.

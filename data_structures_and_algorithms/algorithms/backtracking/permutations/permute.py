@@ -1,5 +1,6 @@
 def get_permutations(string: str) -> list:
     def permute(lst: list, start: int, end: int) -> None:
+        # noinspection PyShadowingNames
         def swap(i: int, j: int) -> None:
             lst[i], lst[j] = lst[j], lst[i]
 

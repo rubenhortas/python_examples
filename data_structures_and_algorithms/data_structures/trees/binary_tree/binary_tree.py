@@ -6,6 +6,7 @@ from collections import deque
 from node import Node
 
 
+# noinspection PyShadowingBuiltins
 class BinaryTree:
     def __init__(self):
         self.root = None
@@ -49,6 +50,8 @@ class BinaryTree:
         Time complexity: O(n)
         Auxiliary Space: O(n)
         """
+
+        # noinspection PyShadowingNames
         def delete_node(node_to_delete: Node) -> None:
             queue = deque()
             queue.append(self.root)
@@ -226,7 +229,7 @@ class BinaryTree:
 
     def get_preorder_traversal_morris(self) -> list:
         """
-        Preordedr Tree Traversal using Morris Traversal.
+        Preorder Tree Traversal using Morris Traversal.
 
         Time complexity: O(n)
         Auxiliary space: O(1)
@@ -335,6 +338,8 @@ class BinaryTree:
         Time complexity: O(n^2)
         Auxiliary space: O(n)
         """
+
+        # noinspection PyShadowingNames
         def get_level(node: Node, level: int, left_to_right: bool) -> None:
             if node:
                 if level == 1:
@@ -444,6 +449,8 @@ class BinaryTree:
         Time complexity:  O(n)
         Auxiliary space: O(h)
         """
+
+        # noinspection PyShadowingNames
         def map_node(node: Node, level: int) -> None:
             if node:
                 if level not in map:
@@ -471,6 +478,8 @@ class BinaryTree:
         Time complexity:  O(n*log(n))
         Auxiliary space: O(n)
         """
+
+        # noinspection PyShadowingNames
         def map_node(node: Node, distance: int, map: dict) -> None:
             if node:
                 # distance of current line from rightmost-topmost slope
