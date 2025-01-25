@@ -1,7 +1,7 @@
 class BasicHashTable:
     def __init__(self, size):
         self._size = size
-        self._data = [None] * self._size
+        self._data: (None | list) = [None] * self._size
 
     def insert(self, key: str, value: str) -> None:
         index = self._get_index(key)
