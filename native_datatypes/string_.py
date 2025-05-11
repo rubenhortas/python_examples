@@ -118,6 +118,22 @@ def _reverse() -> None:
     # return: 'REDRUM' backwards is 'MURDER'
 
 
+def _escape_quotes() -> None:
+    my_script = "my_script"
+
+    command = f"Running \"{my_script}\"..."
+    print(command)
+    # return: Running "my_script"...
+
+    command = f'''Running "{my_script}"...'''
+    print(command)
+    # return: Running "my_script"...
+
+    command = f"""Running "{my_script}"..."""
+    print(command)
+    # return: Running "my_script"...
+
+
 if __name__ == '__main__':
     _multiline_strings()
     _capitalize()
@@ -127,3 +143,4 @@ if __name__ == '__main__':
     _split()
     _join()
     _reverse()
+    _escape_quotes()
