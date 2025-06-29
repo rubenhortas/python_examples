@@ -50,7 +50,7 @@ def _number_formatting() -> None:
 
 
 def _string_formatting() -> None:
-    # Literal String Interpolation https://peps.python.org/pep-0498/
+    # f-strings (Literal String Interpolation https://peps.python.org/pep-0498/)
     one_argument = 'one argument'
     print(f"f-string with {one_argument}")
     # return: f-string with one argument
