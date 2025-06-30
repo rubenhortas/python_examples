@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 # T-strings, or template strings, are a new feature in Python 3.14 that allow for safer and more flexible string processing compared to f-strings.
-# They provisde a way to access and manipulate interpolated values before combining them into a final string,
+# They provide a way to access and manipulate interpolated values before combining them into a final string,
 # reducing the risk of security vulnerabilities like SQL injection and cross-site scripting.
 
 from string import Template
