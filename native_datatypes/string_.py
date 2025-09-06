@@ -134,6 +134,15 @@ def _escape_quotes() -> None:
     # return: Running "my_script"...
 
 
+def _if_statement_into_fstring() -> None:
+    # Use if-else inside a fstring to make the code shorter.
+    num1 = 0
+    num2 = 1
+
+    print(f"{'num1 is less than num2' if num1 < num2 else 'num2 is less than num1'}")
+    # return: num1 is less than num2
+
+
 if __name__ == '__main__':
     _multiline_strings()
     _capitalize()
@@ -144,3 +153,4 @@ if __name__ == '__main__':
     _join()
     _reverse()
     _escape_quotes()
+    _if_statement_into_fstring()
