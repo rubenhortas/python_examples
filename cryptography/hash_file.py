@@ -3,10 +3,11 @@
 import hashlib
 
 _FILE = 'helloworld.txt'
-_CHUNK_SIZE = 1024
+_CHUNK_SIZE = 65536  # 64KB
 
 def _hash_file(file_path: str) -> str:
-    h = hashlib.new('SHA256')
+    # h = hashlib.new('SHA256')
+    h = hashlib.sha256()
 
     with open(file_path, "rb") as f:
         while True:
