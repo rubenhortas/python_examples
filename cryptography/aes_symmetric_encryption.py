@@ -7,16 +7,17 @@ from cryptography.hazmat.primitives.ciphers.aead import AESGCM
 _PLAIN_TEXT = 'Hello, AES!'
 _KEY_SIZE = 32  # bytes
 _NONCE_SIZE = 12  # bytes
+_ENCODING = 'UTF-8'
 
 def encrypt(aes: AESGCM, nonce: bytes, plaintext: str) -> str:
-    return (nonce + aes.encrypt(nonce, plaintext.encode('UTF-8'), None)).hex()
+    return (nonce + aes.encrypt(nonce, plaintext.encode(_ENCODING), None)).hex()
 
 def decrypt(aes: AESGCM, ciphertext: str) -> str:
     ciphertext_bytes = bytes.fromhex(ciphertext)
     nonce = ciphertext_bytes[:_NONCE_SIZE]
     encrypted_data = ciphertext_bytes[_NONCE_SIZE:]
 
-    return aes.decrypt(nonce, encrypted_data, None).decode('UTF-8')
+    return aes.decrypt(nonce, encrypted_data, None).decode(_ENCODING)
 
 if __name__ == '__main__':
     key = secrets.token_bytes(_KEY_SIZE)
