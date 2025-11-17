@@ -1,12 +1,10 @@
 #!/usr/bin/env python3
 
-
 import hashlib
 
+_TEXT = 'Hello world!'
 
 if __name__ == '__main__':
-    _TEXT = 'Hello world!'
-
     hash_object = hashlib.sha256(_TEXT.encode())
     hash_digest = hash_object.hexdigest()
 
