@@ -5,7 +5,7 @@ import hashlib
 _TEXT = 'Hello world!'
 
 if __name__ == '__main__':
-    hash_object = hashlib.sha256(_TEXT.encode())
+    hash_object = hashlib.sha256(_TEXT.encode('UTF-8'))
     hash_digest = hash_object.hexdigest()
 
     print(f"SHA256 hash of '{_TEXT}' is '{hash_digest}'")
