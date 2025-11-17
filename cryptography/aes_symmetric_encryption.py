@@ -9,9 +9,11 @@ _KEY_SIZE = 32  # bytes
 _NONCE_SIZE = 12  # bytes
 _ENCODING = 'UTF-8'
 
+# noinspection PyShadowingNames
 def encrypt(aes: AESGCM, nonce: bytes, plaintext: str) -> str:
     return (nonce + aes.encrypt(nonce, plaintext.encode(_ENCODING), None)).hex()
 
+# noinspection PyShadowingNames
 def decrypt(aes: AESGCM, ciphertext: str) -> str:
     ciphertext_bytes = bytes.fromhex(ciphertext)
     nonce = ciphertext_bytes[:_NONCE_SIZE]
