@@ -32,7 +32,7 @@ if __name__ == '__main__':
     print(f"Key: '{key.hex()}'")
     print(f"Ciphertext: '{ciphertext}'")
     print(f"Decrypted text: '{decoded_ciphertext}'")
-    #return:
+    # return:
     # Plaintext: Hello, AES!'
     # Key: '450d0b49bfc86b8180c437d7b6e711f84dc96e72d28cff06318bc0919ee7189c'
     # Ciphertext: 'afa250e2e4aecdb9104a5b1eecf97e329168111bf708f2d9b8ce30a6908825370074be525c834e'
