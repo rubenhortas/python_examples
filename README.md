@@ -13,7 +13,7 @@ A collection of Python examples, including Data Structures and Algorithms (DSA).
 
 ![GitHub](https://img.shields.io/github/license/rubenhortas/python_examples)
 
-## Python naming conventions
+## :bookmark: Python naming conventions
 
 ### Public elements
 
@@ -102,6 +102,6 @@ No attribute is really private in Python (without a generally unnecessary amount
 * [PEP 8](https://peps.python.org/pep-0008)
 * [Google Python Style Guide](https://google.github.io/styleguide/pyguide.html)
 
-## Support
+## :star: Support
 
 If you find these examples useful, please consider starring this repository!
