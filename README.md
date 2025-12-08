@@ -1,6 +1,6 @@
 # python examples
 
-Small examples of Python code, data structures and algorithms.
+A collection of Python examples, including Data Structures and Algorithms (DSA).
 
 ![GitHub repo file count](https://img.shields.io/github/directory-file-count/rubenhortas/python_examples)
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/rubenhortas/python_examples)
