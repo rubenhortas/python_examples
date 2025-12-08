@@ -90,7 +90,7 @@ No attribute is really private in Python (without a generally unnecessary amount
   """Returns a circle."""
   ```
 
-## Python file format
+## snake: Python file format
 
   1. Hashbang
   2. Docstrings
