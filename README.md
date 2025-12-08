@@ -104,4 +104,4 @@ No attribute is really private in Python (without a generally unnecessary amount
 
 ## :star: Support
 
-If you find these examples useful, please consider starring this repository!
+If you find these examples useful, please, consider starring this repository!
