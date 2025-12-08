@@ -90,14 +90,14 @@ No attribute is really private in Python (without a generally unnecessary amount
   """Returns a circle."""
   ```
 
-## snake: Python file format
+## :snake: Python file format
 
   1. Hashbang
   2. Docstrings
   3. Imports
   4. Code
 
-## Sources
+## :books: Sources
 
 * [PEP 8](https://peps.python.org/pep-0008)
 * [Google Python Style Guide](https://google.github.io/styleguide/pyguide.html)
