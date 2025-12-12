@@ -2,14 +2,8 @@
 
 A collection of Python examples, including Data Structures and Algorithms (DSA).
 
-![GitHub repo file count](https://img.shields.io/github/directory-file-count/rubenhortas/python_examples)
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/rubenhortas/python_examples)
 ![GitHub repo size](https://img.shields.io/github/repo-size/rubenhortas/python_examples)
-
-![GitHub issues](https://img.shields.io/github/issues-raw/rubenhortas/python_examples?logo=github)
-![GitHub closed issues](https://img.shields.io/github/issues-closed-raw/rubenhortas/python_examples?logo=github)
-![GitHub pull requests](https://img.shields.io/github/issues-pr-raw/rubenhortas/python_examples?&logo=github)
-![GitHub closed pull requests](https://img.shields.io/github/issues-pr-closed-raw/rubenhortas/python_examples?logo=github)
 
 ![GitHub](https://img.shields.io/github/license/rubenhortas/python_examples)
 
