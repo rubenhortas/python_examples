@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-def read_file_example(file_path):
+def read(file_path):
     try:
         # Modes:
         # 'r'  - Read (default). Opens for reading. Error if file doesn't exist.
@@ -18,7 +18,7 @@ def read_file_example(file_path):
         print(f"An unexpected error occurred: {e}")
 
 
-def write_file_example(file_path, text_to_write):
+def write(file_path, text_to_write):
     try:
         # Modes:
         # 'w'  - Write. Creates a new file or truncates (overwrites) existing.
@@ -37,6 +37,6 @@ def write_file_example(file_path, text_to_write):
 
 
 if __name__ == '__main__':
-    write_file_example('output.txt', 'Hello, world!')
-    data = read_file_example('output.txt')
+    write('output.txt', 'Hello, world!')
+    data = read('output.txt')
     print(data)
