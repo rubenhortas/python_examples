@@ -13,7 +13,7 @@ def load_url(url, timeout):
 
 def run_concurrent_tasks():
     # ThreadPoolExecutor for I/O bound tasks
-    with concurrent.futures.ThreadPoolExecutor(max_workers=min(32, os.cpu_count() + 4)) as executor:
+    with concurrent.futures.ThreadPoolExecutor(max_workers=min(32, (os.cpu_count() or 1) + 4)) as executor:
         future_to_url = {executor.submit(load_url, url, 60): url for url in URLS}
 
         for future in concurrent.futures.as_completed(future_to_url):
