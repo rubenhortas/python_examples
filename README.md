@@ -11,16 +11,16 @@ A collection of Python examples, including Data Structures and Algorithms (DSA).
 
 ### Public elements
 
-| Type            | Notation                    | Example       | Notes                                                                             |
-|-----------------|-----------------------------|---------------|-----------------------------------------------------------------------------------|
-| Class           | PascalCase (UpperCamelCase) | MyClass       |                                                                                   |
-| Constant        | SCREAMING_SNAKE_CASE        | MY_CONSTANT   | Uppercase single letter, word, or words. Separate words with underscores.         |
-| Enum values     | SCREAMING_SNAKE_CASE        | SOME_ENUM     |                                                                                   |
-| Exception       | PascalCase (UpperCamelCase) | MyException   |                                                                                   |
-| Function/Method | snake_case                  | my_function() | Lowercase word or words. Separate words by underscores.                           |
-| Module          | snake_case                  | my_module.py  | Short. Lowercase word or words.  Underscores can be used if improves readability. |
-| Package         | lowercase                   | mypackage     | Short. Lowercase word or words. The use of underscores is discouraged.            |
-| Variable        | snake_case                  | my_variable   | Lowercase single letter, word, or words. Separate words with underscores.         |
+| Type            | Notation                    | Example          | Notes                                                                             |
+|-----------------|-----------------------------|------------------|-----------------------------------------------------------------------------------|
+| Class           | PascalCase (UpperCamelCase) | MyClass          |                                                                                   |
+| Constant        | SCREAMING_SNAKE_CASE        | MY_CONSTANT      | Uppercase single letter, word, or words. Separate words with underscores.         |
+| Enum values     | SCREAMING_SNAKE_CASE        | SOME_ENUM        |                                                                                   |
+| Exception       | PascalCase (UpperCamelCase) | MyExceptionError | "Error" suffix.                                                                   |
+| Function/Method | snake_case                  | my_function()    | Lowercase word or words. Separate words by underscores.                           |
+| Module          | snake_case                  | my_module.py     | Short. Lowercase word or words.  Underscores can be used if improves readability. |
+| Package         | lowercase                   | mypackage        | Short. Lowercase word or words. The use of underscores is discouraged.            |
+| Variable        | snake_case                  | my_variable      | Lowercase single letter, word, or words. Separate words with underscores.         |
 
 ### Private elements
 
