@@ -29,3 +29,4 @@ class _Hero:
 if __name__ == "__main__":
     hero = _Hero("Robbie Reyes", "Ghost Rider")
     print(f"I'm {hero.name}, and I'm {hero.hero_name}")
+    # return: I'm Ghost Rider, and I'm Robbie Reyes
