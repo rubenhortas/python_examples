@@ -16,15 +16,16 @@ Advantages:
 
 from dataclasses import dataclass
 
+
+@dataclass
+class _Fighter:
+    name: str
+    suit: str
+
+
 if __name__ == "__main__":
-
-    @dataclass
-    class Fighter:
-        name: str
-        suit: str
-
-    fighter1 = Fighter("Ryu", "black")
-    fighter2 = Fighter("Ryu", "black")
+    fighter1 = _Fighter("Ryu", "black")
+    fighter2 = _Fighter("Ryu", "black")
 
     print(fighter1 == fighter2)
     # return: True
@@ -33,4 +34,4 @@ if __name__ == "__main__":
     # return: Ryu
 
     print(fighter1)
-    # return: Fighter(name='Ryu', suit='black')
+    # return: _Fighter(name='Ryu', suit='black')
