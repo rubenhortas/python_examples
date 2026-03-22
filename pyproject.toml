@@ -41,6 +41,7 @@ extend-select = [
 
 ignore = [
     "E501",    # Line too long (because we are using the formatter)
+    "BLE001",  # Blind exception
     "COM812",  # Conflicts with the formatter
     "ISC001",  # Conflicts with the formatter
 ]
