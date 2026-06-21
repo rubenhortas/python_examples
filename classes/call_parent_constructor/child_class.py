@@ -2,6 +2,6 @@ from parent_class import Parent
 
 
 class Child(Parent):
-    def ___init__(self):
+    def ___init__(self) -> None:
         super(Parent, self).__init__()
         # return: Parent constructor called!

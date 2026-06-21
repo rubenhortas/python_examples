@@ -1,9 +1,8 @@
 #!/usr/bin/env python3
+from classes.name_mangling.hero import Hero
 
-from classes.name_mangling.Hero import Hero
-
-if __name__ == '__main__':
-    batman: Hero = Hero('Batman', 'Bruce Wayne')
+if __name__ == "__main__":
+    batman: Hero = Hero("Batman", "Bruce Wayne")
 
     batman.print_name()
     # return: I'm Batman!

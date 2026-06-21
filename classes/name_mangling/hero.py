@@ -6,15 +6,16 @@ class Hero:
     Python's runtime does not restrict access to such attributes, the mangling only prevents name collisions
     if a derived class defines an attribute with the same name.
     """
+
     __hero_name: str = None
     __real_name: str = None
 
-    def __init__(self, hero_name: str, real_name: str):
+    def __init__(self, hero_name: str, real_name: str) -> None:
         self.__hero_name = hero_name
         self.__real_name = real_name
 
-    def print_name(self):
+    def print_name(self) -> None:
         print(f"I'm {self.__hero_name}!")
 
-    def _print_real_name(self):
+    def _print_real_name(self) -> None:
         print(f"PWNED! I'm {self.__real_name} :(")
