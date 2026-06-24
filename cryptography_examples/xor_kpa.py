@@ -10,16 +10,16 @@ KEY_LENGTH = 4
 
 
 # noinspection PyShadowingNames
-def _initialize() -> (str, str, str):
+def _initialize() -> tuple[bytes, bytes, bytes]:
     print("Initializing values...")
 
-    plaintext = "Hello world!".encode()  # string to bytes
-    key = os.urandom(KEY_LENGTH)  # Random KEY of length KEY_LENGTH
-    ciphertext = _xor(key, plaintext)
+    plaintext: bytes = b"Hello world!"
+    key: bytes = os.urandom(KEY_LENGTH)
+    ciphertext: bytes = _xor(key, plaintext)
 
-    print(f"\tplaintext: {plaintext.decode()}")
-    print(f"\tkey: {key}")
-    print(f"\tciphertext: {ciphertext}")
+    print(f"\tplaintext: {plaintext.decode('utf-8')}")
+    print(f"\tkey: {key.hex()}")  # Hex representation is cleaner for binary logs
+    print(f"\tciphertext: {ciphertext.hex()}")
     print()
 
     return plaintext, key, ciphertext
