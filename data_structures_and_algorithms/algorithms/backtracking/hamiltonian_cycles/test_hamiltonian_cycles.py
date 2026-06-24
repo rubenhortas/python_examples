@@ -6,7 +6,7 @@ from data_structures_and_algorithms.algorithms.backtracking.hamiltonian_cycles.h
 
 
 class Test(unittest.TestCase):
-    def test_get_hamiltonian_cycles(self):
+    def test_get_hamiltonian_cycles(self) -> None:
         graphs = [
             (
                 [[0, 1, 0, 1, 0], [1, 0, 1, 1, 1], [0, 1, 0, 0, 1], [1, 1, 0, 0, 1], [0, 1, 1, 1, 0]],
