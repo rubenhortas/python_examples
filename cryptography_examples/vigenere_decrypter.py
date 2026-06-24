@@ -14,6 +14,8 @@ Krypton Level 5: https://overthewire.org/wargames/krypton/krypton5.html
 """
 
 import argparse
+import sys
+from pathlib import Path
 
 from numpy import median
 
@@ -49,28 +51,26 @@ LANGUAGE_FREQUENCIES = {
 }
 
 
-def _read_encrypted_file(file: str) -> str:
+def _read_encrypted_file(file_path_str: str) -> str:
+    target_path = Path(file_path_str)
+
     try:
-        text = ""
-
-        with open(file, "r") as f:
-            lines = f.readlines()
-
-        for line in lines:
-            for character in line:
-                if character.isalpha():
-                    text = text + character.upper()
-
-        return text
-    except FileNotFoundError as file_not_found_error:
-        print(f"'{file_not_found_error.filename}' no such file or directory.")
-        exit(-1)
+        # Keep the try block strictly isolated to I/O operations
+        with target_path.open(mode="r", encoding="utf-8") as file_stream:
+            raw_content = file_stream.read()
+    except FileNotFoundError:
+        print(f"'{target_path.name}' no such file or directory.", file=sys.stderr)
+        sys.exit(1)
     except PermissionError:
-        print(f"Permission denied: '{file}'")
-        exit(-1)
+        print(f"Permission denied: '{target_path}'", file=sys.stderr)
+        sys.exit(1)
     except OSError as os_error:
-        print(f"'{file}' OSError: {os_error}")
-        exit(-1)
+        print(f"'{target_path}' OSError: {os_error}", file=sys.stderr)
+        sys.exit(1)
+    else:
+        # Execution moves here ONLY if I/O succeeded.
+        # Efficient O(N) filtering via list comprehension and join (avoids quadratic string allocations)
+        return "".join(char.upper() for char in raw_content if char.isalpha())
 
 
 # noinspection PyShadowingNames
@@ -164,10 +164,7 @@ def _complete_frequencies(frequencies: dict) -> dict:
     complete_frequencies = {}
 
     for character_frequency in LANGUAGE_FREQUENCIES:
-        if character_frequency in frequencies:
-            complete_frequencies[character_frequency] = frequencies[character_frequency]
-        else:
-            complete_frequencies[character_frequency] = 0
+        complete_frequencies[character_frequency] = frequencies.get(character_frequency, 0)
 
     return complete_frequencies
 
@@ -245,10 +242,9 @@ def _get_max_coincidences(coincidences: list) -> int:
         list_slice = coincidences[i :: i + 1]
 
         # len(lst) < key length = i + 1 (The key length cannot be greater than the list slice)
-        if len(list_slice) >= (i + 1):
-            if median(list_slice) > max_median:
-                max_median = median(list_slice)
-                key_length = i + 1
+        if len(list_slice) >= (i + 1) and median(list_slice) > max_median:
+            max_median = median(list_slice)
+            key_length = i + 1
 
     return key_length
 
@@ -291,4 +287,4 @@ if __name__ == "__main__":
         print(f"ct: {ciphertext}\n")
         print(f"pt: {pt}\n")
     else:
-        print(f"Key length = 0.")
+        print("Key length = 0.")
