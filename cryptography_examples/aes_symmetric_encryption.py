@@ -2,16 +2,18 @@
 
 import secrets
 
-from cryptography.hazmat.primitives.ciphers.aead import AESGCM
+from cryptography_examples.hazmat.primitives.ciphers.aead import AESGCM
 
-_PLAIN_TEXT = 'Hello, AES!'
+_PLAIN_TEXT = "Hello, AES!"
 _KEY_SIZE = 32  # bytes
 _NONCE_SIZE = 12  # bytes
-_ENCODING = 'UTF-8'
+_ENCODING = "UTF-8"
+
 
 # noinspection PyShadowingNames
 def encrypt(aes: AESGCM, nonce: bytes, plaintext: str) -> str:
     return (nonce + aes.encrypt(nonce, plaintext.encode(_ENCODING), None)).hex()
+
 
 # noinspection PyShadowingNames
 def decrypt(aes: AESGCM, ciphertext: str) -> str:
@@ -21,7 +23,8 @@ def decrypt(aes: AESGCM, ciphertext: str) -> str:
 
     return aes.decrypt(nonce, encrypted_data, None).decode(_ENCODING)
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     key = secrets.token_bytes(_KEY_SIZE)
     nonce = secrets.token_bytes(_NONCE_SIZE)  # A number that is unsed only once
     aes = AESGCM(key)

@@ -1,27 +1,29 @@
 #!/usr/bin/env python3
 
-from cryptography.hazmat.primitives.asymmetric import rsa, padding
 from cryptography.hazmat.primitives import hashes
-from cryptography.hazmat.primitives.asymmetric.rsa import RSAPublicKey, RSAPrivateKey
+from cryptography.hazmat.primitives.asymmetric import padding, rsa
+from cryptography.hazmat.primitives.asymmetric.rsa import RSAPrivateKey, RSAPublicKey
 
-_PLAINTEXT = 'Hello, RSA!'
+_PLAINTEXT = "Hello, RSA!"
 _PUBLIC_EXPONENT = 65537
 _KEY_SIZE = 2048
-_ENCODING = 'UTF-8'
+_ENCODING = "UTF-8"
 
 
 # noinspection PyShadowingNames
 def encrypt(public_key: RSAPublicKey, oaep_padding: padding.OAEP, plaintext: str) -> bytes:
     return public_key.encrypt(plaintext.encode(_ENCODING), oaep_padding)
 
+
 # noinspection PyShadowingNames
 def decrypt(private_key: RSAPrivateKey, oaep_padding: padding.OAEP, ciphertext: bytes) -> str:
     return private_key.decrypt(ciphertext, oaep_padding).decode(_ENCODING)
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     private_key = rsa.generate_private_key(public_exponent=_PUBLIC_EXPONENT, key_size=_KEY_SIZE)
     public_key = private_key.public_key()
-    oaep_padding = padding.OAEP(mgf=padding.MGF1(algorithm=hashes.SHA256()), algorithm=hashes.SHA256(),label=None)
+    oaep_padding = padding.OAEP(mgf=padding.MGF1(algorithm=hashes.SHA256()), algorithm=hashes.SHA256(), label=None)
     ciphertext = encrypt(public_key, oaep_padding, _PLAINTEXT)
     decrypted_text = decrypt(private_key, oaep_padding, ciphertext)
 
