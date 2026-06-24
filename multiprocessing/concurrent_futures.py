@@ -16,6 +16,7 @@ def _main() -> None:
     start_time = time.perf_counter()
 
     # By default, ProcessProolExecutor uses all CPU cores
+    # We are going to leave one core free (if there's one) for the system
     with concurrent.futures.ProcessPoolExecutor(max_workers=max(1, (os.cpu_count() or 1) - 1)) as executor:
         results = list(executor.map(_compute_factorial, numbers))
 
