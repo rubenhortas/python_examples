@@ -8,8 +8,8 @@ import urllib.request
 URLS = ["https://www.google.com/", "https://www.python.org/", "https://www.github.com/", "https://stackoverflow.com"]
 
 
-def _load_url(url, timeout) -> bytes:
-    with urllib.request.urlopen(url, timeout=timeout) as conn:
+def _load_url(url: str, timeout: int) -> bytes:
+    with urllib.request.urlopen(url, timeout=timeout) as conn:  # noqa: S310
         return conn.read()
 
 
