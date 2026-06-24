@@ -7,7 +7,7 @@ from sympy.ntheory.modular import crt
 MODULUS = [3, 5, 7]
 RESULTS = [2, 3, 2]
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     result = crt(MODULUS, RESULTS)[0]
     print(f"Result of the Chinese Remainder Theorem = {result}")
     # return: Result of the Chinese Remainder Theorem = 23
