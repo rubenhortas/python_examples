@@ -5,7 +5,7 @@ def get_permutations(string: str) -> list:
             lst[i], lst[j] = lst[j], lst[i]
 
         if start == end:
-            permutations.append(''.join(lst))
+            permutations.append("".join(lst))
         else:
             for i in range(start, end):
                 swap(start, i)  # Swap chars

@@ -2,9 +2,9 @@
 
 import base64
 
-PLAINTEXT = 'Hello world!'
+PLAINTEXT = "Hello world!"
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     print(f"message: {PLAINTEXT}")
     # return: message: Hello world!
 

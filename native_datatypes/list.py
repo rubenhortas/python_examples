@@ -5,12 +5,12 @@ EMPTY_LIST = []
 
 
 def add_items(lst: List[Union[str, int, bool]]) -> List[Union[str, int, bool]]:
-    lst = lst + ['a']
+    lst = lst + ["a"]
     lst.append(1)  # In a list items don't need to be the same type
-    lst.extend(['b', 2])
+    lst.extend(["b", 2])
     lst.insert(0, True)
 
-    print(f'List: {lst}')
+    print(f"List: {lst}")
 
     return lst
 
@@ -67,8 +67,8 @@ def reverse() -> None:
 
 
 def join() -> None:
-    lst1 = ['a', 'b', 'c']
-    lst2 = ['dct', 'e', 'f']
+    lst1 = ["a", "b", "c"]
+    lst2 = ["dct", "e", "f"]
 
     joined_list_1 = lst1 + lst2
     lst1.extend(lst2)  # Adds lst2 at the end of lst1
@@ -96,19 +96,19 @@ def slice() -> None:
     print(f"new_list = {new_list}")
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     item_list = []
 
     item_list = add_items(item_list)
     # return: List: [True, 'a', 1, 'b', 2]
 
-    search(item_list, 'a')
+    search(item_list, "a")
     # return: 'a' is in the list
 
-    get_value_position(item_list, 'a')
+    get_value_position(item_list, "a")
     # return: Position of a: 1
 
-    get_value_position(item_list, 'non_existing_value')
+    get_value_position(item_list, "non_existing_value")
     # return: non_existing_value not found
 
     get_value_by_position(item_list, -1)

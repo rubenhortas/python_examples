@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     print(11 / 2)  # Division
     # return: 5.5
 

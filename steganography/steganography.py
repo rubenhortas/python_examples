@@ -2,9 +2,9 @@
 
 from stegano import lsb
 
-MESSAGE = 'https://www.youtube.com/watch?v=QH2-TGUlwu4'
-ORIGINAL_IMAGE = 'nyancat.png'
-IMAGE_WITH_SECRET_MESSAGE = 'nyan_with_secret.png'
+MESSAGE = "https://www.youtube.com/watch?v=QH2-TGUlwu4"
+ORIGINAL_IMAGE = "nyancat.png"
+IMAGE_WITH_SECRET_MESSAGE = "nyan_with_secret.png"
 
 
 def _hide_message() -> None:
@@ -15,7 +15,7 @@ def _hide_message() -> None:
         # Save the image with the hidden message
         secret.save(IMAGE_WITH_SECRET_MESSAGE)
 
-        print('Secret hidden!')
+        print("Secret hidden!")
     except Exception as e:
         print(e)
 
@@ -28,6 +28,6 @@ def _get_hidden_message() -> None:
         print(e)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     _hide_message()
     _get_hidden_message()

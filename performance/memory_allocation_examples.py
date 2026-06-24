@@ -39,6 +39,6 @@ def _get_object_memory_allocation() -> None:
     # Size of list: 920 bytes
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     _get_function_memory_allocation()
     _get_object_memory_allocation()

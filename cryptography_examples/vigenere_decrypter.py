@@ -20,40 +20,40 @@ from numpy import median
 # English frequencies from: https://www3.nd.edu/~busiforc/handouts/cryptography/letterfrequencies.html
 # Alphabetically ordered!
 LANGUAGE_FREQUENCIES = {
-    'A': 8.4966,
-    'B': 2.0720,
-    'C': 4.5388,
-    'D': 3.3844,
-    'E': 11.1607,
-    'F': 1.8121,
-    'G': 2.4705,
-    'H': 3.0034,
-    'I': 7.5448,
-    'J': 0.1965,
-    'K': 1.1016,
-    'L': 5.4893,
-    'M': 3.0129,
-    'N': 6.6544,
-    'O': 7.1635,
-    'P': 3.1671,
-    'Q': 0.1962,
-    'R': 7.5809,
-    'S': 5.7351,
-    'T': 6.9509,
-    'U': 3.6308,
-    'V': 1.0074,
-    'W': 1.2899,
-    'X': 0.2902,
-    'Y': 1.7779,
-    'Z': 0.2722
+    "A": 8.4966,
+    "B": 2.0720,
+    "C": 4.5388,
+    "D": 3.3844,
+    "E": 11.1607,
+    "F": 1.8121,
+    "G": 2.4705,
+    "H": 3.0034,
+    "I": 7.5448,
+    "J": 0.1965,
+    "K": 1.1016,
+    "L": 5.4893,
+    "M": 3.0129,
+    "N": 6.6544,
+    "O": 7.1635,
+    "P": 3.1671,
+    "Q": 0.1962,
+    "R": 7.5809,
+    "S": 5.7351,
+    "T": 6.9509,
+    "U": 3.6308,
+    "V": 1.0074,
+    "W": 1.2899,
+    "X": 0.2902,
+    "Y": 1.7779,
+    "Z": 0.2722,
 }
 
 
 def _read_encrypted_file(file: str) -> str:
     try:
-        text = ''
+        text = ""
 
-        with open(file, 'r') as f:
+        with open(file, "r") as f:
             lines = f.readlines()
 
         for line in lines:
@@ -96,7 +96,7 @@ def _get_frequencies(characters: str) -> dict:
 
     for i in characters:
         if i not in frequencies:
-            frequencies[i] = ((characters.count(i) * 100) / characters_length)
+            frequencies[i] = (characters.count(i) * 100) / characters_length
 
     return frequencies
 
@@ -121,7 +121,8 @@ def _get_key_shift(language_frequency_values: list, ciphertext_frequency_values:
         for j in range(alphabet_length):
             mod_ = (i + j) % alphabet_length  # mod, used for rotation
             ciphertext_frequency_sum = ciphertext_frequency_sum + (
-                        language_frequency_values[j] * ciphertext_frequency_values[mod_])
+                language_frequency_values[j] * ciphertext_frequency_values[mod_]
+            )
 
         if ciphertext_frequency_sum > max_sum:
             max_sum = ciphertext_frequency_sum
@@ -132,7 +133,7 @@ def _get_key_shift(language_frequency_values: list, ciphertext_frequency_values:
 
 # noinspection PyShadowingNames
 def _get_key(shifts: list) -> str:
-    key = ''
+    key = ""
 
     for shift in shifts:
         i = 0
@@ -150,7 +151,7 @@ def _get_key(shifts: list) -> str:
 # noinspection PyShadowingNames
 def _decrypt(ciphertext: str, ciphertext_length: int, key_shifts: list, key_length: int) -> str:
     alphabet = list(LANGUAGE_FREQUENCIES.keys())
-    plaintext = ''
+    plaintext = ""
 
     for i in range(ciphertext_length):
         m = i % key_length
@@ -214,7 +215,7 @@ def _get_coincidences(ciphertext: str, ciphertext_length: int) -> list:
     coincidences = []
 
     for i in range(max_length):
-        comparison_chars = ciphertext[:(max_length - i)]  # Rotated ciphertext
+        comparison_chars = ciphertext[: (max_length - i)]  # Rotated ciphertext
         comparison_chars_length = len(comparison_chars)
         coincidences_sum = 0
 
@@ -241,7 +242,7 @@ def _get_max_coincidences(coincidences: list) -> int:
     max_median = 0
 
     for i in range(coincidences_length):
-        list_slice = coincidences[i::i + 1]
+        list_slice = coincidences[i :: i + 1]
 
         # len(lst) < key length = i + 1 (The key length cannot be greater than the list slice)
         if len(list_slice) >= (i + 1):
@@ -252,19 +253,19 @@ def _get_max_coincidences(coincidences: list) -> int:
     return key_length
 
 
-if __name__ == '__main__':
-    parser = argparse.ArgumentParser(description='Vigenere Decrypter')
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description="Vigenere Decrypter")
     group = parser.add_mutually_exclusive_group()
-    group.add_argument('-k', '--key', dest='key', nargs=1, help='decrypt key')
-    group.add_argument('-kl', '--key-length', dest='key_length', nargs=1, help='decrypt key length')
-    parser.add_argument('encrypted_file', nargs=1, help='encrypted file')
+    group.add_argument("-k", "--key", dest="key", nargs=1, help="decrypt key")
+    group.add_argument("-kl", "--key-length", dest="key_length", nargs=1, help="decrypt key length")
+    parser.add_argument("encrypted_file", nargs=1, help="encrypted file")
 
     args = parser.parse_args()
 
     key_length = 0
     key_shifts = []
-    key = ''
-    pt = ''
+    key = ""
+    pt = ""
     ciphertext = _read_encrypted_file(args.encrypted_file[0])
     ciphertext_length = len(ciphertext)
 

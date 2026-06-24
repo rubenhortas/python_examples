@@ -11,7 +11,7 @@ class Test(unittest.TestCase):
         avl.insert_value(3)
         avl.insert_value(4)
         avl.insert_value(5)
-        
+
         self.assertEqual([2, 1, 4, 3, 5], avl.preorder())
 
         avl.delete_value(2)

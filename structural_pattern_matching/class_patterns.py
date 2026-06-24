@@ -7,6 +7,7 @@
 # Whether a match succeeds or not is determined by the equivalent of an isinstance call.
 # If the subject is not an instance of the named class, the match fails.
 
+
 class Cat:
     url = None
 
@@ -26,10 +27,10 @@ def _get_pet(pet: Cat | Dog) -> None:
         case Cat():
             print(f"Cat url: {pet.url}")
         case Dog():
-            print('I don\'t want to print dog urls :(')
+            print("I don't want to print dog urls :(")
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     _get_pet(Cat(200))
     # return: Cat url: https://http.cat/status/200
 

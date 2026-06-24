@@ -7,9 +7,9 @@
 from string import Template
 
 # Define some car data
-car1 = {'make': 'Suzuki', 'model': 'Swift Sport', 'year': 2018, 'color': 'White Pearl'}
-car2 = {'make': 'Toyota', 'model': 'GR Yaris', 'year': 2020, 'color': 'Blue'}
-car3 = {'make': 'Ford', 'model': 'Mustang', 'year': 1967, 'color': 'Red'}
+car1 = {"make": "Suzuki", "model": "Swift Sport", "year": 2018, "color": "White Pearl"}
+car2 = {"make": "Toyota", "model": "GR Yaris", "year": 2020, "color": "Blue"}
+car3 = {"make": "Ford", "model": "Mustang", "year": 1967, "color": "Red"}
 
 # Create a template string
 car_template = Template("The ${color} ${year} ${make} ${model} is a fantastic car!")
@@ -26,5 +26,5 @@ print(car_template.substitute(car3))
 
 # You can also use safe_substitute if some placeholders might be missing
 another_template = Template("Make: $make, Model: $model")
-print(another_template.safe_substitute(make='Opel'))  # Model will be left as $model
+print(another_template.safe_substitute(make="Opel"))  # Model will be left as $model
 # return: Make: Opel, Model: $model

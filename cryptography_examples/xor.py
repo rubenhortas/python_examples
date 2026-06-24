@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
 
-KEY = b'123456'
-PLAINTEXT = b'hello world!'
+KEY = b"123456"
+PLAINTEXT = b"hello world!"
 
 
 # noinspection PyShadowingNames
 def _xor(key: bytes, stream: bytes) -> bytes:
-    xored_stream = b''
+    xored_stream = b""
     stream_length = len(stream)
     key_length = len(key)
 
@@ -17,7 +17,7 @@ def _xor(key: bytes, stream: bytes) -> bytes:
     return xored_stream
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     ciphertext = _xor(KEY, PLAINTEXT)  # key ⊕ plaintext = ciphertext
     decrypted_text = _xor(KEY, ciphertext)  # key ⊕ ciphertext = plaintext
 

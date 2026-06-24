@@ -5,23 +5,16 @@ import copy
 EMPTY_DICT = {}
 
 USERS = {
-    'root': 'r00t.h4x0r.p455',
-    'guest': '',
-    'bob': '123456',
-    'Bob': 'temp1234',  # Dictionary keys are case-sensitive
-    'alice': 'qwerty'
+    "root": "r00t.h4x0r.p455",
+    "guest": "",
+    "bob": "123456",
+    "Bob": "temp1234",  # Dictionary keys are case-sensitive
+    "alice": "qwerty",
 }
 
-NEW_USERS = {
-    'sysadmin': 'r2@l.r00t',
-    'anonymous': 'anonymous'
-}
+NEW_USERS = {"sysadmin": "r2@l.r00t", "anonymous": "anonymous"}
 
-USERS_COUNTER = {
-    'root': 1,
-    'users': 50,
-    'admins': 4
-}
+USERS_COUNTER = {"root": 1, "users": 50, "admins": 4}
 
 
 def is_empty(dct: dict) -> None:
@@ -43,7 +36,7 @@ def merge(dict1: dict, dict2: dict) -> None:
 
 
 def comprehensions() -> None:
-    powers = {x: x ** 3 for x in range(10) if x ** 3 % 4 == 0}
+    powers = {x: x**3 for x in range(10) if x**3 % 4 == 0}
 
     print(f"Powers: {powers}")
 
@@ -56,12 +49,12 @@ def check_key(dct: dict, key: str) -> None:
 
 
 def get_value_with_default(dct: dict, key: str) -> None:
-    value = dct.get(key, 'default_value')
+    value = dct.get(key, "default_value")
     print(f"The value of '{key}' is: {value}.")
 
 
 def iterate(dct: dict) -> None:
-    print('Dictionary: ', end='')
+    print("Dictionary: ", end="")
 
     for key in dct:
         print(f"{key}:{dct[key]}", end=", ")
@@ -115,12 +108,12 @@ def do_deep_copy(original_dict: dict) -> dict:
     return copy_dict
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     # Dictionary with mutable objects for the shallow copy and deep copy examples.
     groups = {
-        'root': ['root'],
-        'nogroup': ['guest', 'anonymous'],
-        '0g_h4x0r2': [],
+        "root": ["root"],
+        "nogroup": ["guest", "anonymous"],
+        "0g_h4x0r2": [],
     }
 
     print(f"Passwords: {USERS}")
@@ -149,10 +142,10 @@ if __name__ == '__main__':
     comprehensions()
     # return: Powers: {0: 0, 2: 8, 4: 64, 6: 216, 8: 512}
 
-    check_key(USERS, 'root')
+    check_key(USERS, "root")
     # return: 'root' exists.
 
-    get_value_with_default(USERS, 'ruben')
+    get_value_with_default(USERS, "ruben")
     # return: The value of 'ruben' is: default_value.
 
     iterate(USERS)
@@ -162,10 +155,10 @@ if __name__ == '__main__':
     # return: Shallow copy -> original dict.: {'root': ['root'], 'nogroup': ['guest', 'anonymous'], '0g_h4x0r2': []}, copy dict.: {'root': ['root'], 'nogroup': ['guest', 'anonymous'], '0g_h4x0r2': []}
 
     # The modification in the original will be reflected in the copied dictionary.
-    groups['0g_h4x0r2'].append('ctrl')
-    groups['0g_h4x0r2'].append('demonsito')
-    groups['0g_h4x0r2'].append('kaian')
-    groups['0g_h4x0r2'].append('trazi')
+    groups["0g_h4x0r2"].append("ctrl")
+    groups["0g_h4x0r2"].append("demonsito")
+    groups["0g_h4x0r2"].append("kaian")
+    groups["0g_h4x0r2"].append("trazi")
     print(f"Modified shallow copy -> original dict. (modified!): {groups}, copy dict.: {copy_dict}")
     # return: Modified shallow copy -> original dict. (modified!): {'root': ['root'], 'nogroup': ['guest', 'anonymous'], '0g_h4x0r2': ['ctrl', 'demonsito', 'kaian', 'trazi']}, copy dict.: {'root': ['root'], 'nogroup': ['guest', 'anonymous'], '0g_h4x0r2': ['ctrl', 'demonsito', 'kaian', 'trazi']}
 
@@ -173,6 +166,6 @@ if __name__ == '__main__':
     # return: Deep copy -> original dict.: {'root': ['root'], 'nogroup': ['guest', 'anonymous'], '0g_h4x0r2': ['ctrl', 'demonsito', 'kaian', 'trazi']}, copy dict.: {'root': ['root'], 'nogroup': ['guest', 'anonymous'], '0g_h4x0r2': ['ctrl', 'demonsito', 'kaian', 'trazi']}
 
     # The modification on the original dictionary will be NOT reflected in the copied dictionary.
-    groups['0g_h4x0r2'].append('prospect')
+    groups["0g_h4x0r2"].append("prospect")
     print(f"Modified shallow copy -> original dict.: {groups}, copy dict.: {copy_dict}")
     # return: Modified shallow copy -> original dict.: {'root': ['root'], 'nogroup': ['guest', 'anonymous'], '0g_h4x0r2': ['ctrl', 'demonsito', 'kaian', 'trazi', 'prospect']}, copy dict.: {'root': ['root'], 'nogroup': ['guest', 'anonymous'], '0g_h4x0r2': ['ctrl', 'demonsito', 'kaian', 'trazi']}

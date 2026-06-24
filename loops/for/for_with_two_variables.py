@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 import itertools
 
-NAMES = ['Philip', 'Hercule', 'Pepe']
-SURNAMES = ['Marlowe', 'Poirot', 'Carvalho']
+NAMES = ["Philip", "Hercule", "Pepe"]
+SURNAMES = ["Marlowe", "Poirot", "Carvalho"]
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     # Simulate a nested loop
     for i, j in itertools.product(range(len(NAMES)), range(len(SURNAMES))):
         print(f"{NAMES[i]} {SURNAMES[j]}")

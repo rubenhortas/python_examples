@@ -5,12 +5,12 @@ def get_shortest_path(graph: dict, start: str, end: str) -> (list, int):
     # Time complexity: O((nodes+edges)*log(nodes))
     # Auxiliary space: O(nodes)
 
-    distances = defaultdict(lambda: float('inf'))
+    distances = defaultdict(lambda: float("inf"))
     distances[start] = 0
     predecessors = {}
     unvisited = set(graph)
     path = []
-    current = ''
+    current = ""
 
     while current != end and unvisited:
         current = min(unvisited, key=lambda node: distances[node])

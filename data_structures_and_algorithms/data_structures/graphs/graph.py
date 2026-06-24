@@ -19,7 +19,7 @@ class Graph:
                     self.weights[edge[1]].append(edge[2])
 
     def __repr__(self):
-        result = ''
+        result = ""
 
         if self.weighted:
             for i, (nodes, weights) in enumerate(zip(self.nodes, self.weights)):
@@ -31,9 +31,9 @@ class Graph:
 
     def __str__(self):
         if self.weighted:
-            result = '# node1: [(node2, weight), ..., (node_n, weight)]\n'
+            result = "# node1: [(node2, weight), ..., (node_n, weight)]\n"
         else:
-            result = '# node1: [node2, ..., node_n]\n'
+            result = "# node1: [node2, ..., node_n]\n"
 
         result += self.__repr__()
 

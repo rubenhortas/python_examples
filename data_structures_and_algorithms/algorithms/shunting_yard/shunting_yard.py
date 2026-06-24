@@ -3,11 +3,11 @@ Shunting yard algorithm: https://en.wikipedia.org/wiki/Shunting_yard_algorithm
 """
 
 _PRECEDENCES = {  # PEMDAS: Parentheses, Exponents, Multiplication/Division, Addition/Subtraction.
-    '**': 3,
-    '*': 2,
-    '/': 2,
-    '+': 1,
-    '-': 1,
+    "**": 3,
+    "*": 2,
+    "/": 2,
+    "+": 1,
+    "-": 1,
 }
 
 
@@ -17,22 +17,25 @@ def shunting_yard(expression: str) -> str:
     :param expression: '1 + 2 * 3 + (4 + 5 * 6)'
     :return: '1 2 3 * + 4 5 6 * + +'
     """
-    expression = expression.strip().replace('(', '( ').replace(')', ' )').split()
+    expression = expression.strip().replace("(", "( ").replace(")", " )").split()
     output_queue = []
     operator_stack = []
 
     for token in expression:
-        if token == ' ':
+        if token == " ":
             continue
         elif token in _PRECEDENCES:
-            while (operator_stack and operator_stack[-1] in _PRECEDENCES and
-                   _PRECEDENCES[token] <= _PRECEDENCES[operator_stack[-1]]):
+            while (
+                operator_stack
+                and operator_stack[-1] in _PRECEDENCES
+                and _PRECEDENCES[token] <= _PRECEDENCES[operator_stack[-1]]
+            ):
                 output_queue.append(operator_stack.pop())
             operator_stack.append(token)
-        elif token == '(':
+        elif token == "(":
             operator_stack.append(token)
-        elif token == ')':
-            while operator_stack and operator_stack[-1] != '(':
+        elif token == ")":
+            while operator_stack and operator_stack[-1] != "(":
                 output_queue.append(operator_stack.pop())
             operator_stack.pop()
         else:
@@ -41,4 +44,4 @@ def shunting_yard(expression: str) -> str:
     while operator_stack:
         output_queue.append(operator_stack.pop())
 
-    return ' '.join(output_queue)
+    return " ".join(output_queue)

@@ -13,6 +13,6 @@ def outer_function(text: str) -> None:
     nested_function()
 
 
-if __name__ == '__main__':
-    outer_function('Hello World!')
+if __name__ == "__main__":
+    outer_function("Hello World!")
     # return: Hello World!

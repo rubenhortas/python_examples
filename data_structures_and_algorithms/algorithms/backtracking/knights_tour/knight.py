@@ -14,5 +14,5 @@ class Knight:
         (-2, -1),  # One square down and two squares left
         (-1, -2),  # Two squares down and one square left
         (1, -2),  # Two squares down and one square right
-        (2, -1)  # One square down and two squares right
+        (2, -1),  # One square down and two squares right
     ]

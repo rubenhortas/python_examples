@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 
+
 class Node:
     def __init__(self, data: str):
         self.data = data
@@ -30,7 +31,7 @@ class LinkedList:
             nodes.append(node.data)
             node = node.next
 
-        return ' -> '.join(nodes)
+        return " -> ".join(nodes)
 
     def __iter__(self):
         node = self.head
@@ -56,7 +57,7 @@ class LinkedList:
 
     def add_after(self, target_node_data: str, new_node: Node):
         if self.head is None:
-            raise Exception('List is empty')
+            raise Exception("List is empty")
 
         for node in self:
             if node.data == target_node_data:
@@ -68,7 +69,7 @@ class LinkedList:
 
     def add_before(self, target_node_data: str, new_node: Node):
         if self.head is None:
-            raise Exception('List is empty')
+            raise Exception("List is empty")
 
         if self.head.data == target_node_data:
             return self.add_first(new_node)
@@ -87,7 +88,7 @@ class LinkedList:
 
     def remove(self, target_node_data: str):
         if self.head is None:
-            raise Exception('List is empty')
+            raise Exception("List is empty")
 
         if self.head.data == target_node_data:
             self.head = self.head.next
@@ -105,29 +106,29 @@ class LinkedList:
         raise Exception(f"Node with data '{target_node_data}' not found")
 
 
-if __name__ == '__main__':
-    nodes = ['b', 'c', 'd', 'e']
+if __name__ == "__main__":
+    nodes = ["b", "c", "d", "e"]
 
     linked_list = LinkedList(nodes)
     print(linked_list)
     # return: b -> c -> d -> e
 
-    linked_list.add_first(Node('0'))
+    linked_list.add_first(Node("0"))
     print(linked_list)
     # return: 0 -> b -> c -> d -> e
 
-    linked_list.add_last(Node('z'))
+    linked_list.add_last(Node("z"))
     print(linked_list)
     # return: 0 -> b -> c -> d -> e -> z
 
-    linked_list.add_after('e', Node('f'))
+    linked_list.add_after("e", Node("f"))
     print(linked_list)
     # return: 0 -> b -> c -> d -> e -> f -> z
 
-    linked_list.add_before('b', Node('a'))
+    linked_list.add_before("b", Node("a"))
     print(linked_list)
     # return: 0 -> a -> b -> c -> d -> e -> f -> z
 
-    linked_list.remove('0')
+    linked_list.remove("0")
     print(linked_list)
     # return: a -> b -> c -> d -> e -> f -> z

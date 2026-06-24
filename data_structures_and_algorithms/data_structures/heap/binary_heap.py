@@ -34,13 +34,13 @@ class BinaryHeap:
         """
         Moves an element up the tree if it's smaller than its parent.
         """
-        raise Exception('Not implemented')
+        raise Exception("Not implemented")
 
     def _heapify_down(self, i):
         """
         Moves an element down the tree to maintain the heap property.:
         """
-        raise Exception('Not implemented')
+        raise Exception("Not implemented")
 
     def _extract_root(self):
         """

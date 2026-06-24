@@ -8,9 +8,9 @@ With tuples you can protect data from read/write.
 """
 
 EMPTY = ()
-ITEMS = ('a', 'b', 'c')
+ITEMS = ("a", "b", "c")
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     # Tuples in a boolean context.
     # An empty tuple is False otherwise is True.
     if ITEMS:

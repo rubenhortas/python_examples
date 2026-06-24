@@ -5,8 +5,8 @@ from string import Template
 
 def _multiline_strings() -> None:
     # Triple quotes allow printing in several lines with a single instruction
-    print('''Multi line string
-    in one instruction''')
+    print("""Multi line string
+    in one instruction""")
     # return: Multi line string
     #             in one instruction
 
@@ -19,13 +19,13 @@ def _multiline_strings() -> None:
 def _capitalize() -> None:
     # Return a capitalized version of the string.
     # More specifically, make the first character have upper case and the rest lower case.
-    s1 = 'my capitalized string'
+    s1 = "my capitalized string"
     print(f"'{s1}' capitalized: '{s1.capitalize()}'")
     # return: 'my capitalized string' capitalized: 'My capitalized string'
 
     # Return a version of the string where each word is titlecased.
     # More specifically, words start with uppercased characters and all remaining cased characters have lower case.
-    s2 = 'my title string'
+    s2 = "my title string"
     print(f"'{s2}' titlecased: '{s2.title()}'")
     # return: 'my title string' titlecased: 'My Title String'
 
@@ -51,24 +51,24 @@ def _number_formatting() -> None:
 
 def _string_formatting() -> None:
     # f-strings (Literal String Interpolation https://peps.python.org/pep-0498/)
-    one_argument = 'one argument'
+    one_argument = "one argument"
     print(f"f-string with {one_argument}")
     # return: f-string with one argument
 
     # %-formatting
-    print('%%-formatting with %s' % one_argument)
+    print("%%-formatting with %s" % one_argument)
     # return: %-formatting with one argument
 
     # str.format
-    print('str.format with {0}'.format(one_argument))
+    print("str.format with {0}".format(one_argument))
     # return: str.format with one argument
 
     # str.format Changed in version 3.1: The positional argument specifiers can be omitted for str.format()
-    print('str.format with {}{}'.format(one_argument, ' or two...'))
+    print("str.format with {}{}".format(one_argument, " or two..."))
     # return: str.format with one argument or two...
 
     # template
-    str_template = Template('I have a template with $what')
+    str_template = Template("I have a template with $what")
     print(str_template.substitute(what=one_argument))
     # return: I have a template with one argument
 
@@ -94,16 +94,16 @@ def _string_formatting_types_based_on_placeholders() -> None:
 
 
 def _split() -> None:
-    lorem_ipsum = 'Lorem ipsum dolor sit amet'
+    lorem_ipsum = "Lorem ipsum dolor sit amet"
     splitted_string = lorem_ipsum.split()  # To split on whitespace don’t have to give split any arguments
 
-    print(f"\"{lorem_ipsum}\" splitted: {splitted_string}")
+    print(f'"{lorem_ipsum}" splitted: {splitted_string}')
     # return: 'Lorem ipsum dolor sit amet' splitted: ['Lorem', 'ipsum', 'dolor', 'sit', 'amet']
 
 
 def _join() -> None:
-    lorem_ipsum = ['lorem', 'ipsum', 'dolor', 'sit', 'amet']
-    joined_string = ' '.join(lorem_ipsum)
+    lorem_ipsum = ["lorem", "ipsum", "dolor", "sit", "amet"]
+    joined_string = " ".join(lorem_ipsum)
 
     print(f"{lorem_ipsum} joined: '{joined_string}'")
     # return: ['lorem', 'ipsum', 'dolor', 'sit', 'amet'] joined: 'lorem ipsum dolor sit amet'
@@ -111,7 +111,7 @@ def _join() -> None:
 
 def _reverse() -> None:
     # noinspection SpellCheckingInspection
-    s = 'REDRUM'
+    s = "REDRUM"
     reversed_s = s[::-1]  # slicing
 
     print(f"'{s}' backwards is '{reversed_s}'")
@@ -121,7 +121,7 @@ def _reverse() -> None:
 def _escape_quotes() -> None:
     my_script = "my_script"
 
-    command = f"Running \"{my_script}\"..."
+    command = f'Running "{my_script}"...'
     print(command)
     # return: Running "my_script"...
 
@@ -143,7 +143,7 @@ def _if_statement_into_fstring() -> None:
     # return: num1 is less than num2
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     _multiline_strings()
     _capitalize()
     _number_formatting()

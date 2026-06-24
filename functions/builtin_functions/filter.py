@@ -12,7 +12,7 @@ def _is_even(number: int) -> bool:
     return False
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     numbers = [i for i in range(10)]
 
     print(list(filter(_is_even, numbers)))

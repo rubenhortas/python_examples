@@ -78,7 +78,7 @@ def toggle_bit(number: int, index: int) -> int:
     return number ^ (1 << index)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     print(f"Byteorder: {sys.byteorder}")  # little/big endian
     # Byteorder: little
 

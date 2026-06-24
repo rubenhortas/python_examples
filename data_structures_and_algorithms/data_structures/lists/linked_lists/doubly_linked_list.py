@@ -8,8 +8,8 @@ class Node:
         self.next = None
 
     def __repr__(self):
-        prev = 'None' if self.prev is None else self.prev.data
-        next = 'None' if self.next is None else self.next.data
+        prev = "None" if self.prev is None else self.prev.data
+        next = "None" if self.next is None else self.next.data
 
         return f"{prev} <- {self.data} -> {next}"
 
@@ -36,7 +36,7 @@ class DoublyLinkedList:
             nodes.append(node.data)
             node = node.next
 
-        return ' <-> '.join(nodes)
+        return " <-> ".join(nodes)
 
     def __iter__(self):
         node = self.head
@@ -63,7 +63,7 @@ class DoublyLinkedList:
 
     def add_after(self, target_node_data: str, new_node: Node):
         if self.head is None:
-            raise Exception('List is empty')
+            raise Exception("List is empty")
 
         for node in self:
             if node.data == target_node_data:
@@ -76,7 +76,7 @@ class DoublyLinkedList:
 
     def add_before(self, target_node_data: str, new_node: Node):
         if self.head is None:
-            raise Exception('List is empty')
+            raise Exception("List is empty")
 
         if self.head.data == target_node_data:
             self.add_first(new_node)
@@ -94,7 +94,7 @@ class DoublyLinkedList:
 
     def remove(self, target_node_data: str):
         if self.head is None:
-            raise Exception('List is empty')
+            raise Exception("List is empty")
 
         if self.head.data == target_node_data:
             self.head = self.head.next
@@ -113,29 +113,29 @@ class DoublyLinkedList:
         raise Exception(f"Node with data '{target_node_data}' not found")
 
 
-if __name__ == '__main__':
-    nodes = ['b', 'c', 'd', 'e']
+if __name__ == "__main__":
+    nodes = ["b", "c", "d", "e"]
 
     doubly_linked_list = DoublyLinkedList(nodes)
     print(doubly_linked_list)
     # return: b <-> c <-> d <-> e
 
-    doubly_linked_list.add_first(Node('a'))
+    doubly_linked_list.add_first(Node("a"))
     print(doubly_linked_list)
     # return: a <-> b <-> c <-> d <-> e
 
-    doubly_linked_list.add_last(Node('z'))
+    doubly_linked_list.add_last(Node("z"))
     print(doubly_linked_list)
     # return: a <-> b <-> c <-> d <-> e <-> z
 
-    doubly_linked_list.add_after('e', Node('y'))
+    doubly_linked_list.add_after("e", Node("y"))
     print(doubly_linked_list)
     # return: a <-> b <-> c <-> d <-> e <-> y <-> z
 
-    doubly_linked_list.add_before('a', Node('0'))
+    doubly_linked_list.add_before("a", Node("0"))
     print(doubly_linked_list)
     # return: 0 <-> a <-> b <-> c <-> d <-> e <-> y <-> z
 
-    doubly_linked_list.remove('a')
+    doubly_linked_list.remove("a")
     print(doubly_linked_list)
     # return: 0 <-> b <-> c <-> d <-> e <-> y <-> z

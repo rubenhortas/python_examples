@@ -1,7 +1,6 @@
 #!/usr/bin/python 3
 
 import time
-
 from functools import wraps
 from typing import Callable
 

@@ -11,9 +11,9 @@ KEY_LENGTH = 4
 
 # noinspection PyShadowingNames
 def _initialize() -> (str, str, str):
-    print('Initializing values...')
+    print("Initializing values...")
 
-    plaintext = 'Hello world!'.encode()  # string to bytes
+    plaintext = "Hello world!".encode()  # string to bytes
     key = os.urandom(KEY_LENGTH)  # Random KEY of length KEY_LENGTH
     ciphertext = _xor(key, plaintext)
 
@@ -27,7 +27,7 @@ def _initialize() -> (str, str, str):
 
 # noinspection PyShadowingNames
 def _xor(key: bytes, stream: bytes) -> bytes:
-    xored_stream = b''
+    xored_stream = b""
     stream_length = len(stream)
     key_length = len(key)
 
@@ -40,9 +40,9 @@ def _xor(key: bytes, stream: bytes) -> bytes:
 
 # noinspection PyShadowingNames
 def _get_xor_key(plaintext: bytes, ciphertext: bytes) -> bytes:
-    key = b''
+    key = b""
 
-    print('Guessing the secret (random) KEY used for xor...')
+    print("Guessing the secret (random) KEY used for xor...")
 
     for i in range(KEY_LENGTH):
         key += bytes([plaintext[i] ^ ciphertext[i]])
@@ -53,7 +53,7 @@ def _get_xor_key(plaintext: bytes, ciphertext: bytes) -> bytes:
     return key
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     plaintext, key, ciphertext = _initialize()
 
     # If we have the initial plain text string (or at least a part) and the result ciphertext
@@ -64,13 +64,13 @@ if __name__ == '__main__':
     decrypted_text = _xor(guessed_key, ciphertext)
 
     # Check the results
-    print('Results:')
-    print('\tKeys:')
+    print("Results:")
+    print("\tKeys:")
     print(f"\t\tRandom generated key: {key}")
     print(f"\t\tGuessed key: {guessed_key}")
     print(("\t\tKeys are different", "\t\tKeys are equals")[key == guessed_key])  # keys are equal
     print()
-    print('Initial strings:')
+    print("Initial strings:")
     print(f"\t\tInitial plaintext: {plaintext.decode()}")
     print(f"\t\tDecrypted text: {decrypted_text.decode()}")
     print(("\t\tStrings are different", "\t\tStrings are equals")[plaintext == decrypted_text])  # strings are equal

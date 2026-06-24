@@ -2,7 +2,7 @@
 
 from modules import module
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     module.public_method()
     # return: Public method
 

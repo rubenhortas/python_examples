@@ -8,12 +8,27 @@ class Test(unittest.TestCase):
     def test_board(self):
         boards = [
             # (board_size, safe_squares)
-            (4, [((0, 1), False), ((0, 2), False), ((0, 3), False),
-                 ((1, 0), False), ((1, 1), False), ((1, 2), True), ((1, 3), True),
-                 ((2, 0), False), ((2, 1), True), ((2, 2), False), ((2, 3), True),
-                 ((3, 0), False), ((3, 1), True), ((3, 2), True), ((3, 3), False), ]),
-            (2, [((0, 1), False),
-                 ((1, 0), False), ((1, 1), False)])
+            (
+                4,
+                [
+                    ((0, 1), False),
+                    ((0, 2), False),
+                    ((0, 3), False),
+                    ((1, 0), False),
+                    ((1, 1), False),
+                    ((1, 2), True),
+                    ((1, 3), True),
+                    ((2, 0), False),
+                    ((2, 1), True),
+                    ((2, 2), False),
+                    ((2, 3), True),
+                    ((3, 0), False),
+                    ((3, 1), True),
+                    ((3, 2), True),
+                    ((3, 3), False),
+                ],
+            ),
+            (2, [((0, 1), False), ((1, 0), False), ((1, 1), False)]),
         ]
 
         for board in boards:
@@ -34,7 +49,7 @@ class Test(unittest.TestCase):
             # (board_size, solution)
             (2, None),  # There is no solution
             (3, None),  # There is no solution
-            (4, board_4_solution.squares)
+            (4, board_4_solution.squares),
         ]
 
         for game in games:

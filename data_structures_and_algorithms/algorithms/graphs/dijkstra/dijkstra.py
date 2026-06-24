@@ -19,7 +19,7 @@ def get_shortest_path(graph: Graph, start: int, end: int) -> (list, float):
                 distances[node] = distances[current] + weight
                 predecessors[node] = current
 
-    distances = [float('inf')] * graph.num_nodes
+    distances = [float("inf")] * graph.num_nodes
     visited = set()
     predecessors = [None] * graph.num_nodes
     # Use a priority queue (min-heap) to efficiently select the next node

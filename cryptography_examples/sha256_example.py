@@ -2,10 +2,10 @@
 
 import hashlib
 
-_PLAINTEXT = 'Hello world!'
+_PLAINTEXT = "Hello world!"
 
-if __name__ == '__main__':
-    hash_object = hashlib.sha256(_PLAINTEXT.encode('UTF-8'))
+if __name__ == "__main__":
+    hash_object = hashlib.sha256(_PLAINTEXT.encode("UTF-8"))
     hash_digest = hash_object.hexdigest()
 
     print(f"SHA256 hash of '{_PLAINTEXT}' is '{hash_digest}'")

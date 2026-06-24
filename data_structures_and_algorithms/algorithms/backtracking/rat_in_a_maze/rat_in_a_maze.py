@@ -7,7 +7,7 @@ def get_paths(maze: Maze) -> list | None:
     Consider a rat placed at (0, 0) in a square matrix of order N*N.
     Returns all possible paths (in increasing lexicographically order) that the rat can take
     to get from (0,0) to (N-1, N-1).
-    
+
     The directions in which the rat can move are 'U' (Up), 'D' (Down), 'L' (Left), 'R' (Right).
 
     The value 0 in a cell of the matrix represents that it is blocked and rat cannot move to it.
@@ -40,7 +40,7 @@ def get_paths(maze: Maze) -> list | None:
 
     paths = []
 
-    get_path(0, 0, 0, '')
+    get_path(0, 0, 0, "")
 
     if paths:
         return paths

@@ -5,10 +5,10 @@ The map() function executes a specified function for each item in an iterable.
 The item is sent to the function as a parameter.
 """
 
-FRUITS = ['apple', 'banana', 'cherry']
+FRUITS = ["apple", "banana", "cherry"]
 
-if __name__ == '__main__':
-    print('Map:')
+if __name__ == "__main__":
+    print("Map:")
     print(f"\tFruits: {FRUITS}")
 
     # map(function, iterables)

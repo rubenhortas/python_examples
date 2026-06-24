@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 
+
 class Node:
     def __init__(self, data: str):
         self.data = data
@@ -38,7 +39,7 @@ class CircularLinkedList:
 
             return f"<- {' -> '.join(nodes)} ->"
         else:
-            return ''
+            return ""
 
     def __iter__(self):
         if self.head is not None:
@@ -79,7 +80,7 @@ class CircularLinkedList:
 
     def add_after(self, target_node_data: str, new_node: Node):
         if self.head is None:
-            raise Exception('List is empty')
+            raise Exception("List is empty")
 
         for node in self:
             if node.data == target_node_data:
@@ -91,7 +92,7 @@ class CircularLinkedList:
 
     def add_before(self, target_node_data: str, new_node: Node):
         if self.head is None:
-            raise Exception('List is empty')
+            raise Exception("List is empty")
 
         if self.head.data == target_node_data:
             self.add_first(new_node)
@@ -109,25 +110,25 @@ class CircularLinkedList:
         raise Exception(f"Node with data '{target_node_data}' not found")
 
 
-if __name__ == '__main__':
-    nodes = ['1', '2', '3', '4', '5']
+if __name__ == "__main__":
+    nodes = ["1", "2", "3", "4", "5"]
 
     circular_linked_list = CircularLinkedList(nodes)
     print(circular_linked_list)
     # return: <- 1 -> 2 -> 3 -> 4 -> 5 ->
 
-    circular_linked_list.add_first(Node('0'))
+    circular_linked_list.add_first(Node("0"))
     print(circular_linked_list)
     # return: <- 0 -> 1 -> 2 -> 3 -> 4 -> 5 ->
 
-    circular_linked_list.add_last(Node('100'))
+    circular_linked_list.add_last(Node("100"))
     print(circular_linked_list)
     # return: <- 0 -> 1 -> 2 -> 3 -> 4 -> 5 -> 100 ->
 
-    circular_linked_list.add_after('5', Node('6'))
+    circular_linked_list.add_after("5", Node("6"))
     print(circular_linked_list)
     # return: <- 0 -> 1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 100 ->
 
-    circular_linked_list.add_before('100', Node('99'))
+    circular_linked_list.add_before("100", Node("99"))
     print(circular_linked_list)
     # return: <- 0 -> 1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 99 -> 100 ->

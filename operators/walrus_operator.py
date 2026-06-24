@@ -28,10 +28,9 @@ def _get_numbers_descriptive_statistics(numbers: list) -> None:
         # Without the walrus operator we would need the following two lines:
         # 'length': numbers_length,
         # 'sum': numbers_sum,
-
-        'length': (numbers_length := len(numbers)),
-        'sum': (numbers_sum := sum(numbers)),
-        'mean': numbers_sum / numbers_length,
+        "length": (numbers_length := len(numbers)),
+        "sum": (numbers_sum := sum(numbers)),
+        "mean": numbers_sum / numbers_length,
     }
 
     print(description)  # {'length': 8, 'sum': 35, 'mean': 4.375}
@@ -63,7 +62,7 @@ def _print_random_number() -> None:
     print(number)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     _get_numbers_descriptive_statistics(NUMBERS)
     _do_calculations(NUMBERS)
     _print_random_number()

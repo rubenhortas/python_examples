@@ -15,4 +15,4 @@ class Test(unittest.TestCase):
         bst.insert(5)
         bst.insert(7)
 
-        self.assertEqual(['4 (1)', '5 (2)', '6 (2)', '7 (2)', '12 (1)'], bst.get_inorder_traversal())
+        self.assertEqual(["4 (1)", "5 (2)", "6 (2)", "7 (2)", "12 (1)"], bst.get_inorder_traversal())

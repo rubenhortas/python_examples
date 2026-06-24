@@ -1,7 +1,10 @@
 import unittest
 
-from data_structures_and_algorithms.algorithms.fibonacci import fibonacci_top_down, fibonacci_bottom_up, \
-    fibonacci_recursive
+from data_structures_and_algorithms.algorithms.fibonacci import (
+    fibonacci_bottom_up,
+    fibonacci_recursive,
+    fibonacci_top_down,
+)
 
 
 class Test(unittest.TestCase):
@@ -52,5 +55,5 @@ class Test(unittest.TestCase):
         return True
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

@@ -31,4 +31,3 @@ if __name__ == "__main__":
     collection.add_comic("X-Men", "A comic about a team of mutant superheroes.")
     print(collection.comics)
     # return: {'Spiderman': 'A superhero comic about Peter Parker.', 'Batman': 'A superhero comic featuring Bruce Wayne.', 'X-Men': 'A comic about a team of mutant superheroes.'}
-

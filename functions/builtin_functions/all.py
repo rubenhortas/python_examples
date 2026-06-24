@@ -2,10 +2,10 @@
 
 LIST0 = [1, 1, 1, 1, 1, 1, 1, 1]
 LIST2 = [1, 1, 1, 1, 1, 1, 1, 0]
-ALPHAS = ['a', 'a', 'a', 'a', 'a', 'a']
-DIGITS = ['a', 'a', 'a', 'a', 'a', '0']
+ALPHAS = ["a", "a", "a", "a", "a", "a"]
+DIGITS = ["a", "a", "a", "a", "a", "0"]
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     # all returns True if bool(x) is True for all values x in the iterable.
     print(all(LIST0))
     # return: True

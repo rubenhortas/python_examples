@@ -31,7 +31,7 @@ class AdjacencyMatrix:
             self.data[node2][node1] = 1
 
     def __repr__(self):
-        return '\n'.join(str(row) for row in self.data)
+        return "\n".join(str(row) for row in self.data)
 
     def __str__(self):
         return self.__repr__()

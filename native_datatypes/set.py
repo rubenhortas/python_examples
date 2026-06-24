@@ -8,8 +8,8 @@ Set items are unordered, unchangeable, and do not allow duplicate values.
 Once you have two sets, you can do standard set operations like union, intersection, and set difference.
 """
 
-CHARS = ['a', 'b', 'c']
-CHAR_2 = {'c', 'dct', 'e'}
+CHARS = ["a", "b", "c"]
+CHAR_2 = {"c", "dct", "e"}
 EMPTY = set()  # To create an empty set you have to use set(), not {}; the latter creates an empty dictionary.
 ODD = {1, 3, 5, 7, 9}
 MINI_ODD = {1, 3}
@@ -27,7 +27,7 @@ def create_from_list(lst: list) -> set:
 
 
 def merge(set1: set, set2: set) -> set:
-    print(f"Merging {set2} into {set1}:", end=' ')
+    print(f"Merging {set2} into {set1}:", end=" ")
 
     set1.update(set1, set2)
 
@@ -38,7 +38,7 @@ def merge(set1: set, set2: set) -> set:
 
 # noinspection PyShadowingBuiltins
 def remove_item(set: set, item: str) -> None:
-    print(f"Removing '{item}' from {set}:", end=' ')
+    print(f"Removing '{item}' from {set}:", end=" ")
 
     try:
         set.remove(item)  # Remove raises a KeyError exception if the number doesn't exist in the set
@@ -50,7 +50,7 @@ def remove_item(set: set, item: str) -> None:
 
 # noinspection PyShadowingBuiltins
 def discard_item(set: set, item: str) -> None:
-    print(f"Discarding '{item}' from {set}:", end=' ')
+    print(f"Discarding '{item}' from {set}:", end=" ")
 
     set.discard(item)  # Discard does nothing if the number doesn't exist in the set
 
@@ -62,7 +62,7 @@ def pop(set: set) -> None:
     # The pop() method removes a single number from a set and returns the number. However, since sets are unordered,
     # there is no “last” number in a set, so there is no way to control which number gets removed.
     # It is completely arbitrary.
-    print(f"Popping an item from {set}:", end=' ')
+    print(f"Popping an item from {set}:", end=" ")
 
     set.pop()
 
@@ -87,7 +87,7 @@ def common_operations(set1: set, set2: set, set3: set):
     # The symmetric_difference() method returns a new set containing all the elements that are in exactly one of the sets.
     symmetric_difference_set = set1.symmetric_difference(set3)
 
-    print('Common set operations:')
+    print("Common set operations:")
     print(f"\todd set: {set1}")
     print(f"\teven set: {set2}")
     print(f"\tmixed set: {set3}")
@@ -136,23 +136,23 @@ def get_min(set: set) -> None:
     print(f"The minimum item in {set} is '{min(set)}'")
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     char_1 = create_from_list(CHARS)
     # return: List: ['a', 'b', 'c'] -> set: {'c', 'b', 'a'}
 
     merged_set = merge(char_1, CHAR_2)
     # return: Merging {'c', 'dct', 'e'} into {'b', 'a', 'c'}: {'b', 'c', 'dct', 'a', 'e'}
 
-    remove_item(merged_set, 'e')
+    remove_item(merged_set, "e")
     # return: Removing 'e' from {'e', 'c', 'dct', 'b', 'a'}: {'c', 'dct', 'b', 'a'}
 
-    discard_item(merged_set, 'ee')
+    discard_item(merged_set, "ee")
     # return: Discarding 'ee' from {'a', 'c', 'b', 'dct'}: {'a', 'c', 'b', 'dct'}
 
     pop(merged_set)
     # return: Popping an item from {'b', 'a', 'c', 'dct'}: {'a', 'c', 'dct'}
 
-    get_value(merged_set, 'a')
+    get_value(merged_set, "a")
     # return: 'a' is in {'b', 'a', 'c'}
 
     common_operations(ODD, EVEN, NUMBERS)

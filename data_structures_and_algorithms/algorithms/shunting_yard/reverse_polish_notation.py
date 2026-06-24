@@ -4,7 +4,7 @@
 Reverse Polish Notation (RPN): https://en.wikipedia.org/wiki/Reverse_Polish_notation
 """
 
-OPERATORS = ['**', '*', '/', '+', '-']
+OPERATORS = ["**", "*", "/", "+", "-"]
 
 
 def rpn_to_infix(expression: str) -> str:
@@ -16,7 +16,7 @@ def rpn_to_infix(expression: str) -> str:
     output_queue = []
 
     for token in expression:
-        if token == ' ':
+        if token == " ":
             continue
         elif token in OPERATORS:
             b = output_queue.pop()

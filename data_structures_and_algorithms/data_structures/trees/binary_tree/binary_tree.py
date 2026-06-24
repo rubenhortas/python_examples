@@ -1,6 +1,7 @@
 """
 A binary tree is a tree data structure in which each node has at most two children.
 """
+
 from collections import deque
 
 from node import Node
@@ -116,6 +117,7 @@ class BinaryTree:
         Time complexity: O(n)
         Auxiliary space: O(1)
         """
+
         def traverse_inorder(node: Node) -> None:
             if node:
                 traverse_inorder(node.left)
@@ -192,6 +194,7 @@ class BinaryTree:
         Time complexity: O(n)
         Auxiliary space: O(1)
         """
+
         def traverse_preorder(node: Node) -> None:
             if node:
                 values.append(str(node))
@@ -267,6 +270,7 @@ class BinaryTree:
         Time complexity: O(n)
         Auxiliary space: O(1)
         """
+
         def traverse_postorder(node: Node) -> None:
             if node:
                 traverse_postorder(node.left)
@@ -403,6 +407,7 @@ class BinaryTree:
         Time complexity:  O(n^2)
         Auxiliary space: O(h)
         """
+
         def get_level(node: Node, level: int) -> None:
             if node:
                 if level == 0:
@@ -532,6 +537,7 @@ class BinaryTree:
         Time complexity:  O(n)
         Auxiliary space: O(n)
         """
+
         def get_left_boundary(node: Node) -> None:
             if node:
                 if node.left:
