@@ -1,13 +1,13 @@
 class Board:
     _BLANK = "  "
 
-    def __init__(self, size):
+    def __init__(self, size: int) -> None:
         self.squares = [[self._BLANK] * size for _ in range(size)]
         self.size = len(self.squares)
         self.max_position = self.size**2
 
     def print(self) -> None:
-        for row, columns in zip(self.squares, self.squares):
+        for row, columns in zip(self.squares, self.squares, strict=True):
             for column in columns:
                 print(f"[{column}]", end="")
             print()

@@ -5,12 +5,12 @@ from data_structures_and_algorithms.algorithms.backtracking.knights_tour.knights
 
 
 class Test(unittest.TestCase):
-    def test_board(self):
+    def test_board(self) -> None:
         board = Board(8)
         board.set_position(0, 0, 0)
         board.print()
 
-    def test_get_solution(self):
+    def test_get_solution(self) -> None:
         games = [
             (3, None),
             (4, None),

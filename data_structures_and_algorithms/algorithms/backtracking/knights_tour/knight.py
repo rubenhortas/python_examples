@@ -1,3 +1,6 @@
+from typing import ClassVar, Final
+
+
 class Knight:
     """
     The knight moves multiple squares each move.
@@ -6,7 +9,10 @@ class Knight:
     """
 
     # The order of the moves significantly impacts the efficiency of solutions
-    MOVES = [
+    #
+    # 'tuple' instead of 'list' to enforce immutability at runtime.
+    # 'Final' to behave as a constant.
+    MOVES: Final[tuple[str, ...]] = (
         (2, 1),  # One square up and two squares right
         (1, 2),  # Two squares up and one square right
         (-1, 2),  # Two squares up and one square left
@@ -15,4 +21,4 @@ class Knight:
         (-1, -2),  # Two squares down and one square left
         (1, -2),  # Two squares down and one square right
         (2, -1),  # One square down and two squares right
-    ]
+    )
