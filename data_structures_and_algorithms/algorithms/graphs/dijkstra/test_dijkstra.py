@@ -5,7 +5,7 @@ from data_structures_and_algorithms.data_structures.graphs.graph import Graph
 
 
 class Test(unittest.TestCase):
-    def test_dijkstra(self):
+    def test_dijkstra(self) -> None:
         graph = Graph(6, [(0, 1, 4), (0, 2, 2), (1, 2, 5), (1, 3, 10), (2, 4, 3), (3, 5, 11), (4, 3, 4)], True)
         self.assertEqual(([0, 2, 4, 3, 5], 20), get_shortest_path(graph, 0, 5))
 
