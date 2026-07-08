@@ -1,11 +1,13 @@
 from collections import defaultdict
 
+INF = 10**9
 
-def get_shortest_path(graph: dict, start: str, end: str) -> tuple[list, float | int]:
+
+def get_shortest_path(graph: dict, start: str, end: str) -> tuple[list, int]:
     # Time complexity: O((nodes+edges)*log(nodes))
     # Auxiliary space: O(nodes)
 
-    distances = defaultdict(lambda: float("inf"))
+    distances = defaultdict(lambda: INF)
     distances[start] = 0
     predecessors = {}
     unvisited = set(graph)
@@ -23,10 +25,10 @@ def get_shortest_path(graph: dict, start: str, end: str) -> tuple[list, float | 
                 distances[neighbor] = alternative
                 predecessors[neighbor] = current
 
-    current = end
+    node = end
 
-    while current is not None:
-        path.insert(0, current)
-        current = predecessors.get(current)
+    while node is not None:
+        path.insert(0, node)
+        node = predecessors.get(node)
 
     return path, distances[end]
