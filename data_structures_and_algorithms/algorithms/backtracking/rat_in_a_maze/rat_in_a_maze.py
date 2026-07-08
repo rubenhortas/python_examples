@@ -26,12 +26,12 @@ def get_paths(maze: Maze) -> list | None:
 
         maze.block(row, column)
 
-        for move in Rat.MOVES:
+        for move in Rat.moves:
             next_row = row + move[0]
             next_column = column + move[1]
 
             if maze.is_valid(next_row, next_column):
-                path += Rat.MOVES[move]
+                path += Rat.moves[move]
                 get_path(next_row, next_column, position + 1, path)
                 path = path[:-1]
 

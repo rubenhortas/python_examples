@@ -1,5 +1,5 @@
 class Maze:
-    def __init__(self, squares: list, solutions: list):
+    def __init__(self, squares: list, solutions: list) -> None:
         self.squares = squares
         self.solutions = solutions
         self.last_row = len(squares) - 1
@@ -16,7 +16,7 @@ class Maze:
         self.squares[row][colum] = 1
 
     def print(self) -> None:
-        for row, columns in zip(self.squares, self.squares):
+        for row, columns in zip(self.squares, self.squares, strict=True):
             for column in columns:
                 print(f"[{column}]", end="")
             print()

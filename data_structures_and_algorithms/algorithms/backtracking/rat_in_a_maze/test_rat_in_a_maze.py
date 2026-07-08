@@ -14,7 +14,7 @@ from data_structures_and_algorithms.algorithms.backtracking.rat_in_a_maze.rat_in
 
 
 class Test(unittest.TestCase):
-    def test_get_paths(self):
+    def test_get_paths(self) -> None:
         mazes = [
             Maze([[1, 0, 0, 0], [1, 1, 0, 1], [0, 1, 0, 0], [1, 1, 1, 1]], ["DRDDRR"]),
             Maze([[1, 0, 0, 0], [1, 1, 0, 1], [1, 1, 0, 0], [0, 1, 1, 1]], ["DDRDRR", "DRDDRR"]),
