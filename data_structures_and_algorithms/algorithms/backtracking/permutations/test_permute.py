@@ -4,7 +4,7 @@ from data_structures_and_algorithms.algorithms.backtracking.permutations.permute
 
 
 class Test(unittest.TestCase):
-    def test_permute(self):
+    def test_permute(self) -> None:
         strings = [
             ("", []),
             ("a", ["a"]),
