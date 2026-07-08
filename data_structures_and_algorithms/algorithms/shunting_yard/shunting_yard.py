@@ -22,7 +22,7 @@ def shunting_yard(expression: str) -> str:
     operator_stack = []
 
     for token in expression:
-        if token == " ":
+        if token == " ":  # noqa: S105
             continue
         elif token in _PRECEDENCES:
             while (
@@ -32,9 +32,9 @@ def shunting_yard(expression: str) -> str:
             ):
                 output_queue.append(operator_stack.pop())
             operator_stack.append(token)
-        elif token == "(":
+        elif token == "(":  # noqa: S105
             operator_stack.append(token)
-        elif token == ")":
+        elif token == ")":  # noqa: S105
             while operator_stack and operator_stack[-1] != "(":
                 output_queue.append(operator_stack.pop())
             operator_stack.pop()

@@ -16,7 +16,7 @@ def rpn_to_infix(expression: str) -> str:
     output_queue = []
 
     for token in expression:
-        if token == " ":
+        if token == " ":  # noqa: S105
             continue
         elif token in OPERATORS:
             b = output_queue.pop()
