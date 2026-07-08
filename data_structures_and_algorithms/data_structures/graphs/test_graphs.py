@@ -4,14 +4,14 @@ from data_structures_and_algorithms.data_structures.graphs.graph import Graph
 
 
 class Test(unittest.TestCase):
-    def test_undirected_unweighted_graph(self):
+    def test_undirected_unweighted_graph(self) -> None:
         nodes = 5
         edges = [(0, 1), (0, 4), (1, 2), (1, 3), (1, 4), (2, 3), (3, 4)]
         graph = Graph(nodes, edges)
 
         self.assertEqual([[1, 4], [0, 2, 3, 4], [1, 3], [1, 2, 4], [0, 1, 3]], graph.nodes)
 
-    def test_undirected_weighted_graph(self):
+    def test_undirected_weighted_graph(self) -> None:
         num_nodes = 9
         edges = [
             (0, 1, 3),
@@ -29,14 +29,14 @@ class Test(unittest.TestCase):
 
         self.assertEqual([[1, 3, 8], [0, 7], [7, 3, 5], [0, 2, 4], [3, 8], [2, 6], [5], [1, 2], [0, 4]], graph.nodes)
 
-    def test_directed_unweighted_graph(self):
+    def test_directed_unweighted_graph(self) -> None:
         num_nodes = 5
         edges = [(0, 1), (1, 2), (2, 3), (2, 4), (4, 2), (3, 0)]
         graph = Graph(num_nodes, edges, directed=True)
 
         self.assertEqual([[1], [2], [3, 4], [0], [2]], graph.nodes)
 
-    def test_directed_weighted_graph(self):
+    def test_directed_weighted_graph(self) -> None:
         num_nodes = 6
         edges = [
             (0, 1, 4),

@@ -4,7 +4,7 @@ from data_structures_and_algorithms.data_structures.graphs.adjacency_matrix impo
 
 
 class Test(unittest.TestCase):
-    def test_adjacency_matrix(self):
+    def test_adjacency_matrix(self) -> None:
         nodes = 5
         edges = [(0, 1), (0, 4), (1, 2), (1, 3), (1, 4), (2, 3), (3, 4)]
         matrix = AdjacencyMatrix(nodes, edges)
