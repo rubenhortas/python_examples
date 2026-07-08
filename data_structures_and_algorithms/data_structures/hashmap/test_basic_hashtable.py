@@ -1,6 +1,7 @@
 import unittest
 
 from data_structures_and_algorithms.data_structures.hashmap.basic_hashtable import BasicHashTable
+from data_structures_and_algorithms.data_structures.hashmap.key_not_found_error import KeyNotFoundError
 
 
 class Test(unittest.TestCase):
@@ -17,7 +18,7 @@ class Test(unittest.TestCase):
 
     def test_get_value(self) -> None:
         self.assertEqual("1", self.hashtable.get("one"))
-        self.assertRaises(BaseException, self.hashtable.get, "six")
+        self.assertRaises(KeyNotFoundError, self.hashtable.get, "six")
 
     def test_update(self) -> None:
         self.hashtable.update("five", "5")
