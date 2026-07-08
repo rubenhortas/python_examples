@@ -12,14 +12,14 @@ from data_structures_and_algorithms.algorithms.backtracking.subset_sums.subset_s
 
 
 class NumberSet:
-    def __init__(self, numbers, target, solutions):
+    def __init__(self, numbers: list, target: int, solutions: list) -> None:
         self.numbers = numbers
         self.target = target
         self.solutions = solutions
 
 
 class Test(unittest.TestCase):
-    def test_get_subsets(self):
+    def test_get_subsets(self) -> None:
         number_sets = []
 
         number_set = NumberSet([1, 5, 3, 2], 6, [[1, 5], [1, 2, 3]])
