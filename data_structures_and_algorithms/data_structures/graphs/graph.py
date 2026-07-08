@@ -1,5 +1,5 @@
 class Graph:
-    def __init__(self, num_nodes: int, edges: list, directed: bool = False):
+    def __init__(self, num_nodes: int, edges: list, directed: bool = False) -> None:
         self.num_nodes = num_nodes
         self.directed = directed
         self.weighted = len(edges) > 0 and len(edges[0]) == 3
@@ -18,18 +18,18 @@ class Graph:
                 if self.weighted:
                     self.weights[edge[1]].append(edge[2])
 
-    def __repr__(self):
+    def __repr__(self) -> str:
         result = ""
 
         if self.weighted:
-            for i, (nodes, weights) in enumerate(zip(self.nodes, self.weights)):
-                result += f"{i}: {list(zip(nodes, weights))}\n"
+            for i, (nodes, weights) in enumerate(zip(self.nodes, self.weights, strict=True)):
+                result += f"{i}: {list(zip(nodes, weights, strict=True))}\n"
         else:
             for i, nodes in enumerate(self.nodes):
                 result += f"{i}: {nodes}\n"
         return result
 
-    def __str__(self):
+    def __str__(self) -> str:
         if self.weighted:
             result = "# node1: [(node2, weight), ..., (node_n, weight)]\n"
         else:
