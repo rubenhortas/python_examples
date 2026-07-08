@@ -8,10 +8,10 @@ from data_structures_and_algorithms.algorithms.fibonacci import (
 
 
 class Test(unittest.TestCase):
-    def setUp(self):
+    def setUp(self) -> None:
         self.n = 6  # iterations
 
-    def test_fibonacci_recursive(self):
+    def test_fibonacci_recursive(self) -> None:
         results = []
 
         for i in range(self.n + 1):
@@ -19,7 +19,7 @@ class Test(unittest.TestCase):
 
         self.assertTrue(self._check(results))
 
-    def test_fibonacci_top_down(self):
+    def test_fibonacci_top_down(self) -> None:
         results = []
 
         for i in range(self.n + 1):
@@ -27,7 +27,7 @@ class Test(unittest.TestCase):
 
         self.assertTrue(self._check(results))
 
-    def test_fibonacci_bottom_up(self):
+    def test_fibonacci_bottom_up(self) -> None:
         results = []
 
         for i in range(self.n + 1):
