@@ -12,27 +12,15 @@ class Test(unittest.TestCase):
         self.n = 6  # iterations
 
     def test_fibonacci_recursive(self) -> None:
-        results = []
-
-        for i in range(self.n + 1):
-            results.append(fibonacci_recursive.fibonacci(i))
-
+        results = [fibonacci_recursive.fibonacci(i) for i in range(self.n + 1)]
         self.assertTrue(self._check(results))
 
     def test_fibonacci_top_down(self) -> None:
-        results = []
-
-        for i in range(self.n + 1):
-            results.append(fibonacci_top_down.fibonacci(i))
-
+        results = [fibonacci_top_down.fibonacci(i) for i in range(self.n + 1)]
         self.assertTrue(self._check(results))
 
     def test_fibonacci_bottom_up(self) -> None:
-        results = []
-
-        for i in range(self.n + 1):
-            results.append(fibonacci_bottom_up.fibonacci(i))
-
+        results = [fibonacci_bottom_up.fibonacci(i) for i in range(self.n + 1)]
         self.assertTrue(self._check(results))
 
     def _check(self, results: list) -> bool:
