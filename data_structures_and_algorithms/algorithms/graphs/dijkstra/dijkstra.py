@@ -3,7 +3,7 @@ import heapq
 from data_structures_and_algorithms.data_structures.graphs.graph import Graph
 
 
-def get_shortest_path(graph: Graph, start: int, end: int) -> (list, float):
+def get_shortest_path(graph: Graph, start: int, end: int) -> tuple[list, float]:
     # Time complexity: O((nodes+edges)*log(nodes))
     # Auxiliary space: O(nodes)
 

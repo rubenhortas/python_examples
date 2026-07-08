@@ -1,7 +1,7 @@
 from collections import defaultdict
 
 
-def get_shortest_path(graph: dict, start: str, end: str) -> (list, int):
+def get_shortest_path(graph: dict, start: str, end: str) -> tuple[list, float | int]:
     # Time complexity: O((nodes+edges)*log(nodes))
     # Auxiliary space: O(nodes)
 
@@ -27,6 +27,6 @@ def get_shortest_path(graph: dict, start: str, end: str) -> (list, int):
 
     while current is not None:
         path.insert(0, current)
-        current = predecessors.get(current, None)
+        current = predecessors.get(current)
 
     return path, distances[end]
