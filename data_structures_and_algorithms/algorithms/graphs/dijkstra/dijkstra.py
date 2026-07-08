@@ -2,8 +2,10 @@ import heapq
 
 from data_structures_and_algorithms.data_structures.graphs.graph import Graph
 
+INF = 10**9
 
-def get_shortest_path(graph: Graph, start: int, end: int) -> tuple[list, float]:
+
+def get_shortest_path(graph: Graph, start: int, end: int) -> tuple[list, int]:
     # Time complexity: O((nodes+edges)*log(nodes))
     # Auxiliary space: O(nodes)
 
@@ -18,11 +20,13 @@ def get_shortest_path(graph: Graph, start: int, end: int) -> tuple[list, float]:
                 distances[node] = distances[current] + weight
                 predecessors[node] = current
 
-    distances = [float("inf")] * graph.num_nodes
+    distances = [INF] * graph.num_nodes
     visited = set()
-    predecessors = [None] * graph.num_nodes
+
     # Use a priority queue (min-heap) to efficiently select the next node
-    priority_queue: list[tuple[float, float]] = [(0, start)]  # (distance, node)
+    predecessors: list[None | int] = [None] * graph.num_nodes
+
+    priority_queue: list[tuple[int, int]] = [(0, start)]  # (distance, node)
     distances[start] = 0
     path = []
 
@@ -43,10 +47,10 @@ def get_shortest_path(graph: Graph, start: int, end: int) -> tuple[list, float]:
             if neighbor not in visited:
                 heapq.heappush(priority_queue, (distances[neighbor], neighbor))
 
-    current = end
+    node = end
 
-    while current is not None:
-        path.insert(0, current)
-        current = predecessors[current]
+    while node is not None:
+        path.insert(0, node)
+        node = predecessors[node]
 
     return path, distances[end]
