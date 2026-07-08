@@ -4,7 +4,7 @@ from data_structures_and_algorithms.algorithms.sort.bubble_sort.bubble_sort impo
 
 
 class Test(unittest.TestCase):
-    def test_sort(self):
+    def test_sort(self) -> None:
         lists = [
             # (list, ascending_sorted_list, descending_sorted_list)
             ([], []),
