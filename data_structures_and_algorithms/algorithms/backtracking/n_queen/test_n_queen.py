@@ -5,7 +5,7 @@ from data_structures_and_algorithms.algorithms.backtracking.n_queen.n_queen impo
 
 
 class Test(unittest.TestCase):
-    def test_board(self):
+    def test_board(self) -> None:
         boards = [
             # (board_size, safe_squares)
             (
@@ -31,14 +31,14 @@ class Test(unittest.TestCase):
             (2, [((0, 1), False), ((1, 0), False), ((1, 1), False)]),
         ]
 
-        for board in boards:
-            board_ = Board(board[0])
+        for board_size, safe_squares in boards:
+            board_ = Board(board_size)
             board_.place_queen(0, 0)
 
-            for square in board[1]:
+            for square in safe_squares:
                 self.assertEqual(square[1], board_.is_safe(*square[0]))
 
-    def test_get_solutions(self):
+    def test_get_solutions(self) -> None:
         board_4_solution = Board(4)
         board_4_solution.place_queen(0, 2)
         board_4_solution.place_queen(1, 0)
@@ -52,15 +52,15 @@ class Test(unittest.TestCase):
             (4, board_4_solution.squares),
         ]
 
-        for game in games:
-            solution_board = get_solution(game[0])
+        for board_size, expected_solution in games:
+            solution_board = get_solution(board_size)
 
             if solution_board:
                 solution = solution_board.squares
                 solution_board.print()
             else:
                 solution = None
-                print(f"There is no solution for a {game[0]}x{game[0]} board.")
+                print(f"There is no solution for a {board_size}x{board_size} board.")
 
             print()
-            self.assertEqual(game[1], solution)
+            self.assertEqual(expected_solution, solution)
