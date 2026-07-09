@@ -1,14 +1,14 @@
 #!/usr/bin/env python3
 
 
-def _variable_number_of_arguments(arg1, arg2, *args) -> None:
+def _variable_number_of_arguments(arg1: object, arg2: object, *args: object) -> None:
     # Parameters will be a tuple
     print("Variable number of arguments")
     print(f"Mandatory parameters: {arg1}, {arg2}")
     print(f"Variable number of arguments: {args}\n")
 
 
-def _variable_number_of_named_arguments(arg1, arg2, **args) -> None:
+def _variable_number_of_named_arguments(arg1: object, arg2: object, **args: object) -> None:
     # Parameters will be a dictionary
     print("Variable number of named arguments")
     print(f"Mandatory parameters: {arg1}, {arg2}")
