@@ -2,22 +2,24 @@
 A max heap is a complete binary tree where the value of each node is greater than or equal to the values of its children.
 """
 
-from binary_heap import BinaryHeap
+from typing import Any
+
+from data_structures_and_algorithms.data_structures.heap.binary_heap import BinaryHeap
 
 
 class MaxHeap(BinaryHeap):
-    def extract_max(self):
-        return self._extract_root()
+    def extract_max(self) -> None:
+        self._extract_root()
 
-    def get_max(self):
+    def get_max(self) -> int | None:
         return self._get_root()
 
-    def _heapify_up(self, i):
+    def _heapify_up(self, i: int) -> None:
         while i > 0 and self.heap[i] > self.heap[self._parent(i)]:
             self.heap[i], self.heap[self._parent(i)] = self.heap[self._parent(i)], self.heap[i]
             i = self._parent(i)
 
-    def _heapify_down(self, i):
+    def _heapify_down(self, i: int) -> None:
         largest = i
         left = self._left_child(i)
         right = self._right_child(i)
