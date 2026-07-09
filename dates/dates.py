@@ -4,7 +4,7 @@ from datetime import MAXYEAR, MINYEAR, date, datetime, time
 
 
 # noinspection PyShadowingNames
-def _get_delorean_date_format(date_: date) -> str:
+def _get_delorean_date_format(date_: datetime) -> str:
     return datetime.strftime(date_, "'%b %d %Y %H:%M'").upper()
 
 
@@ -15,7 +15,7 @@ def _get_delorean_time_format(time_: time) -> str:
 if __name__ == "__main__":
     now = datetime.now()
     first_dest = datetime(1985, 10, 26, 9, 00)
-    second_dest_date = date(2015, 10, 21)
+    second_dest_date = datetime(2015, 10, 21)
     second_dest_time = time(7, 28)
     second_dest = datetime(2015, 10, 21, 7, 28)
     third_dest = datetime(1955, 11, 12, 6, 38)
