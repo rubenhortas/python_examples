@@ -1,18 +1,19 @@
 #!/usr/bin/env python3
+from typing import Any, Generator
 
 
 class Node:
-    def __init__(self, data: str):
+    def __init__(self, data: str) -> None:
         self.data = data
         self.next = None
 
-    def __repr__(self):
+    def __repr__(self) -> str:
         return self.data
 
 
 # noinspection PyShadowingNames
 class LinkedList:
-    def __init__(self, nodes: list = None):
+    def __init__(self, nodes: list | None | None = None) -> None:
         self.head = None
 
         if nodes:
@@ -23,7 +24,7 @@ class LinkedList:
                 node.next = Node(n)
                 node = node.next
 
-    def __repr__(self):
+    def __repr__(self) -> str:
         node = self.head
         nodes = []
 
@@ -33,18 +34,18 @@ class LinkedList:
 
         return " -> ".join(nodes)
 
-    def __iter__(self):
+    def __iter__(self) -> Generator[Node, Any, None]:
         node = self.head
 
         while node is not None:
             yield node
             node = node.next
 
-    def add_first(self, node: Node):
+    def add_first(self, node: Node) -> None:
         node.next = self.head
         self.head = node
 
-    def add_last(self, node: Node):
+    def add_last(self, node: Node) -> None:
         if self.head is None:
             self.head = node
             return
@@ -55,7 +56,7 @@ class LinkedList:
         # noinspection PyUnboundLocalVariable
         current_node.next = node
 
-    def add_after(self, target_node_data: str, new_node: Node):
+    def add_after(self, target_node_data: str, new_node: Node) -> None:
         if self.head is None:
             raise Exception("List is empty")
 
@@ -67,7 +68,7 @@ class LinkedList:
 
         raise Exception(f"Node with data '{target_node_data}' not found")
 
-    def add_before(self, target_node_data: str, new_node: Node):
+    def add_before(self, target_node_data: str, new_node: Node) -> None:
         if self.head is None:
             raise Exception("List is empty")
 
@@ -86,7 +87,7 @@ class LinkedList:
 
         raise Exception(f"Node with data '{target_node_data}' not found")
 
-    def remove(self, target_node_data: str):
+    def remove(self, target_node_data: str) -> None:
         if self.head is None:
             raise Exception("List is empty")
 
