@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
 
 
-def read(file_path: str) -> str:
+def read(file_path: str) -> str | None:
     try:
         # Modes:
         # 'r'  - Read (default). Opens for reading. Error if file doesn't exist.
         # 'rb' - Read Binary. Used for non-text files (images, PDFs).
         # 'r+' - Read and Write.
-        with open(file_path, "r", encoding="utf-8") as file:
+        with open(file_path, encoding="utf-8") as file:  # noqa: PTH123
             content = file.read()
             print("File content successfully loaded.")
             return content
@@ -27,7 +27,7 @@ def write(file_path: str, text_to_write: str) -> None:
         # 'a'  - Append. Adds content to the end of the file without overwriting.
         # 'w+' - Write and Read.
         # 'x'  - Exclusive creation. Fails if the file already exists.
-        with open(file_path, "w", encoding="utf-8") as file:
+        with open(file_path, "w", encoding="utf-8") as file:  # noqa: PTH123
             file.write(text_to_write)
             print(f"Successfully written to {file_path}")
     except OSError as e:
