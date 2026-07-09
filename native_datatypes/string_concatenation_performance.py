@@ -1,7 +1,9 @@
 #!/usr/bin/env python3
 
 from array import array
+from collections.abc import Callable
 from io import StringIO
+from typing import Any
 
 from performance.execution_time import get_execution_time
 
@@ -10,74 +12,74 @@ ITERATIONS = 10000
 
 
 @get_execution_time
-def _execute(func, *args, **kwargs):
-    for i in range(ITERATIONS):
+def _execute(func: Callable[..., Any], *args: object, **kwargs: object) -> None:
+    for _ in range(ITERATIONS):
         func(*args, **kwargs)
 
 
-def _measure_function_time(func, *args, **kwargs) -> float:
+def _measure_function_time(func: Callable[..., Any], *args: object, **kwargs: object) -> float | int:
     print(f"Measuring {func.__name__}...")
 
     total_time = _execute(func, *args, **kwargs)
     return total_time / ITERATIONS
 
 
-def _naive_appending(lst):
+def _naive_appending(lst: list) -> None:
     str_out = ""
 
     for item in lst:
         str_out = str_out + item
 
 
-def _format_specifiers(lst):
+def _format_specifiers(lst: list) -> None:
     str_out = ""
 
     for item in lst:
-        str_out = "%s%s" % (str_out, item)
+        str_out = f"{str_out}{item}"
 
 
-def _string_format(lst):
+def _string_format(lst: list) -> None:
     str_out = ""
 
     for item in lst:
-        str_out = "{0}{1}".format(str_out, item)
+        str_out = f"{str_out}{item}"
 
 
-def _string_format_without_positional_arguments(lst):  # python >= 3.1
+def _string_format_without_positional_arguments(lst: list) -> None:  # python >= 3.1
     str_out = ""
 
     for item in lst:
-        str_out = "{}{}".format(str_out, item)
+        str_out = f"{str_out}{item}"
 
 
-def _character_array(lst):
+def _character_array(lst: list) -> None:
     char_array = array("b")
 
     for item in lst:
         char_array.frombytes(bytes(item, "UTF-8"))
 
 
-def _join_creating_list(lst):
+def _join_creating_list(lst: list) -> None:
     strings = []
 
     for item in lst:
-        strings.append(item)
+        strings.append(item)  # noqa: PERF402
 
     "".join(strings)
 
 
-def _join_without_creating_list(lst):
+def _join_without_creating_list(lst: list) -> None:
     "".join(lst)
 
 
-def _write_pseudo_file(lst):
+def _write_pseudo_file(lst: list) -> None:
     file_str = StringIO()
 
     for item in lst:
         file_str.write(item)
 
 
-def _fstrings(lst):
+def _fstrings(lst: list) -> None:
     str_out = ""
 
     for item in lst:
