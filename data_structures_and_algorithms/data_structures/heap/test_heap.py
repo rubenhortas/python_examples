@@ -5,7 +5,7 @@ from min_heap import MinHeap
 
 
 class Test(unittest.TestCase):
-    def test_min_heap(self):
+    def test_min_heap(self) -> None:
         min_heap = MinHeap(10)
         min_heap.insert(10)
         min_heap.insert(5)
@@ -18,7 +18,7 @@ class Test(unittest.TestCase):
         self.assertEqual(min_heap_expected_min, min_heap.extract_min())
         self.assertEqual(min_heap_expected_second_min, min_heap.get_min())
 
-    def test_max_heap(self):
+    def test_max_heap(self) -> None:
         max_heap = MaxHeap(10)
         max_heap.insert(10)
         max_heap.insert(5)
