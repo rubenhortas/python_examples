@@ -56,11 +56,11 @@ def _string_formatting() -> None:
     # return: f-string with one argument
 
     # %-formatting
-    print("%%-formatting with %s" % one_argument)
+    print(f"%-formatting with {one_argument}")
     # return: %-formatting with one argument
 
     # str.format
-    print("str.format with {0}".format(one_argument))
+    print(f"str.format with {one_argument}")
     # return: str.format with one argument
 
     # str.format Changed in version 3.1: The positional argument specifiers can be omitted for str.format()
@@ -95,10 +95,10 @@ def _string_formatting_types_based_on_placeholders() -> None:
 
 def _split() -> None:
     lorem_ipsum = "Lorem ipsum dolor sit amet"
-    splitted_string = lorem_ipsum.split()  # To split on whitespace don’t have to give split any arguments
+    separated_string = lorem_ipsum.split()  # To split on whitespace don't have to give split any arguments
 
-    print(f'"{lorem_ipsum}" splitted: {splitted_string}')
-    # return: 'Lorem ipsum dolor sit amet' splitted: ['Lorem', 'ipsum', 'dolor', 'sit', 'amet']
+    print(f'"{lorem_ipsum}" separated: {separated_string}')
+    # return: 'Lorem ipsum dolor sit amet' separated: ['Lorem', 'ipsum', 'dolor', 'sit', 'amet']
 
 
 def _join() -> None:
