@@ -10,7 +10,7 @@ from rotating_lists import calculate_rotations
 
 
 class Test(unittest.TestCase):
-    def setUp(self):
+    def setUp(self) -> None:
         self.lists = [
             ([0, 2, 3, 4, 5, 6, 9], 0),
             ([5, 6, 9, 0, 2, 3, 4], 3),
@@ -21,7 +21,7 @@ class Test(unittest.TestCase):
             ([0], 0),
         ]
 
-    def test(self):
+    def test(self) -> None:
         for lst in self.lists:
             rotations = calculate_rotations(lst[0])
             self.assertEqual(lst[1], rotations)
