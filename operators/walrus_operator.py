@@ -10,7 +10,7 @@ Walrus operator use cases:
 * Repeated calls that exhaust iterators can make your code overly complex.
 """
 
-import random
+import secrets
 
 NUMBERS = [2, 8, 0, 1, 1, 9, 7, 7]
 
@@ -56,7 +56,7 @@ def _do_expensive_operation(n: int) -> int:
 
 # Assignment expressions can often be used to simplify while loops
 def _print_random_number() -> None:
-    while (number := random.randint(1, 100)) < 50:
+    while (number := secrets.randbelow(100)) < 50:
         pass
 
     print(number)
