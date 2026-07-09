@@ -6,7 +6,7 @@ It's a fundamental data structure used in various algorithms like heap sort, pri
 from abc import ABC, abstractmethod
 from typing import NoReturn
 
-from data_structures_and_algorithms.data_structures.heap.method_not_implemented import MethodNotImplementedError
+from data_structures_and_algorithms.data_structures.heap.method_not_implemented_error import MethodNotImplementedError
 
 
 class BinaryHeap(ABC):
