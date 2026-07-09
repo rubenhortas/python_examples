@@ -1,18 +1,19 @@
 #!/usr/bin/env python3
+from typing import Any, Generator
 
 
 class Node:
-    def __init__(self, data: str):
+    def __init__(self, data: str) -> None:
         self.data = data
         self.next = None
 
-    def __repr__(self):
+    def __repr__(self) -> str:
         return self.data
 
 
 # noinspection PyShadowingNames
 class CircularLinkedList:
-    def __init__(self, nodes: list = None):
+    def __init__(self, nodes: list | None = None) -> None:
         self.head = None
 
         if nodes:
@@ -26,7 +27,7 @@ class CircularLinkedList:
 
             node.next = self.head
 
-    def __repr__(self):
+    def __repr__(self) -> str:
         nodes = []
 
         if self.head is not None:
@@ -41,7 +42,7 @@ class CircularLinkedList:
         else:
             return ""
 
-    def __iter__(self):
+    def __iter__(self) -> Generator[Node | Any, Any, None]:
         if self.head is not None:
             node = self.head
             yield node
@@ -51,7 +52,7 @@ class CircularLinkedList:
                 node = node.next
 
     # noinspection PyUnboundLocalVariable
-    def add_first(self, node: Node):
+    def add_first(self, node: Node) -> None:
         if self.head is None:
             self.head = node
             self.head.next = node
@@ -64,7 +65,7 @@ class CircularLinkedList:
         node.next = self.head
         self.head = node
 
-    def add_last(self, node: Node):
+    def add_last(self, node: Node) -> None:
         if self.head is None:
             self.head = node
             self.head.next = node
@@ -78,7 +79,7 @@ class CircularLinkedList:
         n.next = node
         node.next = self.head
 
-    def add_after(self, target_node_data: str, new_node: Node):
+    def add_after(self, target_node_data: str, new_node: Node) -> None:
         if self.head is None:
             raise Exception("List is empty")
 
@@ -90,7 +91,7 @@ class CircularLinkedList:
 
         raise Exception(f"Node with data '{target_node_data}' not found")
 
-    def add_before(self, target_node_data: str, new_node: Node):
+    def add_before(self, target_node_data: str, new_node: Node) -> None:
         if self.head is None:
             raise Exception("List is empty")
 
