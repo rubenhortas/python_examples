@@ -4,7 +4,7 @@ from binary_search_tree import BinarySearchTree
 
 
 class Test(unittest.TestCase):
-    def test_insert(self):
+    def test_insert(self) -> None:
         bst = BinarySearchTree()
         bst.insert(7)
         bst.insert(5)

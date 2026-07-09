@@ -7,7 +7,7 @@ from node import Node
 
 
 class BinarySearchTree:
-    def __init__(self):
+    def __init__(self) -> None:
         self.root = None
 
     def insert(self, value: int) -> None:
