@@ -5,7 +5,7 @@ Closure are Nested functions that are able to access variables of the enclosing 
 A closure occurs when a function has access to a local variable from an enclosing scope that has finished its execution.
 """
 
-from typing import Callable
+from collections.abc import Callable
 
 
 def _outer_function(outer_text: str) -> Callable[[str], None]:
