@@ -2,10 +2,10 @@ from collections import deque
 
 
 class StackLeft:
-    def __init__(self):
+    def __init__(self) -> None:
         self.queue = deque()
 
-    def __str__(self):
+    def __str__(self) -> str:
         return str(list(self.queue))
 
     def append(self, item: str) -> None:

@@ -5,7 +5,7 @@ from data_structures_and_algorithms.data_structures.stack.stack_right import Sta
 
 
 class Test(unittest.TestCase):
-    def test_stack_left(self):
+    def test_stack_left(self) -> None:
         stack = StackLeft()
         stack.append("First")
         stack.append("Second")
@@ -18,7 +18,7 @@ class Test(unittest.TestCase):
         stack.pop()
         self.assertEqual(["First"], list(stack.queue))
 
-    def test_stack_right(self):
+    def test_stack_right(self) -> None:
         stack = StackRight()
         stack.append("First")
         stack.append("Second")
