@@ -1,9 +1,9 @@
 class Node:
     def __init__(self, value: int) -> None:
-        self.value = value
-        self.left = None
-        self.right = None
-        self.height = 1
+        self.value: int = value
+        self.left: Node | None = None
+        self.right: Node | None = None
+        self.height: int = 1
 
     def __repr__(self) -> str:
         return f"{self.value}, Left: {self.left!s}, Right: {self.right!s}, Height: {self.height}"
