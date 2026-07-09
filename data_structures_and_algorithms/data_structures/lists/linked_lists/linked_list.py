@@ -1,5 +1,9 @@
 #!/usr/bin/env python3
-from typing import Any, Generator
+from collections.abc import Generator
+from typing import Any
+
+from data_structures_and_algorithms.data_structures.lists.linked_lists.empty_list_error import EmptyListError
+from data_structures_and_algorithms.data_structures.lists.linked_lists.node_not_found_error import NodeNotFoundError
 
 
 class Node:
@@ -58,7 +62,7 @@ class LinkedList:
 
     def add_after(self, target_node_data: str, new_node: Node) -> None:
         if self.head is None:
-            raise Exception("List is empty")
+            raise EmptyListError
 
         for node in self:
             if node.data == target_node_data:
@@ -66,14 +70,14 @@ class LinkedList:
                 node.next = new_node
                 return
 
-        raise Exception(f"Node with data '{target_node_data}' not found")
+        raise NodeNotFoundError(target_node_data)
 
     def add_before(self, target_node_data: str, new_node: Node) -> None:
         if self.head is None:
-            raise Exception("List is empty")
+            raise EmptyListError
 
         if self.head.data == target_node_data:
-            return self.add_first(new_node)
+            self.add_first(new_node)
 
         prev_node = self.head
 
@@ -85,11 +89,11 @@ class LinkedList:
 
             prev_node = node
 
-        raise Exception(f"Node with data '{target_node_data}' not found")
+        raise NodeNotFoundError(target_node_data)
 
     def remove(self, target_node_data: str) -> None:
         if self.head is None:
-            raise Exception("List is empty")
+            raise EmptyListError
 
         if self.head.data == target_node_data:
             self.head = self.head.next
@@ -104,7 +108,7 @@ class LinkedList:
 
             previous_node = node
 
-        raise Exception(f"Node with data '{target_node_data}' not found")
+        raise NodeNotFoundError(target_node_data)
 
 
 if __name__ == "__main__":
