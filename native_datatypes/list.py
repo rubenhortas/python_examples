@@ -1,12 +1,10 @@
 #!/usr/bin/env python3
-from typing import List, Union
 
 EMPTY_LIST = []
 
 
-def add_items(lst: List[Union[str, int, bool]]) -> List[Union[str, int, bool]]:
-    lst = lst + ["a"]
-    lst.append(1)  # In a list items don't need to be the same type
+def add_items(lst: list[str | int | bool]) -> list[str | int | bool]:
+    lst = [*lst, "a", 1]
     lst.extend(["b", 2])
     lst.insert(0, True)
 
@@ -15,14 +13,14 @@ def add_items(lst: List[Union[str, int, bool]]) -> List[Union[str, int, bool]]:
     return lst
 
 
-def search(lst: list, value) -> None:
+def search(lst: list, value: object) -> None:
     if value in lst:
         print(f"'{value}' is in the list")
     else:
         print(f"'{value}' is not in the list")
 
 
-def get_value_position(lst: list, value) -> None:
+def get_value_position(lst: list, value: object) -> None:
     try:
         print(f"Position of {value}: {lst.index(value)}")  # Returns the position of the first occurrence
     except ValueError:
@@ -53,14 +51,14 @@ def is_empty(lst: list) -> None:
 
 
 def comprehensions() -> None:
-    numbers = [i for i in range(10)]
+    numbers = list(range(10))
     even_numbers = [i for i in range(10) if i % 2 == 0]  # [ expression for item in list if conditional ]
 
     print(f"numbers: {numbers}, even numbers: {even_numbers}")
 
 
 def reverse() -> None:
-    numbers = [i for i in range(10)]
+    numbers = list(range(10))
     reversed_numbers = numbers[::-1]
 
     print(f"{numbers} backwards is {reversed_numbers}")
@@ -81,7 +79,7 @@ def join() -> None:
 # noinspection PyShadowingBuiltins
 def slice() -> None:
     # Lst[ Initial : End : IndexJump ]
-    numbers = [i for i in range(10)]
+    numbers = list(range(10))
 
     print(f"{{lst[0:5]}}: {numbers[0:5]}")  # [0, 1, 2, 3, 4]
 
