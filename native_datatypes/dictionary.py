@@ -71,11 +71,11 @@ def sort_by_value(dct: dict) -> None:
     sorted_list = sorted(dct.items(), key=lambda item: item[1], reverse=True)  # sorted will return a list of tuples
     print(f"\t{sorted_list}")
 
-    sorted_dict = {k: v for k, v in sorted(dct.items(), key=lambda item: item[1], reverse=True)}  # returns a dictionary
+    sorted_dict = dict(sorted(dct.items(), key=lambda item: item[1], reverse=True))  # returns a dictionary
     print(f"\t{sorted_dict}")
 
 
-def sort_by_key(dct: dict):
+def sort_by_key(dct: dict) -> None:
     # Check collections.OrderedDict https://docs.python.org/3/library/collections.html#collections.OrderedDict
     print(f"Sorting {dct} by keys:")
 
