@@ -1,25 +1,25 @@
 """
-The AVL tree is a self–balancing binary search tree that guarantees the difference of the heights of the left and right subtrees of a node is at most 1.
+The AVL tree is a self-balancing binary search tree that guarantees the difference of the heights of the left and right subtrees of a node is at most 1.
 """
 
-from node import Node
+from data_structures_and_algorithms.data_structures.trees.avl_tree.node import Node
 
 
 class AvlTree:
-    def __init__(self):
+    def __init__(self) -> None:
         self.root = None
 
-    def insert_value(self, value):
+    def insert_value(self, value: int) -> None:
         self.root = self._insert(self.root, value)
 
-    def delete_value(self, value):
+    def delete_value(self, value: int) -> None:
         self.root = self._delete(self.root, value)
 
-    def search_value(self, value):
+    def search_value(self, value: int) -> Node | None:
         return self._search(self.root, value)
 
-    def preorder(self):
-        def traverse_preorder(node):
+    def preorder(self) -> list[Node]:
+        def traverse_preorder(node: Node | None) -> None:
             if node:
                 values.append(node.value)
                 traverse_preorder(node.left)
@@ -31,14 +31,14 @@ class AvlTree:
         return values
 
     @staticmethod
-    def _get_height(node):
+    def _get_height(node: Node | None) -> int:
         if not node:
             return 0
 
         return node.height
 
     @staticmethod
-    def _get_min_value_node(node):
+    def _get_min_value_node(node: Node) -> Node:
         current = node
 
         while current.left:
@@ -46,13 +46,13 @@ class AvlTree:
 
         return current
 
-    def _get_balance_factor(self, node):
+    def _get_balance_factor(self, node: Node | None) -> int:
         if not node:
             return 0
 
         return self._get_height(node.left) - self._get_height(node.right)
 
-    def _insert(self, node, value):
+    def _insert(self, node: Node | None, value: int) -> Node | None:
         if not node:
             return Node(value)
 
@@ -78,7 +78,7 @@ class AvlTree:
 
         return node
 
-    def _delete(self, node, value):
+    def _delete(self, node: Node | None, value: int) -> Node | None:
         if not node:
             return node
 
@@ -116,7 +116,7 @@ class AvlTree:
 
         return node
 
-    def _rotate_left(self, node):
+    def _rotate_left(self, node: Node | None) -> Node | None:
         right_node = node.right
         temp = right_node.left
 
@@ -128,7 +128,7 @@ class AvlTree:
 
         return right_node
 
-    def _rotate_right(self, node):
+    def _rotate_right(self, node: Node | None) -> Node | None:
         left_node = node.left
         temp = left_node.right
 
@@ -140,7 +140,7 @@ class AvlTree:
 
         return left_node
 
-    def _search(self, node, value):
+    def _search(self, node: Node | None, value: int) -> Node | None:
         if not node or node.value == value:
             return node
 
