@@ -5,6 +5,7 @@ The AVL tree is a self-balancing binary search tree that guarantees the differen
 from data_structures_and_algorithms.data_structures.trees.avl_tree.node import Node
 
 
+# noinspection PyUnresolvedReferences
 class AvlTree:
     def __init__(self) -> None:
         self.root = None
