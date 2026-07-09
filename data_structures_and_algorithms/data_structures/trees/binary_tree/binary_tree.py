@@ -9,7 +9,7 @@ from node import Node
 
 # noinspection PyShadowingBuiltins
 class BinaryTree:
-    def __init__(self):
+    def __init__(self) -> None:
         self.root = None
 
     def insert(self, new_value: str) -> None:
@@ -53,7 +53,7 @@ class BinaryTree:
         """
 
         # noinspection PyShadowingNames
-        def delete_node(node_to_delete: Node) -> None:
+        def delete_node(node_to_delete: Node | None) -> None:
             queue = deque()
             queue.append(self.root)
 
@@ -92,6 +92,7 @@ class BinaryTree:
 
             if node_to_delete:
                 if node_to_delete != deepest_rightmost_node:
+                    # noinspection PyUnresolvedReferences
                     node_to_delete.value = deepest_rightmost_node.value
 
                 delete_node(deepest_rightmost_node)
@@ -530,7 +531,7 @@ class BinaryTree:
 
         return values
 
-    def get_boundary_traversal(self):
+    def get_boundary_traversal(self) -> list[Node]:
         """
         Get boundary nodes of the binary tree Anti-Clockwise starting from the root.
 
