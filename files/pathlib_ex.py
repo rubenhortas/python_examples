@@ -13,9 +13,9 @@ def read(file: str) -> str | None:
         file_path = Path(file)
         return file_path.read_text()
     except FileNotFoundError:
-        print(f"Error: The file at {file_path} was not found.")
+        print(f"Error: The file '{file}' was not found.")
     except PermissionError:
-        print(f"Error: You don't have permissions to read {file_path}.")
+        print(f"Error: You don't have permissions to read '{file}'.")
     except Exception as e:
         print(f"An unexpected error occurred: {e}")
 
