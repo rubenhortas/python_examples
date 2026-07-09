@@ -15,7 +15,7 @@ if __name__ == "__main__":
     print(queue)
     # return: deque(['First', 'Second', 'Third'])
 
-    for i in list(queue):
+    while queue:
         queue.popleft()  # Since queues are FIFO, the first element who got into the queue should be the first to get out
         print(queue)
 
