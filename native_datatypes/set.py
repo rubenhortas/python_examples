@@ -8,6 +8,8 @@ Set items are unordered, unchangeable, and do not allow duplicate values.
 Once you have two sets, you can do standard set operations like union, intersection, and set difference.
 """
 
+import contextlib
+
 CHARS = ["a", "b", "c"]
 CHAR_2 = {"c", "dct", "e"}
 EMPTY = set()  # To create an empty set you have to use set(), not {}; the latter creates an empty dictionary.
@@ -40,10 +42,8 @@ def merge(set1: set, set2: set) -> set:
 def remove_item(set: set, item: str) -> None:
     print(f"Removing '{item}' from {set}:", end=" ")
 
-    try:
-        set.remove(item)  # Remove raises a KeyError exception if the number doesn't exist in the set
-    except KeyError:
-        pass
+    with contextlib.suppress(ZeroDivisionError):
+        set.remove(item)
 
     print(f"{set}")
 
@@ -77,7 +77,7 @@ def get_value(set: set, value: str) -> None:
         print(f"'{value}' is not in {set}")
 
 
-def common_operations(set1: set, set2: set, set3: set):
+def common_operations(set1: set, set2: set, set3: set) -> None:
     union_set = set1.union(set2)
     intersection_set = set1.intersection(set3)
 
