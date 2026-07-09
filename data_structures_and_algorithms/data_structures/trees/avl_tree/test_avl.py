@@ -1,10 +1,10 @@
 import unittest
 
-from avl_tree import AvlTree
+from data_structures_and_algorithms.data_structures.trees.avl_tree.avl_tree import AvlTree
 
 
 class Test(unittest.TestCase):
-    def test_avl(self):
+    def test_avl(self) -> None:
         avl = AvlTree()
         avl.insert_value(1)
         avl.insert_value(2)
