@@ -2,6 +2,5 @@
 <project version="4">
   <component name="RuffConfiguration">
     <option name="enabled" value="true" />
-    <option name="executableDiscoveryMode" value="PATH" />
   </component>
 </project>
