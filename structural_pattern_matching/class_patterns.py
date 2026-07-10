@@ -11,14 +11,14 @@
 class Cat:
     url = None
 
-    def __init__(self, code):
+    def __init__(self, code: int) -> None:
         self.url = f"https://http.cat/status/{code}"
 
 
 class Dog:
     url = None
 
-    def __init__(self, code):
+    def __init__(self, code: int) -> None:
         self.url = f"https://httpstatusdogs.com/{code}"
 
 
