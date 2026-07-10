@@ -14,6 +14,7 @@ class _ComicCollection:
         self.comics = MappingProxyType(self._comics)  # Update the read-only view
 
 
+# noinspection GrazieInspection
 if __name__ == "__main__":
     collection = _ComicCollection(
         Spiderman="A superhero comic about Peter Parker.", Batman="A superhero comic featuring Bruce Wayne."
