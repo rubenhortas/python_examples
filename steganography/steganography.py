@@ -4,7 +4,7 @@ from stegano import lsb
 
 MESSAGE = "https://www.youtube.com/watch?v=QH2-TGUlwu4"
 ORIGINAL_IMAGE = "nyancat.png"
-IMAGE_WITH_SECRET_MESSAGE = "nyan_with_secret.png"
+IMAGE_WITH_SECRET_MESSAGE = "nyan_with_secret.png"  # noqa: S105
 
 
 def _hide_message() -> None:
