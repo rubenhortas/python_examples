@@ -9,7 +9,7 @@
 # ["a", *_, "z"] matches any sequence of length two or more that starts with "a" and ends with "z".
 
 
-def _get_match(collection):
+def _get_match(collection: tuple) -> None:
     match collection:
         case 1, [collection, *others]:
             print(f"Got 1 and a nested sequence: collection: {collection}, *others: {others}")
@@ -17,7 +17,7 @@ def _get_match(collection):
             print(f"Got 1 and {x}")
 
 
-def _get_cat(action: list):
+def _get_cat(action: list) -> None:
     match action:
         case ["get"]:
             print("Which cat do you want?")
