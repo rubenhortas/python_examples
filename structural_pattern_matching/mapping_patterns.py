@@ -9,7 +9,7 @@
 # **_ is invalid in mapping patterns
 
 
-def _pwn(user_info):
+def _pwn(user_info: dict) -> None:
     match user_info:
         case {"SUDO": has_sudo, **rest}:
             print(f"PWN! sudo {has_sudo}: {rest}")
