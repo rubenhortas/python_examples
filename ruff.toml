@@ -1,7 +1,6 @@
-[tool.ruff]
 line-length = 120
 
-[tool.ruff.lint]
+[lint]
 select = [
     "E", # pycodestyle errors
     "F", # Pyflakes
@@ -44,11 +43,6 @@ ignore = [
     "ISC001", # Conflicts with the formatter
 ]
 
-[tool.ruff.format]
+[format]
 quote-style = "double"
 indent-style = "space"
-
-[tool.basedpyright]
-reportUnusedCallResult = "none"
-reportAny = "none"
-reportGeneralTypeIssues = "none"

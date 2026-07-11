@@ -7,3 +7,8 @@ dependencies = [
     "stegano>=2.5.0",
     "textblob>=0.20.0",
 ]
+
+[tool.basedpyright]
+reportUnusedCallResult = "none"
+reportAny = "none"
+reportGeneralTypeIssues = "none"
