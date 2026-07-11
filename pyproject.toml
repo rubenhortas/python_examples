@@ -2,3 +2,8 @@
 name = "python_examples"
 version = "0.1.0"
 requires-python = ">=3.13"
+dependencies = [
+    "ruff>=0.15.21",
+    "stegano>=2.5.0",
+    "textblob>=0.20.0",
+]
