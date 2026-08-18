@@ -4,7 +4,7 @@ A binary tree is a tree data structure in which each node has at most two childr
 
 from collections import deque
 
-from node import Node
+from data_structures_and_algorithms.data_structures.trees.binary_tree.node import Node
 
 
 # noinspection PyShadowingBuiltins
