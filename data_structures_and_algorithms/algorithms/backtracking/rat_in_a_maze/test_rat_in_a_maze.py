@@ -7,6 +7,7 @@
 # Return the list of paths in lexicographically increasing order.
 # Note: In a path, no cell can be visited more than once.
 # If the source cell is 0, the rat cannot move to any other cell.
+
 import unittest
 
 from data_structures_and_algorithms.algorithms.backtracking.rat_in_a_maze.maze import Maze
