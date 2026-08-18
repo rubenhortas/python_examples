@@ -3,7 +3,7 @@ Binary search tree (BST) is a special type of binary tree in which the left chil
 than the node's value and the right child has a value greater than the node's value.
 """
 
-from node import Node
+from data_structures_and_algorithms.data_structures.trees.binary_search_tree.node import Node
 
 
 class BinarySearchTree:
