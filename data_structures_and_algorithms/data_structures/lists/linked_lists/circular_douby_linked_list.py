@@ -51,7 +51,7 @@ class CircularLinkedList:
 
         return f"<- {' <-> '.join(nodes)} ->"
 
-    def __iter__(self) -> Generator[Node | Any, Any, None]:
+    def __iter__(self) -> Generator[Node | Any, Any]:
         if self.head is not None:
             node = self.head
             yield node
