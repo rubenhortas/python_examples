@@ -1,4 +1,4 @@
-from typing import Iterable
+from collections.abc import Iterable
 
 
 class Board:
@@ -7,7 +7,7 @@ class Board:
         self.size = len(self.squares)
 
     def print(self) -> None:
-        for row, columns in zip(self.squares, self.squares, strict=True):
+        for row, columns in zip(self.squares, self.squares, strict=True):  # noqa: B007
             for column in columns:
                 print(f"[{column}]", end="")
             print()
