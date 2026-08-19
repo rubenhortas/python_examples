@@ -2,7 +2,7 @@
 
 import secrets
 
-from cryptography_.hazmat.primitives.ciphers.aead import AESGCM
+from cryptography.hazmat.primitives.ciphers.aead import AESGCM
 
 _PLAIN_TEXT = "Hello, AES!"
 _KEY_SIZE = 32  # bytes
