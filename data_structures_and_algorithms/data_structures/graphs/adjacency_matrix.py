@@ -20,7 +20,7 @@ class AdjacencyMatrix:
     Adjacency Matrix for undirected and unweighted graph.
     """
 
-    def __init__(self, nodes, edges):
+    def __init__(self, nodes: int, edges: list[tuple[int, int]]) -> None:
         self.data = [[0] * nodes for _ in range(nodes)]
 
         for node1, node2 in edges:
@@ -30,8 +30,8 @@ class AdjacencyMatrix:
             self.data[node1][node2] = 1
             self.data[node2][node1] = 1
 
-    def __repr__(self):
+    def __repr__(self) -> str:
         return "\n".join(str(row) for row in self.data)
 
-    def __str__(self):
+    def __str__(self) -> str:
         return self.__repr__()
