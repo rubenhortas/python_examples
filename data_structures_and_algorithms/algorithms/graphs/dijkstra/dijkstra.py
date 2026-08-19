@@ -31,7 +31,7 @@ def get_shortest_path(graph: Graph, start: int, end: int) -> tuple[list, int]:
     path = []
 
     while priority_queue:
-        distance, current = heapq.heappop(priority_queue)
+        distance, current = heapq.heappop(priority_queue)  # noqa: RUF059
 
         if current in visited:
             continue  # Skip if already visited
