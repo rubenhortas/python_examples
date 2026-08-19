@@ -31,6 +31,6 @@ def dfs(graph: list, source_node: int) -> list:
             dfs_tour.append(current_node)
 
             for neighbor in graph[current_node]:
-                stack.append(neighbor)
+                stack.append(neighbor)  # noqa: PERF402
 
     return dfs_tour
