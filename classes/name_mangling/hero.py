@@ -7,8 +7,8 @@ class Hero:
     if a derived class defines an attribute with the same name.
     """
 
-    __hero_name: str = None
-    __real_name: str = None
+    __hero_name: str = ""
+    __real_name: str = ""
 
     def __init__(self, hero_name: str, real_name: str) -> None:
         self.__hero_name = hero_name
