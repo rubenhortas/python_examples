@@ -1,4 +1,4 @@
-from typing import ClassVar, Final
+from typing import Final
 
 
 class Knight:
@@ -12,7 +12,7 @@ class Knight:
     #
     # 'tuple' instead of 'list' to enforce immutability at runtime.
     # 'Final' to behave as a constant.
-    MOVES: Final[tuple[str, ...]] = (
+    MOVES: Final[tuple[tuple[int, int], ...]] = (
         (2, 1),  # One square up and two squares right
         (1, 2),  # Two squares up and one square right
         (-1, 2),  # Two squares up and one square left
