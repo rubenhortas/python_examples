@@ -4,7 +4,6 @@ It's a fundamental data structure used in various algorithms like heap sort, pri
 """
 
 from abc import ABC, abstractmethod
-from typing import NoReturn
 
 from data_structures_and_algorithms.data_structures.heap.method_not_implemented_error import MethodNotImplementedError
 
@@ -22,6 +21,7 @@ class BinaryHeap(ABC):
         self.heap[self.size] = x
         self.size += 1
         self._heapify_up(self.size - 1)
+        return None
 
     @staticmethod
     def _parent(i: int) -> int:
@@ -36,14 +36,14 @@ class BinaryHeap(ABC):
         return 2 * i + 2
 
     @abstractmethod
-    def _heapify_up(self, i: int) -> NoReturn:
+    def _heapify_up(self, i: int) -> None:
         """
         Moves an element up the tree if it's smaller than its parent.
         """
         raise MethodNotImplementedError
 
     @abstractmethod
-    def _heapify_down(self, i: int) -> NoReturn:
+    def _heapify_down(self, i: int) -> None:
         """
         Moves an element down the tree to maintain the heap property.:
         """
@@ -59,6 +59,7 @@ class BinaryHeap(ABC):
         self.heap[0] = self.heap[self.size - 1]
         self.size -= 1
         self._heapify_down(0)
+        return None
 
     def _get_root(self) -> int | None:
         """

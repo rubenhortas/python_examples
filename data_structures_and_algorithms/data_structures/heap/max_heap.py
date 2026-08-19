@@ -2,8 +2,6 @@
 A max heap is a complete binary tree where the value of each node is greater than or equal to the values of its children.
 """
 
-from typing import Any
-
 from data_structures_and_algorithms.data_structures.heap.binary_heap import BinaryHeap
 
 
