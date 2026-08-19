@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 from sympy.ntheory.modular import crt
 
 # n mod(MODULUS) = RESULT
