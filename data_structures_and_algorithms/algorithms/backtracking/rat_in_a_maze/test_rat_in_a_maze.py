@@ -1,5 +1,5 @@
 # Consider a rat located at (0, 0) in a square matrix of order N * N.
-# It must reach the destination at (N – 1, N – 1).
+# It must reach the destination at (N - 1, N -1).
 # Find all possible paths the rat can take to reach from the source to the destination.
 # The directions in which the rat can move are 'U' (Up), 'D' (Down), 'L' (Left), 'R' (Right).
 # The value 0 in a cell of the matrix represents that it is blocked and the rat cannot move to it
