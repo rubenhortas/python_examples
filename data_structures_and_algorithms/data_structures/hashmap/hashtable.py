@@ -12,17 +12,19 @@ class HashTable:
 
     def get(self, key: str) -> str | None:
         index = self._get_index(key)
+        node = self._data[index]
 
-        if self._data[index]:
-            return self._data[index][1]
+        if node:
+            return node[1]
         else:
             raise KeyNotFoundError(key)
 
     def update(self, key: str, value: str) -> None:
         index = self._get_index(key)
+        node = self._data[index]
 
-        if self._data[index]:
-            self._data[index][1] = value
+        if node:
+            node[1] = value
         else:
             raise KeyNotFoundError(key)
 
