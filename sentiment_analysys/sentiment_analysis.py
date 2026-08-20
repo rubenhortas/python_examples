@@ -30,5 +30,5 @@ if __name__ == "__main__":
                 results_file.write(f"{clean_line},{line_polarity},{line_subjectivity}\n")
     except TranslatorError:
         pass
-    except Exception as e:  # noqa: BLE001
+    except Exception as e:
         print(f"Unexpected error: {e}")
