@@ -46,7 +46,7 @@ class CircularLinkedList:
         else:
             return ""
 
-    def __iter__(self) -> Generator[Node | Any, Any, None]:
+    def __iter__(self) -> Generator[Node | Any, Any]:
         if self.head is not None:
             node = self.head
             yield node
@@ -62,7 +62,7 @@ class CircularLinkedList:
             self.head.next = node
             return
 
-        for current_node in self:
+        for current_node in self:  # noqa: B007
             pass
 
         current_node.next = node
