@@ -8,12 +8,7 @@ from performance.memory_allocation import get_memory_allocation
 # noinspection PyShadowingNames
 @get_memory_allocation
 def _create_list(size: int) -> list:
-    lst = []
-
-    for i in range(0, size - 1):
-        lst.append(i)
-
-    return lst
+    return list(range(size))
 
 
 def _get_function_memory_allocation() -> None:
@@ -30,7 +25,7 @@ def _get_object_memory_allocation() -> None:
     # The range function returns a class that behaves like a list.
     # A range is much more memory efficient than a list.
     numbers_range = range(100)
-    numbers_list = [i for i in range(100)]
+    numbers_list = list(range(100))
 
     print(f"Size of range: {sys.getsizeof(numbers_range)} bytes")
     # return: Size of range: 48 bytes
