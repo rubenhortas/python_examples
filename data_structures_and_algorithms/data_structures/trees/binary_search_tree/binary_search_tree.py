@@ -39,4 +39,5 @@ class BinarySearchTree:
 
         values = []
         traverse_inorder(self.root)
+
         return values
