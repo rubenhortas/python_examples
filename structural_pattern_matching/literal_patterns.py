@@ -3,7 +3,7 @@
 # Literal pattern types: number, string, 'True', 'False', None
 
 
-def _get_http_status(code: int) -> str:
+def _get_http_status(code: int | None) -> str:
     match code:
         case None:
             return "None"
