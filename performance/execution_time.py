@@ -1,8 +1,8 @@
 #!/usr/bin/python 3
 
 import time
+from collections.abc import Callable
 from functools import wraps
-from typing import Callable
 
 
 def get_execution_time(func: Callable) -> Callable:
