@@ -127,6 +127,7 @@ class BinaryTree:
 
         values = []
         traverse_inorder(self.root)
+
         return values
 
     def get_inorder_traversal_iterative_stack(self) -> list:
@@ -204,6 +205,7 @@ class BinaryTree:
 
         values = []
         traverse_preorder(self.root)
+
         return values
 
     def get_preorder_traversal_iterative_stack(self) -> list:
@@ -280,6 +282,7 @@ class BinaryTree:
 
         values = []
         traverse_postorder(self.root)
+
         return values
 
     def get_postorder_traversal_iterative(self) -> list:
