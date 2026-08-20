@@ -22,7 +22,7 @@ if __name__ == "__main__":
     print()
 
     # Loop simultaneously
-    for name, surname in zip(NAMES, SURNAMES):
+    for name, surname in zip(NAMES, SURNAMES, strict=True):
         print(f"{name} {surname}")
     # result:
     # Philip Marlowe
