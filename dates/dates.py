@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-from datetime import MAXYEAR, MINYEAR, date, datetime, time
+from datetime import MAXYEAR, MINYEAR, datetime, time
 
 
 # noinspection PyShadowingNames
