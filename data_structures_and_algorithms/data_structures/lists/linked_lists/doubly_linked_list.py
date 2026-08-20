@@ -22,7 +22,7 @@ class Node:
 
 # noinspection PyShadowingNames
 class DoublyLinkedList:
-    def __init__(self, nodes: list = None) -> None:
+    def __init__(self, nodes: list | None = None) -> None:
         self.head = None
 
         if nodes:
@@ -44,7 +44,7 @@ class DoublyLinkedList:
 
         return " <-> ".join(nodes)
 
-    def __iter__(self) -> Generator[Node, Any, None]:
+    def __iter__(self) -> Generator[Node, Any]:
         node = self.head
 
         while node is not None:
