@@ -44,7 +44,7 @@ def _do_calculations(numbers: list) -> None:
     # Using a double list comprehension
     # results = [value for num in numbers for value in [_do_expensive_operation(num)] if value > 0]
 
-    # Walrus operator improves code’s readability
+    # Walrus operator improves code's readability
     results = [value for num in numbers if (value := _do_expensive_operation(num)) > 0]
 
     print(results)  # return: [3, 4, 2, 2]
