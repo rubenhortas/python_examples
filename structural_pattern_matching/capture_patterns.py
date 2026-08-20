@@ -6,9 +6,9 @@
 # A capture pattern appearing in a scope makes the name local to that scope.
 
 
-def _get_cat(code: int) -> None:
+def _get_cat(code: int | None) -> None:
     match code:
-        case "":
+        case None:
             print("No cat :(")
         case code_:
             print(f"Your cat is https://http.cat/status/{code_}")
@@ -16,4 +16,5 @@ def _get_cat(code: int) -> None:
 
 if __name__ == "__main__":
     _get_cat(500)
+    _get_cat(None)
     # return: Your cat is https://http.cat/status/500
