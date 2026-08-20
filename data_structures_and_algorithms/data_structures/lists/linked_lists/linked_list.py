@@ -38,7 +38,7 @@ class LinkedList:
 
         return " -> ".join(nodes)
 
-    def __iter__(self) -> Generator[Node, Any, None]:
+    def __iter__(self) -> Generator[Node, Any]:
         node = self.head
 
         while node is not None:
@@ -54,7 +54,7 @@ class LinkedList:
             self.head = node
             return
 
-        for current_node in self:
+        for current_node in self:  # noqa: B007
             pass
 
         # noinspection PyUnboundLocalVariable
