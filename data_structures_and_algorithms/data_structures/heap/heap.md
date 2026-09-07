@@ -10,9 +10,9 @@ A **Heap** is a specialized tree-based data structure that satisfies the **Heap 
 It is typically implemented as a **Binary Heap** laid out contiguously inside an array, providing optimal CPU cache
 locality with standard implicit pointer arithmetic for indexing:
 
-* Left Child: 2i + 1
-* Right Child: 2i + 2
-* Parent: (i - 1) / 2
+* Left Child: 2i+1
+* Right Child: 2i+2
+* Parent: (i-1)/2
 
 ### Time & Space Complexity
 
