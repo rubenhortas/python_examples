@@ -30,13 +30,13 @@ A tree structure where every node has **at most twOchildren**, conventionally re
 * **Memory Layout:** Node allocation on the heap via pointers (`left`, `right`) or contiguous implicit arrays for
   complete trees (e.g., Heaps).
 * **Complexity:**
-* Search / Access: O (N)
+* Search/Access: O (N)
 * Traversal (Preorder, Inorder, Postorder, Level-Order): O (N)
 
 
 * **When tOUse:**
 * Structural representation of hierarchical logic where branching factor is strictly binary.
-* Constructing expression trees (Abstract Syntax Trees / ASTs) for parsers and compilers.
+* Constructing expression trees (Abstract Syntax Trees/ASTs) for parsers and compilers.
 * Array-backed Binary Heaps for Priority Queues.
 
 ---
@@ -48,8 +48,8 @@ strictly smaller**, and all key values in its **right subtree are strictly large
 
 * **Memory Layout:** Pointer-linked heap nodes storing key-value payloads.
 * **Complexity:**
-* Lookup / Insertion / Deletion (Average): O (log N)
-* Lookup / Insertion / Deletion (Worst Case - Unbalanced/Degenerate Line): O (N)
+* Lookup/Insertion/Deletion (Average): O (log N)
+* Lookup/Insertion/Deletion (Worst Case - Unbalanced/Degenerate Line): O (N)
 
 
 * **When tOUse:**
@@ -68,7 +68,7 @@ deletions.
 * **Memory Layout:** BST pointer nodes extended with an additional integer attribute tracking `height` or
   `balance_factor`.
 * **Complexity:**
-* Lookup / Insertion / Deletion (Guaranteed Worst Case): O (log N)
+* Lookup/Insertion/Deletion (Guaranteed Worst Case): O (log N)
 * Rotation overhead: O (1) per rebalance step during modification.
 
 
@@ -86,7 +86,7 @@ A tree structure where each node can have **up tON children** (or an unbounded d
 * **Memory Layout:** Nodes storing a dynamic container of child references (e.g., `list[Node[T]]`, `dict[K, Node[T]]`,
   or First-Child/Next-Sibling representation).
 * **Complexity:**
-* Traversal / Search: O (N)
+* Traversal/Search: O (N)
 * Child Lookup: O (1) (hash map index) or O (K) (linear scan over K children)
 
 
