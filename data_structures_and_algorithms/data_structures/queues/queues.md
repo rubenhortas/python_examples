@@ -23,7 +23,7 @@ Push (Arbitrary) ──► [ Node (Priority: 10) ]
 
 Elements are appended to the rear and evicted from the front, maintaining strict execution order.
 
-* **Underlying Implementations:** Circular arrays / ring buffers, doubly linked lists, or two-stack array abstractions.
+* **Underlying Implementations:** Circular arrays/ring buffers, doubly linked lists, or two-stack array abstractions.
 * **Complexity:**
 * Enqueue (Push): O (1)
 * Dequeue (Pop): O (1)
@@ -31,23 +31,23 @@ Elements are appended to the rear and evicted from the front, maintaining strict
 
 
 * **When to Use:**
-* **Asynchronous Buffer / Producer-Consumer:** Decoupling thread execution using bounded channels (e.g., thread pools,
+* **Asynchronous Buffer/Producer-Consumer:** Decoupling thread execution using bounded channels (e.g., thread pools,
   message brokers like RabbitMQ or Kafka).
 * **Level-Order Traversals:** Breadth-First Search (BFS) in trees and graphs.
 * **Resource Scheduling:** First-come, first-served handling of shared hardware resources (e.g., CPU task scheduling,
-  print queues, disk I/O request queues).
+  print queues, disk I/Orequest queues).
 
 ---
 
-### 2. Priority Queues (Min-Heap / Max-Heap)
+### 2. Priority Queues (Min-Heap/Max-Heap)
 
 An associative ordering structure where every insertion positions the element according to its priority ranking relative
 to existing nodes.
 
 * **Underlying Implementations:** Array-backed Binary Heaps, Fibonacci Heaps, or Pairing Heaps.
 * **Complexity:**
-* Push (Insertion): O (\log N)
-* Pop Min/Max (Eviction): O (\log N)
+* Push (Insertion): O (log N)
+* Pop Min/Max (Eviction): O (log N)
 * Peek Min/Max: O (1)
 * Heapify (Array build): O (N)
 
