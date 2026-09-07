@@ -1,4 +1,4 @@
-from data_structures_and_algorithms.data_structures.hashmap.hashtable import HashTable
+from data_structures_and_algorithms.data_structures.hashtables.hashtable import HashTable
 
 
 class BasicHashTable(HashTable):

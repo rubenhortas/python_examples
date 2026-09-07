@@ -1,7 +1,7 @@
 import unittest
 
-from data_structures_and_algorithms.data_structures.hashmap.key_not_found_error import KeyNotFoundError
-from data_structures_and_algorithms.data_structures.hashmap.linear_probing_hashtable import LinearProbingHashTable
+from data_structures_and_algorithms.data_structures.hashtables.key_not_found_error import KeyNotFoundError
+from data_structures_and_algorithms.data_structures.hashtables.linear_probing_hashtable import LinearProbingHashTable
 
 
 class Test(unittest.TestCase):

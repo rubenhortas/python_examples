@@ -1,7 +1,7 @@
 import unittest
 
-from data_structures_and_algorithms.data_structures.hashmap.basic_hashtable import BasicHashTable
-from data_structures_and_algorithms.data_structures.hashmap.key_not_found_error import KeyNotFoundError
+from data_structures_and_algorithms.data_structures.hashtables.basic_hashtable import BasicHashTable
+from data_structures_and_algorithms.data_structures.hashtables.key_not_found_error import KeyNotFoundError
 
 
 class Test(unittest.TestCase):

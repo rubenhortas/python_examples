@@ -1,4 +1,4 @@
-from data_structures_and_algorithms.data_structures.hashmap.key_not_found_error import KeyNotFoundError
+from data_structures_and_algorithms.data_structures.hashtables.key_not_found_error import KeyNotFoundError
 
 
 class HashTable:

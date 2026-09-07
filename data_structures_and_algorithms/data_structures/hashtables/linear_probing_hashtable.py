@@ -1,4 +1,4 @@
-from data_structures_and_algorithms.data_structures.hashmap.basic_hashtable import BasicHashTable
+from data_structures_and_algorithms.data_structures.hashtables.basic_hashtable import BasicHashTable
 
 
 class LinearProbingHashTable(BasicHashTable):
