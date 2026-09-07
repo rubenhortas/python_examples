@@ -72,6 +72,6 @@ that wrap around using modulo arithmetic (`index % capacity`).
 
 
 * **When to Use:**
-* Producer-Consumer bounded queues, ring buffers, and streaming audio/video I/O pipelines.
+* Producer-Consumer bounded queues, ring buffers, and streaming audio/video I/Opipelines.
 * Sliding-window algorithms requiring fixed-capacity retention.
 * Fast O (1) double-ended queue operations (e.g., Python `collections.deque`, Rust `VecDeque`).
