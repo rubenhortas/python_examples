@@ -1,4 +1,4 @@
-### Queues Overview
+### Queue
 
 A **Queue** is a linear data structure operating on a **First-In, First-Out (FIFO)** processing principle: the first
 element inserted is the first to be removed.
