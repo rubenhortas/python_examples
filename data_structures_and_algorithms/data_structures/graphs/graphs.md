@@ -4,12 +4,12 @@ A **Graph** is a non-linear data structure consisting of a finite set of **Verti
 (links). Graphs model complex, non-hierarchical network relationships between entities.
 
 * **Key Classifications:**
-* **Directed vs. Undirected:** Edges have a explicit direction ($A \to B$) or represent symmetric bidirectional
-  relationships ($A \leftrightarrow B$).
+* **Directed vs. Undirected:** Edges have a explicit direction (A to B) or represent symmetric bidirectional
+  relationships (A <-> B).
 * **Weighted vs. Unweighted:** Edges carry scalar attributes (e.g., latency, distance, bandwidth) or treat all
-  connections with uniform cost ($1$).
+  connections with uniform cost (1).
 * **Cyclic vs. Acyclic:** Paths can return to a starting vertex or guarantee zero directed cycles (e.g., Directed
-  Acyclic Graphs / DAGs).
+  Acyclic Graphs/DAGs).
 
 
 * **When to Use:**
