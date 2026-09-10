@@ -1,5 +1,5 @@
 cryptography>=50.0.0
-numpy==2.5.2
+numpy==2.5.3
 ruff==0.16.5
 stegano==3.0.0
 sympy>=1.14.0
